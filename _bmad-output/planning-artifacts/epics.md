@@ -364,4 +364,120 @@ So that a single command processes a video end-to-end from discovery through gra
 
 **Given** a channel's worth of videos have been processed through graph load
 **When** the spot-check Cypher query `MATCH (e:Entity)-[r:RELATED]->(e2:Entity) RETURN e.name, r.predicate, e2.name, r.evidence LIMIT 50` is run
-**Then** at least 50 `RELATED` edges are returned; every row has non-null `evidence` and a recognisable predicate from the extraction schema
+**Then** at least 50 `RELATED` edges are returned; every row has non-null `evidence` and a recognizable predicate from the extraction schema
+
+---
+
+## Epic 3: Academic Citation Enrichment
+
+After this epic Paper nodes exist in Kuzu for papers referenced in videos, linked to the chunks and videos that cite them, with PDFs downloaded for any open-access paper.
+
+### Story 3.1: Citation Extraction from Video Descriptions and Transcripts
+
+As a developer,
+I want `yt_kg/cite.py` to extract raw paper references from a video's description and transcript,
+So that I have a list of candidate paper strings (DOIs, arXiv IDs, titles) to resolve in the next stage.
+
+**Acceptance Criteria:**
+
+**Given** a video description containing a DOI string (e.g. `10.1519/JSC.0000000000001873`) or an arXiv ID (e.g. `arXiv:2301.00001`)
+**When** `cite.py` runs the description regex pass
+**Then** all matching DOI and arXiv ID strings are extracted and written to a SQLite `raw_citations` table with columns `citation_id` (UUID), `video_id`, `source` (`'description'`), `raw_ref` (the matched string), `created_at`
+
+**Given** a video transcript where a speaker mentions a paper by title or author/year (e.g. "Schoenfeld et al. 2017")
+**When** `cite.py` runs the transcript LLM pass via Ollama
+**Then** candidate paper references identified by the LLM are written to `raw_citations` with `source='transcript'`; references already captured by the description regex pass are not duplicated
+
+**Given** a video with no paper references in description or transcript
+**When** `cite.py` runs
+**Then** no rows are written to `raw_citations` for that video; no error is raised
+
+**Given** `cite.py` has already been run for a video
+**When** it is run again
+**Then** no duplicate rows are added to `raw_citations` (idempotent on `video_id` + `raw_ref`)
+
+---
+
+### Story 3.2: OpenAlex Resolution and Paper Node Creation in Kuzu
+
+As a developer,
+I want `yt_kg/cite.py` to resolve each raw reference via OpenAlex (with Semantic Scholar fallback) and upsert a `Paper` node and `REFERENCES` edge in Kuzu,
+So that structured paper metadata exists in the graph linked to the chunks that cite it.
+
+**Acceptance Criteria:**
+
+**Given** a `raw_citations` row with a valid DOI or arXiv ID
+**When** the OpenAlex works endpoint is queried (`https://api.openalex.org/works/{doi}` or by title search)
+**Then** a response with `doi`, `title`, `authorships`, and `publication_year` is received and stored in a `resolved_citations` SQLite table with columns `citation_id`, `video_id`, `doi`, `title`, `authors` (comma-joined display names), `year`, `oa_url` (`open_access.oa_url`, nullable), `resolved_at`
+
+**Given** OpenAlex returns a 404 or empty result for a raw reference
+**When** the fallback is triggered
+**Then** Semantic Scholar's `/paper/{identifier}` endpoint is queried; if that also fails, `last_error` and `error_stage='cite'` are written to the `videos` row and the reference is skipped
+
+**Given** a successfully resolved citation
+**When** the Kuzu graph load runs for that paper
+**Then** a `Paper` node is upserted with `doi`, `title`, `authors`, `year`; a `REFERENCES` edge is created from each `Chunk` that contained the citation to the `Paper` node; re-running the load does not create duplicate nodes or edges
+
+**Given** the Kuzu graph is populated with paper data
+**When** the Cypher query `MATCH (c:Chunk)-[:REFERENCES]->(p:Paper) RETURN p.doi, p.title LIMIT 5` is run
+**Then** at least one row is returned for a video known to contain paper references
+
+---
+
+### Story 3.3: PDF Download for Open-Access Papers
+
+As a developer,
+I want `yt_kg/cite.py` to download the PDF for any resolved paper that has a non-null `open_access.oa_url`,
+So that full paper text is available locally for future analysis while papers without open access are recorded with metadata only.
+
+**Acceptance Criteria:**
+
+**Given** a resolved citation where `oa_url` is non-null
+**When** the PDF download step runs
+**Then** `httpx` performs a GET request to `oa_url`; on HTTP 200, the response body is written to `data/papers/{doi_slug}.pdf` where `doi_slug` is the DOI with `/` and `.` replaced by `_`
+
+**Given** `data/papers/{doi_slug}.pdf` already exists for a paper
+**When** the download step runs again
+**Then** no HTTP request is made and the existing file is left untouched (idempotent)
+
+**Given** a resolved citation where `oa_url` is null
+**When** the download step runs
+**Then** no HTTP request is attempted; the paper is recorded in Kuzu with metadata only; no error is raised
+
+**Given** the HTTP request to `oa_url` returns a non-200 status or times out
+**When** the error is caught
+**Then** the failure is logged to `last_error` with `error_stage='cite_pdf'`; the Paper node and `REFERENCES` edges already created in Story 3.2 are unaffected; the pipeline continues
+
+**Given** a video known to have a paper with an open-access URL (verifiable via OpenAlex)
+**When** `cite.py` completes for that video
+**Then** `data/papers/{doi_slug}.pdf` exists and has a non-zero file size
+
+---
+
+### Story 3.4: Pipeline Extension — Citation Stage Integration
+
+As a developer,
+I want `scripts/run_pipeline.py` extended to drive the citation stage after graph load, using the same idempotent stage-flag pattern,
+So that `cited_at` is set per video and the pipeline can be interrupted and resumed without re-fetching citations or re-downloading PDFs.
+
+**Acceptance Criteria:**
+
+**Given** a video with `graphed_at IS NOT NULL AND cited_at IS NULL`
+**When** `run_pipeline.py` is run
+**Then** `cite.py` is called for that video; on completion `cited_at` is set to the current UTC timestamp in the `videos` table
+
+**Given** a video with `cited_at IS NOT NULL`
+**When** `run_pipeline.py` is run
+**Then** the citation stage is skipped entirely for that video (idempotent)
+
+**Given** the pipeline is interrupted after citation extraction but before PDF download
+**When** `run_pipeline.py` is restarted
+**Then** already-resolved citations are not re-fetched from OpenAlex; only the pending PDF downloads are retried
+
+**Given** one video's citation stage fails entirely
+**When** the pipeline continues
+**Then** `error_stage='cite'` is logged for that video and all other videos proceed unblocked; `cited_at` is not set for the failed video
+
+**Given** a video with known paper references has completed the full pipeline
+**When** `MATCH (p:Paper) RETURN p.doi, p.title` is run in Kuzu
+**Then** at least one Paper node with a valid DOI and title is returned
