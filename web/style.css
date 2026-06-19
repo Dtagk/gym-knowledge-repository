@@ -1,0 +1,267 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:            #0d1117;
+  --surface:       #161b27;
+  --surface2:      #1f2538;
+  --border:        #2a3050;
+  --accent:        #f77f00;
+  --accent-dim:    rgba(247, 127, 0, 0.22);
+  --accent-mid:    rgba(247, 127, 0, 0.55);
+  --accent-bright: rgba(247, 127, 0, 0.82);
+  --text:          #e6edf3;
+  --text-muted:    #7d8399;
+  --body-fill:     #1e2540;
+  --body-stroke:   #343d62;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+header {
+  padding: 14px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Main layout ─────────────────────────────────────────── */
+main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Body map sidebar ────────────────────────────────────── */
+.body-map {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px 24px;
+  overflow-y: auto;
+}
+
+.view-toggle {
+  display: flex;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.view-toggle button {
+  padding: 6px 22px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background 0.12s, color 0.12s;
+}
+
+.view-toggle button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.hover-label {
+  display: block;
+  height: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.svg-wrap {
+  width: 180px;
+}
+
+.svg-wrap svg {
+  width: 100%;
+  height: auto;
+}
+
+.svg-wrap svg.hidden {
+  display: none;
+}
+
+/* ── SVG body ────────────────────────────────────────────── */
+.silhouette > * {
+  fill: var(--body-fill);
+  stroke: var(--body-stroke);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.muscle {
+  cursor: pointer;
+}
+
+.muscle > * {
+  fill: var(--accent-dim);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  transition: fill 0.13s;
+}
+
+.muscle:hover > * {
+  fill: var(--accent-mid);
+}
+
+.muscle.active > * {
+  fill: var(--accent-bright);
+  filter: drop-shadow(0 0 4px rgba(247, 127, 0, 0.6));
+}
+
+/* ── Detail panel ────────────────────────────────────────── */
+.detail {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 48px;
+}
+
+.detail-empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+.detail-empty svg {
+  fill: var(--border);
+}
+
+.detail-empty p {
+  font-size: 0.95rem;
+}
+
+.detail-content {
+  display: none;
+  max-width: 720px;
+}
+
+.detail-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+/* ── Tabs ────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 10px 22px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Tab panel content ───────────────────────────────────── */
+.tab-panel {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* content sections rendered by app.js */
+.content-section {
+  margin-bottom: 32px;
+}
+
+.content-section h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.content-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-section ul li {
+  padding-left: 18px;
+  position: relative;
+}
+
+.content-section ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.empty-state {
+  padding: 48px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.empty-state code {
+  background: var(--surface2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text);
+}

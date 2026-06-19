@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Knowledge Base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Gym Knowledge Base</h1>
+    </header>
+    <main>
+      <aside class="body-map">
+        <div class="view-toggle">
+          <button class="active" data-view="front">Front</button>
+          <button data-view="back">Back</button>
+        </div>
+        <span class="hover-label" id="hover-label">&nbsp;</span>
+        <div class="svg-wrap">
+
+          <!-- ── FRONT VIEW ───────────────────────────────────────── -->
+          <svg id="front-view" viewBox="0 0 200 500" xmlns="http://www.w3.org/2000/svg">
+            <g class="silhouette">
+              <circle cx="100" cy="38" r="28"/>
+              <rect x="91" y="64" width="18" height="18" rx="4"/>
+              <ellipse cx="62" cy="94" rx="22" ry="16"/>
+              <ellipse cx="138" cy="94" rx="22" ry="16"/>
+              <path d="M72,88 L128,88 L134,230 L66,230 Z"/>
+              <rect x="38" y="96" width="24" height="78" rx="12"/>
+              <rect x="138" y="96" width="24" height="78" rx="12"/>
+              <rect x="32" y="170" width="22" height="72" rx="11"/>
+              <rect x="146" y="170" width="22" height="72" rx="11"/>
+              <rect x="67" y="228" width="32" height="100" rx="12"/>
+              <rect x="101" y="228" width="32" height="100" rx="12"/>
+              <rect x="69" y="324" width="26" height="96" rx="11"/>
+              <rect x="105" y="324" width="26" height="96" rx="11"/>
+              <ellipse cx="76" cy="428" rx="22" ry="10"/>
+              <ellipse cx="118" cy="428" rx="22" ry="10"/>
+            </g>
+            <g class="muscle" data-muscle="chest">
+              <ellipse cx="84" cy="122" rx="16" ry="22"/>
+              <ellipse cx="116" cy="122" rx="16" ry="22"/>
+            </g>
+            <g class="muscle" data-muscle="shoulders">
+              <ellipse cx="56" cy="104" rx="18" ry="18"/>
+              <ellipse cx="144" cy="104" rx="18" ry="18"/>
+            </g>
+            <g class="muscle" data-muscle="biceps">
+              <ellipse cx="46" cy="150" rx="11" ry="22"/>
+              <ellipse cx="154" cy="150" rx="11" ry="22"/>
+            </g>
+            <g class="muscle" data-muscle="core">
+              <rect x="82" y="152" width="36" height="66" rx="8"/>
+            </g>
+            <g class="muscle" data-muscle="quads">
+              <ellipse cx="79" cy="285" rx="16" ry="44"/>
+              <ellipse cx="121" cy="285" rx="16" ry="44"/>
+            </g>
+            <g class="muscle" data-muscle="calves">
+              <ellipse cx="76" cy="373" rx="12" ry="38"/>
+              <ellipse cx="118" cy="373" rx="12" ry="38"/>
+            </g>
+          </svg>
+
+          <!-- ── BACK VIEW ────────────────────────────────────────── -->
+          <svg id="back-view" viewBox="0 0 200 500" xmlns="http://www.w3.org/2000/svg" class="hidden">
+            <g class="silhouette">
+              <circle cx="100" cy="38" r="28"/>
+              <rect x="91" y="64" width="18" height="18" rx="4"/>
+              <ellipse cx="62" cy="94" rx="22" ry="16"/>
+              <ellipse cx="138" cy="94" rx="22" ry="16"/>
+              <path d="M72,88 L128,88 L134,230 L66,230 Z"/>
+              <rect x="38" y="96" width="24" height="78" rx="12"/>
+              <rect x="138" y="96" width="24" height="78" rx="12"/>
+              <rect x="32" y="170" width="22" height="72" rx="11"/>
+              <rect x="146" y="170" width="22" height="72" rx="11"/>
+              <rect x="67" y="228" width="32" height="100" rx="12"/>
+              <rect x="101" y="228" width="32" height="100" rx="12"/>
+              <rect x="69" y="324" width="26" height="96" rx="11"/>
+              <rect x="105" y="324" width="26" height="96" rx="11"/>
+              <ellipse cx="76" cy="428" rx="22" ry="10"/>
+              <ellipse cx="118" cy="428" rx="22" ry="10"/>
+            </g>
+            <g class="muscle" data-muscle="back">
+              <rect x="82" y="90" width="36" height="28" rx="5"/>
+              <ellipse cx="82" cy="162" rx="16" ry="45"/>
+              <ellipse cx="118" cy="162" rx="16" ry="45"/>
+            </g>
+            <g class="muscle" data-muscle="triceps">
+              <ellipse cx="46" cy="148" rx="11" ry="24"/>
+              <ellipse cx="154" cy="148" rx="11" ry="24"/>
+            </g>
+            <g class="muscle" data-muscle="glutes">
+              <ellipse cx="80" cy="242" rx="20" ry="24"/>
+              <ellipse cx="120" cy="242" rx="20" ry="24"/>
+            </g>
+            <g class="muscle" data-muscle="hamstrings">
+              <ellipse cx="80" cy="294" rx="16" ry="40"/>
+              <ellipse cx="120" cy="294" rx="16" ry="40"/>
+            </g>
+          </svg>
+
+        </div>
+      </aside>
+
+      <section class="detail">
+        <div class="detail-empty" id="detail-empty">
+          <svg viewBox="0 0 24 24" width="52" height="52" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8zm2 10a3 3 0 0 0-3 3H3a5 5 0 0 1 10 0h-2a3 3 0 0 0-3-3zm8 0a3 3 0 0 0-3 3h-2a5 5 0 0 1 10 0h-2a3 3 0 0 0-3-3z"/></svg>
+          <p>Select a muscle group to explore</p>
+        </div>
+        <div class="detail-content" id="detail-content">
+          <h2 id="muscle-title"></h2>
+          <nav class="tabs" role="tablist">
+            <button class="tab active" data-tab="training"  role="tab">Training</button>
+            <button class="tab"        data-tab="mobility"  role="tab">Mobility</button>
+            <button class="tab"        data-tab="stretching" role="tab">Stretching</button>
+            <button class="tab"        data-tab="recovery"  role="tab">Recovery</button>
+          </nav>
+          <div class="tab-panel" id="tab-panel" role="tabpanel"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
