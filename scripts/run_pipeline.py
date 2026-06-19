@@ -8,6 +8,9 @@ from yt_kg.discover import discover
 from yt_kg.download import download
 from yt_kg.transcribe import transcribe
 from yt_kg.embed import embed
+from yt_kg.extract import extract
+from yt_kg.resolve import resolve
+from yt_kg.graph import graph
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -27,6 +30,9 @@ def main() -> None:
     _run_stage(download, "download")
     _run_stage(transcribe, "transcribe")
     _run_stage(embed, "embed")
+    _run_stage(extract, "extract")
+    _run_stage(resolve, "resolve")
+    _run_stage(graph, "graph")
 
     logger.info("All stages done. Running smoke test...")
 

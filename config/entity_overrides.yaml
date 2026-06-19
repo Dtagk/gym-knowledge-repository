@@ -1,0 +1,6 @@
+# Add explicit merge pairs here: alias -> canonical name
+# Example:
+# - alias: "Schoenfeld"
+#   canonical: "Brad Schoenfeld"
+#   type: "Person"
+merges: []
