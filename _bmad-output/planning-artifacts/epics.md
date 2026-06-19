@@ -1,5 +1,5 @@
 ---
-stepsCompleted: [1, 2]
+stepsCompleted: [1, 2, 3, 4]
 inputDocuments:
   - _bmad-output/specs/spec-yt-kg/SPEC.md
   - _bmad-output/specs/spec-yt-kg/stack.md
