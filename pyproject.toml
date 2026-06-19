@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "gym-knowledge-repository"
+version = "0.1.0"
+description = "Local ingestion pipeline with semantic search for YouTube fitness content"
+requires-python = ">=3.11"
+dependencies = [
+    "yt-dlp",
+    "faster-whisper",
+    "sentence-transformers",
+    "lancedb",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+[tool.setuptools.packages.find]
+include = ["yt_kg*"]
+[tool.black]
+line-length = 100
+[tool.ruff]
+line-length = 100
+[project.scripts]
+run-pipeline = "scripts.run_pipeline:main"
