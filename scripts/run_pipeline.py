@@ -11,6 +11,9 @@ from yt_kg.embed import embed
 from yt_kg.extract import extract
 from yt_kg.resolve import resolve
 from yt_kg.graph import graph
+from yt_kg.cite_extract import cite_extract
+from yt_kg.cite_resolve import cite_resolve
+from yt_kg.cite_pdf import cite_pdf_stage
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -33,6 +36,9 @@ def main() -> None:
     _run_stage(extract, "extract")
     _run_stage(resolve, "resolve")
     _run_stage(graph, "graph")
+    _run_stage(cite_extract, "cite_extract")
+    _run_stage(cite_resolve, "cite_resolve")
+    _run_stage(cite_pdf_stage, "cite_pdf")
 
     logger.info("All stages done. Running smoke test...")
 
