@@ -481,3 +481,81 @@ So that `cited_at` is set per video and the pipeline can be interrupted and resu
 **Given** a video with known paper references has completed the full pipeline
 **When** `MATCH (p:Paper) RETURN p.doi, p.title` is run in Kuzu
 **Then** at least one Paper node with a valid DOI and title is returned
+
+---
+
+## Epic 4: MCP Server — Claude Code Query Interface
+
+After this epic Claude Code can answer fitness questions with YouTube timestamps and graph evidence via 4 registered MCP tools.
+
+### Story 4.1: FastMCP Server with `vector_search` and `cypher_query` Tools
+
+As a developer,
+I want `yt_kg/mcp_server.py` to expose `vector_search` and `cypher_query` as FastMCP tools,
+So that Claude Code can run semantic and graph queries against the pipeline's data stores via a running MCP server.
+
+**Acceptance Criteria:**
+
+**Given** `yt_kg/mcp_server.py` exists and is started with `python -m yt_kg.mcp_server`
+**When** the process starts
+**Then** it binds using the FastMCP stdio transport with no errors; `claude mcp list` shows the server as connected once registered
+
+**Given** the `vector_search` tool is called with a `query` string and optional `limit` (default 5)
+**When** the tool executes
+**Then** it embeds `query` using `bge-small-en-v1.5`, runs a LanceDB ANN search, and returns a list of results each containing `chunk_id`, `video_id`, `start`, `end`, `text`, and a `url` field of the form `https://youtu.be/{video_id}?t={int(start)}`
+
+**Given** the `cypher_query` tool is called with a `query` string containing a valid Cypher statement
+**When** the tool executes
+**Then** it runs the query against the Kuzu database and returns the result rows as a JSON-serializable list; if Kuzu raises a parse or runtime error, the tool returns an error message string rather than raising an unhandled exception
+
+**Given** the `cypher_query` tool is called with a Cypher statement that attempts a write operation (`CREATE`, `MERGE`, `DELETE`, `SET`)
+**When** the tool executes
+**Then** the call is rejected with an error message indicating only read queries are permitted; no write is performed
+
+---
+
+### Story 4.2: `expand_entity` and `papers_for_topic` Tools
+
+As a developer,
+I want `expand_entity` and `papers_for_topic` added to the MCP server,
+So that Claude Code can traverse the entity graph and surface papers linked to a topic in a single tool call.
+
+**Acceptance Criteria:**
+
+**Given** the `expand_entity` tool is called with a `name` string and optional `depth` (default 1)
+**When** the tool executes
+**Then** it runs a Kuzu Cypher traversal from the matching `Entity` node, following `RELATED` edges up to `depth` hops, and returns a list of connected entities each with `name`, `type`, `predicate` (the relation label), and `evidence` (the evidence quote on the edge); if no entity matches `name`, an empty list is returned
+
+**Given** the `papers_for_topic` tool is called with a `topic` string
+**When** the tool executes
+**Then** it embeds `topic` with `bge-small-en-v1.5`, finds the top-5 chunks via LanceDB, collects their `chunk_id` values, runs a Kuzu query `MATCH (c:Chunk)-[:REFERENCES]->(p:Paper) WHERE c.chunk_id IN $ids RETURN DISTINCT p.doi, p.title, p.authors, p.year`, and returns the matching Paper records; if no papers are linked, an empty list is returned
+
+**Given** both new tools are added to `mcp_server.py`
+**When** the server is restarted
+**Then** `claude mcp list` still shows the server as connected; all four tools (`vector_search`, `cypher_query`, `expand_entity`, `papers_for_topic`) are listed
+
+---
+
+### Story 4.3: Claude Code Registration and End-to-End Query Smoke Test
+
+As a developer,
+I want the MCP server registered in Claude Code's MCP config and verified with the FR9 acceptance query,
+So that the complete pipeline — from YouTube ingestion to knowledge graph to Claude Code — is proven end-to-end.
+
+**Acceptance Criteria:**
+
+**Given** the MCP server entry is added to Claude Code's MCP config (via `claude mcp add` or manual `.claude/mcp.json` edit) pointing to `python -m yt_kg.mcp_server` with the repo root as working directory
+**When** `claude mcp list` is run
+**Then** the server appears with status `connected`
+
+**Given** the pipeline has processed at least one fitness video with extraction and graph load complete
+**When** Claude Code (with the MCP server active) is asked "What exercises target the posterior chain?"
+**Then** the response includes at least one transcript chunk with a `https://youtu.be/...?t=...` timestamp URL (sourced via `vector_search`) and at least one graph entity with a non-null evidence quote (sourced via `expand_entity` or `cypher_query`)
+
+**Given** the MCP server process is not running
+**When** Claude Code attempts to call any of the four tools
+**Then** Claude Code reports the server as disconnected rather than hanging; restarting the server process and re-running `claude mcp list` shows it as connected again
+
+**Given** `scripts/start_mcp.py` (or equivalent shell script) exists in the repo
+**When** it is run from the repo root
+**Then** it starts `yt_kg.mcp_server` with the correct working directory and prints the server name and transport to stdout so the developer can confirm it is running
