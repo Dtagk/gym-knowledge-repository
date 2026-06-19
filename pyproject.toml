@@ -13,6 +13,11 @@ dependencies = [
     "sentence-transformers",
     "lancedb",
     "pyyaml",
+    "fastmcp",
+    "kuzu",
+    "instructor",
+    "httpx",
+    "pyarrow",
 ]
 
 [project.optional-dependencies]
