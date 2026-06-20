@@ -11,9 +11,9 @@ def _init_graph() -> kuzu.Connection:
     conn = kuzu.Connection(db)
 
     ddl = [
-        "CREATE NODE TABLE IF NOT EXISTS Entity (canonical_id STRING, name STRING, type STRING, description STRING, PRIMARY KEY (canonical_id))",
+        "CREATE NODE TABLE IF NOT EXISTS Entity (canonical_id STRING, name STRING, entity_type STRING, entity_desc STRING, PRIMARY KEY (canonical_id))",
         "CREATE NODE TABLE IF NOT EXISTS Video (video_id STRING, title STRING, channel_id STRING, PRIMARY KEY (video_id))",
-        "CREATE NODE TABLE IF NOT EXISTS Chunk (chunk_id STRING, video_id STRING, start DOUBLE, end DOUBLE, text STRING, PRIMARY KEY (chunk_id))",
+        "CREATE NODE TABLE IF NOT EXISTS Chunk (chunk_id STRING, video_id STRING, start DOUBLE, end_time DOUBLE, text STRING, PRIMARY KEY (chunk_id))",
         "CREATE NODE TABLE IF NOT EXISTS Paper (doi STRING, title STRING, authors STRING, year INT64, PRIMARY KEY (doi))",
         "CREATE REL TABLE IF NOT EXISTS MENTIONS (FROM Chunk TO Entity)",
         "CREATE REL TABLE IF NOT EXISTS APPEARS_IN (FROM Entity TO Video)",
@@ -87,13 +87,13 @@ def load_video(video_id: str) -> None:
 
             chunk_info = chunks_by_id.get(chunk_id, {})
             start = float(chunk_info.get("start", 0.0))
-            end = float(chunk_info.get("end", 0.0))
+            end_time = float(chunk_info.get("end", 0.0))
             text = chunk_info.get("text", "")
 
             try:
                 kuzu_conn.execute(
-                    "MERGE (c:Chunk {chunk_id: $cid}) SET c.video_id = $vid, c.start = $start, c.end = $end, c.text = $text",
-                    {"cid": chunk_id, "vid": video_id, "start": start, "end": end, "text": text},
+                    "MERGE (c:Chunk {chunk_id: $cid}) SET c.video_id = $vid, c.start = $start, c.end_time = $end_time, c.text = $text",
+                    {"cid": chunk_id, "vid": video_id, "start": start, "end_time": end_time, "text": text},
                 )
             except Exception:
                 pass
@@ -111,12 +111,12 @@ def load_video(video_id: str) -> None:
 
                 try:
                     kuzu_conn.execute(
-                        "MERGE (e:Entity {canonical_id: $eid}) SET e.name = $name, e.type = $type, e.description = $desc",
+                        "MERGE (e:Entity {canonical_id: $eid}) SET e.name = $name, e.entity_type = $etype, e.entity_desc = $edesc",
                         {
                             "eid": canonical_id,
                             "name": ent["name"] or "",
-                            "type": ent["type"] or "",
-                            "desc": ent["description"] or "",
+                            "etype": ent["type"] or "",
+                            "edesc": ent.get("description", "") or "",
                         },
                     )
                 except Exception:

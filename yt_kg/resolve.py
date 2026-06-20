@@ -12,7 +12,7 @@ from yt_kg.db import init_db, utcnow
 logger = logging.getLogger(__name__)
 
 OVERRIDES_PATH = Path("config/entity_overrides.yaml")
-OLLAMA_MODEL = "qwen-coder-32768:latest"
+OLLAMA_MODEL = "qwen2.5-coder:7b"
 SIMILARITY_THRESHOLD = 0.85
 
 
