@@ -1,4 +1,66 @@
+# Sprint Fix S3: extraction-robustness
+
+**Branch:** `fix/extraction-robustness`  
+**Files:** `yt_kg/extract.py` only
+
+## Issues to fix
+
+### Fix 1 — `extracted_at` written even on 100% chunk failure
+
+`yt_kg/extract.py`, lines 162–172.
+
+After processing all chunks for a video, `extracted_at` is unconditionally written to the database
+regardless of failure rate. The 3% threshold only adds an error note, but the video still gets
+marked as extracted and moves to the graph stage — which then builds a graph with missing or empty
+relations because Ollama was down.
+
+**Fix:** Only write `extracted_at` when the failure rate is within the acceptable threshold.
+When failures exceed 3%, write the error but leave `extracted_at` NULL so the video retries:
+
+```python
+failure_rate = failures / len(chunks) if chunks else 0.0
+if failure_rate > 0.03:
+    conn.execute(
+        "UPDATE videos SET last_error = ?, error_stage = ? WHERE video_id = ?",
+        (f"{failures}/{len(chunks)} chunks failed extraction", "extract", video_id),
+    )
+else:
+    conn.execute(
+        "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
+        (utcnow(), video_id),
+    )
+conn.commit()
+```
+
+### Fix 2 — `video_id` interpolated into LanceDB filter string (SQL injection)
+
+`yt_kg/extract.py`, line 124.
+
+```python
+chunks = tbl.search([0.0] * 384).where(
+    f"video_id = '{video_id}'", prefilter=True
+).limit(100000).to_list()
+```
+
+`video_id` comes from the SQLite `videos` table (originally from yt-dlp). LanceDB `.where()` does
+not support parameterized queries, so `video_id` must be validated before interpolation. YouTube
+video IDs are 11 alphanumeric+hyphen+underscore characters, so a strict allowlist is safe and
+sufficient.
+
+**Fix:** Add validation at the top of the chunk-fetching block, before the `.where()` call:
+
+```python
 import re
+if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
+    raise ValueError(f"Unexpected video_id format: {video_id!r}")
+```
+
+The same pattern also appears in the fallback branches (pandas query and the unfiltered scan
+fallback). Add the validation once, before all three branches.
+
+## Current file content
+
+```python
 import sqlite3
 from pydantic import BaseModel
 from typing import Optional
@@ -49,15 +111,8 @@ _llm = instructor.from_openai(
 )
 
 
-class _LLMRelation(BaseModel):
-    subject: str = ""
-    predicate: str = ""
-    object: str = ""
-    evidence: str = ""
-
-
 class _Relations(BaseModel):
-    relations: list[_LLMRelation]
+    relations: list[Relation]
 
 
 def _init_extractions_table(conn: sqlite3.Connection) -> None:
@@ -97,17 +152,13 @@ def _extract_chunk(text: str) -> Extraction:
         )
         try:
             r = _llm.chat.completions.create(
-                model="qwen2.5-coder:7b",  # ponytail: base qwen2.5:7b better for NL, switch if relations quality suffers
+                model="qwen2.5-coder:7b",
                 messages=[{"role": "user", "content": prompt}],
                 response_model=_Relations,
                 max_retries=1,
                 timeout=60.0,
             )
-            relations = [
-                Relation(subject=lr.subject, predicate=lr.predicate, object=lr.object, evidence=lr.evidence)
-                for lr in r.relations
-                if lr.subject and lr.predicate and lr.object
-            ]
+            relations = r.relations
         except Exception as exc:
             print(f"[extract] relations failed: {exc}")
 
@@ -131,9 +182,6 @@ def extract() -> None:
 
     for row in rows:
         video_id = row["video_id"]
-
-        if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
-            raise ValueError(f"Unexpected video_id format: {video_id!r}")
 
         try:
             chunks = tbl.search([0.0] * 384).where(
@@ -174,15 +222,22 @@ def extract() -> None:
                 print(f"[extract] chunk {chunk_id} failed: {exc}")
                 failures += 1
 
+        conn.execute(
+            "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
+            (utcnow(), video_id),
+        )
         failure_rate = failures / len(chunks) if chunks else 0.0
         if failure_rate > 0.03:
             conn.execute(
                 "UPDATE videos SET last_error = ?, error_stage = ? WHERE video_id = ?",
                 (f"{failures}/{len(chunks)} chunks failed extraction", "extract", video_id),
             )
-        else:
-            conn.execute(
-                "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
-                (utcnow(), video_id),
-            )
         conn.commit()
+```
+
+## Acceptance criteria
+
+- `extracted_at` is only written when `failure_rate <= 0.03`; on high failure, only the error is written and `extracted_at` stays NULL
+- `video_id` is validated with `re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id)` before any LanceDB filter interpolation; a `ValueError` is raised for invalid IDs
+- Validation happens once, before the try/except block with the three fallback branches
+- No other changes to the file

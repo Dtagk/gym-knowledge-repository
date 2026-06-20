@@ -7,16 +7,26 @@ from .db import init_db, utcnow
 
 logger = logging.getLogger(__name__)
 
-AUDIO_DIR = Path("data/audio")
+_ROOT = Path(__file__).parent.parent
+AUDIO_DIR = _ROOT / "data/audio"
+_COOKIES_FILE = _ROOT / "cookies.txt"
+
+_FFMPEG_DIRS = [
+    Path(r"C:\Users\User\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin"),
+]
+_FFMPEG_LOCATION = next((str(p) for p in _FFMPEG_DIRS if (p / "ffmpeg.exe").exists()), None)
 
 _YDL_OPTS = {
-    "format": "bestaudio[abr<=96]/bestaudio",
+    "format": "bestaudio[abr<=96]/bestaudio/best",
     "outtmpl": str(AUDIO_DIR / "%(id)s.%(ext)s"),
     "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "m4a"}],
+    **( {"cookiefile": str(_COOKIES_FILE)} if _COOKIES_FILE.exists()
+        else {"cookiesfrombrowser": ("chrome",)} ),
     "sleep_interval_requests": 2,
     "max_sleep_interval": 5,
     "quiet": True,
     "no_warnings": True,
+    **({"ffmpeg_location": _FFMPEG_LOCATION} if _FFMPEG_LOCATION else {}),
 }
 
 
@@ -27,7 +37,7 @@ def _download_one(video_id: str, url: str) -> None:
         with yt_dlp.YoutubeDL(_YDL_OPTS) as ydl:
             ydl.download([url])
         conn.execute(
-            "UPDATE videos SET downloaded_at=? WHERE video_id=?",
+            "UPDATE videos SET downloaded_at=?, last_error=NULL, error_stage=NULL WHERE video_id=?",
             (utcnow(), video_id),
         )
         conn.commit()
