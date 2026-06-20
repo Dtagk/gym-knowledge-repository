@@ -56,7 +56,7 @@ def _download_one(video_id: str, url: str) -> None:
 def download(workers: int = 1) -> None:
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id, url FROM videos WHERE downloaded_at IS NULL AND skipped = 0"
+        "SELECT video_id, url FROM videos WHERE downloaded_at IS NULL AND skipped = 0 AND status = 'approved'"
     ).fetchall()
     conn.close()
 

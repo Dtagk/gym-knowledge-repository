@@ -26,7 +26,7 @@ def embed(workers: int = 1) -> None:  # ponytail: workers reserved — SentenceT
     Path("data/vectors.lance").mkdir(parents=True, exist_ok=True)
     conn = init_db()
     rows = conn.execute(
-        "SELECT * FROM videos WHERE transcribed_at IS NOT NULL AND chunked_at IS NULL"
+        "SELECT * FROM videos WHERE transcribed_at IS NOT NULL AND chunked_at IS NULL AND skipped = 0"
     ).fetchall()
 
     if not rows:

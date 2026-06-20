@@ -4,7 +4,7 @@ from urllib.parse import quote
 
 import requests
 
-from yt_kg.db import init_db, utcnow
+from yt_kg.db import init_db, utcnow, record_failure, clear_error
 from yt_kg.graph import _init_graph
 
 logger = logging.getLogger(__name__)
@@ -101,6 +101,7 @@ def resolve_citations(video_id: str) -> None:
         (video_id,),
     ).fetchall()
 
+    unresolved = 0
     for row in rows:
         cid, ref = row["citation_id"], row["raw_ref"]
         meta = _resolve_openalex(ref) or _resolve_semantic_scholar(ref)
@@ -113,12 +114,13 @@ def resolve_citations(video_id: str) -> None:
             )
             conn.commit()
         else:
+            # A single unresolvable reference is normal (blogs, verbal cites) and
+            # must NOT fail the whole video. Just log it.
+            unresolved += 1
             logger.warning("Could not resolve citation %s (%s) for video %s", cid, ref, video_id)
-            conn.execute(
-                "UPDATE videos SET last_error=?, error_stage='cite' WHERE video_id=?",
-                (f"unresolved: {ref}", video_id),
-            )
-            conn.commit()
+
+    if unresolved:
+        logger.info("%d/%d citations unresolved for %s", unresolved, len(rows), video_id)
 
 
 def load_paper_nodes(video_id: str) -> None:
@@ -150,15 +152,12 @@ def load_paper_nodes(video_id: str) -> None:
 def cite_resolve() -> None:
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL"
+        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL AND skipped = 0"
     ).fetchall()
     for row in rows:
         try:
             resolve_citations(row["video_id"])
             load_paper_nodes(row["video_id"])
+            clear_error(conn, row["video_id"])
         except Exception as e:
-            conn.execute(
-                "UPDATE videos SET last_error=?, error_stage='cite' WHERE video_id=?",
-                (str(e), row["video_id"]),
-            )
-            conn.commit()
+            record_failure(conn, row["video_id"], "cite", str(e))

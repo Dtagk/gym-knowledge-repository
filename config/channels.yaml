@@ -20,3 +20,11 @@ channels:
     url: https://www.youtube.com/playlist?list=PLlRV2l7j-WsK0nO5a0WpPlAQ-b4prQdpG
     type: playlist
     poll_every: never
+
+# Search-seeded discovery (Epic 5, Story 5.1). Results are staged as candidates
+# (status='candidate') and do NOT download until promoted by scoring or review.
+# searches:
+#   - query: "rir vs rpe hypertrophy"
+#     limit: 30
+#   - query: "lengthened partials meta-analysis"
+#     limit: 30

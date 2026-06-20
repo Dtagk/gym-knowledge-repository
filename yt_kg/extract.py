@@ -9,7 +9,7 @@ from gliner import GLiNER
 from openai import OpenAI
 
 from config.extraction_schema import Entity, Extraction, Relation
-from yt_kg.db import init_db, utcnow
+from yt_kg.db import init_db, utcnow, record_failure
 
 _LABELS = [
     "fitness exercise or movement",
@@ -119,7 +119,7 @@ def extract() -> None:
     _init_extractions_table(conn)
 
     rows = conn.execute(
-        "SELECT video_id FROM videos WHERE chunked_at IS NOT NULL AND extracted_at IS NULL"
+        "SELECT video_id FROM videos WHERE chunked_at IS NOT NULL AND extracted_at IS NULL AND skipped = 0"
     ).fetchall()
 
     db = lancedb.connect("data/vectors.lance")
@@ -176,13 +176,10 @@ def extract() -> None:
 
         failure_rate = failures / len(chunks) if chunks else 0.0
         if failure_rate > 0.03:
-            conn.execute(
-                "UPDATE videos SET last_error = ?, error_stage = ? WHERE video_id = ?",
-                (f"{failures}/{len(chunks)} chunks failed extraction", "extract", video_id),
-            )
+            record_failure(conn, video_id, "extract", f"{failures}/{len(chunks)} chunks failed extraction")
         else:
             conn.execute(
-                "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
+                "UPDATE videos SET extracted_at = ?, last_error = NULL, error_stage = NULL WHERE video_id = ?",
                 (utcnow(), video_id),
             )
         conn.commit()

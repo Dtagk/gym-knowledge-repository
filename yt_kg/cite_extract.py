@@ -7,7 +7,7 @@ import uuid
 import requests
 import yt_dlp
 
-from yt_kg.db import init_db, utcnow
+from yt_kg.db import init_db, utcnow, record_failure
 
 logger = logging.getLogger(__name__)
 
@@ -99,14 +99,10 @@ def extract_citations(video_id: str) -> None:
 def cite_extract() -> None:
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL"
+        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL AND skipped = 0"
     ).fetchall()
     for row in rows:
         try:
             extract_citations(row["video_id"])
         except Exception as e:
-            conn.execute(
-                "UPDATE videos SET last_error=?, error_stage='cite' WHERE video_id=?",
-                (str(e), row["video_id"]),
-            )
-            conn.commit()
+            record_failure(conn, row["video_id"], "cite", str(e))

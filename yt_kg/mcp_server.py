@@ -10,11 +10,14 @@ _ROOT = Path(__file__).parent.parent
 
 _model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 _lance_db = lancedb.connect(str(_ROOT / "data/vectors.lance"))
-_kuzu_db = kuzu.Database(str(_ROOT / "data/graph.kuzu"))
+# Primary write protection: the database itself is opened read-only, so any
+# mutating statement fails at the engine level regardless of how it is phrased.
+# The regex below is only a secondary, fail-fast guard for a friendlier message.
+_kuzu_db = kuzu.Database(str(_ROOT / "data/graph.kuzu"), read_only=True)
 
-# ponytail: prefix allowlist + write-token denylist — neither alone is sufficient
-_READ_PREFIX = re.compile(r"^\s*(MATCH|RETURN|UNWIND|OPTIONAL\s+MATCH)\b", re.IGNORECASE)
-_WRITE_TOKENS = re.compile(r"\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE|DROP|ALTER|COPY|INSTALL|LOAD|CALL)\b", re.IGNORECASE)
+# Allow the read-only statement starters Kuzu supports. WITH is now included to
+# match the error message and permit multi-stage read pipelines.
+_READ_PREFIX = re.compile(r"^\s*(MATCH|OPTIONAL\s+MATCH|WITH|UNWIND|RETURN|CALL)\b", re.IGNORECASE)
 
 mcp = FastMCP("gym-knowledge-repository")
 
@@ -39,8 +42,10 @@ def vector_search(query: str, limit: int = 5) -> list[dict]:
 
 @mcp.tool()
 def cypher_query(query: str) -> list[dict] | str:
-    if not _READ_PREFIX.match(query) or _WRITE_TOKENS.search(query):
-        return "Error: only read queries (MATCH, RETURN, UNWIND, WITH, OPTIONAL MATCH) are permitted."
+    # Engine-level read_only=True is the real guard; this just gives a clear
+    # message instead of a raw Kuzu error for obviously-mutating queries.
+    if not _READ_PREFIX.match(query):
+        return "Error: only read queries (MATCH, OPTIONAL MATCH, WITH, UNWIND, RETURN, CALL) are permitted."
     try:
         conn = kuzu.Connection(_kuzu_db)
         result = conn.execute(query)
@@ -114,15 +119,14 @@ def papers_for_topic(topic: str) -> list[dict]:
     if not chunk_ids:
         return []
 
-    ids_literal = ", ".join(f'"{cid}"' for cid in chunk_ids)
     cypher = (
-        f"MATCH (c:Chunk)-[:REFERENCES]->(p:Paper) "
-        f"WHERE c.chunk_id IN [{ids_literal}] "
-        f"RETURN DISTINCT p.doi AS doi, p.title AS title, p.authors AS authors, p.year AS year"
+        "MATCH (c:Chunk)-[:REFERENCES]->(p:Paper) "
+        "WHERE c.chunk_id IN $chunk_ids "
+        "RETURN DISTINCT p.doi AS doi, p.title AS title, p.authors AS authors, p.year AS year"
     )
     try:
         conn = kuzu.Connection(_kuzu_db)
-        result = conn.execute(cypher)
+        result = conn.execute(cypher, {"chunk_ids": chunk_ids})
         papers = []
         while result.has_next():
             row = result.get_next()
