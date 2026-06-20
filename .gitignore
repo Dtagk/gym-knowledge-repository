@@ -5,3 +5,6 @@ __pycache__/
 .aider*
 __ollama_prompt.txt
 __ollama_run.py
+.vscode/settings.json
+cookies.txt
+chromewebstore.google.com_cookies.txt

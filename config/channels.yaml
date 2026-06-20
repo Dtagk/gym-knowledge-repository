@@ -8,3 +8,11 @@ channels:
     url: https://www.youtube.com/watch?v=3ryh7PNhz3E
     type: video
     poll_every: never
+  - id: playlist-test
+    url: https://www.youtube.com/playlist?list=PLyqKj7LwU2Rt2CCL00RJvIC8mv-ATkkUD
+    type: playlist
+    poll_every: never
+  - id: playlist-big
+    url: https://www.youtube.com/playlist?list=PLp4G6oBUcv8yGQifkb4p_ZOoACPnYslx9
+    type: playlist
+    poll_every: never

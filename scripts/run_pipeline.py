@@ -28,6 +28,7 @@ def _run_stage(fn, name: str) -> None:
         logger.info("Stage completed: %s", name)
     except Exception as e:
         logger.error("Stage failed: %s — %s", name, e, exc_info=True)
+        raise
 
 
 def main() -> None:
@@ -36,17 +37,28 @@ def main() -> None:
     args = parser.parse_args()
     w = args.workers
 
-    _run_stage(discover, "discover")
-    _run_stage(filter_videos, "filter")
-    _run_stage(lambda: download(workers=w), "download")
-    _run_stage(lambda: transcribe(workers=w), "transcribe")
-    _run_stage(lambda: embed(workers=w), "embed")
-    _run_stage(extract, "extract")           # sequential — Ollama bottleneck
-    _run_stage(resolve, "resolve")           # sequential — full-batch operation
-    _run_stage(graph, "graph")               # sequential — full-batch operation
-    _run_stage(cite_extract, "cite_extract")
-    _run_stage(cite_resolve, "cite_resolve")
-    _run_stage(lambda: cite_pdf_stage(workers=w), "cite_pdf")
+    stages = [
+        (discover,                        "discover"),
+        (filter_videos,                   "filter"),
+        (lambda: download(workers=w),     "download"),
+        (lambda: transcribe(workers=w),   "transcribe"),
+        (lambda: embed(workers=w),        "embed"),
+        (extract,                         "extract"),
+        (resolve,                         "resolve"),
+        (graph,                           "graph"),
+        (cite_extract,                    "cite_extract"),
+        (cite_resolve,                    "cite_resolve"),
+        (lambda: cite_pdf_stage(workers=w), "cite_pdf"),
+    ]
+
+    for fn, name in stages:
+        _run_stage(fn, name)
+
+    # Retry pass — re-runs every stage; each stage's WHERE clause naturally
+    # picks up only videos that failed or were skipped the first time.
+    logger.info("Retry pass — re-running stages to pick up transient failures")
+    for fn, name in stages:
+        _run_stage(fn, f"{name} [retry]")
 
     logger.info("All stages done. Running smoke test...")
 

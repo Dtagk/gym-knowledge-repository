@@ -34,9 +34,9 @@ def _init_graph() -> kuzu.Connection:
 
 def load_video(video_id: str) -> None:
     sql_conn = init_db()
-    kuzu_conn = _init_graph()
 
     try:
+        kuzu_conn = _init_graph()
         video_row = sql_conn.execute(
             "SELECT * FROM videos WHERE video_id = ?", (video_id,)
         ).fetchone()
@@ -67,7 +67,7 @@ def load_video(video_id: str) -> None:
             if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
                 raise ValueError(f"Unexpected video_id format: {video_id!r}")
             results = (
-                tbl.search(None)
+                tbl.search([0.0] * 384)
                 .where(f"video_id = '{video_id}'", prefilter=True)
                 .limit(100000)
                 .to_list()

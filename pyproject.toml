@@ -19,6 +19,7 @@ dependencies = [
     "httpx",
     "pyarrow",
     "gliner",
+    "tqdm",
 ]
 
 [project.optional-dependencies]
@@ -28,7 +29,7 @@ dev = [
     "ruff",
 ]
 [tool.setuptools.packages.find]
-include = ["yt_kg*"]
+include = ["yt_kg*", "config*"]
 [tool.black]
 line-length = 100
 [tool.ruff]
