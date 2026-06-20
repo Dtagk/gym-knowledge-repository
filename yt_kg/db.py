@@ -36,6 +36,13 @@ def init_db() -> sqlite3.Connection:
         )
     """)
     
+    try:
+        conn.execute("ALTER TABLE videos ADD COLUMN skipped INTEGER DEFAULT 0")
+        conn.execute("ALTER TABLE videos ADD COLUMN skip_reason TEXT")
+        conn.commit()
+    except Exception:
+        pass
+
     conn.commit()
     return conn
 

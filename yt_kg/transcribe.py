@@ -22,7 +22,7 @@ def _load_model() -> WhisperModel:
     return WhisperModel("small", device="cpu", compute_type="int8")
 
 
-def transcribe() -> None:
+def transcribe(workers: int = 1) -> None:  # ponytail: workers reserved — GPU Whisper is inherently sequential
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     conn = init_db()
     rows = conn.execute(

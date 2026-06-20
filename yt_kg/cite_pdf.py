@@ -1,4 +1,5 @@
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import httpx
@@ -30,36 +31,38 @@ def download_pdf(doi: str, oa_url: str) -> bool:
         return False
 
 
-def cite_pdf(video_id: str) -> None:
+def _cite_pdf_one(video_id: str) -> None:
     conn = init_db()
-    citations = conn.execute(
-        "SELECT doi, oa_url FROM resolved_citations WHERE video_id=? AND doi IS NOT NULL AND oa_url IS NOT NULL",
-        (video_id,),
-    ).fetchall()
+    try:
+        citations = conn.execute(
+            "SELECT doi, oa_url FROM resolved_citations WHERE video_id=? AND doi IS NOT NULL AND oa_url IS NOT NULL",
+            (video_id,),
+        ).fetchall()
+        for row in citations:
+            if not download_pdf(row["doi"], row["oa_url"]):
+                conn.execute(
+                    "UPDATE videos SET last_error=?, error_stage='cite_pdf' WHERE video_id=?",
+                    (f"PDF download failed for DOI: {row['doi']}", video_id),
+                )
+                conn.commit()
+        conn.execute("UPDATE videos SET cited_at=? WHERE video_id=?", (utcnow(), video_id))
+        conn.commit()
+    except Exception as e:
+        conn.execute(
+            "UPDATE videos SET last_error=?, error_stage='cite_pdf' WHERE video_id=?",
+            (str(e), video_id),
+        )
+        conn.commit()
+    finally:
+        conn.close()
 
-    for row in citations:
-        if not download_pdf(row["doi"], row["oa_url"]):
-            conn.execute(
-                "UPDATE videos SET last_error=?, error_stage='cite_pdf' WHERE video_id=?",
-                (f"PDF download failed for DOI: {row['doi']}", video_id),
-            )
-            conn.commit()
 
-    conn.execute("UPDATE videos SET cited_at=? WHERE video_id=?", (utcnow(), video_id))
-    conn.commit()
-
-
-def cite_pdf_stage() -> None:
+def cite_pdf_stage(workers: int = 1) -> None:
     conn = init_db()
     rows = conn.execute(
         "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL"
     ).fetchall()
-    for row in rows:
-        try:
-            cite_pdf(row["video_id"])
-        except Exception as e:
-            conn.execute(
-                "UPDATE videos SET last_error=?, error_stage='cite_pdf' WHERE video_id=?",
-                (str(e), row["video_id"]),
-            )
-            conn.commit()
+    conn.close()
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        pool.map(lambda r: _cite_pdf_one(r["video_id"]), rows)
