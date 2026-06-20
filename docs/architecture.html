@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Knowledge Repository — Architecture</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3350;
+      --accent: #6c8ef7;
+      --accent2: #56c9a4;
+      --accent3: #f7a05c;
+      --accent4: #e06c75;
+      --text: #c8d0e7;
+      --text-dim: #7a84a8;
+      --text-bright: #eaf0ff;
+      --tag-bg: #1e2540;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #101628 0%, #1a2040 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 40px 36px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: -0.5px;
+    }
+    header p {
+      margin-top: 8px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+    .badge-row {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    /* ── Main layout ─────────────────────────────────────────── */
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    section { margin-bottom: 56px; }
+    section > h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Pipeline flow diagram ───────────────────────────────── */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      padding: 20px 4px;
+    }
+    .flow-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      min-width: 110px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .flow-step .icon { font-size: 1.4rem; }
+    .flow-step .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-top: 4px;
+    }
+    .flow-step .sub {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+    .flow-arrow {
+      color: var(--border);
+      font-size: 1.3rem;
+      padding: 0 4px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    /* ── Component grid ─────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-accent, var(--accent));
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .card-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .card-title { font-size: 1rem; font-weight: 700; color: var(--text-bright); }
+    .card-lib {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-family: "SF Mono", "Fira Code", monospace;
+      margin-top: 1px;
+    }
+
+    .card-desc { font-size: 0.88rem; color: var(--text); margin-bottom: 12px; }
+
+    .card-row { display: flex; flex-direction: column; gap: 6px; }
+    .card-fact {
+      font-size: 0.82rem;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 8px;
+    }
+    .card-fact .fact-label {
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-top: 1px;
+    }
+    .card-fact .fact-val { color: var(--text); }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    /* ── Data store table ────────────────────────────────────── */
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.87rem;
+    }
+    .ds-table th {
+      background: var(--surface2);
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .ds-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .ds-table tr:last-child td { border-bottom: none; }
+    .ds-table tr:hover td { background: var(--surface2); }
+    .mono { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.8rem; color: var(--accent2); }
+    .bright { color: var(--text-bright); font-weight: 600; }
+
+    /* ── Decision box ────────────────────────────────────────── */
+    .decisions { display: flex; flex-direction: column; gap: 14px; }
+    .decision {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent3);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+    .decision h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-bright); margin-bottom: 6px; }
+    .decision p { font-size: 0.84rem; color: var(--text); }
+    .decision .vs { color: var(--accent3); font-weight: 700; font-size: 0.8rem; margin: 6px 0 4px; }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Gym Knowledge Repository</h1>
+  <p>Architecture overview — components, rationale, and design decisions</p>
+  <div class="badge-row">
+    <span class="badge">Python 3.11+</span>
+    <span class="badge">Local-first</span>
+    <span class="badge">Zero API cost</span>
+    <span class="badge">GPU-accelerated</span>
+    <span class="badge">MCP-native</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Pipeline Flow ──────────────────────────────────────── -->
+  <section>
+    <h2>Pipeline Stages</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="icon">📋</div>
+        <div class="label">Discover</div>
+        <div class="sub">channels.yaml → DB</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">⬇️</div>
+        <div class="label">Download</div>
+        <div class="sub">yt-dlp → .m4a</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🎙️</div>
+        <div class="label">Transcribe</div>
+        <div class="sub">Whisper → JSON</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">✂️</div>
+        <div class="label">Chunk</div>
+        <div class="sub">2 400 char</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🔢</div>
+        <div class="label">Embed</div>
+        <div class="sub">384-dim vectors</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🧩</div>
+        <div class="label">Extract</div>
+        <div class="sub">LLM → triples</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🔗</div>
+        <div class="label">Resolve</div>
+        <div class="sub">entity dedup</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🕸️</div>
+        <div class="label">Graph</div>
+        <div class="sub">Kuzu load</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">📚</div>
+        <div class="label">Cite</div>
+        <div class="sub">OpenAlex + PDF</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🤖</div>
+        <div class="label">MCP</div>
+        <div class="sub">Claude tools</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Core Components ────────────────────────────────────── -->
+  <section>
+    <h2>Core Components</h2>
+    <div class="grid">
+
+      <div class="card" style="--card-accent: #e06c75">
+        <div class="card-header">
+          <div class="card-icon">⬇️</div>
+          <div>
+            <div class="card-title">yt-dlp</div>
+            <div class="card-lib">yt_dlp — download + discovery</div>
+          </div>
+        </div>
+        <div class="card-desc">Handles video discovery (channels, playlists, single videos), audio extraction at ≤96 kbps, and request throttling to avoid YouTube rate limits.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Mature fork of youtube-dl; native playlist/channel iteration, format selection, sleep_requests throttling, and extract_flat for discovery without downloading.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">youtube-dl (stale, slower updates), pytube (fragile, no throttling), direct API (requires key, quota limits).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">audio/m4a</span><span class="tag">extract_flat</span><span class="tag">throttle</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #56c9a4">
+        <div class="card-header">
+          <div class="card-icon">🎙️</div>
+          <div>
+            <div class="card-title">faster-whisper</div>
+            <div class="card-lib">faster_whisper — transcription</div>
+          </div>
+        </div>
+        <div class="card-desc">Local speech-to-text using CTranslate2 runtime. GPU mode: medium/float16 on CUDA. CPU fallback: small/int8. VAD filter removes silence before transcription.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">4× faster than original Whisper at equal accuracy. Runs fully offline — no API cost per minute of audio. Timestamped segments enable YouTube URL generation (youtu.be?t=).</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">OpenAI Whisper API (cost, privacy), whisper.cpp (Python binding complexity), AssemblyAI (paid, network dependency).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">cuda/float16</span><span class="tag">vad_filter</span><span class="tag">timestamps</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #6c8ef7">
+        <div class="card-header">
+          <div class="card-icon">🔢</div>
+          <div>
+            <div class="card-title">SentenceTransformers</div>
+            <div class="card-lib">sentence_transformers — BAAI/bge-small-en-v1.5</div>
+          </div>
+        </div>
+        <div class="card-desc">Encodes text chunks into 384-dimensional dense vectors for semantic similarity search. Same model used for embedding query text at retrieval time.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">bge-small-en-v1.5 tops MTEB leaderboard at this size class. 384-dim keeps LanceDB index small. Runs on CPU in ~10ms per chunk — no GPU needed for embedding.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">OpenAI text-embedding-ada-002 (API cost, latency), all-MiniLM (lower retrieval quality), larger models (unnecessarily slow for 384-dim benefit).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">384-dim</span><span class="tag">cosine</span><span class="tag">cpu-friendly</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #f7a05c">
+        <div class="card-header">
+          <div class="card-icon">🗄️</div>
+          <div>
+            <div class="card-title">LanceDB</div>
+            <div class="card-lib">lancedb — vector store</div>
+          </div>
+        </div>
+        <div class="card-desc">Embedded vector database storing transcript chunks as Apache Arrow columnar data with ANN (approximate nearest-neighbor) index for sub-millisecond semantic search.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Serverless — runs in-process, no daemon. Apache Arrow format for fast column access. Supports prefilter (WHERE on metadata before ANN) which we use for per-video queries.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Chroma (separate server), Pinecone/Weaviate (cloud, cost), pgvector (heavier Postgres dependency), FAISS (no metadata filtering).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">embedded</span><span class="tag">arrow</span><span class="tag">prefilter</span><span class="tag">ANN</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #c678dd">
+        <div class="card-header">
+          <div class="card-icon">🦙</div>
+          <div>
+            <div class="card-title">Ollama</div>
+            <div class="card-lib">ollama — local LLM serving</div>
+          </div>
+        </div>
+        <div class="card-desc">Serves open-source models locally via an OpenAI-compatible API. Used for triple extraction (qwen-coder) and entity resolution / citation extraction (general reasoning).</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">One-command model management on Windows with GPU offloading. OpenAI-compatible API means zero code changes to switch models. Zero marginal cost per LLM call.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">OpenAI API (cost at scale, privacy), llama.cpp direct (no model management), LM Studio (no programmatic API).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">qwen-coder</span><span class="tag">gpt-oss:20b</span><span class="tag">gpu-offload</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #56c9a4">
+        <div class="card-header">
+          <div class="card-icon">🧩</div>
+          <div>
+            <div class="card-title">instructor</div>
+            <div class="card-lib">instructor — structured LLM output</div>
+          </div>
+        </div>
+        <div class="card-desc">Wraps the Ollama client to enforce Pydantic-validated JSON responses from the LLM. Handles retry logic automatically when the model returns malformed JSON.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Turns unreliable LLM text into typed Python objects. Mode.JSON works with Ollama. Built-in retry (max_retries=2) recovers from transient malformed output without custom parsing code.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Manual JSON parsing (fragile), LangChain output parsers (heavy dependency), outlines (different model serving path).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">Mode.JSON</span><span class="tag">Pydantic</span><span class="tag">retries</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #e06c75">
+        <div class="card-header">
+          <div class="card-icon">🕸️</div>
+          <div>
+            <div class="card-title">Kuzu</div>
+            <div class="card-lib">kuzu — graph database</div>
+          </div>
+        </div>
+        <div class="card-desc">Embedded property graph database with Cypher query language. Stores entities, relations (RELATED edges with evidence + video_id provenance), chunk-entity links, and paper nodes.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Embedded (no server process), full Cypher support (multi-hop traversals), columnar storage for fast aggregations, and actively maintained with Python bindings. Ideal for local knowledge graphs.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Neo4j (server required, license cost), NetworkX (in-memory, no persistence), TigerGraph (cloud/enterprise), RDFLib (SPARQL, not Cypher).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">Cypher</span><span class="tag">embedded</span><span class="tag">multi-hop</span><span class="tag">provenance</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #6c8ef7">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <div>
+            <div class="card-title">FastMCP</div>
+            <div class="card-lib">fastmcp — MCP server</div>
+          </div>
+        </div>
+        <div class="card-desc">Exposes four tools to Claude Code via stdio MCP transport: vector_search, cypher_query, expand_entity, papers_for_topic. Write Cypher is blocked server-side.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">First-class Claude Code MCP framework. FastAPI-style decorator syntax for tool definitions. Minimal boilerplate: a decorated function becomes a callable tool in claude mcp list.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Raw MCP JSON-RPC (verbose), LangChain tools (wrong interface), custom HTTP server (unnecessary when stdio is simpler).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">stdio</span><span class="tag">vector_search</span><span class="tag">cypher_query</span><span class="tag">read-only</span></div>
+      </div>
+
+      <div class="card" style="--card-accent: #f7a05c">
+        <div class="card-header">
+          <div class="card-icon">📚</div>
+          <div>
+            <div class="card-title">OpenAlex + Semantic Scholar</div>
+            <div class="card-lib">httpx — citation resolution</div>
+          </div>
+        </div>
+        <div class="card-desc">Resolves raw DOI/arXiv citations from video descriptions and transcripts into structured paper metadata (title, authors, year, open-access PDF URL). OpenAlex is primary; Semantic Scholar is fallback.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">OpenAlex is free, no API key required, 250M+ works indexed. Semantic Scholar covers preprints and grey literature OpenAlex misses. Together they resolve &gt;95% of fitness research citations.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">CrossRef (DOIs only, no open-access data), PubMed (biomedical only), Unpaywall (PDF URLs only, no metadata).</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">doi</span><span class="tag">arxiv</span><span class="tag">oa_url</span><span class="tag">no-key</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Data Stores ─────────────────────────────────────────── -->
+  <section>
+    <h2>Data Stores</h2>
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Store</th>
+          <th>Technology</th>
+          <th>Contents</th>
+          <th>Why this tool</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bright">Pipeline state</td>
+          <td class="mono">data/jobs.sqlite</td>
+          <td>videos table: stage timestamps, last_error, error_stage, skipped flag</td>
+          <td>Zero-config embedded SQL. Idempotent pipeline: each stage checks IS NOT NULL before processing. Survives crashes and resumes.</td>
+        </tr>
+        <tr>
+          <td class="bright">Extraction cache</td>
+          <td class="mono">data/jobs.sqlite</td>
+          <td>raw_extractions: chunk_id, extraction_json; entities, entity_aliases; raw_citations, resolved_citations</td>
+          <td>Same SQLite file keeps all relational data co-located. Avoids schema sprawl across multiple DBs.</td>
+        </tr>
+        <tr>
+          <td class="bright">Vector index</td>
+          <td class="mono">data/vectors.lance</td>
+          <td>chunks table: 384-dim embedding, video_id, start, end, text per chunk</td>
+          <td>LanceDB Arrow format. Supports prefilter for video-scoped queries without full scan.</td>
+        </tr>
+        <tr>
+          <td class="bright">Knowledge graph</td>
+          <td class="mono">data/graph.kuzu</td>
+          <td>Entity, Video, Chunk, Paper nodes; RELATED, MENTIONS, APPEARS_IN, REFERENCES edges</td>
+          <td>Embedded Cypher database. Multi-hop traversals (Entity→RELATED→Entity) without server overhead.</td>
+        </tr>
+        <tr>
+          <td class="bright">Audio (transient)</td>
+          <td class="mono">data/audio/*.m4a</td>
+          <td>Downloaded audio at ≤96 kbps; deleted after transcription succeeds</td>
+          <td>Deleted immediately to save disk. Only the transcript JSON is kept permanently.</td>
+        </tr>
+        <tr>
+          <td class="bright">Transcripts</td>
+          <td class="mono">data/transcripts/*.json</td>
+          <td>language, duration, segments[] with start/end/text per video</td>
+          <td>JSON because the segment array maps directly to Python dicts. Re-processable without re-transcribing.</td>
+        </tr>
+        <tr>
+          <td class="bright">Papers (PDFs)</td>
+          <td class="mono">data/papers/*.pdf</td>
+          <td>Open-access PDFs for resolved citations with oa_url</td>
+          <td>Local copy for future full-text extraction. Idempotent: skips download if file exists.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── Key Design Decisions ───────────────────────────────── -->
+  <section>
+    <h2>Key Design Decisions</h2>
+    <div class="decisions">
+
+      <div class="decision">
+        <h4>Idempotent stage-flag pattern</h4>
+        <p>Every pipeline stage checks <code>WHERE stage_at IS NULL</code> before processing a video. On success it sets <code>stage_at = utcnow()</code>. On failure it writes <code>last_error + error_stage</code>. This means the pipeline can be interrupted and restarted at any time with zero double-processing, and individual video failures never block the rest of the batch.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Local-first, zero-API-cost architecture</h4>
+        <p>Every inference step (transcription, embedding, extraction, entity resolution) runs on local hardware. The only external network calls are YouTube audio downloads, OpenAlex/Semantic Scholar lookups (free, no key), and open-access PDF downloads. Total operating cost after initial model download: $0/run.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Lenient LLM parsing with strict promotion</h4>
+        <p><code>_LLMRelation</code> uses all-optional Pydantic fields to absorb incomplete or partial LLM output without raising validation errors. Valid triples (subject + predicate + object all non-empty) are then promoted to the strict <code>Relation</code> model. This prevents the Pydantic <code>Field required</code> crash that occurred when the LLM returned single-field responses.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Embedded databases over server databases</h4>
+        <p>Both Kuzu (graph) and LanceDB (vector) run in-process — no daemon, no port, no auth. SQLite handles all relational state. This makes the entire stack a single <code>pip install -e .</code> with no infrastructure setup, and all data lives in <code>data/</code> alongside the code.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Provenance on every graph edge</h4>
+        <p>Every RELATED edge carries <code>evidence</code> (the exact transcript quote) and <code>video_id</code> (source video). This means any fact in the graph is traceable back to the specific YouTube timestamp that supports it — critical for a fitness domain where sources matter.</p>
+      </div>
+
+      <div class="decision">
+        <h4>MCP read-only enforcement</h4>
+        <p>The MCP server blocks write Cypher (CREATE/MERGE/DELETE/SET/CALL) at the server level. Claude Code can query and traverse the graph freely but cannot mutate it — preventing accidental corruption of the knowledge base during interactive sessions.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  gym-knowledge-repository &nbsp;·&nbsp; all inference runs locally &nbsp;·&nbsp; zero API cost per pipeline run
+</footer>
+
+</body>
+</html>
