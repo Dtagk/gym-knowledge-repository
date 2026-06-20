@@ -89,6 +89,11 @@ def extract_citations(video_id: str) -> None:
             logger.error("LLM extraction failed for %s: %s", video_id, e)
 
     conn.commit()
+    conn.execute(
+        "UPDATE videos SET cited_at = ? WHERE video_id = ?",
+        (utcnow(), video_id),
+    )
+    conn.commit()
 
 
 def cite_extract() -> None:
