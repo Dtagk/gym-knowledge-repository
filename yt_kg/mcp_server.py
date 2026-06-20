@@ -14,7 +14,7 @@ _kuzu_db = kuzu.Database(str(_ROOT / "data/graph.kuzu"))
 
 # ponytail: prefix allowlist + write-token denylist — neither alone is sufficient
 _READ_PREFIX = re.compile(r"^\s*(MATCH|RETURN|UNWIND|OPTIONAL\s+MATCH)\b", re.IGNORECASE)
-_WRITE_TOKENS = re.compile(r"\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE|DROP|ALTER|COPY|INSTALL|LOAD)\b", re.IGNORECASE)
+_WRITE_TOKENS = re.compile(r"\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE|DROP|ALTER|COPY|INSTALL|LOAD|CALL)\b", re.IGNORECASE)
 
 mcp = FastMCP("gym-knowledge-repository")
 
