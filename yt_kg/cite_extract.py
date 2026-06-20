@@ -80,7 +80,7 @@ def extract_citations(video_id: str) -> None:
             resp.raise_for_status()
             for line in resp.json().get("response", "").splitlines():
                 ref = line.strip()
-                if ref:
+                if ref and (re.search(r'10\.\d{4,}/', ref) or re.search(r'(?i)arxiv:', ref) or re.search(r'\b(19|20)\d\d\b', ref)):
                     conn.execute(
                         "INSERT OR IGNORE INTO raw_citations (citation_id, video_id, source, raw_ref, created_at) VALUES (?,?,?,?,?)",
                         (str(uuid.uuid4()), video_id, "transcript", ref, ts),
