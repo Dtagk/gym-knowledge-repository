@@ -21,7 +21,7 @@ def filter_videos() -> None:
 
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id, channel_id, url FROM videos WHERE downloaded_at IS NULL AND skipped = 0"
+        "SELECT video_id, channel_id, url FROM videos WHERE downloaded_at IS NULL AND skipped = 0 AND status = 'approved'"
     ).fetchall()
 
     for row in rows:

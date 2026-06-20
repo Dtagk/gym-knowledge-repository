@@ -60,7 +60,7 @@ def _cite_pdf_one(video_id: str) -> None:
 def cite_pdf_stage(workers: int = 1) -> None:
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL"
+        "SELECT video_id FROM videos WHERE graphed_at IS NOT NULL AND cited_at IS NULL AND skipped = 0"
     ).fetchall()
     conn.close()
 

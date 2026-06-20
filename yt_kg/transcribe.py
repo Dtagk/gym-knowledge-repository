@@ -27,7 +27,7 @@ def transcribe(workers: int = 1) -> None:  # ponytail: workers reserved — GPU 
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     conn = init_db()
     rows = conn.execute(
-        "SELECT video_id FROM videos WHERE downloaded_at IS NOT NULL AND transcribed_at IS NULL"
+        "SELECT video_id FROM videos WHERE downloaded_at IS NOT NULL AND transcribed_at IS NULL AND skipped = 0"
     ).fetchall()
 
     if not rows:

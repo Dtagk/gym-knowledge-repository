@@ -187,7 +187,7 @@ def load_video(video_id: str) -> None:
 def graph() -> None:
     conn = init_db()
     rows = conn.execute(
-        "SELECT * FROM videos WHERE extracted_at IS NOT NULL AND graphed_at IS NULL"
+        "SELECT * FROM videos WHERE extracted_at IS NOT NULL AND graphed_at IS NULL AND skipped = 0"
     ).fetchall()
     conn.close()
     for row in rows:
