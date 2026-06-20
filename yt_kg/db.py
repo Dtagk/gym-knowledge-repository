@@ -17,7 +17,8 @@ def init_db() -> sqlite3.Connection:
     os.makedirs(DB_PATH.parent, exist_ok=True)
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
-    
+    conn.execute("PRAGMA journal_mode=WAL")
+
     # Create videos table if it doesn't exist
     conn.execute("""
         CREATE TABLE IF NOT EXISTS videos (
@@ -40,8 +41,9 @@ def init_db() -> sqlite3.Connection:
         conn.execute("ALTER TABLE videos ADD COLUMN skipped INTEGER DEFAULT 0")
         conn.execute("ALTER TABLE videos ADD COLUMN skip_reason TEXT")
         conn.commit()
-    except Exception:
-        pass
+    except sqlite3.OperationalError as e:
+        if "duplicate column" not in str(e).lower():
+            raise
 
     conn.commit()
     return conn
