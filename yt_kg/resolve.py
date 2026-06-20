@@ -77,6 +77,19 @@ def _upsert_alias(conn, alias, entity_type, canonical_id):
     )
 
 
+def _find(merged_into: dict, x: int) -> int:
+    depth = 0
+    while x in merged_into:
+        parent = merged_into[x]
+        if parent in merged_into:
+            merged_into[x] = merged_into[parent]  # path compression
+        x = merged_into[x]
+        depth += 1
+        if depth > 10000:
+            raise RuntimeError(f"Union-Find cycle detected at node {x}")
+    return x
+
+
 def resolve():
     conn = init_db()
     _init_tables(conn)
@@ -164,12 +177,8 @@ def resolve():
                 sim = _cosine(embeddings[i], embeddings[j])
                 if sim > SIMILARITY_THRESHOLD:
                     if _llm_verify(group[i]["name"], group[j]["name"], etype):
-                        root_i = i
-                        while root_i in merged_into:
-                            root_i = merged_into[root_i]
-                        root_j = j
-                        while root_j in merged_into:
-                            root_j = merged_into[root_j]
+                        root_i = _find(merged_into, i)
+                        root_j = _find(merged_into, j)
                         if root_i != root_j:
                             if group[root_i]["name"] <= group[root_j]["name"]:
                                 merged_into[root_j] = root_i
@@ -179,9 +188,7 @@ def resolve():
 
         canonical_ids = {}
         for idx, ent in enumerate(group):
-            root = idx
-            while root in merged_into:
-                root = merged_into[root]
+            root = _find(merged_into, idx)
             if root not in canonical_ids:
                 cid = str(uuid.uuid4())
                 canonical_ids[root] = cid
