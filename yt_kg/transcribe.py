@@ -47,12 +47,12 @@ def transcribe(workers: int = 1) -> None:  # ponytail: workers reserved — GPU 
             TRANSCRIPTS_DIR.joinpath(f"{video_id}.json").write_text(
                 json.dumps(transcript), encoding="utf-8"
             )
-            audio_path.unlink(missing_ok=True)
             conn.execute(
                 "UPDATE videos SET transcribed_at=? WHERE video_id=?",
                 (utcnow(), video_id),
             )
             conn.commit()
+            audio_path.unlink(missing_ok=True)
             logger.info("transcribed %s (%.0fs, lang=%s)", video_id, info.duration, info.language)
         except Exception as e:
             conn.execute(
