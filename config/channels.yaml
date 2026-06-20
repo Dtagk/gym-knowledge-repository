@@ -1,9 +1,10 @@
 channels:
-  - id: jeff-nippard
-    url: https://www.youtube.com/@JeffNippard
-    type: channel
-    poll_every: 7d
+  # Full channels — enable after validation run
+  # - id: jeff-nippard
+  #   url: https://www.youtube.com/@JeffNippard
+  #   type: channel
+  #   poll_every: 7d
   - id: single-video-test
-    url: https://www.youtube.com/watch?v=XXXXXXXXXXX
+    url: https://www.youtube.com/watch?v=3ryh7PNhz3E
     type: video
     poll_every: never

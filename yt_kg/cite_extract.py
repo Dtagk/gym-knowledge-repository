@@ -74,7 +74,7 @@ def extract_citations(video_id: str) -> None:
             )
             resp = requests.post(
                 "http://localhost:11434/api/generate",
-                json={"model": "qwen-coder-32768:latest", "prompt": prompt, "stream": False},
+                json={"model": "qwen2.5-coder:7b", "prompt": prompt, "stream": False},
                 timeout=60,
             )
             resp.raise_for_status()

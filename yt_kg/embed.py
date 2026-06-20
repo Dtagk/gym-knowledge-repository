@@ -21,7 +21,7 @@ SCHEMA = pa.schema([
 ])
 
 
-def embed() -> None:
+def embed(workers: int = 1) -> None:  # ponytail: workers reserved — SentenceTransformer not thread-safe
     Path("data/vectors.lance").mkdir(parents=True, exist_ok=True)
     conn = init_db()
     rows = conn.execute(

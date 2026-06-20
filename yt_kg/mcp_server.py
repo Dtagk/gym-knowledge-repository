@@ -60,7 +60,7 @@ def expand_entity(name: str, depth: int = 1) -> list[dict]:
     if depth <= 1:
         cypher = (
             "MATCH (e:Entity {name: $name})-[r:RELATED]->(e2:Entity) "
-            "RETURN e2.name AS name, e2.type AS type, r.predicate AS predicate, r.evidence AS evidence"
+            "RETURN e2.name AS name, e2.entity_type AS type, r.predicate AS predicate, r.evidence AS evidence"
         )
         try:
             result = conn.execute(cypher, {"name": name})
@@ -81,7 +81,7 @@ def expand_entity(name: str, depth: int = 1) -> list[dict]:
             for entity_name in frontier:
                 cypher = (
                     "MATCH (e:Entity {name: $name})-[r:RELATED]->(e2:Entity) "
-                    "RETURN e2.name AS name, e2.type AS type, r.predicate AS predicate, r.evidence AS evidence"
+                    "RETURN e2.name AS name, e2.entity_type AS type, r.predicate AS predicate, r.evidence AS evidence"
                 )
                 try:
                     result = conn.execute(cypher, {"name": entity_name})

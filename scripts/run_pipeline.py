@@ -1,3 +1,4 @@
+import argparse
 import logging
 from pathlib import Path
 
@@ -5,6 +6,7 @@ import lancedb
 from sentence_transformers import SentenceTransformer
 
 from yt_kg.discover import discover
+from yt_kg.filter import filter_videos
 from yt_kg.download import download
 from yt_kg.transcribe import transcribe
 from yt_kg.embed import embed
@@ -29,16 +31,22 @@ def _run_stage(fn, name: str) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="YouTube Fitness Knowledge Graph Pipeline")
+    parser.add_argument("--workers", type=int, default=4, help="Parallel workers for I/O stages (default: 4)")
+    args = parser.parse_args()
+    w = args.workers
+
     _run_stage(discover, "discover")
-    _run_stage(download, "download")
-    _run_stage(transcribe, "transcribe")
-    _run_stage(embed, "embed")
-    _run_stage(extract, "extract")
-    _run_stage(resolve, "resolve")
-    _run_stage(graph, "graph")
+    _run_stage(filter_videos, "filter")
+    _run_stage(lambda: download(workers=w), "download")
+    _run_stage(lambda: transcribe(workers=w), "transcribe")
+    _run_stage(lambda: embed(workers=w), "embed")
+    _run_stage(extract, "extract")           # sequential — Ollama bottleneck
+    _run_stage(resolve, "resolve")           # sequential — full-batch operation
+    _run_stage(graph, "graph")               # sequential — full-batch operation
     _run_stage(cite_extract, "cite_extract")
     _run_stage(cite_resolve, "cite_resolve")
-    _run_stage(cite_pdf_stage, "cite_pdf")
+    _run_stage(lambda: cite_pdf_stage(workers=w), "cite_pdf")
 
     logger.info("All stages done. Running smoke test...")
 
