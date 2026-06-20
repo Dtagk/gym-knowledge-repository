@@ -1,5 +1,6 @@
 """Embedding stage: encodes transcript chunks with bge-small and stores in LanceDB."""
 import logging
+import re
 from pathlib import Path
 
 import lancedb
@@ -59,6 +60,8 @@ def embed(workers: int = 1) -> None:  # ponytail: workers reserved — SentenceT
 
             # Delete existing chunks for this video then re-add (upsert by video)
             try:
+                if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
+                    raise ValueError(f"Unexpected video_id format: {video_id!r}")
                 table.delete(f"video_id = '{video_id}'")
             except Exception:
                 pass

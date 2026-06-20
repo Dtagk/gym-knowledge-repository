@@ -1,3 +1,5 @@
+import re
+
 import kuzu
 import lancedb
 
@@ -62,6 +64,8 @@ def load_video(video_id: str) -> None:
         tbl = db_lance.open_table("chunks")
         chunks_by_id = {}
         try:
+            if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
+                raise ValueError(f"Unexpected video_id format: {video_id!r}")
             results = (
                 tbl.search(None)
                 .where(f"video_id = '{video_id}'", prefilter=True)
@@ -185,5 +189,6 @@ def graph() -> None:
     rows = conn.execute(
         "SELECT * FROM videos WHERE extracted_at IS NOT NULL AND graphed_at IS NULL"
     ).fetchall()
+    conn.close()
     for row in rows:
         load_video(row["video_id"])
