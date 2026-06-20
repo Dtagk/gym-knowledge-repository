@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from pydantic import BaseModel
 from typing import Optional
@@ -120,6 +121,9 @@ def extract() -> None:
     for row in rows:
         video_id = row["video_id"]
 
+        if not re.fullmatch(r'[A-Za-z0-9_-]{6,20}', video_id):
+            raise ValueError(f"Unexpected video_id format: {video_id!r}")
+
         try:
             chunks = tbl.search([0.0] * 384).where(
                 f"video_id = '{video_id}'", prefilter=True
@@ -159,14 +163,15 @@ def extract() -> None:
                 print(f"[extract] chunk {chunk_id} failed: {exc}")
                 failures += 1
 
-        conn.execute(
-            "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
-            (utcnow(), video_id),
-        )
         failure_rate = failures / len(chunks) if chunks else 0.0
         if failure_rate > 0.03:
             conn.execute(
                 "UPDATE videos SET last_error = ?, error_stage = ? WHERE video_id = ?",
                 (f"{failures}/{len(chunks)} chunks failed extraction", "extract", video_id),
+            )
+        else:
+            conn.execute(
+                "UPDATE videos SET extracted_at = ? WHERE video_id = ?",
+                (utcnow(), video_id),
             )
         conn.commit()
