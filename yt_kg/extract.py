@@ -1,17 +1,55 @@
-import json
 import sqlite3
+from pydantic import BaseModel
+from typing import Optional
 
 import instructor
 import lancedb
+from gliner import GLiNER
 from openai import OpenAI
 
-from config.extraction_schema import Extraction
+from config.extraction_schema import Entity, Extraction, Relation
 from yt_kg.db import init_db, utcnow
 
-_client = instructor.from_openai(
+_LABELS = [
+    "fitness exercise or movement",
+    "muscle group or body part",
+    "scientific study or research paper",
+    "fitness equipment or machine",
+    "training technique or programming method",
+    "fitness trainer, researcher or athlete",
+    "gym, company or organization",
+    "nutritional concept or supplement",
+]
+_LABEL_MAP = {
+    "fitness exercise or movement": "Method",
+    "muscle group or body part": "Concept",
+    "scientific study or research paper": "Paper",
+    "fitness equipment or machine": "Tool",
+    "training technique or programming method": "Method",
+    "fitness trainer, researcher or athlete": "Person",
+    "gym, company or organization": "Organization",
+    "nutritional concept or supplement": "Concept",
+}
+_PRONOUNS = {"i", "me", "we", "us", "you", "he", "she", "they", "them", "it", "my", "your", "our"}
+
+_gliner_model: Optional[GLiNER] = None
+
+
+def _gliner() -> GLiNER:
+    global _gliner_model
+    if _gliner_model is None:
+        _gliner_model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1")
+    return _gliner_model
+
+
+_llm = instructor.from_openai(
     OpenAI(base_url="http://localhost:11434/v1", api_key="ollama"),
     mode=instructor.Mode.JSON,
 )
+
+
+class _Relations(BaseModel):
+    relations: list[Relation]
 
 
 def _init_extractions_table(conn: sqlite3.Connection) -> None:
@@ -24,6 +62,44 @@ def _init_extractions_table(conn: sqlite3.Connection) -> None:
         )
     """)
     conn.commit()
+
+
+def _extract_chunk(text: str) -> Extraction:
+    # Entities: GLiNER — fast, no LLM, runs on CPU
+    spans = _gliner().predict_entities(text, _LABELS, threshold=0.4)
+    seen: set[tuple[str, str]] = set()
+    entities: list[Entity] = []
+    for s in spans:
+        if s["text"].lower().strip() in _PRONOUNS:
+            continue
+        key = (s["text"].lower(), s["label"])
+        if key not in seen:
+            seen.add(key)
+            entities.append(Entity(name=s["text"], type=_LABEL_MAP[s["label"]], description=""))
+
+    # Relations: LLM only when ≥2 entities found
+    relations: list[Relation] = []
+    if len(entities) >= 2:
+        names = [e.name for e in entities]
+        prompt = (
+            f"Entities found in this fitness transcript excerpt: {names}\n\n"
+            f"{text}\n\n"
+            f"Return JSON with a 'relations' array. Each item has: "
+            f"subject, predicate, object (from the entity list), evidence (exact quote from text)."
+        )
+        try:
+            r = _llm.chat.completions.create(
+                model="qwen2.5-coder:7b",  # ponytail: base qwen2.5:7b better for NL, switch if relations quality suffers
+                messages=[{"role": "user", "content": prompt}],
+                response_model=_Relations,
+                max_retries=1,
+                timeout=60.0,
+            )
+            relations = r.relations
+        except Exception as exc:
+            print(f"[extract] relations failed: {exc}")
+
+    return Extraction(entities=entities, relations=relations)
 
 
 def extract() -> None:
@@ -71,20 +147,8 @@ def extract() -> None:
             if chunk_id in existing_ids:
                 continue
 
-            prompt = (
-                f"Extract entities and relations from this gym/fitness transcript excerpt:\n\n"
-                f"{chunk['text']}\n\n"
-                f"Return a JSON object with 'entities' and 'relations' arrays."
-            )
-
             try:
-                result = _client.chat.completions.create(
-                    model="qwen-coder-32768:latest",
-                    messages=[{"role": "user", "content": prompt}],
-                    response_model=Extraction,
-                    max_retries=2,
-                    timeout=120.0,
-                )
+                result = _extract_chunk(chunk["text"])
                 conn.execute(
                     "INSERT OR REPLACE INTO raw_extractions (chunk_id, video_id, extraction_json, created_at) VALUES (?, ?, ?, ?)",
                     (chunk_id, video_id, result.model_dump_json(), utcnow()),
