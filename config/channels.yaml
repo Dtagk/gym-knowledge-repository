@@ -16,3 +16,7 @@ channels:
     url: https://www.youtube.com/playlist?list=PLp4G6oBUcv8yGQifkb4p_ZOoACPnYslx9
     type: playlist
     poll_every: never
+  - id: playlist-nippard-sbs
+    url: https://www.youtube.com/playlist?list=PLlRV2l7j-WsK0nO5a0WpPlAQ-b4prQdpG
+    type: playlist
+    poll_every: never
