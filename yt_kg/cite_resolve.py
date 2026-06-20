@@ -44,6 +44,8 @@ def _parse_work(work: dict) -> dict:
 
 def _resolve_openalex(raw_ref: str) -> dict | None:
     if raw_ref.startswith("10."):
+        raw_ref = re.sub(r'/[a-zA-Z]+$', '', raw_ref)
+    if raw_ref.startswith("10."):
         url = f"https://api.openalex.org/works/doi:{raw_ref}"
     elif re.match(r'(?i)arxiv:', raw_ref):
         arxiv_id = re.sub(r'(?i)^arxiv:', '', raw_ref).strip()

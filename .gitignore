@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .venv/
 .aider*
+__ollama_prompt.txt
+__ollama_run.py
