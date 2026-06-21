@@ -1,4 +1,7 @@
 data/
+# Allow the docs/data fixture files committed for GitHub Pages
+!docs/data/
+!docs/data/**
 __pycache__/
 *.pyc
 .venv/

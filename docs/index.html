@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Knowledge Browser</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #21253a;
+      --border: #2e334d;
+      --accent: #4f8ef7;
+      --text: #e2e5f0;
+      --text-muted: #7b82a0;
+      --badge-bp-bg: #1a3a6b;
+      --badge-bp-fg: #7bb3f7;
+      --badge-uc-bg: #1a4a2e;
+      --badge-uc-fg: #6ecc8e;
+      --badge-ent-bg: #2e2040;
+      --badge-ent-fg: #c09fff;
+      --radius: 10px;
+      --sidebar-w: 256px;
+
+      /* Body part accent colors */
+      --c-shoulder: #4f8ef7;
+      --c-chest:    #f74f8e;
+      --c-back:     #f79a4f;
+      --c-core:     #4fd9f7;
+      --c-arms:     #bf4ff7;
+      --c-legs:     #f7c84f;
+
+      --zone-idle:   #1e2235;
+      --zone-stroke: #3a4060;
+      --body-fill:   #191c2d;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 0.85rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    #video-count { font-size: 0.8rem; color: var(--text-muted); }
+
+    main { display: flex; flex: 1; min-height: 0; }
+
+    /* ── Sidebar ────────────────────────────────────────────────────────────── */
+    aside#filters {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      padding: 1.25rem 1rem 1.5rem;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* ── Body map ───────────────────────────────────────────────────────────── */
+    .body-map { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+
+    .body-views { display: flex; gap: 8px; justify-content: center; }
+
+    .body-view { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+
+    .view-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .body-svg { width: 104px; height: auto; overflow: visible; }
+
+    /* Non-interactive outline shapes */
+    .outline {
+      fill: var(--body-fill);
+      stroke: var(--zone-stroke);
+      stroke-width: 1;
+      pointer-events: none;
+    }
+
+    /* Clickable zones */
+    .zone {
+      fill: var(--zone-idle);
+      stroke: var(--zone-stroke);
+      stroke-width: 1;
+      cursor: pointer;
+      transition: fill 0.12s, filter 0.12s;
+    }
+    .zone:hover { filter: brightness(1.6); }
+    .zone.active { filter: brightness(1); }
+
+    /* Active colors per body part */
+    [data-part="shoulder"].active { fill: var(--c-shoulder); stroke: var(--c-shoulder); }
+    [data-part="chest"].active    { fill: var(--c-chest);    stroke: var(--c-chest); }
+    [data-part="back"].active     { fill: var(--c-back);     stroke: var(--c-back); }
+    [data-part="core"].active     { fill: var(--c-core);     stroke: var(--c-core); }
+    [data-part="arms"].active     { fill: var(--c-arms);     stroke: var(--c-arms); }
+    [data-part="legs"].active     { fill: var(--c-legs);     stroke: var(--c-legs); }
+
+    /* Legend dots */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.6rem;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-item.active { color: var(--text); }
+
+    /* ── Full-body button ────────────────────────────────────────────────────── */
+    #full-body-btn {
+      width: 100%;
+      padding: 0.38rem;
+      background: var(--zone-idle);
+      border: 1.5px solid var(--zone-stroke);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.12s;
+      letter-spacing: 0.02em;
+    }
+    #full-body-btn:hover { border-color: #4ff7a5; color: #4ff7a5; }
+    #full-body-btn.active { background: #4ff7a5; border-color: #4ff7a5; color: #081a10; font-weight: 600; }
+
+    /* ── Use-case section ───────────────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .uc-pills { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+    .uc-pill {
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .uc-pill:hover { border-color: var(--badge-uc-fg); color: var(--badge-uc-fg); }
+    .uc-pill.active {
+      background: var(--badge-uc-bg);
+      border-color: var(--badge-uc-fg);
+      color: var(--badge-uc-fg);
+    }
+
+    /* ── Clear button ───────────────────────────────────────────────────────── */
+    #clear-btn {
+      margin-top: auto;
+      padding: 0.38rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      cursor: pointer;
+      transition: border-color 0.12s, color 0.12s;
+    }
+    #clear-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Card grid ──────────────────────────────────────────────────────────── */
+    #grid { flex: 1; padding: 1.25rem; overflow-y: auto; }
+
+    #cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface2);
+    }
+
+    .card-body { padding: 0.75rem; }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+    .card-title:hover { color: var(--accent); }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.35rem; }
+
+    .badge { font-size: 0.68rem; font-weight: 500; padding: 0.15rem 0.45rem; border-radius: 999px; }
+    .badge-bp  { background: var(--badge-bp-bg);  color: var(--badge-bp-fg); }
+    .badge-uc  { background: var(--badge-uc-bg);  color: var(--badge-uc-fg); }
+    .badge-ent { background: var(--badge-ent-bg); color: var(--badge-ent-fg); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.75rem 0.6rem;
+    }
+    .toggle-hint { font-size: 0.7rem; color: var(--text-muted); }
+    .watch-link { font-size: 0.75rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .watch-link:hover { text-decoration: underline; }
+
+    .entity-panel {
+      display: none;
+      padding: 0.6rem 0.75rem 0.75rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .entity-panel h3 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .entity-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+    .card.expanded .entity-panel { display: block; }
+    .card.expanded { border-color: var(--accent); }
+
+    #empty { display: none; text-align: center; padding: 4rem 1rem; color: var(--text-muted); }
+    #empty.visible { display: block; }
+
+    .noscript-notice {
+      background: #3a2a00; color: #f5c842;
+      padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      main { flex-direction: column; }
+      aside#filters { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+<noscript><p class="noscript-notice">Filtering requires JavaScript. All videos are shown below.</p></noscript>
+
+<header>
+  <h1>Gym Knowledge Browser</h1>
+  <span id="video-count"></span>
+</header>
+
+<main>
+  <aside id="filters">
+
+    <div class="body-map">
+      <div class="body-views">
+
+        <!-- FRONT VIEW -->
+        <div class="body-view">
+          <span class="view-label">Front</span>
+          <svg class="body-svg" viewBox="0 0 100 255">
+            <!-- background outline -->
+            <circle class="outline" cx="50" cy="17" r="13"/>
+            <rect   class="outline" x="45" y="28" width="10" height="10"/>
+            <path   class="outline" d="M23,40 L77,40 L72,132 L58,132 L58,138 L42,138 L42,132 L28,132 Z"/>
+            <path   class="outline" d="M14,64 L26,60 L22,125 L10,120 Z"/>
+            <path   class="outline" d="M74,60 L86,64 L90,120 L78,125 Z"/>
+            <path   class="outline" d="M28,140 L48,140 L46,253 L26,253 Z"/>
+            <path   class="outline" d="M52,140 L72,140 L74,253 L54,253 Z"/>
+
+            <!-- Shoulder zones (left + right deltoid) -->
+            <path class="zone" data-part="shoulder" d="M23,40 L42,40 L40,70 L21,62 Z"/>
+            <path class="zone" data-part="shoulder" d="M58,40 L77,40 L79,62 L60,70 Z"/>
+            <!-- Chest (upper torso) -->
+            <path class="zone" data-part="chest"    d="M42,40 L58,40 L58,86 L42,86 Z"/>
+            <!-- Core / abs (lower torso) -->
+            <path class="zone" data-part="core"     d="M42,86 L58,86 L57,132 L43,132 Z"/>
+            <!-- Arms -->
+            <path class="zone" data-part="arms"     d="M14,64 L25,60 L21,123 L10,118 Z"/>
+            <path class="zone" data-part="arms"     d="M75,60 L86,64 L90,118 L79,123 Z"/>
+            <!-- Legs -->
+            <path class="zone" data-part="legs"     d="M29,140 L47,140 L45,252 L27,252 Z"/>
+            <path class="zone" data-part="legs"     d="M53,140 L71,140 L73,252 L55,252 Z"/>
+          </svg>
+        </div>
+
+        <!-- BACK VIEW -->
+        <div class="body-view">
+          <span class="view-label">Back</span>
+          <svg class="body-svg" viewBox="0 0 100 255">
+            <!-- same outline -->
+            <circle class="outline" cx="50" cy="17" r="13"/>
+            <rect   class="outline" x="45" y="28" width="10" height="10"/>
+            <path   class="outline" d="M23,40 L77,40 L72,132 L58,132 L58,138 L42,138 L42,132 L28,132 Z"/>
+            <path   class="outline" d="M14,64 L26,60 L22,125 L10,120 Z"/>
+            <path   class="outline" d="M74,60 L86,64 L90,120 L78,125 Z"/>
+            <path   class="outline" d="M28,140 L48,140 L46,253 L26,253 Z"/>
+            <path   class="outline" d="M52,140 L72,140 L74,253 L54,253 Z"/>
+
+            <!-- Rear shoulders (same deltoid region) -->
+            <path class="zone" data-part="shoulder" d="M23,40 L42,40 L40,70 L21,62 Z"/>
+            <path class="zone" data-part="shoulder" d="M58,40 L77,40 L79,62 L60,70 Z"/>
+            <!-- Back (traps + lats — full torso rear) -->
+            <path class="zone" data-part="back"     d="M42,40 L58,40 L57,132 L43,132 Z"/>
+            <!-- Arms (back view) -->
+            <path class="zone" data-part="arms"     d="M14,64 L25,60 L21,123 L10,118 Z"/>
+            <path class="zone" data-part="arms"     d="M75,60 L86,64 L90,118 L79,123 Z"/>
+            <!-- Legs (back view) -->
+            <path class="zone" data-part="legs"     d="M29,140 L47,140 L45,252 L27,252 Z"/>
+            <path class="zone" data-part="legs"     d="M53,140 L71,140 L73,252 L55,252 Z"/>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Full-body toggle -->
+      <button id="full-body-btn">Full Body</button>
+
+      <!-- Color legend -->
+      <div class="legend" id="legend">
+        <span class="legend-item" data-part="shoulder"><span class="legend-dot" style="background:var(--c-shoulder)"></span>Shoulder</span>
+        <span class="legend-item" data-part="chest">   <span class="legend-dot" style="background:var(--c-chest)"></span>Chest</span>
+        <span class="legend-item" data-part="back">    <span class="legend-dot" style="background:var(--c-back)"></span>Back</span>
+        <span class="legend-item" data-part="core">    <span class="legend-dot" style="background:var(--c-core)"></span>Core</span>
+        <span class="legend-item" data-part="arms">    <span class="legend-dot" style="background:var(--c-arms)"></span>Arms</span>
+        <span class="legend-item" data-part="legs">    <span class="legend-dot" style="background:var(--c-legs)"></span>Legs</span>
+      </div>
+    </div>
+
+    <!-- Use-case filters -->
+    <div>
+      <p class="section-label">Training Goal</p>
+      <div class="uc-pills">
+        <button class="uc-pill" data-uc="rehab">Rehab</button>
+        <button class="uc-pill" data-uc="mobility">Mobility</button>
+        <button class="uc-pill" data-uc="strength">Strength</button>
+        <button class="uc-pill" data-uc="hypertrophy">Hypertrophy</button>
+        <button class="uc-pill" data-uc="general-fitness">General</button>
+        <button class="uc-pill" data-uc="programming">Programming</button>
+      </div>
+    </div>
+
+    <button id="clear-btn">Clear all filters</button>
+
+  </aside>
+
+  <section id="grid">
+    <div id="cards"></div>
+    <div id="empty">No videos match the selected filters.</div>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  let allVideos = [];
+  const activeParts = new Set();
+  const activeUcs   = new Set();
+
+  // ── Body zone clicks ───────────────────────────────────────────────────────
+  document.querySelectorAll('.zone').forEach(function (el) {
+    el.addEventListener('click', function () {
+      const part = this.dataset.part;
+      if (activeParts.has(part)) {
+        activeParts.delete(part);
+      } else {
+        activeParts.add(part);
+      }
+      syncUI();
+      renderFiltered();
+    });
+  });
+
+  // Legend items also act as toggles
+  document.querySelectorAll('.legend-item').forEach(function (el) {
+    el.addEventListener('click', function () {
+      const part = this.dataset.part;
+      if (activeParts.has(part)) {
+        activeParts.delete(part);
+      } else {
+        activeParts.add(part);
+      }
+      syncUI();
+      renderFiltered();
+    });
+  });
+
+  // Full-body: clear all part selections (= show everything)
+  document.getElementById('full-body-btn').addEventListener('click', function () {
+    activeParts.clear();
+    syncUI();
+    renderFiltered();
+  });
+
+  function syncUI() {
+    // Sync zones across both SVGs
+    document.querySelectorAll('.zone').forEach(function (el) {
+      el.classList.toggle('active', activeParts.has(el.dataset.part));
+    });
+    // Sync legend
+    document.querySelectorAll('.legend-item').forEach(function (el) {
+      el.classList.toggle('active', activeParts.has(el.dataset.part));
+    });
+    // Full-body active when nothing selected
+    document.getElementById('full-body-btn').classList.toggle('active', activeParts.size === 0);
+  }
+
+  // ── Use-case pills ─────────────────────────────────────────────────────────
+  document.querySelectorAll('.uc-pill').forEach(function (el) {
+    el.addEventListener('click', function () {
+      const uc = this.dataset.uc;
+      if (activeUcs.has(uc)) {
+        activeUcs.delete(uc);
+        this.classList.remove('active');
+      } else {
+        activeUcs.add(uc);
+        this.classList.add('active');
+      }
+      renderFiltered();
+    });
+  });
+
+  // ── Clear ──────────────────────────────────────────────────────────────────
+  document.getElementById('clear-btn').addEventListener('click', function () {
+    activeParts.clear();
+    activeUcs.clear();
+    document.querySelectorAll('.uc-pill').forEach(function (el) { el.classList.remove('active'); });
+    syncUI();
+    renderFiltered();
+  });
+
+  // ── Filter logic ───────────────────────────────────────────────────────────
+  function videoMatches(v) {
+    const bpOk = activeParts.size === 0
+      || Array.from(activeParts).some(function (p) { return (v.body_parts || []).includes(p); });
+    const ucOk = activeUcs.size === 0
+      || Array.from(activeUcs).some(function (u) { return (v.use_cases  || []).includes(u); });
+    return bpOk && ucOk;
+  }
+
+  // ── Card builder ───────────────────────────────────────────────────────────
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function buildCard(v) {
+    const card = document.createElement('article');
+    card.className = 'card';
+
+    const thumbSrc = v.video_id.startsWith('placeholder')
+      ? '' : `https://img.youtube.com/vi/${v.video_id}/mqdefault.jpg`;
+
+    const bpBadges  = (v.body_parts || []).map(function (b) { return `<span class="badge badge-bp">${esc(b)}</span>`; }).join('');
+    const ucBadges  = (v.use_cases  || []).map(function (u) { return `<span class="badge badge-uc">${esc(u)}</span>`; }).join('');
+    const entBadges = (v.entities   || []).map(function (e) { return `<span class="badge badge-ent">${esc(e.name)} · ${esc(e.type)}</span>`; }).join('');
+
+    card.innerHTML = `
+      ${thumbSrc
+        ? `<img class="card-thumb" src="${esc(thumbSrc)}" alt="${esc(v.title)}" loading="lazy">`
+        : `<div class="card-thumb" style="display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-muted)">No thumbnail</div>`}
+      <div class="card-body">
+        <a class="card-title" href="${esc(v.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(v.title)}</a>
+        <div class="badge-row">${bpBadges}</div>
+        <div class="badge-row">${ucBadges}</div>
+      </div>
+      <div class="card-footer">
+        <span class="toggle-hint">Click to see entities</span>
+        <a class="watch-link" href="${esc(v.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch ↗</a>
+      </div>
+      <div class="entity-panel">
+        <h3>Entities</h3>
+        <div class="entity-list">${entBadges || '<span style="color:var(--text-muted);font-size:0.75rem">None tagged</span>'}</div>
+      </div>`;
+
+    card.addEventListener('click', function () {
+      this.classList.toggle('expanded');
+      this.querySelector('.toggle-hint').textContent =
+        this.classList.contains('expanded') ? 'Click to collapse' : 'Click to see entities';
+    });
+
+    return card;
+  }
+
+  // ── Render ─────────────────────────────────────────────────────────────────
+  function renderFiltered() {
+    const container = document.getElementById('cards');
+    const empty     = document.getElementById('empty');
+    const frag      = document.createDocumentFragment();
+    let shown       = 0;
+
+    allVideos.forEach(function (v) {
+      if (videoMatches(v)) { frag.appendChild(buildCard(v)); shown++; }
+    });
+
+    container.innerHTML = '';
+    container.appendChild(frag);
+    empty.classList.toggle('visible', shown === 0);
+    document.getElementById('video-count').textContent =
+      shown === allVideos.length ? `${allVideos.length} videos` : `${shown} / ${allVideos.length} videos`;
+  }
+
+  // ── Boot ───────────────────────────────────────────────────────────────────
+  fetch('data/videos.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (videos) { allVideos = videos; syncUI(); renderFiltered(); })
+    .catch(function (err) {
+      document.getElementById('cards').innerHTML =
+        `<p style="color:var(--text-muted);padding:2rem">Failed to load videos: ${esc(String(err))}</p>`;
+    });
+})();
+</script>
+</body>
+</html>
