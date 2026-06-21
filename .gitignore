@@ -8,3 +8,8 @@ __ollama_run.py
 .vscode/settings.json
 cookies.txt
 chromewebstore.google.com_cookies.txt
+*.egg-info/
+*.log
+.serena/
+.mcp.json
+_review_patches/
