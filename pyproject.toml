@@ -20,6 +20,8 @@ dependencies = [
     "pyarrow",
     "gliner",
     "tqdm",
+    "fastapi",
+    "uvicorn",
 ]
 
 [project.optional-dependencies]
