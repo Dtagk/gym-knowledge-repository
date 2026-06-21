@@ -1,3 +1,16 @@
+st # Trusted YouTube channel IDs for search filtering.
+# Find a channel ID: go to the channel page → view source → search "channelId".
+# Used when a search entry has channels_only: true.
+channel_whitelist:
+  - UC68TLK0mAEzUyHx5x5k-S1Q  # Jeff Nippard
+  - UCfQgsKhHjSyRLOp9mnffqVg  # Renaissance Periodization
+  - UCYjEjXbMc-gkuPL6TbPG6EQ  # RP University
+  - UCyPYQTT20IgzVw92LDvtClw  # Squat University
+  - UCXUOT2gl9D6qQ286wjEZOow  # Venus Gabby
+  - UCCq4cXAbqfZfiwnwLxMGyGg  # Dr. Pak
+  - UCru8Ef3TDFaJOOTfAZ52iFA  # Dr. Milo Wolf
+  - UC9Cph05W6T461_FEXLWcPvQ  # Calgary Barbell
+
 channels:
   # Full channels — enable after validation run
   # - id: jeff-nippard
@@ -23,8 +36,7 @@ channels:
 
 # Search-seeded discovery (Epic 5, Story 5.1). Results are staged as candidates
 # (status='candidate') and do NOT download until promoted by scoring or review.
-# searches:
-#   - query: "rir vs rpe hypertrophy"
-#     limit: 30
-#   - query: "lengthened partials meta-analysis"
-#     limit: 30
+searches:
+  - query: "shoulder mobility exercises"
+    limit: 20
+    channels_only: true

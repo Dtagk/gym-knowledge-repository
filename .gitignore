@@ -13,3 +13,6 @@ chromewebstore.google.com_cookies.txt
 .serena/
 .mcp.json
 _review_patches/
+.claude/
+_bmad/
+_bmad-output/
