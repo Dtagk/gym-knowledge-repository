@@ -12,6 +12,7 @@ from sentence_transformers import SentenceTransformer
 from yt_kg.discover import discover
 from yt_kg.filter import filter_videos
 from yt_kg.promote import promote
+from yt_kg.validate import validate
 from yt_kg.download import download
 from yt_kg.transcribe import transcribe
 from yt_kg.embed import embed
@@ -96,6 +97,7 @@ def main() -> None:
         (discover,                        "discover"),
         (filter_videos,                   "filter"),
         (promote,                         "promote"),
+        (lambda: validate(workers=2),     "validate"),
         (lambda: download(workers=w),     "download"),
         (lambda: transcribe(workers=w),   "transcribe"),
         (lambda: embed(workers=w),        "embed"),
