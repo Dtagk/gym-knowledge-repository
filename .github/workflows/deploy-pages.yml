@@ -1,0 +1,76 @@
+name: Classify, Export, and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # manual trigger for testing
+
+permissions:
+  contents: write   # to commit docs/data/ changes back
+  pages: write      # to deploy to GitHub Pages
+  id-token: write   # required for pages deploy action
+
+jobs:
+  classify-export-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Start Ollama
+        run: docker run -d --name ollama -p 11434:11434 ollama/ollama:latest
+
+      - name: Pull classify model
+        run: docker exec ollama ollama pull qwen2.5-coder:7b
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environment.yml
+          activate-environment: gym-kg
+          auto-activate-base: false
+
+      - name: Install package
+        shell: bash -l {0}
+        run: pip install -e .
+
+      - name: Classify videos
+        shell: bash -l {0}
+        run: python -m yt_kg.classify || true
+
+      - name: Export to docs/data/
+        shell: bash -l {0}
+        run: python -m yt_kg.export || true
+
+      - name: Pull research model for synthesis
+        run: docker exec ollama ollama pull gpt-oss:20b || true
+
+      - name: Run synthesize stage
+        shell: bash -l {0}
+        run: |
+          DATA_DIR=${{ github.workspace }} python -m yt_kg.rag_server &
+          sleep 10
+          python -m yt_kg.synthesize || true
+          pkill -f rag_server || true
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/
+          git diff --staged --quiet || git commit -m "chore(data): update exported video data [skip ci]"
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - uses: actions/deploy-pages@v4
+        id: deployment
