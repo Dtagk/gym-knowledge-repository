@@ -1,4 +1,4 @@
-st # Trusted YouTube channel IDs for search filtering.
+# Trusted YouTube channel IDs for search filtering.
 # Find a channel ID: go to the channel page → view source → search "channelId".
 # Used when a search entry has channels_only: true.
 channel_whitelist:
