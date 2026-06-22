@@ -22,8 +22,9 @@ _YDL_OPTS = {
     "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "m4a"}],
     **( {"cookiefile": str(_COOKIES_FILE)} if _COOKIES_FILE.exists()
         else {"cookiesfrombrowser": ("chrome",)} ),
-    "sleep_interval_requests": 2,
-    "max_sleep_interval": 5,
+    "sleep_interval": 5,
+    "sleep_interval_requests": 8,
+    "max_sleep_interval": 15,
     "quiet": True,
     "no_warnings": True,
     **({"ffmpeg_location": _FFMPEG_LOCATION} if _FFMPEG_LOCATION else {}),
