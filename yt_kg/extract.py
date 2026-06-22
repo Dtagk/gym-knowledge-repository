@@ -39,7 +39,9 @@ _gliner_model: Optional[GLiNER] = None
 def _gliner() -> GLiNER:
     global _gliner_model
     if _gliner_model is None:
-        _gliner_model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1")
+        import torch
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        _gliner_model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1", device=device)
     return _gliner_model
 
 
@@ -87,7 +89,6 @@ def _init_extractions_table(conn: sqlite3.Connection) -> None:
 
 
 def _extract_chunk(text: str) -> Extraction:
-    # Entities: GLiNER — fast, no LLM, runs on CPU
     spans = _gliner().predict_entities(text, _LABELS, threshold=0.4)
     seen: set[tuple[str, str]] = set()
     entities: list[Entity] = []
