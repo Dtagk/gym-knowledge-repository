@@ -20,7 +20,6 @@ _PERMANENT_PATTERNS = (
     "this video is private",
     "has been removed",
     "not available in your country",
-    "requested format is not available",
     "this video requires payment",
     "age-restricted",
 )
