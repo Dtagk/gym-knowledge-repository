@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Knowledge Browser</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #21253a;
+      --border: #2e334d;
+      --accent: #4f8ef7;
+      --text: #e2e5f0;
+      --text-muted: #7b82a0;
+      --badge-bp-bg: #1a3a6b;
+      --badge-bp-fg: #7bb3f7;
+      --badge-uc-bg: #1a4a2e;
+      --badge-uc-fg: #6ecc8e;
+      --badge-entity-bg: #2e2040;
+      --badge-entity-fg: #c09fff;
+      --radius: 10px;
+      --sidebar-w: 230px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 1rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    #video-count { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ── Layout ── */
+    main {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ── Sidebar ── */
+    aside#filters {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      padding: 1.25rem 1rem;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    aside#filters h2 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .filter-group { margin-bottom: 1.5rem; }
+
+    .filter-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      color: var(--text);
+      user-select: none;
+    }
+    .filter-group label:hover { color: var(--accent); }
+    .filter-group input[type="checkbox"] { accent-color: var(--accent); cursor: pointer; }
+
+    #clear-filters {
+      width: 100%;
+      padding: 0.45rem 0.75rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    #clear-filters:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Grid ── */
+    #grid {
+      flex: 1;
+      padding: 1.25rem;
+      overflow-y: auto;
+    }
+
+    #cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface2);
+    }
+
+    .card-body { padding: 0.75rem; }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+    .card-title:hover { color: var(--accent); }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .badge-bp  { background: var(--badge-bp-bg);     color: var(--badge-bp-fg); }
+    .badge-uc  { background: var(--badge-uc-bg);     color: var(--badge-uc-fg); }
+    .badge-ent { background: var(--badge-entity-bg); color: var(--badge-entity-fg); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.75rem 0.6rem;
+    }
+
+    .toggle-hint { font-size: 0.7rem; color: var(--text-muted); }
+    .watch-link {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .watch-link:hover { text-decoration: underline; }
+
+    /* ── Entity panel ── */
+    .entity-panel {
+      display: none;
+      padding: 0.6rem 0.75rem 0.75rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .entity-panel h3 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .entity-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+    .card.expanded .entity-panel { display: block; }
+    .card.expanded { border-color: var(--accent); }
+
+    /* ── Empty state ── */
+    #empty {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--text-muted);
+    }
+    #empty.visible { display: block; }
+
+    /* ── Noscript ── */
+    .noscript-notice {
+      background: #3a2a00;
+      color: #f5c842;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* ── Responsive: collapse sidebar on mobile ── */
+    @media (max-width: 640px) {
+      main { flex-direction: column; }
+      aside#filters {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<noscript>
+  <p class="noscript-notice">Filtering requires JavaScript. All videos are shown below.</p>
+</noscript>
+
+<header>
+  <h1>Gym Knowledge Browser</h1>
+  <span id="video-count"></span>
+</header>
+
+<main>
+  <aside id="filters">
+    <div class="filter-group">
+      <h2>Body Parts</h2>
+      <label><input type="checkbox" name="bp" value="shoulder"> Shoulder</label>
+      <label><input type="checkbox" name="bp" value="chest"> Chest</label>
+      <label><input type="checkbox" name="bp" value="back"> Back</label>
+      <label><input type="checkbox" name="bp" value="legs"> Legs</label>
+      <label><input type="checkbox" name="bp" value="arms"> Arms</label>
+      <label><input type="checkbox" name="bp" value="core"> Core</label>
+      <label><input type="checkbox" name="bp" value="full-body"> Full Body</label>
+    </div>
+
+    <div class="filter-group">
+      <h2>Use Cases</h2>
+      <label><input type="checkbox" name="uc" value="rehab"> Rehab</label>
+      <label><input type="checkbox" name="uc" value="mobility"> Mobility</label>
+      <label><input type="checkbox" name="uc" value="strength"> Strength</label>
+      <label><input type="checkbox" name="uc" value="hypertrophy"> Hypertrophy</label>
+      <label><input type="checkbox" name="uc" value="general-fitness"> General Fitness</label>
+    </div>
+
+    <button id="clear-filters">Clear filters</button>
+  </aside>
+
+  <section id="grid">
+    <div id="cards"></div>
+    <div id="empty">No videos match the selected filters.</div>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  let allVideos = [];
+
+  // ── Render a single card element ──────────────────────────────────────────
+  function buildCard(v) {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.dataset.videoId = v.video_id;
+
+    const thumbSrc = v.video_id.startsWith('placeholder')
+      ? ''
+      : `https://img.youtube.com/vi/${v.video_id}/mqdefault.jpg`;
+
+    const bpBadges = (v.body_parts || [])
+      .map(b => `<span class="badge badge-bp">${b}</span>`).join('');
+
+    const ucBadges = (v.use_cases || [])
+      .map(u => `<span class="badge badge-uc">${u}</span>`).join('');
+
+    const entBadges = (v.entities || [])
+      .map(e => `<span class="badge badge-ent">${e.name} · ${e.type}</span>`).join('');
+
+    card.innerHTML = `
+      ${thumbSrc
+        ? `<img class="card-thumb" src="${thumbSrc}" alt="${escHtml(v.title)}" loading="lazy">`
+        : `<div class="card-thumb" style="display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-muted);">No thumbnail</div>`
+      }
+      <div class="card-body">
+        <a class="card-title" href="${escHtml(v.url)}" target="_blank" rel="noopener"
+           onclick="event.stopPropagation()">${escHtml(v.title)}</a>
+        <div class="badge-row">${bpBadges}</div>
+        <div class="badge-row">${ucBadges}</div>
+      </div>
+      <div class="card-footer">
+        <span class="toggle-hint">Click to see entities</span>
+        <a class="watch-link" href="${escHtml(v.url)}" target="_blank" rel="noopener"
+           onclick="event.stopPropagation()">Watch ↗</a>
+      </div>
+      <div class="entity-panel">
+        <h3>Entities</h3>
+        <div class="entity-list">${entBadges || '<span style="color:var(--text-muted);font-size:0.75rem;">None tagged</span>'}</div>
+      </div>
+    `;
+
+    card.addEventListener('click', function () {
+      this.classList.toggle('expanded');
+      const hint = this.querySelector('.toggle-hint');
+      hint.textContent = this.classList.contains('expanded')
+        ? 'Click to collapse'
+        : 'Click to see entities';
+    });
+
+    return card;
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // ── Filter logic ──────────────────────────────────────────────────────────
+  function getChecked(name) {
+    return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+      .map(cb => cb.value);
+  }
+
+  function videoMatches(v, bpSel, ucSel) {
+    // OR within group, AND between groups
+    const bpOk = bpSel.length === 0 || bpSel.some(b => (v.body_parts || []).includes(b));
+    const ucOk = ucSel.length === 0 || ucSel.some(u => (v.use_cases  || []).includes(u));
+    return bpOk && ucOk;
+  }
+
+  // ── Render filtered set ───────────────────────────────────────────────────
+  // Use a document fragment to batch DOM work — handles 500 videos without lag
+  function renderFiltered() {
+    const bpSel = getChecked('bp');
+    const ucSel = getChecked('uc');
+
+    const container = document.getElementById('cards');
+    const empty     = document.getElementById('empty');
+
+    const frag = document.createDocumentFragment();
+    let shown = 0;
+
+    for (const v of allVideos) {
+      if (videoMatches(v, bpSel, ucSel)) {
+        frag.appendChild(buildCard(v));
+        shown++;
+      }
+    }
+
+    container.innerHTML = '';
+    container.appendChild(frag);
+
+    empty.classList.toggle('visible', shown === 0);
+    document.getElementById('video-count').textContent =
+      shown === allVideos.length
+        ? `${allVideos.length} videos`
+        : `${shown} / ${allVideos.length} videos`;
+  }
+
+  // ── Bootstrap ─────────────────────────────────────────────────────────────
+  function init(videos) {
+    allVideos = videos;
+
+    // Wire filter checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', renderFiltered);
+    });
+
+    // Clear button
+    document.getElementById('clear-filters').addEventListener('click', function () {
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      renderFiltered();
+    });
+
+    renderFiltered();
+  }
+
+  // Resolve data path relative to the page (works both on GH Pages and locally)
+  const dataUrl = new URL('data/videos.json', document.currentScript
+    ? document.currentScript.src
+    : location.href).href.replace(/\/[^/]+$/, '/data/videos.json');
+
+  fetch('data/videos.json')
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(init)
+    .catch(function (err) {
+      document.getElementById('cards').innerHTML =
+        `<p style="color:var(--text-muted);padding:2rem;">Failed to load videos: ${escHtml(String(err))}</p>`;
+    });
+})();
+</script>
+
+</body>
+</html>

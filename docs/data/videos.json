@@ -1,0 +1,7 @@
+[
+  {"video_id":"dT0DLcRBJck","title":"Shoulder Mobility Routine","channel_id":"UCyPYQTT20IgzVw92LDvtClw","url":"https://youtu.be/dT0DLcRBJck","body_parts":["shoulder"],"use_cases":["mobility"],"entities":[{"name":"rotator cuff","type":"MUSCLE"},{"name":"band pull-apart","type":"EXERCISE"}]},
+  {"video_id":"Q0o_6KwvXM8","title":"Fix Your Posture — Upper Back Exercises","channel_id":"UC68TLK0mAEzUyHx5x5k-S1Q","url":"https://youtu.be/Q0o_6KwvXM8","body_parts":["back","shoulder"],"use_cases":["strength","mobility"],"entities":[{"name":"trapezius","type":"MUSCLE"},{"name":"face pull","type":"EXERCISE"}]},
+  {"video_id":"placeholder1","title":"Leg Day Hypertrophy Guide","channel_id":"UCfQgsKhHjSyRLOp9mnffqVg","url":"https://youtu.be/placeholder1","body_parts":["legs"],"use_cases":["hypertrophy","strength"],"entities":[{"name":"quadriceps","type":"MUSCLE"},{"name":"squat","type":"EXERCISE"}]},
+  {"video_id":"placeholder2","title":"Core Rehab After Injury","channel_id":"UCCq4cXAbqfZfiwnwLxMGyGg","url":"https://youtu.be/placeholder2","body_parts":["core"],"use_cases":["rehab"],"entities":[{"name":"transverse abdominis","type":"MUSCLE"}]},
+  {"video_id":"placeholder3","title":"Full Body Strength Fundamentals","channel_id":"UCru8Ef3TDFaJOOTfAZ52iFA","url":"https://youtu.be/placeholder3","body_parts":["full-body"],"use_cases":["strength","hypertrophy"],"entities":[{"name":"compound lift","type":"CONCEPT"},{"name":"progressive overload","type":"CONCEPT"}]}
+]
