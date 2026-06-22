@@ -46,8 +46,11 @@ def vector_search(query: str, limit: int = 5) -> list[dict]:
 
 @mcp.tool()
 def cypher_query(query: str) -> list[dict] | str:
-    # Engine-level read_only=True is the real guard; this just gives a clear
-    # message instead of a raw Kuzu error for obviously-mutating queries.
+    # SECURITY MODEL: engine-level read_only=True is the real write guard. This
+    # prefix check just returns a clear message for obviously-mutating queries.
+    # Reads are intentionally unrestricted — this is a local, single-user tool
+    # and the caller is trusted to read the whole graph. Do NOT expose this tool
+    # over a network without adding query-scope restrictions (see S7-mcp-security).
     if not _READ_PREFIX.match(query):
         return "Error: only read queries (MATCH, OPTIONAL MATCH, WITH, UNWIND, RETURN, CALL) are permitted."
     try:
@@ -138,6 +141,44 @@ def papers_for_topic(topic: str) -> list[dict]:
         return papers
     except Exception:
         return []
+
+
+@mcp.tool()
+def exercise_technique(exercise: str, kind: str | None = None, limit: int = 50) -> list[dict]:
+    """Timestamped coaching cues / common mistakes for an exercise.
+
+    kind filters to one of: mistake, cue, setup, tempo, breathing, range-of-motion.
+    Each result includes a youtu.be deep link to the exact moment.
+    """
+    cypher = (
+        "MATCH (e:Entity {name: $name})-[h:HAS_TECHNIQUE]->(t:TechniqueCue) "
+        + ("WHERE t.kind = $kind " if kind else "")
+        + "RETURN t.text AS cue, t.kind AS kind, h.video_id AS video_id, h.start AS start "
+        "ORDER BY h.start"
+    )
+    params: dict = {"name": exercise}
+    if kind:
+        params["kind"] = kind
+    try:
+        _db, conn = _kuzu_conn()
+        result = conn.execute(cypher, params)
+    except Exception as exc:
+        return [{"error": str(exc)}]
+    rows = []
+    while result.has_next():
+        cue, ckind, vid, start = result.get_next()
+        rows.append(
+            {
+                "cue": cue,
+                "kind": ckind,
+                "video_id": vid,
+                "start": int(start or 0),
+                "url": f"https://youtu.be/{vid}?t={int(start or 0)}",
+            }
+        )
+        if len(rows) >= limit:
+            break
+    return rows
 
 
 if __name__ == "__main__":

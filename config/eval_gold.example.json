@@ -1,0 +1,19 @@
+[
+  {
+    "text": "When you do lateral raises, the most common mistake is shrugging your shoulders up toward your ears at the top. Keep your traps relaxed and lead with the elbows. Don't use momentum to swing the dumbbells up. Pause briefly at the top, around shoulder height, then lower under control over about three seconds.",
+    "entities": [
+      {"name": "lateral raises", "type": "Method"},
+      {"name": "dumbbells", "type": "Tool"},
+      {"name": "traps", "type": "Concept"}
+    ],
+    "relations": [
+      {"subject": "lateral raises", "predicate": "targets", "object": "traps"}
+    ],
+    "cues": [
+      {"exercise": "lateral raises", "cue": "don't shrug your shoulders toward your ears at the top", "kind": "mistake"},
+      {"exercise": "lateral raises", "cue": "lead with the elbows", "kind": "cue"},
+      {"exercise": "lateral raises", "cue": "don't use momentum to swing the weight up", "kind": "mistake"},
+      {"exercise": "lateral raises", "cue": "lower under control over about three seconds", "kind": "tempo"}
+    ]
+  }
+]

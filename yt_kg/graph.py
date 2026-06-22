@@ -1,3 +1,4 @@
+import hashlib
 import re
 import time
 
@@ -28,10 +29,12 @@ def _init_graph() -> kuzu.Connection:
         "CREATE NODE TABLE IF NOT EXISTS Video (video_id STRING, title STRING, channel_id STRING, PRIMARY KEY (video_id))",
         "CREATE NODE TABLE IF NOT EXISTS Chunk (chunk_id STRING, video_id STRING, start DOUBLE, end_time DOUBLE, text STRING, PRIMARY KEY (chunk_id))",
         "CREATE NODE TABLE IF NOT EXISTS Paper (doi STRING, title STRING, authors STRING, year INT64, PRIMARY KEY (doi))",
+        "CREATE NODE TABLE IF NOT EXISTS TechniqueCue (cue_id STRING, text STRING, kind STRING, PRIMARY KEY (cue_id))",
         "CREATE REL TABLE IF NOT EXISTS MENTIONS (FROM Chunk TO Entity)",
         "CREATE REL TABLE IF NOT EXISTS APPEARS_IN (FROM Entity TO Video)",
         "CREATE REL TABLE IF NOT EXISTS REFERENCES (FROM Chunk TO Paper)",
         "CREATE REL TABLE IF NOT EXISTS RELATED (FROM Entity TO Entity, predicate STRING, evidence STRING, video_id STRING)",
+        "CREATE REL TABLE IF NOT EXISTS HAS_TECHNIQUE (FROM Entity TO TechniqueCue, video_id STRING, chunk_id STRING, start DOUBLE)",
     ]
 
     for stmt in ddl:
@@ -63,10 +66,22 @@ def load_video(video_id: str) -> None:
             "SELECT alias, type, canonical_id FROM entity_aliases"
         ).fetchall()
         alias_map = {(r["alias"], r["type"]): r["canonical_id"] for r in alias_rows}
-        # ponytail: relations lack type info, so resolve by name only; first type wins
-        name_to_canonical = {}
-        for (alias, _), cid in alias_map.items():
+        # ponytail FIX: relations/cues lack type info from the LLM. Prefer a
+        # type-aware lookup when a type hint is available; fall back to name-only
+        # (first type wins) only when the hinted type has no match. This stops
+        # "press" (Method) silently linking to "press" (Tool).
+        name_to_canonical: dict[str, str] = {}
+        name_type_to_canonical: dict[tuple[str, str], str] = {}
+        for (alias, atype), cid in alias_map.items():
+            name_type_to_canonical[(alias, atype)] = cid
             name_to_canonical.setdefault(alias, cid)
+
+        def resolve_name(name: str, type_hint: str | None = None) -> str | None:
+            if type_hint is not None:
+                cid = name_type_to_canonical.get((name, type_hint))
+                if cid is not None:
+                    return cid
+            return name_to_canonical.get(name)
 
         entity_rows = sql_conn.execute("SELECT * FROM entities").fetchall()
         entities_by_id = {r["canonical_id"]: dict(r) for r in entity_rows}
@@ -159,8 +174,8 @@ def load_video(video_id: str) -> None:
                 predicate = relation.get("predicate", "")
                 evidence = relation.get("evidence", "")
 
-                subj_id = name_to_canonical.get(subj_name)
-                obj_id = name_to_canonical.get(obj_name)
+                subj_id = resolve_name(subj_name)
+                obj_id = resolve_name(obj_name)
                 if subj_id is None or obj_id is None:
                     continue
 
@@ -175,6 +190,48 @@ def load_video(video_id: str) -> None:
                             "pred": predicate,
                             "evidence": evidence,
                             "vid": video_id,
+                        },
+                    )
+                except Exception:
+                    pass
+
+            for cue in extraction.get("cues", []):
+                exercise_name = cue.get("exercise", "")
+                cue_text = (cue.get("cue", "") or "").strip()
+                kind = cue.get("kind", "cue") or "cue"
+                if not exercise_name or not cue_text:
+                    continue
+
+                # Exercises are Method-typed entities; use the type hint.
+                ex_id = resolve_name(exercise_name, "Method") or resolve_name(exercise_name)
+                if ex_id is None:
+                    continue
+
+                # Deterministic id: same cue text on the same exercise+chunk is
+                # one node, so re-running graph is idempotent (MERGE, no dupes).
+                cue_id = hashlib.sha1(
+                    f"{ex_id}|{chunk_id}|{kind}|{cue_text}".encode("utf-8")
+                ).hexdigest()
+
+                try:
+                    kuzu_conn.execute(
+                        "MERGE (t:TechniqueCue {cue_id: $tid}) SET t.text = $text, t.kind = $kind",
+                        {"tid": cue_id, "text": cue_text, "kind": kind},
+                    )
+                except Exception:
+                    pass
+
+                try:
+                    kuzu_conn.execute(
+                        "MATCH (e:Entity {canonical_id: $eid}), (t:TechniqueCue {cue_id: $tid}) "
+                        "MERGE (e)-[h:HAS_TECHNIQUE {chunk_id: $cid}]->(t) "
+                        "SET h.video_id = $vid, h.start = $start",
+                        {
+                            "eid": ex_id,
+                            "tid": cue_id,
+                            "cid": chunk_id,
+                            "vid": video_id,
+                            "start": start,
                         },
                     )
                 except Exception:

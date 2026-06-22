@@ -22,6 +22,8 @@ dependencies = [
     "tqdm",
     "fastapi",
     "uvicorn",
+    "pypdf",
+    "requests",
 ]
 
 [project.optional-dependencies]

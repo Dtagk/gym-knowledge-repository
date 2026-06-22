@@ -13,10 +13,12 @@ def chunk(video: dict) -> list[dict]:
     i = 0
 
     while i < len(segments):
-        # Accumulate segments until ~2400 chars
+        # Accumulate segments until ~2400 chars. Always take at least one
+        # segment so a single >2400-char segment still forms its own chunk
+        # rather than stalling.
         window, length = [], 0
         j = i
-        while j < len(segments) and length < 2400:
+        while j < len(segments) and (not window or length < 2400):
             seg = segments[j]
             window.append(seg)
             length += len(seg.get("text", ""))
@@ -33,16 +35,18 @@ def chunk(video: dict) -> list[dict]:
             "text": " ".join(s.get("text", "") for s in window),
         })
 
-        # ~300 char overlap: step back enough segments to re-cover ~300 chars
+        # ~300 char overlap: step back enough segments to re-cover ~300 chars,
+        # but never back past the window's first segment.
         overlap, back = 0, 0
         for seg in reversed(window):
             seg_len = len(seg.get("text", ""))
-            if overlap + seg_len > 300:
+            if overlap + seg_len > 300 or back >= len(window) - 1:
                 break
             overlap += seg_len
             back += 1
 
-        # Advance at least one segment to avoid infinite loop
-        i = j - max(back, 0) if j - max(back, 0) > i else i + 1
+        # Guarantee forward progress: advance at least one segment past i.
+        next_i = j - back
+        i = next_i if next_i > i else i + 1
 
     return chunks

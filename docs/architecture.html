@@ -269,6 +269,12 @@
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
+        <div class="icon">🎯</div>
+        <div class="label">Promote</div>
+        <div class="sub">score → approved</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
         <div class="icon">⬇️</div>
         <div class="label">Download</div>
         <div class="sub">yt-dlp → .m4a</div>
@@ -326,6 +332,12 @@
         <div class="icon">🧠</div>
         <div class="label">Synthesize</div>
         <div class="sub">RAG → cards</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">📚</div>
+        <div class="label">Enrich</div>
+        <div class="sub">papers → graph</div>
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
@@ -446,7 +458,7 @@
             <div class="card-lib">kuzu — graph database</div>
           </div>
         </div>
-        <div class="card-desc">Embedded property graph database with Cypher query language. Stores entities, relations (RELATED edges with evidence + video_id provenance), chunk-entity links, and paper nodes.</div>
+        <div class="card-desc">Embedded property graph database with Cypher query language. Stores entities, relations (RELATED edges with evidence + video_id provenance), chunk-entity links, paper nodes, technique cues, and research concepts — connecting the coaching layer to the research layer.</div>
         <div class="card-row">
           <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Embedded (no server process), full Cypher support (multi-hop traversals), columnar storage for fast aggregations, and actively maintained with Python bindings. Ideal for local knowledge graphs.</span></div>
           <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Neo4j (server required, license cost), NetworkX (in-memory, no persistence), TigerGraph (cloud/enterprise), RDFLib (SPARQL, not Cypher).</span></div>
@@ -540,8 +552,8 @@
         <tr>
           <td class="bright">Knowledge graph</td>
           <td class="mono">data/graph.kuzu</td>
-          <td>Entity, Video, Chunk, Paper nodes; RELATED, MENTIONS, APPEARS_IN, REFERENCES edges</td>
-          <td>Embedded Cypher database. Multi-hop traversals (Entity→RELATED→Entity) without server overhead.</td>
+          <td>Entity, Video, Chunk, Paper, TechniqueCue, Concept nodes; RELATED, MENTIONS, APPEARS_IN, REFERENCES, HAS_TECHNIQUE, DISCUSSES, ABOUT, CITES edges</td>
+          <td>Embedded Cypher database. Multi-hop traversals (Entity→RELATED→Entity, Paper→DISCUSSES→Entity) without server overhead. Powers the graph explorer page.</td>
         </tr>
         <tr>
           <td class="bright">Audio (transient)</td>
@@ -558,14 +570,14 @@
         <tr>
           <td class="bright">Papers (PDFs)</td>
           <td class="mono">data/papers/*.pdf</td>
-          <td>Open-access PDFs for resolved citations with oa_url</td>
-          <td>Local copy for future full-text extraction. Idempotent: skips download if file exists.</td>
+          <td>Open-access PDFs for resolved citations with oa_url; text mined into LanceDB (source='paper') and linked to entities via the enrich stage</td>
+          <td>Local copy, full-text extracted and embedded. Idempotent: skips download if file exists; enrichment tracked in enriched_papers table.</td>
         </tr>
         <tr>
           <td class="bright">Browser data</td>
           <td class="mono">docs/data/</td>
-          <td>videos.json — classified video list; entities.json — entity hub map (name, type, video_ids, related, use_case_counts); synthesis.json — pre-generated knowledge cards; meta.json — export timestamp + counts</td>
-          <td>Static JSON exported at CI time. GitHub Pages serves them directly — no server needed at browse time. entities.json and synthesis.json power the entity hub panel and knowledge cards without runtime queries.</td>
+          <td>videos.json — classified video list; entities.json — entity hub map; synthesis.json + synthesis.html — pre-generated knowledge cards; graph.json — full node/edge dump for the graph explorer; meta.json — export timestamp + counts</td>
+          <td>Static JSON exported at CI time. GitHub Pages serves them directly — no server needed at browse time. graph.json powers the dual-view explorer (force graph + node browser); D3 is vendored locally under docs/vendor/.</td>
         </tr>
       </tbody>
     </table>

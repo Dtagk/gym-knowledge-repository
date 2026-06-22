@@ -135,6 +135,7 @@ async def search(q: str, limit: int = 10):
 class AskRequest(BaseModel):
     query: str
     limit: int = 5
+    graph_expand: bool = True  # pull in chunks via graph neighbors, not just ANN
 
 
 @app.post("/ask")
@@ -176,6 +177,39 @@ async def ask(req: AskRequest):
                 )
         except Exception:
             pass
+
+    # 3b. Graph-guided recall (graph-native retrieval): the enrichment above
+    # surfaced RELATED neighbor entities. Find additional chunks that MENTION
+    # those neighbors — videos vector search alone may have ranked just below
+    # the cutoff but that the graph says are topically connected. These are
+    # appended (deduped) so the LLM sees a graph-expanded context, not only the
+    # ANN top-k.
+    seen_chunk_ids = {r["chunk_id"] for r in lance_rows}
+    if req.graph_expand and entities_by_id:
+        neighbor_names = {
+            rel["name"]
+            for e in entities_by_id.values()
+            for rel in e["related"]
+            if rel.get("name")
+        }
+        # cap fan-out so a hub entity can't flood the context
+        for name in list(neighbor_names)[:10]:
+            try:
+                res = kuzu_conn.execute(
+                    "MATCH (e:Entity {name: $name})<-[:MENTIONS]-(c:Chunk) "
+                    "RETURN c.chunk_id, c.video_id, c.start, c.text LIMIT 3",
+                    {"name": name},
+                )
+            except Exception:
+                continue
+            while res.has_next():
+                cid, vid, start, text = res.get_next()
+                if cid in seen_chunk_ids:
+                    continue
+                seen_chunk_ids.add(cid)
+                lance_rows.append(
+                    {"chunk_id": cid, "video_id": vid, "start": start or 0.0, "text": text or ""}
+                )
 
     # 4. Build Ollama prompt
     chunk_excerpts = "\n\n".join(
@@ -248,3 +282,124 @@ async def ask(req: AskRequest):
     ]
 
     return {"answer": answer, "sources": sources, "entities": entities_out}
+
+
+# ---------------------------------------------------------------------------
+# /technique — timestamped coaching cues for an exercise
+# ---------------------------------------------------------------------------
+
+@app.get("/technique")
+async def technique(exercise: str, kind: str | None = None, limit: int = 50):
+    """Return technique cues for an exercise, each with a timestamped deep link.
+
+    `exercise` is resolved through the alias table so 'lat raise', 'side raise',
+    etc. all map to the canonical entity. `kind` optionally filters to one of:
+    mistake, cue, setup, tempo, breathing, range-of-motion.
+    """
+    exercise = exercise.strip()
+    if not exercise:
+        return []
+
+    # Resolve the search term to canonical entity name(s) via the alias table.
+    sql_conn = init_db()
+    alias_rows = sql_conn.execute(
+        "SELECT e.name FROM entity_aliases a "
+        "JOIN entities e ON e.canonical_id = a.canonical_id "
+        "WHERE LOWER(a.alias) = LOWER(?) AND a.type = 'Method'",
+        (exercise,),
+    ).fetchall()
+    canonical_names = {r["name"] for r in alias_rows} or {exercise}
+
+    kuzu_conn = kuzu.Connection(_get_kuzu())
+    results: list[dict] = []
+    for name in canonical_names:
+        cypher = (
+            "MATCH (e:Entity {name: $name})-[h:HAS_TECHNIQUE]->(t:TechniqueCue) "
+            + ("WHERE t.kind = $kind " if kind else "")
+            + "RETURN t.text, t.kind, h.video_id, h.start ORDER BY h.start"
+        )
+        params = {"name": name}
+        if kind:
+            params["kind"] = kind
+        try:
+            res = kuzu_conn.execute(cypher, params)
+        except Exception:
+            continue
+        while res.has_next():
+            text, ckind, vid, start = res.get_next()
+            results.append(
+                {
+                    "exercise": name,
+                    "cue": text,
+                    "kind": ckind,
+                    "video_id": vid,
+                    "start": int(start or 0),
+                    "url": f"https://youtu.be/{vid}?t={int(start or 0)}",
+                }
+            )
+
+    # Title lookup + dedup identical cues, keep earliest timestamp.
+    seen: dict[tuple, dict] = {}
+    for r in results:
+        key = (r["cue"], r["video_id"])
+        if key not in seen or r["start"] < seen[key]["start"]:
+            seen[key] = r
+    out = sorted(seen.values(), key=lambda r: (r["video_id"], r["start"]))[:limit]
+    for r in out:
+        row = sql_conn.execute(
+            "SELECT title FROM videos WHERE video_id = ?", (r["video_id"],)
+        ).fetchone()
+        r["title"] = row["title"] if row else r["video_id"]
+    return out
+
+
+# ---------------------------------------------------------------------------
+# /related — pure graph traversals (no LLM, no vector search)
+# ---------------------------------------------------------------------------
+
+@app.get("/related/co-cited")
+async def co_cited(video_id: str, limit: int = 10):
+    """Videos that REFERENCE at least one paper in common with the given video."""
+    conn = kuzu.Connection(_get_kuzu())
+    try:
+        res = conn.execute(
+            "MATCH (c1:Chunk {video_id: $vid})-[:REFERENCES]->(p:Paper)<-[:REFERENCES]-(c2:Chunk) "
+            "WHERE c2.video_id <> $vid "
+            "RETURN c2.video_id AS vid, count(DISTINCT p.doi) AS shared "
+            "ORDER BY shared DESC LIMIT $lim",
+            {"vid": video_id, "lim": limit},
+        )
+    except Exception as exc:
+        return JSONResponse(status_code=500, content={"error": str(exc)})
+    sql_conn = init_db()
+    out = []
+    while res.has_next():
+        vid, shared = res.get_next()
+        row = sql_conn.execute("SELECT title FROM videos WHERE video_id = ?", (vid,)).fetchone()
+        out.append({
+            "video_id": vid,
+            "title": row["title"] if row else vid,
+            "shared_papers": int(shared),
+            "url": f"https://youtu.be/{vid}",
+        })
+    return out
+
+
+@app.get("/related/exercises")
+async def related_exercises(entity: str, limit: int = 15):
+    """Entities connected to the given one via RELATED (either direction)."""
+    conn = kuzu.Connection(_get_kuzu())
+    try:
+        res = conn.execute(
+            "MATCH (e:Entity {name: $name})-[r:RELATED]-(e2:Entity) "
+            "RETURN DISTINCT e2.name AS name, e2.entity_type AS type, r.predicate AS predicate "
+            "LIMIT $lim",
+            {"name": entity, "lim": limit},
+        )
+    except Exception as exc:
+        return JSONResponse(status_code=500, content={"error": str(exc)})
+    out = []
+    while res.has_next():
+        name, etype, predicate = res.get_next()
+        out.append({"name": name, "type": etype, "predicate": predicate})
+    return out

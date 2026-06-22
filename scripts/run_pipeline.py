@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 
 from yt_kg.discover import discover
 from yt_kg.filter import filter_videos
+from yt_kg.promote import promote
 from yt_kg.download import download
 from yt_kg.transcribe import transcribe
 from yt_kg.embed import embed
@@ -20,6 +21,7 @@ from yt_kg.graph import graph
 from yt_kg.cite_extract import cite_extract
 from yt_kg.cite_resolve import cite_resolve
 from yt_kg.cite_pdf import cite_pdf_stage
+from yt_kg.enrich_papers import enrich_papers
 from yt_kg.classify import classify
 from yt_kg.export import export
 
@@ -93,6 +95,7 @@ def main() -> None:
     stages = [
         (discover,                        "discover"),
         (filter_videos,                   "filter"),
+        (promote,                         "promote"),
         (lambda: download(workers=w),     "download"),
         (lambda: transcribe(workers=w),   "transcribe"),
         (lambda: embed(workers=w),        "embed"),
@@ -104,6 +107,7 @@ def main() -> None:
         (cite_extract,                    "cite_extract"),
         (cite_resolve,                    "cite_resolve"),
         (lambda: cite_pdf_stage(workers=w), "cite_pdf"),
+        (enrich_papers,                   "enrich_papers"),
     ]
 
     for fn, name in stages:
