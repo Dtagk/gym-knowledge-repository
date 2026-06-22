@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install (lint/test deps only)
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff pytest pydantic kuzu requests numpy
+
+      - name: Ruff
+        # scripts/ contains one-off helpers with pre-existing lint; scope CI to
+        # the library + config + tests, which are kept clean.
+        run: ruff check yt_kg config tests
+
+      - name: Tests
+        # Only the dependency-light unit tests run in CI. Tests that need the
+        # heavy ML stack (sentence-transformers, gliner, ollama) are excluded.
+        run: pytest tests/test_pipeline.py -q

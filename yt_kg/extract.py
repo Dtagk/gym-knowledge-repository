@@ -8,7 +8,7 @@ import lancedb
 from gliner import GLiNER
 from openai import OpenAI
 
-from config.extraction_schema import Entity, Extraction, Relation
+from config.extraction_schema import Entity, Extraction, Relation, TechniqueCue
 from yt_kg.db import init_db, utcnow, record_failure
 
 _LABELS = [
@@ -58,6 +58,20 @@ class _LLMRelation(BaseModel):
 
 class _Relations(BaseModel):
     relations: list[_LLMRelation]
+
+
+_VALID_KINDS = {"mistake", "cue", "setup", "tempo", "breathing", "range-of-motion"}
+
+
+class _LLMCue(BaseModel):
+    exercise: str = ""
+    cue: str = ""
+    kind: str = "cue"
+    evidence: str = ""
+
+
+class _Cues(BaseModel):
+    cues: list[_LLMCue]
 
 
 def _init_extractions_table(conn: sqlite3.Connection) -> None:
@@ -111,7 +125,43 @@ def _extract_chunk(text: str) -> Extraction:
         except Exception as exc:
             print(f"[extract] relations failed: {exc}")
 
-    return Extraction(entities=entities, relations=relations)
+    # Technique cues: LLM pass, gated on ≥1 exercise (Method) entity. Many
+    # technique passages discuss a single movement, so the ≥2 gate used for
+    # relations would miss them.
+    cues: list[TechniqueCue] = []
+    exercise_names = [e.name for e in entities if e.type == "Method"]
+    if exercise_names:
+        prompt = (
+            f"Exercises mentioned in this fitness transcript excerpt: {exercise_names}\n\n"
+            f"{text}\n\n"
+            f"Extract technique coaching points for these exercises. Return JSON with a "
+            f"'cues' array. Each item has: exercise (from the list above), cue (the "
+            f"technique note or common mistake, one sentence), kind (one of: mistake, "
+            f"cue, setup, tempo, breathing, range-of-motion), evidence (exact quote). "
+            f"Only include cues actually stated in the text; return an empty array if none."
+        )
+        try:
+            c = _llm.chat.completions.create(
+                model="qwen2.5-coder:7b",  # ponytail: candidate for base qwen2.5:7b — see eval harness
+                messages=[{"role": "user", "content": prompt}],
+                response_model=_Cues,
+                max_retries=1,
+                timeout=60.0,
+            )
+            cues = [
+                TechniqueCue(
+                    exercise=lc.exercise,
+                    cue=lc.cue,
+                    kind=lc.kind if lc.kind in _VALID_KINDS else "cue",
+                    evidence=lc.evidence,
+                )
+                for lc in c.cues
+                if lc.exercise and lc.cue
+            ]
+        except Exception as exc:
+            print(f"[extract] cues failed: {exc}")
+
+    return Extraction(entities=entities, relations=relations, cues=cues)
 
 
 def extract() -> None:

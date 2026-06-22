@@ -7,7 +7,7 @@ import numpy as np
 import requests
 import yaml
 
-from yt_kg.db import init_db, utcnow
+from yt_kg.db import init_db
 
 logger = logging.getLogger(__name__)
 

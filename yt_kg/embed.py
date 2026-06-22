@@ -19,6 +19,7 @@ SCHEMA = pa.schema([
     ("end", pa.float64()),
     ("text", pa.string()),
     ("vector", pa.list_(pa.float32(), 384)),
+    ("source", pa.string()),  # 'transcript' | 'paper' — set by enrich_papers
 ])
 
 
@@ -55,7 +56,7 @@ def embed(workers: int = 1) -> None:  # ponytail: workers reserved — SentenceT
             ).tolist()
 
             records = [
-                {**c, "vector": v} for c, v in zip(chunks, vectors)
+                {**c, "vector": v, "source": "transcript"} for c, v in zip(chunks, vectors)
             ]
 
             # Delete existing chunks for this video then re-add (upsert by video)

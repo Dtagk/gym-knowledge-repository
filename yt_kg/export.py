@@ -150,6 +150,80 @@ def export() -> None:
         f.write(json.dumps(meta, indent=2, ensure_ascii=False))
 
     _export_entities(videos)
+    _export_graph()
+
+
+def _export_graph() -> None:
+    """Dump the whole KG as nodes + links JSON for the graph explorer page.
+
+    Node types: Entity, Paper, Concept, TechniqueCue, Video.
+    Edge types: RELATED, DISCUSSES, ABOUT, CITES, HAS_TECHNIQUE, REFERENCES, APPEARS_IN.
+    Kept compact (ids + minimal labels) so the static page loads fast.
+    """
+    try:
+        db = kuzu.Database(_KUZU_PATH, read_only=True)
+        conn = kuzu.Connection(db)
+    except Exception as exc:
+        print(f"[export] WARNING: graph export skipped -- {exc}")
+        return
+
+    nodes: dict[str, dict] = {}
+    links: list[dict] = []
+
+    def add_node(node_id: str, label: str, ntype: str) -> None:
+        if node_id and node_id not in nodes:
+            nodes[node_id] = {"id": node_id, "label": label or node_id, "type": ntype}
+
+    # --- nodes ---
+    node_queries = [
+        ("MATCH (e:Entity) RETURN e.canonical_id, e.name", "Entity"),
+        ("MATCH (p:Paper) RETURN p.doi, p.title", "Paper"),
+        ("MATCH (c:Concept) RETURN c.concept_id, c.name", "Concept"),
+        ("MATCH (t:TechniqueCue) RETURN t.cue_id, t.text", "TechniqueCue"),
+    ]
+    for q, ntype in node_queries:
+        try:
+            r = conn.execute(q)
+        except Exception:
+            continue
+        while r.has_next():
+            node_id, label = r.get_next()
+            if ntype == "Paper" and label:
+                label = label[:60]
+            add_node(node_id, label, ntype)
+
+    # --- edges ---
+    def add_edges(query: str, etype: str, resolve_src=None, resolve_dst=None) -> None:
+        try:
+            r = conn.execute(query)
+        except Exception:
+            return
+        while r.has_next():
+            s, d = r.get_next()
+            s = resolve_src(s) if resolve_src else s
+            d = resolve_dst(d) if resolve_dst else d
+            if s in nodes and d in nodes:
+                links.append({"source": s, "target": d, "type": etype})
+
+    add_edges("MATCH (a:Entity)-[:RELATED]->(b:Entity) RETURN a.canonical_id, b.canonical_id", "RELATED")
+    add_edges("MATCH (p:Paper)-[:DISCUSSES]->(e:Entity) RETURN p.doi, e.canonical_id", "DISCUSSES")
+    add_edges("MATCH (p:Paper)-[:ABOUT]->(c:Concept) RETURN p.doi, c.concept_id", "ABOUT")
+    add_edges("MATCH (a:Paper)-[:CITES]->(b:Paper) RETURN a.doi, b.doi", "CITES")
+    add_edges("MATCH (e:Entity)-[:HAS_TECHNIQUE]->(t:TechniqueCue) RETURN e.canonical_id, t.cue_id", "HAS_TECHNIQUE")
+
+    graph = {
+        "nodes": list(nodes.values()),
+        "links": links,
+        "counts": {
+            "nodes": len(nodes),
+            "links": len(links),
+            "by_type": dict(Counter(n["type"] for n in nodes.values())),
+        },
+    }
+    os.makedirs(_DOCS_DATA_DIR, exist_ok=True)
+    with open(os.path.join(_DOCS_DATA_DIR, "graph.json"), "w", encoding="utf-8") as f:
+        f.write(json.dumps(graph, ensure_ascii=False))
+    print(f"[export] graph.json: {len(nodes)} nodes, {len(links)} links")
 
 
 if __name__ == "__main__":
