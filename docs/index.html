@@ -426,24 +426,36 @@
             <!-- Right leg -->
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Shoulders (anterior deltoids) -->
-            <path class="zone" data-part="shoulder" d="M20,38 Q11,46 12,68 L20,70 Q24,56 28,48 Q36,44 50,42 Q34,42 20,38 Z"/>
-            <path class="zone" data-part="shoulder" d="M80,38 Q89,46 88,68 L80,70 Q76,56 72,48 Q64,44 50,42 Q66,42 80,38 Z"/>
-            <!-- Chest (pec major — two fan shapes meeting at sternum) -->
-            <path class="zone" data-part="chest" d="M50,50 L28,60 Q24,74 28,88 Q38,92 50,90 Z"/>
-            <path class="zone" data-part="chest" d="M50,50 L72,60 Q76,74 72,88 Q62,92 50,90 Z"/>
-            <!-- Core (abs + obliques) -->
-            <path class="zone" data-part="core" d="M28,88 Q50,93 72,88 L70,132 Q50,135 30,132 Z"/>
-            <!-- Abs detail: midline + two inscriptions -->
-            <line class="muscle-line" x1="50" y1="91" x2="50" y2="132"/>
-            <line class="muscle-line" x1="30" y1="105" x2="70" y2="105"/>
-            <line class="muscle-line" x1="31" y1="119" x2="69" y2="119"/>
-            <!-- Arms (biceps front) -->
-            <path class="zone" data-part="arms" d="M12,68 Q7,86 9,109 Q10,117 14,122 L20,120 L20,70 Z"/>
-            <path class="zone" data-part="arms" d="M88,68 Q93,86 91,109 Q90,117 86,122 L80,120 L80,70 Z"/>
-            <!-- Legs (quads) -->
-            <path class="zone" data-part="legs" d="M38,140 L24,142 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,164 40,156 Z"/>
-            <path class="zone" data-part="legs" d="M62,140 L76,142 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,164 60,156 Z"/>
+            <!-- Left deltoid (anterior) -->
+            <path class="zone" data-part="shoulder" d="M21,38 Q11,47 12,69 L20,71 Q25,58 29,49 Q36,44 50,42 Q34,42 21,38 Z"/>
+            <!-- Right deltoid (anterior) -->
+            <path class="zone" data-part="shoulder" d="M79,38 Q89,47 88,69 L80,71 Q75,58 71,49 Q64,44 50,42 Q66,42 79,38 Z"/>
+
+            <!-- Left pec (fan from sternum to outer chest) -->
+            <path class="zone" data-part="chest" d="M50,49 Q40,51 30,58 Q22,67 25,86 Q30,92 50,91 Z"/>
+            <!-- Right pec -->
+            <path class="zone" data-part="chest" d="M50,49 Q60,51 70,58 Q78,67 75,86 Q70,92 50,91 Z"/>
+
+            <!-- Abs: 6 individual cells (3 pairs) — clearly anatomical -->
+            <ellipse class="zone" data-part="core" cx="42" cy="97"  rx="9" ry="5"/>
+            <ellipse class="zone" data-part="core" cx="58" cy="97"  rx="9" ry="5"/>
+            <ellipse class="zone" data-part="core" cx="41" cy="110" rx="8" ry="5"/>
+            <ellipse class="zone" data-part="core" cx="59" cy="110" rx="8" ry="5"/>
+            <ellipse class="zone" data-part="core" cx="41" cy="122" rx="7" ry="5"/>
+            <ellipse class="zone" data-part="core" cx="59" cy="122" rx="7" ry="5"/>
+            <!-- Obliques (side strips) -->
+            <path class="zone" data-part="core" d="M28,91 Q32,106 32,124 Q32,132 35,138 L39,138 Q37,131 37,123 Q37,106 33,91 Z"/>
+            <path class="zone" data-part="core" d="M72,91 Q68,106 68,124 Q68,132 65,138 L61,138 Q63,131 63,123 Q63,106 67,91 Z"/>
+
+            <!-- Left arm (bicep front) -->
+            <path class="zone" data-part="arms" d="M12,69 Q7,86 9,109 Q10,117 14,122 L20,120 L20,71 Z"/>
+            <!-- Right arm (bicep front) -->
+            <path class="zone" data-part="arms" d="M88,69 Q93,86 91,109 Q90,117 86,122 L80,120 L80,71 Z"/>
+
+            <!-- Left leg (quads) -->
+            <path class="zone" data-part="legs" d="M38,140 L24,142 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,165 40,156 Z"/>
+            <!-- Right leg (quads) -->
+            <path class="zone" data-part="legs" d="M62,140 L76,142 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,165 60,156 Z"/>
           </svg>
         </div>
 
@@ -461,27 +473,32 @@
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
             <!-- Rear shoulders (posterior deltoids) -->
-            <path class="zone" data-part="shoulder" d="M20,38 Q11,46 12,68 L20,70 Q24,56 28,48 Q36,44 50,42 Q34,42 20,38 Z"/>
-            <path class="zone" data-part="shoulder" d="M80,38 Q89,46 88,68 L80,70 Q76,56 72,48 Q64,44 50,42 Q66,42 80,38 Z"/>
-            <!-- Back: trapezius (upper V shape) -->
-            <path class="zone" data-part="back" d="M28,50 Q50,48 72,50 L65,90 Q50,96 35,90 Z"/>
-            <!-- Back: left lat (wing shape) -->
-            <path class="zone" data-part="back" d="M28,88 L35,92 Q37,114 36,132 L28,132 Z"/>
-            <!-- Back: right lat -->
-            <path class="zone" data-part="back" d="M72,88 L65,92 Q63,114 64,132 L72,132 Z"/>
-            <!-- Back: middle/lower back (erectors) -->
-            <path class="zone" data-part="back" d="M35,92 Q50,98 65,92 L64,132 Q50,135 36,132 Z"/>
-            <!-- Erector detail line (spine) -->
-            <line class="muscle-line" x1="50" y1="96" x2="50" y2="132"/>
-            <!-- Arms (triceps back) -->
-            <path class="zone" data-part="arms" d="M12,68 Q7,86 9,109 Q10,117 14,122 L20,120 L20,70 Z"/>
-            <path class="zone" data-part="arms" d="M88,68 Q93,86 91,109 Q90,117 86,122 L80,120 L80,70 Z"/>
-            <!-- Legs back (glutes + hamstrings — start at y=130 to include glute area) -->
-            <path class="zone" data-part="legs" d="M38,132 L24,134 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,164 40,155 Z"/>
-            <path class="zone" data-part="legs" d="M62,132 L76,134 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,164 60,155 Z"/>
-            <!-- Glute crease detail lines -->
-            <line class="muscle-line" x1="24" y1="152" x2="40" y2="155"/>
-            <line class="muscle-line" x1="76" y1="152" x2="60" y2="155"/>
+            <path class="zone" data-part="shoulder" d="M21,38 Q11,47 12,69 L20,71 Q25,58 29,49 Q36,44 50,42 Q34,42 21,38 Z"/>
+            <path class="zone" data-part="shoulder" d="M79,38 Q89,47 88,69 L80,71 Q75,58 71,49 Q64,44 50,42 Q66,42 79,38 Z"/>
+
+            <!-- Trapezius (upper-back V from neck base to shoulder blades) -->
+            <path class="zone" data-part="back" d="M28,50 Q50,46 72,50 L65,90 Q50,96 35,90 Z"/>
+            <!-- Left lat wing (outer back, armpit to waist) -->
+            <path class="zone" data-part="back" d="M20,70 Q16,92 18,112 Q20,126 26,132 L36,132 Q36,110 35,90 Z"/>
+            <!-- Right lat wing -->
+            <path class="zone" data-part="back" d="M80,70 Q84,92 82,112 Q80,126 74,132 L64,132 Q64,110 65,90 Z"/>
+            <!-- Middle back / erectors -->
+            <path class="zone" data-part="back" d="M35,90 Q50,96 65,90 L64,132 Q50,136 36,132 Z"/>
+            <!-- Spine line -->
+            <line class="muscle-line" x1="50" y1="94" x2="50" y2="132"/>
+
+            <!-- Left arm (tricep back) -->
+            <path class="zone" data-part="arms" d="M12,69 Q7,86 9,109 Q10,117 14,122 L20,120 L20,71 Z"/>
+            <!-- Right arm (tricep back) -->
+            <path class="zone" data-part="arms" d="M88,69 Q93,86 91,109 Q90,117 86,122 L80,120 L80,71 Z"/>
+
+            <!-- Left leg (glute + hamstring — starts at y=132 to cover glutes) -->
+            <path class="zone" data-part="legs" d="M38,132 L24,135 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,165 40,155 Z"/>
+            <!-- Right leg (glute + hamstring) -->
+            <path class="zone" data-part="legs" d="M62,132 L76,135 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,165 60,155 Z"/>
+            <!-- Glute crease lines -->
+            <line class="muscle-line" x1="24" y1="150" x2="40" y2="154"/>
+            <line class="muscle-line" x1="76" y1="150" x2="60" y2="154"/>
           </svg>
         </div>
 
