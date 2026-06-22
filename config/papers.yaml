@@ -1,0 +1,44 @@
+# Proactive paper discovery queries.
+# sources: openalex | pubmed | semantic_scholar  (any combination)
+# Set include_graph_entities: true to also auto-search top entity names from the KG.
+include_graph_entities: true
+entity_limit: 50        # how many KG entities to pull
+entity_results: 5       # results per entity query
+
+paper_searches:
+  - query: "resistance training hypertrophy skeletal muscle"
+    sources: [openalex, pubmed]
+    limit: 20
+  - query: "training volume dose response muscle hypertrophy"
+    sources: [openalex, pubmed, semantic_scholar]
+    limit: 20
+  - query: "progressive overload strength training programming"
+    sources: [openalex, pubmed]
+    limit: 15
+  - query: "EMG electromyography muscle activation exercise"
+    sources: [openalex, semantic_scholar]
+    limit: 15
+  - query: "blood flow restriction training low load hypertrophy"
+    sources: [openalex, pubmed]
+    limit: 15
+  - query: "protein synthesis muscle protein turnover exercise"
+    sources: [openalex, pubmed]
+    limit: 15
+  - query: "shoulder mobility rotator cuff rehabilitation"
+    sources: [openalex, pubmed]
+    limit: 15
+  - query: "bench press biomechanics shoulder health technique"
+    sources: [openalex, pubmed]
+    limit: 10
+  - query: "ankle dorsiflexion mobility squat biomechanics"
+    sources: [openalex, pubmed]
+    limit: 10
+  - query: "deload recovery supercompensation periodization"
+    sources: [openalex]
+    limit: 10
+  - query: "mind muscle connection neuromuscular activation"
+    sources: [openalex, semantic_scholar]
+    limit: 10
+  - query: "hip hinge Romanian deadlift posterior chain"
+    sources: [openalex, pubmed]
+    limit: 10

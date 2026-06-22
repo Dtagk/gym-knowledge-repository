@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papers — Gym Knowledge Base</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #1a1d27;
+      --surface2:  #21253a;
+      --border:    #2e334d;
+      --accent:    #4f8ef7;
+      --text:      #e2e5f0;
+      --muted:     #7b82a0;
+      --radius:    10px;
+
+      --c-openalex:        #4f8ef7;
+      --c-pubmed:          #f7874f;
+      --c-semantic_scholar:#34c0a8;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────────── */
+    header {
+      padding: 0.85rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
+    #paper-count { font-size: 0.8rem; color: var(--muted); }
+    .back-link {
+      margin-left: auto;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* ── Toolbar ─────────────────────────────────────────────────────────────── */
+    #toolbar {
+      padding: 0.9rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    #search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.42rem 0.7rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+    }
+    #search-input:focus { border-color: var(--accent); }
+    #search-input::placeholder { color: var(--muted); }
+
+    .source-filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+    .src-btn {
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .src-btn[data-src="openalex"].active   { border-color: var(--c-openalex);        color: var(--c-openalex);        background: #0d1e3a; }
+    .src-btn[data-src="pubmed"].active     { border-color: var(--c-pubmed);           color: var(--c-pubmed);           background: #2e1a0d; }
+    .src-btn[data-src="semantic_scholar"].active { border-color: var(--c-semantic_scholar); color: var(--c-semantic_scholar); background: #0d2926; }
+
+    #sort-select {
+      padding: 0.28rem 0.55rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.78rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* ── Grid ────────────────────────────────────────────────────────────────── */
+    #grid {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 0.9rem;
+      align-content: start;
+    }
+
+    /* ── Card ────────────────────────────────────────────────────────────────── */
+    .paper-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: border-color 0.12s;
+    }
+    .paper-card:hover { border-color: #4a5070; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .paper-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .source-badge {
+      flex-shrink: 0;
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 0.18rem 0.45rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-openalex        { background: #0d1e3a; color: var(--c-openalex); }
+    .badge-pubmed          { background: #2e1a0d; color: var(--c-pubmed); }
+    .badge-semantic_scholar { background: #0d2926; color: var(--c-semantic_scholar); }
+
+    .paper-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .paper-abstract {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+      flex-wrap: wrap;
+    }
+
+    .doi-link, .pdf-link {
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .doi-link:hover, .pdf-link:hover { text-decoration: underline; }
+    .pdf-link { color: var(--c-semantic_scholar); }
+
+    /* ── Empty state ─────────────────────────────────────────────────────────── */
+    #empty {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Papers</h1>
+  <span id="paper-count"></span>
+  <a class="back-link" href="index.html">← Back to videos</a>
+</header>
+
+<div id="toolbar">
+  <input id="search-input" type="search" placeholder="Search title, authors, abstract…">
+  <div class="source-filters">
+    <button class="src-btn" data-src="openalex">OpenAlex</button>
+    <button class="src-btn" data-src="pubmed">PubMed</button>
+    <button class="src-btn" data-src="semantic_scholar">Semantic Scholar</button>
+  </div>
+  <select id="sort-select">
+    <option value="year-desc">Newest first</option>
+    <option value="year-asc">Oldest first</option>
+    <option value="title-asc">Title A–Z</option>
+  </select>
+</div>
+
+<div id="grid">
+  <div id="empty">No papers match your filters.</div>
+</div>
+
+<script>
+  let allPapers = [];
+  let activeSources = new Set();
+  let searchQuery = '';
+  let sortKey = 'year-desc';
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const countEl = document.getElementById('paper-count');
+
+  // ── Load data ───────────────────────────────────────────────────────────────
+  fetch('data/papers.json')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      allPapers = data;
+      countEl.textContent = `${data.length} papers`;
+      render();
+    })
+    .catch(() => {
+      countEl.textContent = '(offline)';
+      empty.style.display = 'block';
+      empty.textContent = 'papers.json not found — run python -m yt_kg.export_papers first.';
+    });
+
+  // ── Render ──────────────────────────────────────────────────────────────────
+  function render() {
+    const q = searchQuery.toLowerCase();
+    let papers = allPapers.filter(p => {
+      if (activeSources.size && !activeSources.has(p.source)) return false;
+      if (q && !`${p.title} ${p.authors} ${p.abstract}`.toLowerCase().includes(q)) return false;
+      return true;
+    });
+
+    papers = papers.slice().sort((a, b) => {
+      if (sortKey === 'year-desc') return (b.year || 0) - (a.year || 0);
+      if (sortKey === 'year-asc')  return (a.year || 0) - (b.year || 0);
+      return (a.title || '').localeCompare(b.title || '');
+    });
+
+    // remove existing cards (keep #empty)
+    Array.from(grid.children).forEach(el => { if (el.id !== 'empty') el.remove(); });
+
+    if (papers.length === 0) {
+      empty.style.display = 'block';
+      empty.textContent = 'No papers match your filters.';
+      return;
+    }
+    empty.style.display = 'none';
+
+    const frag = document.createDocumentFragment();
+    papers.forEach(p => frag.appendChild(makeCard(p)));
+    grid.appendChild(frag);
+  }
+
+  function makeCard(p) {
+    const card = document.createElement('div');
+    card.className = 'paper-card';
+
+    const badgeClass = `source-badge badge-${p.source}`;
+    const srcLabel = { openalex: 'OpenAlex', pubmed: 'PubMed', semantic_scholar: 'S2' }[p.source] || p.source;
+    const meta = [p.authors, p.year].filter(Boolean).join(' · ');
+    const abstract = (p.abstract || '').trim();
+    const doi = p.doi ? `https://doi.org/${p.doi}` : null;
+
+    card.innerHTML = `
+      <div class="card-top">
+        <span class="paper-title">${esc(p.title || 'Untitled')}</span>
+        <span class="${badgeClass}">${esc(srcLabel)}</span>
+      </div>
+      ${meta ? `<div class="paper-meta">${esc(meta)}</div>` : ''}
+      ${abstract ? `<div class="paper-abstract">${esc(abstract)}</div>` : ''}
+      <div class="card-footer">
+        ${doi ? `<a class="doi-link" href="${doi}" target="_blank" rel="noopener">DOI ↗</a>` : ''}
+        ${p.oa_url ? `<a class="pdf-link" href="${esc(p.oa_url)}" target="_blank" rel="noopener">PDF ↗</a>` : ''}
+      </div>
+    `;
+    return card;
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ── Controls ────────────────────────────────────────────────────────────────
+  document.getElementById('search-input').addEventListener('input', function () {
+    searchQuery = this.value;
+    render();
+  });
+
+  document.querySelectorAll('.src-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const src = this.dataset.src;
+      if (activeSources.has(src)) {
+        activeSources.delete(src);
+        this.classList.remove('active');
+      } else {
+        activeSources.add(src);
+        this.classList.add('active');
+      }
+      render();
+    });
+  });
+
+  document.getElementById('sort-select').addEventListener('change', function () {
+    sortKey = this.value;
+    render();
+  });
+</script>
+</body>
+</html>

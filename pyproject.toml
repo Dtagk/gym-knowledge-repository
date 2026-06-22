@@ -24,6 +24,7 @@ dependencies = [
     "uvicorn",
     "pypdf",
     "requests",
+    "defusedxml",
 ]
 
 [project.optional-dependencies]
