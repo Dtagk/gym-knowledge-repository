@@ -149,24 +149,32 @@
       pointer-events: none;
     }
 
-    /* Clickable zones */
+    /* Clickable zones — subtle tint + visible muscle-border stroke at idle */
     .zone {
-      fill: var(--zone-idle);
-      stroke: var(--zone-stroke);
+      fill: rgba(200, 65, 45, 0.10);
+      stroke: rgba(100, 28, 10, 0.55);
       stroke-width: 1;
       cursor: pointer;
-      transition: fill 0.12s, filter 0.12s;
+      transition: fill 0.15s, filter 0.15s, stroke 0.15s;
     }
-    .zone:hover { filter: brightness(1.6); }
+    .zone:hover { fill: rgba(200, 65, 45, 0.28); filter: brightness(1.2); }
     .zone.active { filter: brightness(1); }
 
+    /* Muscle detail lines (abs midline + inscriptions, lat/trap separators) */
+    .muscle-line {
+      fill: none;
+      stroke: rgba(100, 28, 10, 0.35);
+      stroke-width: 0.8;
+      pointer-events: none;
+    }
+
     /* Active colors per body part */
-    [data-part="shoulder"].active { fill: var(--c-shoulder); stroke: var(--c-shoulder); }
-    [data-part="chest"].active    { fill: var(--c-chest);    stroke: var(--c-chest); }
-    [data-part="back"].active     { fill: var(--c-back);     stroke: var(--c-back); }
-    [data-part="core"].active     { fill: var(--c-core);     stroke: var(--c-core); }
-    [data-part="arms"].active     { fill: var(--c-arms);     stroke: var(--c-arms); }
-    [data-part="legs"].active     { fill: var(--c-legs);     stroke: var(--c-legs); }
+    [data-part="shoulder"].active { fill: var(--c-shoulder); stroke: var(--c-shoulder); opacity: 0.82; }
+    [data-part="chest"].active    { fill: var(--c-chest);    stroke: var(--c-chest);    opacity: 0.82; }
+    [data-part="back"].active     { fill: var(--c-back);     stroke: var(--c-back);     opacity: 0.82; }
+    [data-part="core"].active     { fill: var(--c-core);     stroke: var(--c-core);     opacity: 0.82; }
+    [data-part="arms"].active     { fill: var(--c-arms);     stroke: var(--c-arms);     opacity: 0.82; }
+    [data-part="legs"].active     { fill: var(--c-legs);     stroke: var(--c-legs);     opacity: 0.82; }
 
     /* Legend dots */
     .legend {
@@ -418,19 +426,24 @@
             <!-- Right leg -->
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Shoulders (deltoids) -->
-            <path class="zone" data-part="shoulder" d="M20,36 Q14,48 16,70 L24,68 L26,48 Q35,44 50,42 Q35,42 20,36 Z"/>
-            <path class="zone" data-part="shoulder" d="M80,36 Q86,48 84,70 L76,68 L74,48 Q65,44 50,42 Q65,42 80,36 Z"/>
-            <!-- Chest (pecs) -->
-            <path class="zone" data-part="chest" d="M26,48 L74,48 L72,82 L28,82 Z"/>
-            <!-- Core (abs) -->
-            <path class="zone" data-part="core" d="M28,82 L72,82 L70,130 L30,130 Z"/>
-            <!-- Arms -->
-            <path class="zone" data-part="arms" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 L18,108 L16,70 Z"/>
-            <path class="zone" data-part="arms" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 L82,108 L84,70 Z"/>
-            <!-- Legs -->
-            <path class="zone" data-part="legs" d="M38,140 L24,140 L20,185 L22,250 L36,250 L36,185 L40,155 Z"/>
-            <path class="zone" data-part="legs" d="M62,140 L76,140 L80,185 L78,250 L64,250 L64,185 L60,155 Z"/>
+            <!-- Shoulders (anterior deltoids) -->
+            <path class="zone" data-part="shoulder" d="M20,38 Q11,46 12,68 L20,70 Q24,56 28,48 Q36,44 50,42 Q34,42 20,38 Z"/>
+            <path class="zone" data-part="shoulder" d="M80,38 Q89,46 88,68 L80,70 Q76,56 72,48 Q64,44 50,42 Q66,42 80,38 Z"/>
+            <!-- Chest (pec major — two fan shapes meeting at sternum) -->
+            <path class="zone" data-part="chest" d="M50,50 L28,60 Q24,74 28,88 Q38,92 50,90 Z"/>
+            <path class="zone" data-part="chest" d="M50,50 L72,60 Q76,74 72,88 Q62,92 50,90 Z"/>
+            <!-- Core (abs + obliques) -->
+            <path class="zone" data-part="core" d="M28,88 Q50,93 72,88 L70,132 Q50,135 30,132 Z"/>
+            <!-- Abs detail: midline + two inscriptions -->
+            <line class="muscle-line" x1="50" y1="91" x2="50" y2="132"/>
+            <line class="muscle-line" x1="30" y1="105" x2="70" y2="105"/>
+            <line class="muscle-line" x1="31" y1="119" x2="69" y2="119"/>
+            <!-- Arms (biceps front) -->
+            <path class="zone" data-part="arms" d="M12,68 Q7,86 9,109 Q10,117 14,122 L20,120 L20,70 Z"/>
+            <path class="zone" data-part="arms" d="M88,68 Q93,86 91,109 Q90,117 86,122 L80,120 L80,70 Z"/>
+            <!-- Legs (quads) -->
+            <path class="zone" data-part="legs" d="M38,140 L24,142 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,164 40,156 Z"/>
+            <path class="zone" data-part="legs" d="M62,140 L76,142 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,164 60,156 Z"/>
           </svg>
         </div>
 
@@ -447,17 +460,28 @@
             <path class="outline" d="M38,140 L24,140 L20,185 Q19,215 22,250 L36,250 Q35,215 36,185 L40,155 Z"/>
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Rear shoulders (same deltoid region) -->
-            <path class="zone" data-part="shoulder" d="M20,36 Q14,48 16,70 L24,68 L26,48 Q35,44 50,42 Q35,42 20,36 Z"/>
-            <path class="zone" data-part="shoulder" d="M80,36 Q86,48 84,70 L76,68 L74,48 Q65,44 50,42 Q65,42 80,36 Z"/>
-            <!-- Back (traps + lats — full rear torso) -->
-            <path class="zone" data-part="back" d="M26,48 L74,48 L70,130 L30,130 Z"/>
-            <!-- Arms (back view) -->
-            <path class="zone" data-part="arms" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 L18,108 L16,70 Z"/>
-            <path class="zone" data-part="arms" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 L82,108 L84,70 Z"/>
-            <!-- Legs (back view) -->
-            <path class="zone" data-part="legs" d="M38,140 L24,140 L20,185 L22,250 L36,250 L36,185 L40,155 Z"/>
-            <path class="zone" data-part="legs" d="M62,140 L76,140 L80,185 L78,250 L64,250 L64,185 L60,155 Z"/>
+            <!-- Rear shoulders (posterior deltoids) -->
+            <path class="zone" data-part="shoulder" d="M20,38 Q11,46 12,68 L20,70 Q24,56 28,48 Q36,44 50,42 Q34,42 20,38 Z"/>
+            <path class="zone" data-part="shoulder" d="M80,38 Q89,46 88,68 L80,70 Q76,56 72,48 Q64,44 50,42 Q66,42 80,38 Z"/>
+            <!-- Back: trapezius (upper V shape) -->
+            <path class="zone" data-part="back" d="M28,50 Q50,48 72,50 L65,90 Q50,96 35,90 Z"/>
+            <!-- Back: left lat (wing shape) -->
+            <path class="zone" data-part="back" d="M28,88 L35,92 Q37,114 36,132 L28,132 Z"/>
+            <!-- Back: right lat -->
+            <path class="zone" data-part="back" d="M72,88 L65,92 Q63,114 64,132 L72,132 Z"/>
+            <!-- Back: middle/lower back (erectors) -->
+            <path class="zone" data-part="back" d="M35,92 Q50,98 65,92 L64,132 Q50,135 36,132 Z"/>
+            <!-- Erector detail line (spine) -->
+            <line class="muscle-line" x1="50" y1="96" x2="50" y2="132"/>
+            <!-- Arms (triceps back) -->
+            <path class="zone" data-part="arms" d="M12,68 Q7,86 9,109 Q10,117 14,122 L20,120 L20,70 Z"/>
+            <path class="zone" data-part="arms" d="M88,68 Q93,86 91,109 Q90,117 86,122 L80,120 L80,70 Z"/>
+            <!-- Legs back (glutes + hamstrings — start at y=130 to include glute area) -->
+            <path class="zone" data-part="legs" d="M38,132 L24,134 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,164 40,155 Z"/>
+            <path class="zone" data-part="legs" d="M62,132 L76,134 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,164 60,155 Z"/>
+            <!-- Glute crease detail lines -->
+            <line class="muscle-line" x1="24" y1="152" x2="40" y2="155"/>
+            <line class="muscle-line" x1="76" y1="152" x2="60" y2="155"/>
           </svg>
         </div>
 
