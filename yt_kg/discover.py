@@ -97,10 +97,6 @@ def discover() -> None:
     logger.info("Discovery complete")
 
 
-if __name__ == "__main__":
-    discover()
-
-
 def _discover_searches(conn, known_yt_channel_ids: set[str] | None = None) -> None:
     """Seed candidate videos from YouTube search queries (Story 5.1, FR11/FR12).
 
@@ -182,3 +178,7 @@ def _discover_searches(conn, known_yt_channel_ids: set[str] | None = None) -> No
                 inserted += 1
             conn.commit()
             logger.info("Search %r: %d/%d results kept", query, inserted, len(entries))
+
+
+if __name__ == "__main__":
+    discover()
