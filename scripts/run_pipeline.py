@@ -16,6 +16,8 @@ from yt_kg.graph import graph
 from yt_kg.cite_extract import cite_extract
 from yt_kg.cite_resolve import cite_resolve
 from yt_kg.cite_pdf import cite_pdf_stage
+from yt_kg.classify import classify
+from yt_kg.export import export
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -46,6 +48,8 @@ def main() -> None:
         (extract,                         "extract"),
         (resolve,                         "resolve"),
         (graph,                           "graph"),
+        (classify,                        "classify"),
+        (export,                          "export"),
         (cite_extract,                    "cite_extract"),
         (cite_resolve,                    "cite_resolve"),
         (lambda: cite_pdf_stage(workers=w), "cite_pdf"),
