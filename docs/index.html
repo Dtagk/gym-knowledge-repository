@@ -397,11 +397,6 @@
     renderFiltered();
   }
 
-  // Resolve data path relative to the page (works both on GH Pages and locally)
-  const dataUrl = new URL('data/videos.json', document.currentScript
-    ? document.currentScript.src
-    : location.href).href.replace(/\/[^/]+$/, '/data/videos.json');
-
   fetch('data/videos.json')
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
