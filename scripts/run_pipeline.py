@@ -1,5 +1,9 @@
 import argparse
 import logging
+import shutil
+import subprocess
+import time
+import urllib.request
 from pathlib import Path
 
 import lancedb
@@ -22,6 +26,50 @@ from yt_kg.export import export
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+_OLLAMA_URL      = "http://localhost:11434"
+_REQUIRED_MODELS = ["qwen2.5-coder:7b"]
+
+
+def setup_env(skip: bool = False) -> None:
+    """Ensure Docker Desktop + Ollama container + required models are ready."""
+    if skip:
+        return
+    if not shutil.which("docker"):
+        raise RuntimeError("docker not found on PATH — install Docker Desktop.")
+    r = subprocess.run(["docker", "info"], capture_output=True)
+    if r.returncode != 0:
+        raise RuntimeError("Docker daemon is not running — start Docker Desktop.")
+
+    running = subprocess.run(
+        ["docker", "ps", "--filter", "name=ollama", "--format", "{{.Names}}"],
+        capture_output=True, text=True,
+    ).stdout
+    if "ollama" not in running:
+        logger.info("Starting Ollama container via docker compose…")
+        subprocess.run(
+            ["docker", "compose", "up", "-d", "ollama"],
+            check=True, cwd=Path(__file__).resolve().parent.parent,
+        )
+
+    for _ in range(30):
+        try:
+            urllib.request.urlopen(f"{_OLLAMA_URL}/api/tags", timeout=2)
+            break
+        except Exception:
+            time.sleep(2)
+    else:
+        raise RuntimeError("Ollama API not ready — check 'docker logs ollama'.")
+
+    present = subprocess.run(
+        ["docker", "exec", "ollama", "ollama", "list"],
+        capture_output=True, text=True,
+    ).stdout.lower()
+    for model in _REQUIRED_MODELS:
+        if model.split(":")[0] not in present:
+            logger.info("Pulling %s…", model)
+            subprocess.run(["docker", "exec", "ollama", "ollama", "pull", model], check=True)
+    logger.info("Environment ready.")
+
 
 def _run_stage(fn, name: str) -> None:
     try:
@@ -35,9 +83,12 @@ def _run_stage(fn, name: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="YouTube Fitness Knowledge Graph Pipeline")
-    parser.add_argument("--workers", type=int, default=4, help="Parallel workers for I/O stages (default: 4)")
+    parser.add_argument("--workers",    type=int, default=4,    help="Parallel workers for I/O stages (default: 4)")
+    parser.add_argument("--skip-setup", action="store_true",    help="Skip Docker/Ollama environment check")
     args = parser.parse_args()
     w = args.workers
+
+    setup_env(skip=args.skip_setup)
 
     stages = [
         (discover,                        "discover"),

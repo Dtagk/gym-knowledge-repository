@@ -1,7 +1,3977 @@
 [
-  {"video_id":"dT0DLcRBJck","title":"Shoulder Mobility Routine","channel_id":"UCyPYQTT20IgzVw92LDvtClw","url":"https://youtu.be/dT0DLcRBJck","body_parts":["shoulder"],"use_cases":["mobility"],"entities":[{"name":"rotator cuff","type":"MUSCLE"},{"name":"band pull-apart","type":"EXERCISE"}]},
-  {"video_id":"Q0o_6KwvXM8","title":"Fix Your Posture — Upper Back Exercises","channel_id":"UC68TLK0mAEzUyHx5x5k-S1Q","url":"https://youtu.be/Q0o_6KwvXM8","body_parts":["back","shoulder"],"use_cases":["strength","mobility"],"entities":[{"name":"trapezius","type":"MUSCLE"},{"name":"face pull","type":"EXERCISE"}]},
-  {"video_id":"placeholder1","title":"Leg Day Hypertrophy Guide","channel_id":"UCfQgsKhHjSyRLOp9mnffqVg","url":"https://youtu.be/placeholder1","body_parts":["legs"],"use_cases":["hypertrophy","strength"],"entities":[{"name":"quadriceps","type":"MUSCLE"},{"name":"squat","type":"EXERCISE"}]},
-  {"video_id":"placeholder2","title":"Core Rehab After Injury","channel_id":"UCCq4cXAbqfZfiwnwLxMGyGg","url":"https://youtu.be/placeholder2","body_parts":["core"],"use_cases":["rehab"],"entities":[{"name":"transverse abdominis","type":"MUSCLE"}]},
-  {"video_id":"placeholder3","title":"Full Body Strength Fundamentals","channel_id":"UCru8Ef3TDFaJOOTfAZ52iFA","url":"https://youtu.be/placeholder3","body_parts":["full-body"],"use_cases":["strength","hypertrophy"],"entities":[{"name":"compound lift","type":"CONCEPT"},{"name":"progressive overload","type":"CONCEPT"}]}
+  {
+    "video_id": "B6rGDcfyPto",
+    "title": "How To Leg Press For Best Quad Growth | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/B6rGDcfyPto",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "yoga",
+        "type": "Method"
+      },
+      {
+        "name": "Amazon",
+        "type": "Organization"
+      },
+      {
+        "name": "Upper back",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "VXKfH6ciEBI",
+    "title": "Improve Your Lat Pulldown For Growth | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/VXKfH6ciEBI",
+    "body_parts": [
+      "back"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "wrists",
+        "type": "Concept"
+      },
+      {
+        "name": "D-load",
+        "type": "Method"
+      },
+      {
+        "name": "clavicle",
+        "type": "Concept"
+      },
+      {
+        "name": "mesocycle",
+        "type": "Method"
+      },
+      {
+        "name": "Sternum",
+        "type": "Concept"
+      },
+      {
+        "name": "VersaGrips",
+        "type": "Tool"
+      },
+      {
+        "name": "lat pull downs",
+        "type": "Method"
+      },
+      {
+        "name": "target muscle",
+        "type": "Concept"
+      },
+      {
+        "name": "Renaissance Piatization",
+        "type": "Organization"
+      },
+      {
+        "name": "Brian Shaw",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "n5dsI9qQXwY",
+    "title": "Lateral Raise Technique For Huge Delts | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/n5dsI9qQXwY",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "Y_M50iyrd3U",
+    "title": "How To Squat For Most Quad Growth | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/Y_M50iyrd3U",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike Kisletal",
+        "type": "Person"
+      },
+      {
+        "name": "Renaissance Periodization",
+        "type": "Organization"
+      },
+      {
+        "name": "Transformer Bar",
+        "type": "Tool"
+      },
+      {
+        "name": "Kabuki Strength",
+        "type": "Organization"
+      },
+      {
+        "name": "Chris Duffin",
+        "type": "Person"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "adductors",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "5aRHy5ZPjwk",
+    "title": "Maximize Pushups FOR CHEST Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/5aRHy5ZPjwk",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "Renaissance Periodization",
+        "type": "Organization"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "touch and come up",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "Tw0axi-Jlqc",
+    "title": "Maximize Dip Technique FOR TRICEPS Growth | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/Tw0axi-Jlqc",
+    "body_parts": [
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "dips",
+        "type": "Method"
+      },
+      {
+        "name": "cable tricep pushdowns",
+        "type": "Method"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "Renaissance Privatization",
+        "type": "Organization"
+      },
+      {
+        "name": "dip stand",
+        "type": "Tool"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "0f6-uCUKqgA",
+    "title": "Incline Dumbbell Press BETTER | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/0f6-uCUKqgA",
+    "body_parts": [
+      "shoulder",
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "Incline dumbbell presses",
+        "type": "Method"
+      },
+      {
+        "name": "study",
+        "type": "Paper"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "zfAHfyTB_Ao",
+    "title": "Barbell Shrug Technique For Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/zfAHfyTB_Ao",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "chicken dance",
+        "type": "Method"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell shrug",
+        "type": "Method"
+      },
+      {
+        "name": "Tom Hardy",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "Z6R8A5tcrTc",
+    "title": "Make Lunging INSANELY EFFECTIVE For Glute Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/Z6R8A5tcrTc",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "glute",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "front leg",
+        "type": "Concept"
+      },
+      {
+        "name": "back leg",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell",
+        "type": "Tool"
+      },
+      {
+        "name": "tight rope walk",
+        "type": "Method"
+      },
+      {
+        "name": "noodle lunges",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "s5hluoQjtIM",
+    "title": "Optimize Pull-ups For Back Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/s5hluoQjtIM",
+    "body_parts": [
+      "back",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "clavicle",
+        "type": "Concept"
+      },
+      {
+        "name": "Sternum",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Smith Machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Arnold",
+        "type": "Person"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "chin",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "SUdQ1roIWz0",
+    "title": "Get The Most Out Of Chest Machines | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/SUdQ1roIWz0",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "target muscle",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "machine chest press",
+        "type": "Method"
+      },
+      {
+        "name": "Nautilus",
+        "type": "Organization"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Machines",
+        "type": "Tool"
+      },
+      {
+        "name": "PubMed study",
+        "type": "Paper"
+      },
+      {
+        "name": "chess machine",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "7B5Exks1KJE",
+    "title": "Maximize Whole Back Growth On The Barbell Row | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/7B5Exks1KJE",
+    "body_parts": [
+      "back",
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell bent over row",
+        "type": "Method"
+      },
+      {
+        "name": "spinal rector muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "pulling muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "rhomboids",
+        "type": "Concept"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "chest-supported row",
+        "type": "Method"
+      },
+      {
+        "name": "flexion row",
+        "type": "Method"
+      },
+      {
+        "name": "rhomboid mid-trap musculature",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "EQjexKQpGeQ",
+    "title": "How to Target TRICEPS On The Pushup | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/EQjexKQpGeQ",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "GGpArq725ls",
+    "title": "Overhead Pressing Optimized For Muscle Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/GGpArq725ls",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "Crystal",
+        "type": "Person"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder press",
+        "type": "Method"
+      },
+      {
+        "name": "military press",
+        "type": "Method"
+      },
+      {
+        "name": "Jeff Nipper",
+        "type": "Person"
+      },
+      {
+        "name": "YouTube",
+        "type": "Organization"
+      },
+      {
+        "name": "slow eccentric",
+        "type": "Method"
+      },
+      {
+        "name": "Fast eccentric",
+        "type": "Method"
+      },
+      {
+        "name": "sciatic area",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "A0NBCkpYatQ",
+    "title": "Bench Press for Maximum Muscle Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/A0NBCkpYatQ",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "sternal pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      },
+      {
+        "name": "benching",
+        "type": "Method"
+      },
+      {
+        "name": "grip",
+        "type": "Method"
+      },
+      {
+        "name": "guillotine style",
+        "type": "Method"
+      },
+      {
+        "name": "biomechanics",
+        "type": "Method"
+      },
+      {
+        "name": "exercise science",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "tJIFTI9wZOw",
+    "title": "EZ Bar Curl For Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/tJIFTI9wZOw",
+    "body_parts": [
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "Rob",
+        "type": "Person"
+      },
+      {
+        "name": "Rata Sound Spiritization",
+        "type": "Organization"
+      },
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      },
+      {
+        "name": "easy bar",
+        "type": "Tool"
+      },
+      {
+        "name": "Level three",
+        "type": "Method"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      },
+      {
+        "name": "anti-ego juice",
+        "type": "Concept"
+      },
+      {
+        "name": "patented RP product",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "V3h_1IUY-f0",
+    "title": "Master The Controversial Upright Row | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/V3h_1IUY-f0",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "target muscle",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. James Hoffman",
+        "type": "Person"
+      },
+      {
+        "name": "Aaron Thomas",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "I9l9WRZ5SWE",
+    "title": "Good Morning Master Class | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/I9l9WRZ5SWE",
+    "body_parts": [],
+    "use_cases": [
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "good morning exercise",
+        "type": "Method"
+      },
+      {
+        "name": "massive hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "transformer bar",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "8t2a93BjDec",
+    "title": "How to Do SKULLCRUSHERS for BIG Triceps | Targeting The Muscle Series",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/8t2a93BjDec",
+    "body_parts": [],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "grip",
+        "type": "Method"
+      },
+      {
+        "name": "NFTs",
+        "type": "Method"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "nose",
+        "type": "Concept"
+      },
+      {
+        "name": "elbow joints",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "Cv5nS1AH_jE",
+    "title": "Close Grip Bench Pressing For Maximum Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/Cv5nS1AH_jE",
+    "body_parts": [
+      "chest",
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      },
+      {
+        "name": "barbell bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Mike",
+        "type": "Person"
+      },
+      {
+        "name": "close grip bench",
+        "type": "Method"
+      },
+      {
+        "name": "jm press",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "IaJWPqP-Bjo",
+    "title": "Overhead Tricep Extension For Maximum Growth | Targeting The Muscle",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/IaJWPqP-Bjo",
+    "body_parts": [
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "overhead",
+        "type": "Method"
+      },
+      {
+        "name": "easy bar extension",
+        "type": "Method"
+      },
+      {
+        "name": "Wife unit",
+        "type": "Tool"
+      },
+      {
+        "name": "behind  the neck press",
+        "type": "Method"
+      },
+      {
+        "name": "overhead extensions",
+        "type": "Method"
+      },
+      {
+        "name": "press",
+        "type": "Method"
+      },
+      {
+        "name": "eccentric",
+        "type": "Method"
+      },
+      {
+        "name": "long head",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "a4muTr5ZV9Y",
+    "title": "The Cambered Bar Will Change Your Chest Training",
+    "channel_id": "playlist-test",
+    "url": "https://youtu.be/a4muTr5ZV9Y",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "barbell bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Canberr Bar",
+        "type": "Tool"
+      },
+      {
+        "name": "pecks",
+        "type": "Concept"
+      },
+      {
+        "name": "cambered bar bench",
+        "type": "Tool"
+      },
+      {
+        "name": "chest machine",
+        "type": "Tool"
+      },
+      {
+        "name": "hack squats",
+        "type": "Method"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "vcBig73ojpE",
+    "title": "How To Get A Huge Bench Press with Perfect Technique",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/vcBig73ojpE",
+    "body_parts": [
+      "chest",
+      "back",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "pec major",
+        "type": "Concept"
+      },
+      {
+        "name": "sternal",
+        "type": "Concept"
+      },
+      {
+        "name": "upper heads",
+        "type": "Concept"
+      },
+      {
+        "name": "triceps brachii",
+        "type": "Concept"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "elbow extension",
+        "type": "Method"
+      },
+      {
+        "name": "2007 study",
+        "type": "Paper"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "daily undulating periodization",
+        "type": "Method"
+      },
+      {
+        "name": "leg drive",
+        "type": "Method"
+      },
+      {
+        "name": "equipped powerlifting",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "axoeDmW0oAY",
+    "title": "How To Build a Thick Back With Perfect Rowing Technique (Pendlay Row/ Helms Row)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/axoeDmW0oAY",
+    "body_parts": [
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "Pendlay row",
+        "type": "Method"
+      },
+      {
+        "name": "standing barbell row",
+        "type": "Method"
+      },
+      {
+        "name": "Glenn Pendlay",
+        "type": "Person"
+      },
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      },
+      {
+        "name": "mid traps",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike Isretel",
+        "type": "Person"
+      },
+      {
+        "name": "Progressive overload",
+        "type": "Method"
+      },
+      {
+        "name": "hip extension",
+        "type": "Method"
+      },
+      {
+        "name": "best studies",
+        "type": "Paper"
+      },
+      {
+        "name": "Helms Row",
+        "type": "Method"
+      },
+      {
+        "name": "Pendley row",
+        "type": "Method"
+      },
+      {
+        "name": "spinal  erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "aerobic risers",
+        "type": "Tool"
+      },
+      {
+        "name": "true pendulary row",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "i1YgFZB6alI",
+    "title": "How To Build Huge Biceps: Optimal Training Explained",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/i1YgFZB6alI",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      },
+      {
+        "name": "long head",
+        "type": "Concept"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "bicep curl",
+        "type": "Method"
+      },
+      {
+        "name": "barbell curl",
+        "type": "Method"
+      },
+      {
+        "name": "brachialis",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps brachii",
+        "type": "Concept"
+      },
+      {
+        "name": "wrist supination",
+        "type": "Method"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "8-week training study",
+        "type": "Paper"
+      },
+      {
+        "name": "Schoenfeld and colleagues",
+        "type": "Person"
+      },
+      {
+        "name": "short head",
+        "type": "Concept"
+      },
+      {
+        "name": "Bayesian cable curl",
+        "type": "Method"
+      },
+      {
+        "name": "arm blaster",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "popGXI-qs98",
+    "title": "How To Build Huge Triceps with Optimal Training Technique",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/popGXI-qs98",
+    "body_parts": [
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "long head",
+        "type": "Concept"
+      },
+      {
+        "name": "elbow extension",
+        "type": "Method"
+      },
+      {
+        "name": "bicep curl",
+        "type": "Method"
+      },
+      {
+        "name": "skull crusher",
+        "type": "Tool"
+      },
+      {
+        "name": "lat pullovers",
+        "type": "Method"
+      },
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      },
+      {
+        "name": "Other research",
+        "type": "Paper"
+      },
+      {
+        "name": "2017 study",
+        "type": "Paper"
+      },
+      {
+        "name": "Greg Knuckles",
+        "type": "Person"
+      },
+      {
+        "name": "mass research review",
+        "type": "Paper"
+      },
+      {
+        "name": "lats and pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell skull crusher",
+        "type": "Tool"
+      },
+      {
+        "name": "shoulder",
+        "type": "Concept"
+      },
+      {
+        "name": "horizontal pressing",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "Hdc7Mw6BIEE",
+    "title": "The Best Way To Do Pull Ups For A Wide Back (Optimal Training Technique)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/Hdc7Mw6BIEE",
+    "body_parts": [
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "rhomboids",
+        "type": "Concept"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      },
+      {
+        "name": "mid traps",
+        "type": "Concept"
+      },
+      {
+        "name": "brachialis",
+        "type": "Concept"
+      },
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      },
+      {
+        "name": "terus major and minor muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "brachioradialis  muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "lower  traps",
+        "type": "Concept"
+      },
+      {
+        "name": "rectus  abdominis",
+        "type": "Concept"
+      },
+      {
+        "name": "Domen and colleagues",
+        "type": "Paper"
+      },
+      {
+        "name": "chin-ups",
+        "type": "Method"
+      },
+      {
+        "name": "assisted pull-up  machine",
+        "type": "Tool"
+      },
+      {
+        "name": "2016 study",
+        "type": "Paper"
+      },
+      {
+        "name": "Massey University",
+        "type": "Organization"
+      },
+      {
+        "name": "lifting straps",
+        "type": "Tool"
+      },
+      {
+        "name": "cluster sets",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "_RlRDWO2jfg",
+    "title": "Build Bigger Shoulders With Perfect Training Technique (The Overhead Press)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/_RlRDWO2jfg",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "OHP",
+        "type": "Method"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "overhead press",
+        "type": "Method"
+      },
+      {
+        "name": "2013 study",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "bEv6CCg2BC8",
+    "title": "How To Get A Huge Squat With Perfect Technique (Fix Mistakes)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/bEv6CCg2BC8",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "hip extension",
+        "type": "Method"
+      },
+      {
+        "name": "knee extension",
+        "type": "Method"
+      },
+      {
+        "name": "adductor",
+        "type": "Concept"
+      },
+      {
+        "name": "Magnus",
+        "type": "Concept"
+      },
+      {
+        "name": "quadriceps",
+        "type": "Concept"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "upper back",
+        "type": "Concept"
+      },
+      {
+        "name": "big toe",
+        "type": "Concept"
+      },
+      {
+        "name": "hip abductors",
+        "type": "Concept"
+      },
+      {
+        "name": "Foam rolling",
+        "type": "Method"
+      },
+      {
+        "name": "dynamic stretching",
+        "type": "Method"
+      },
+      {
+        "name": "lower back extension",
+        "type": "Method"
+      },
+      {
+        "name": "regulation technique",
+        "type": "Method"
+      },
+      {
+        "name": "hip crease",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "v_ZkxWzYnMc",
+    "title": "How To Build Capped Shoulders: Optimal Training Explained (Side Delts)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/v_ZkxWzYnMc",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "2013 study",
+        "type": "Paper"
+      },
+      {
+        "name": "lateral delt",
+        "type": "Concept"
+      },
+      {
+        "name": "Egyptian cable lateral  raise",
+        "type": "Method"
+      },
+      {
+        "name": "bench press",
+        "type": "Concept"
+      },
+      {
+        "name": "lateral raise",
+        "type": "Concept"
+      },
+      {
+        "name": "internal rotation",
+        "type": "Method"
+      },
+      {
+        "name": "external  rotation",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "xDmFkJxPzeM",
+    "title": "How To Build Great Glutes with Perfect Hip Thrust Technique (Fix Mistakes!)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/xDmFkJxPzeM",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "glute bridge",
+        "type": "Method"
+      },
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      },
+      {
+        "name": "butt cheeks",
+        "type": "Concept"
+      },
+      {
+        "name": "intensity technique",
+        "type": "Method"
+      },
+      {
+        "name": "hip  thrust",
+        "type": "Method"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "Katie Sonnier",
+        "type": "Person"
+      },
+      {
+        "name": "decline bench",
+        "type": "Tool"
+      },
+      {
+        "name": "leg extension machine",
+        "type": "Tool"
+      },
+      {
+        "name": "hip abduction",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "XsrD5y8EIKU",
+    "title": "The Most Effective Way to Deadlift for Muscle and Strength (Sumo Technique Explained)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/XsrD5y8EIKU",
+    "body_parts": [
+      "back",
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "sumo deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "Progressive overload",
+        "type": "Method"
+      },
+      {
+        "name": "spinal  erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      },
+      {
+        "name": "knee extension",
+        "type": "Method"
+      },
+      {
+        "name": "quadriceps",
+        "type": "Concept"
+      },
+      {
+        "name": "plates",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Concept"
+      },
+      {
+        "name": "powerlifting coaches",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "VL5Ab0T07e4",
+    "title": "Build A Bigger Deadlift With Perfect Technique (Conventional Form)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/VL5Ab0T07e4",
+    "body_parts": [
+      "back",
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "sumo deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "lats and traps",
+        "type": "Concept"
+      },
+      {
+        "name": "hip extension",
+        "type": "Concept"
+      },
+      {
+        "name": "coaches",
+        "type": "Person"
+      },
+      {
+        "name": "Sumo",
+        "type": "Method"
+      },
+      {
+        "name": "lockout",
+        "type": "Method"
+      },
+      {
+        "name": "the plates",
+        "type": "Tool"
+      },
+      {
+        "name": "stiff leg deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "plates",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "wr-iSaXPr5s",
+    "title": "The 4 Most Common Deadlift Errors (& How To Fix Them)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/wr-iSaXPr5s",
+    "body_parts": [
+      "legs",
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "sumo deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "hip  thrust",
+        "type": "Method"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Sumo",
+        "type": "Method"
+      },
+      {
+        "name": "stiff leg deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Romanian deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "your lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "cable pull-throughs",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Concept"
+      },
+      {
+        "name": "setup",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "yN6Q1UI_xkE",
+    "title": "How To Do Dips For A Bigger Chest and Shoulders (Fix Mistakes!)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/yN6Q1UI_xkE",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "dip rack",
+        "type": "Tool"
+      },
+      {
+        "name": "parallel bars",
+        "type": "Tool"
+      },
+      {
+        "name": "torso",
+        "type": "Concept"
+      },
+      {
+        "name": "lower pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "interior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "Clavicular or upper head of the pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "dip",
+        "type": "Method"
+      },
+      {
+        "name": "free weight dip",
+        "type": "Method"
+      },
+      {
+        "name": "assisted dip machine",
+        "type": "Tool"
+      },
+      {
+        "name": "weighted dip machine",
+        "type": "Tool"
+      },
+      {
+        "name": "weighted push-ups",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "C6sYjDFuq9I",
+    "title": "How To Build Bigger Traps: Optimal Training Explained",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/C6sYjDFuq9I",
+    "body_parts": [
+      "shoulder",
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "Egyptian cable lateral  raise",
+        "type": "Method"
+      },
+      {
+        "name": "power shrug",
+        "type": "Method"
+      },
+      {
+        "name": "power rack",
+        "type": "Tool"
+      },
+      {
+        "name": "standing calf raise shrug",
+        "type": "Method"
+      },
+      {
+        "name": "dual cable shrug",
+        "type": "Method"
+      },
+      {
+        "name": "cable rack",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike Isartel",
+        "type": "Person"
+      },
+      {
+        "name": "levator scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "scapular elevation",
+        "type": "Method"
+      },
+      {
+        "name": "1994 cadaver study",
+        "type": "Paper"
+      },
+      {
+        "name": "rack pulls",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "-qsRtp_PbVM",
+    "title": "How To FORCE YOUR CALVES To Grow With Smarter Training Methods",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/-qsRtp_PbVM",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Romanian deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "dip",
+        "type": "Method"
+      },
+      {
+        "name": "power shrug",
+        "type": "Method"
+      },
+      {
+        "name": "ankle plantar flexion",
+        "type": "Method"
+      },
+      {
+        "name": "two-headed gastric anemius muscle",
+        "type": "Concept"
+      },
+      {
+        "name": "soleus",
+        "type": "Concept"
+      },
+      {
+        "name": "gastroc",
+        "type": "Concept"
+      },
+      {
+        "name": "EMG data",
+        "type": "Paper"
+      },
+      {
+        "name": "Achilles tendon",
+        "type": "Concept"
+      },
+      {
+        "name": "2011 study",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "v-mQm_droHg",
+    "title": "HOW TO FRONT SQUAT: Build Bigger Quads & A Stronger Squat",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/v-mQm_droHg",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "hip extension",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "upper back",
+        "type": "Concept"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "goblet squat",
+        "type": "Method"
+      },
+      {
+        "name": "Olympic grip",
+        "type": "Method"
+      },
+      {
+        "name": "strap technique",
+        "type": "Method"
+      },
+      {
+        "name": "cross grip",
+        "type": "Method"
+      },
+      {
+        "name": "1-2015 study",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "nwkLwMRHMQo",
+    "title": "How To Fix The Upright Row: Avoid Shoulder Pain & Maximize Growth",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/nwkLwMRHMQo",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "overhead press",
+        "type": "Method"
+      },
+      {
+        "name": "lateral delt",
+        "type": "Concept"
+      },
+      {
+        "name": "NSEA report",
+        "type": "Paper"
+      },
+      {
+        "name": "McAllister et al",
+        "type": "Person"
+      },
+      {
+        "name": "cable machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Front raise",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "-EIhKMDSjBY",
+    "title": "The Best Way To Isolate The Chest For Growth (Upper Chest Focus)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/-EIhKMDSjBY",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "fly",
+        "type": "Method"
+      },
+      {
+        "name": "clavicular head",
+        "type": "Concept"
+      },
+      {
+        "name": "cable setup",
+        "type": "Tool"
+      },
+      {
+        "name": "cable fly",
+        "type": "Method"
+      },
+      {
+        "name": "upper lower",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "gimeRpdqWQw",
+    "title": "How To Build A Thicker Neck Fast! (Simple Science-Based Training)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/gimeRpdqWQw",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "cable rack",
+        "type": "Tool"
+      },
+      {
+        "name": "neck extension",
+        "type": "Method"
+      },
+      {
+        "name": "lying neck curls",
+        "type": "Method"
+      },
+      {
+        "name": "Extension",
+        "type": "Method"
+      },
+      {
+        "name": "neck flex",
+        "type": "Method"
+      },
+      {
+        "name": "neck",
+        "type": "Concept"
+      },
+      {
+        "name": "neck training",
+        "type": "Method"
+      },
+      {
+        "name": "Channing Tatum",
+        "type": "Person"
+      },
+      {
+        "name": "DJ Qualls",
+        "type": "Person"
+      },
+      {
+        "name": "forward flexion",
+        "type": "Method"
+      },
+      {
+        "name": "sternocleidomastoid",
+        "type": "Concept"
+      },
+      {
+        "name": "lateral flexion",
+        "type": "Method"
+      },
+      {
+        "name": "MMA fighters",
+        "type": "Person"
+      },
+      {
+        "name": "NASCAR drivers",
+        "type": "Person"
+      },
+      {
+        "name": "head",
+        "type": "Concept"
+      },
+      {
+        "name": "neck bridges",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "qfc70k40318",
+    "title": "How To Build Boulder Rear Delts: Optimal Training Explained",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/qfc70k40318",
+    "body_parts": [
+      "back",
+      "arms"
+    ],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      },
+      {
+        "name": "Schoenfeld and colleagues",
+        "type": "Person"
+      },
+      {
+        "name": "external  rotation",
+        "type": "Method"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "EMG data",
+        "type": "Paper"
+      },
+      {
+        "name": "cable machine",
+        "type": "Tool"
+      },
+      {
+        "name": "transverse abduction",
+        "type": "Method"
+      },
+      {
+        "name": "isolation  exercises",
+        "type": "Method"
+      },
+      {
+        "name": "seated row",
+        "type": "Method"
+      },
+      {
+        "name": "face pull",
+        "type": "Method"
+      },
+      {
+        "name": "rotator cuff",
+        "type": "Concept"
+      },
+      {
+        "name": "high row",
+        "type": "Method"
+      },
+      {
+        "name": "reverse  peck deck",
+        "type": "Method"
+      },
+      {
+        "name": "Button et al",
+        "type": "Person"
+      },
+      {
+        "name": "reverse peck deck",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "f23vXjoG2e8",
+    "title": "HOW TO DO THE GOOD MORNING EXERCISE: Build Your Glutes, Hamstrings And Squat With Perfect Technique",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/f23vXjoG2e8",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "upper back",
+        "type": "Concept"
+      },
+      {
+        "name": "Romanian deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Mark Ripitow",
+        "type": "Person"
+      },
+      {
+        "name": "safety pins",
+        "type": "Tool"
+      },
+      {
+        "name": "dumbbell rack",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "1G0y8D5rFDc",
+    "title": "How To Build A Better Core & Six Pack Abs: Optimal Training Explained",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/1G0y8D5rFDc",
+    "body_parts": [
+      "core"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      },
+      {
+        "name": "rectus  abdominis",
+        "type": "Concept"
+      },
+      {
+        "name": "hip extension",
+        "type": "Concept"
+      },
+      {
+        "name": "wheel",
+        "type": "Tool"
+      },
+      {
+        "name": "plank",
+        "type": "Method"
+      },
+      {
+        "name": "core",
+        "type": "Concept"
+      },
+      {
+        "name": "abdominal muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "ab wheel rollout",
+        "type": "Method"
+      },
+      {
+        "name": "2008 study",
+        "type": "Paper"
+      },
+      {
+        "name": "Eudice and colleagues",
+        "type": "Person"
+      },
+      {
+        "name": "upper abs",
+        "type": "Concept"
+      },
+      {
+        "name": "lower abs",
+        "type": "Concept"
+      },
+      {
+        "name": "obliques",
+        "type": "Concept"
+      },
+      {
+        "name": "transverse abdominis",
+        "type": "Concept"
+      },
+      {
+        "name": "TVA",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "94DXwlcX8Po",
+    "title": "How To Grow \"Horseshoe\" Triceps By Changing Arm Positions (Technique Explained)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/94DXwlcX8Po",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "easy bar",
+        "type": "Tool"
+      },
+      {
+        "name": "long head",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder",
+        "type": "Concept"
+      },
+      {
+        "name": "D-handle",
+        "type": "Tool"
+      },
+      {
+        "name": "skull  crusher",
+        "type": "Method"
+      },
+      {
+        "name": "lateral head",
+        "type": "Concept"
+      },
+      {
+        "name": "straight bar",
+        "type": "Tool"
+      },
+      {
+        "name": "single arm press down",
+        "type": "Method"
+      },
+      {
+        "name": "kickback",
+        "type": "Method"
+      },
+      {
+        "name": "press down",
+        "type": "Method"
+      },
+      {
+        "name": "rope and single arm press downs",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "_oyxCn2iSjU",
+    "title": "HOW TO DO ROMANIAN DEADLIFTS (RDLs): Build Beefy Hamstrings With Perfect Technique",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/_oyxCn2iSjU",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "sumo deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "stiff leg deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Romanian deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "sumo RDL",
+        "type": "Method"
+      },
+      {
+        "name": "RDL",
+        "type": "Method"
+      },
+      {
+        "name": "leg curl",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "O94yEoGXtBY",
+    "title": "How To Build A V-Tapered Back: Lat Training Dos and Don’ts",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/O94yEoGXtBY",
+    "body_parts": [
+      "back",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      },
+      {
+        "name": "lap pull down",
+        "type": "Method"
+      },
+      {
+        "name": "inverted row",
+        "type": "Method"
+      },
+      {
+        "name": "neutral grip pull down",
+        "type": "Method"
+      },
+      {
+        "name": "supinated grip",
+        "type": "Method"
+      },
+      {
+        "name": "terrace major and minor muscles",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "ljO4jkwv8wQ",
+    "title": "How To Do Leg Extensions With Perfect Technique (Grow Every Quad Head)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/ljO4jkwv8wQ",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      },
+      {
+        "name": "knee extension",
+        "type": "Method"
+      },
+      {
+        "name": "quadriceps",
+        "type": "Concept"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "EMG data",
+        "type": "Paper"
+      },
+      {
+        "name": "Extension",
+        "type": "Method"
+      },
+      {
+        "name": "vastus medialis",
+        "type": "Concept"
+      },
+      {
+        "name": "vastus inter medius",
+        "type": "Concept"
+      },
+      {
+        "name": "vastus lateralis",
+        "type": "Concept"
+      },
+      {
+        "name": "rectus femoris head",
+        "type": "Concept"
+      },
+      {
+        "name": "2015 study",
+        "type": "Paper"
+      },
+      {
+        "name": "lunge",
+        "type": "Method"
+      },
+      {
+        "name": "Split squat",
+        "type": "Method"
+      },
+      {
+        "name": "lateralis",
+        "type": "Concept"
+      },
+      {
+        "name": "x-frame quad sweep",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "djKXLt7kv7Q",
+    "title": "How To Do Dumbbell Rows: Build a Thicker Back With Proper \"Cheating\"",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/djKXLt7kv7Q",
+    "body_parts": [
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "Pendlay row",
+        "type": "Method"
+      },
+      {
+        "name": "standing barbell row",
+        "type": "Method"
+      },
+      {
+        "name": "mid traps",
+        "type": "Concept"
+      },
+      {
+        "name": "Pendley row",
+        "type": "Method"
+      },
+      {
+        "name": "Greg Knuckles",
+        "type": "Person"
+      },
+      {
+        "name": "mass research review",
+        "type": "Paper"
+      },
+      {
+        "name": "dumbbell rack",
+        "type": "Tool"
+      },
+      {
+        "name": "dumbbell and cable rows",
+        "type": "Method"
+      },
+      {
+        "name": "incline bench",
+        "type": "Tool"
+      },
+      {
+        "name": "cable row",
+        "type": "Method"
+      },
+      {
+        "name": "T-bar row",
+        "type": "Method"
+      },
+      {
+        "name": "shoulder extension",
+        "type": "Method"
+      },
+      {
+        "name": "scapular  retraction",
+        "type": "Method"
+      },
+      {
+        "name": "Bro Jeff",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "J46aPqFl0WE",
+    "title": "The Most Underrated Exercise To Get Yoked: Hits The Traps, Triceps, Lats, Glutes",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/J46aPqFl0WE",
+    "body_parts": [
+      "back",
+      "legs",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "upper back",
+        "type": "Concept"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "deadlift",
+        "type": "Concept"
+      },
+      {
+        "name": "neck",
+        "type": "Concept"
+      },
+      {
+        "name": "form alteration",
+        "type": "Method"
+      },
+      {
+        "name": "yoke muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "long head of the triceps",
+        "type": "Concept"
+      },
+      {
+        "name": "45 degree hyper extension machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Glue ham raises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "2RrGnjxSsiA",
+    "title": "Top 3 Science-Based Exercises For Six Pack Abs (Upper vs Lower Abs) ft. Matt Ogus",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/2RrGnjxSsiA",
+    "body_parts": [
+      "core"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      },
+      {
+        "name": "rectus  abdominis",
+        "type": "Concept"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "cable setup",
+        "type": "Tool"
+      },
+      {
+        "name": "plank",
+        "type": "Method"
+      },
+      {
+        "name": "ab wheel rollout",
+        "type": "Method"
+      },
+      {
+        "name": "obliques",
+        "type": "Concept"
+      },
+      {
+        "name": "Matt Ogis",
+        "type": "Person"
+      },
+      {
+        "name": "six pack",
+        "type": "Concept"
+      },
+      {
+        "name": "crunch",
+        "type": "Method"
+      },
+      {
+        "name": "hanging leg raise",
+        "type": "Method"
+      },
+      {
+        "name": "ab",
+        "type": "Concept"
+      },
+      {
+        "name": "hip flexors",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up bar",
+        "type": "Tool"
+      },
+      {
+        "name": "Roman chair",
+        "type": "Tool"
+      },
+      {
+        "name": "decline reverse curls",
+        "type": "Method"
+      },
+      {
+        "name": "bicycle crunch",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "MfMxT_jXcPE",
+    "title": "How To Build Huge Forearms: Optimal Training Explained (5 Best Exercises!)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/MfMxT_jXcPE",
+    "body_parts": [],
+    "use_cases": [
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "easy bar",
+        "type": "Tool"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "decline reverse curls",
+        "type": "Method"
+      },
+      {
+        "name": "One paper",
+        "type": "Paper"
+      },
+      {
+        "name": "brachial radialis",
+        "type": "Concept"
+      },
+      {
+        "name": "advanced intensity technique",
+        "type": "Method"
+      },
+      {
+        "name": "anterior compartment",
+        "type": "Concept"
+      },
+      {
+        "name": "posterior compartment",
+        "type": "Concept"
+      },
+      {
+        "name": "posterior muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "fingers",
+        "type": "Concept"
+      },
+      {
+        "name": "hand gripper",
+        "type": "Tool"
+      },
+      {
+        "name": "form training",
+        "type": "Method"
+      },
+      {
+        "name": "bodybuilder",
+        "type": "Person"
+      },
+      {
+        "name": "dumbbell wrist curl",
+        "type": "Method"
+      },
+      {
+        "name": "farmers walks",
+        "type": "Method"
+      },
+      {
+        "name": "standard barbell holds",
+        "type": "Method"
+      },
+      {
+        "name": "pleat pinch",
+        "type": "Method"
+      },
+      {
+        "name": "digit flexors",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "1GsYg9YG0Xk",
+    "title": "My Top 10 WORST Exercises (Maybe Avoid These)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/1GsYg9YG0Xk",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      },
+      {
+        "name": "behind  the neck press",
+        "type": "Method"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      },
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      },
+      {
+        "name": "OHP",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "goblet squat",
+        "type": "Method"
+      },
+      {
+        "name": "dumbbell rack",
+        "type": "Tool"
+      },
+      {
+        "name": "Bro Jeff",
+        "type": "Person"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      },
+      {
+        "name": "standing dumbbell external rotation",
+        "type": "Method"
+      },
+      {
+        "name": "above the knee rack pull",
+        "type": "Method"
+      },
+      {
+        "name": "gym equipment",
+        "type": "Tool"
+      },
+      {
+        "name": "cable squat",
+        "type": "Method"
+      },
+      {
+        "name": "Machine  Shoulder Press",
+        "type": "Method"
+      },
+      {
+        "name": "curling",
+        "type": "Method"
+      },
+      {
+        "name": "commercial gyms",
+        "type": "Organization"
+      },
+      {
+        "name": "Bosu balls",
+        "type": "Tool"
+      },
+      {
+        "name": "2010 ACSM article",
+        "type": "Paper"
+      }
+    ]
+  }
 ]
