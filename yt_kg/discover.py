@@ -12,6 +12,8 @@ from .db import init_db
 logger = logging.getLogger(__name__)
 
 CONFIG_PATH = Path("config/channels.yaml")
+_ROOT = Path(__file__).parent.parent
+_COOKIES_FILE = _ROOT / "cookies.txt"
 
 
 def load_channels_config() -> list[dict[str, Any]]:
@@ -44,6 +46,10 @@ def _ydl_opts(limit: int | None = None) -> dict:
     opts: dict = {"quiet": True, "no_warnings": True, "extract_flat": True}
     if limit:
         opts["playlistend"] = limit
+    if _COOKIES_FILE.exists():
+        opts["cookiefile"] = str(_COOKIES_FILE)
+    else:
+        opts["cookiesfrombrowser"] = ("chrome",)
     return opts
 
 
