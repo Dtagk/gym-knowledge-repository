@@ -2,8 +2,7 @@
 
 A personal knowledge base of gym/training YouTube videos — tagged, graphed, searchable.
 
-**Live browser:** [https://dtagkoulis.github.io/gym-knowledge-repository/](https://dtagkoulis.github.io/gym-knowledge-repository/)](https://dtagk.github.io/gym-knowledge-repository/)
-
+**Live browser:** [https://dtagk.github.io/gym-knowledge-repository/](https://dtagk.github.io/gym-knowledge-repository/)]
 ## What it does
 
 Ingests YouTube videos from curated channels → transcribes → extracts entities (muscles, exercises, concepts) into a knowledge graph (Kuzu) and vector store (LanceDB) → classifies by body part + training goal → exports to a static GitHub Pages browser.
