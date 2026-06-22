@@ -16,6 +16,8 @@ chromewebstore.google.com_cookies.txt
 .serena/
 .mcp.json
 _review_patches/
+_patch_drop/
+*.zip
 .claude/
 _bmad/
 _bmad-output/
