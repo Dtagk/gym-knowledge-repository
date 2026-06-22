@@ -12,7 +12,7 @@ from yt_kg.db import init_db
 _KUZU_PATH = "data/graph.kuzu"
 
 _BODY_PARTS = ["shoulder", "chest", "back", "legs", "arms", "core", "full-body"]
-_USE_CASES = ["rehab", "mobility", "strength", "hypertrophy", "general-fitness"]
+_USE_CASES = ["rehab", "mobility", "strength", "hypertrophy", "general-fitness", "programming"]
 
 _OLLAMA_URL = "http://localhost:11434/api/chat"
 _OLLAMA_MODEL = "qwen2.5-coder:7b"
