@@ -12,11 +12,47 @@ channel_whitelist:
   - UC9Cph05W6T461_FEXLWcPvQ  # Calgary Barbell
 
 channels:
-  # Full channels — enable after validation run
-  # - id: jeff-nippard
-  #   url: https://www.youtube.com/@JeffNippard
-  #   type: channel
-  #   poll_every: 7d
+  # Whitelisted channels — direct discovery, status='approved', limited to avoid full pulls
+  - id: UC68TLK0mAEzUyHx5x5k-S1Q  # Jeff Nippard
+    url: https://www.youtube.com/channel/UC68TLK0mAEzUyHx5x5k-S1Q/videos
+    type: channel
+    limit: 30
+    poll_every: never
+  - id: UCfQgsKhHjSyRLOp9mnffqVg  # Renaissance Periodization
+    url: https://www.youtube.com/channel/UCfQgsKhHjSyRLOp9mnffqVg/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UCYjEjXbMc-gkuPL6TbPG6EQ  # RP University
+    url: https://www.youtube.com/channel/UCYjEjXbMc-gkuPL6TbPG6EQ/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UCyPYQTT20IgzVw92LDvtClw  # Squat University
+    url: https://www.youtube.com/channel/UCyPYQTT20IgzVw92LDvtClw/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UCXUOT2gl9D6qQ286wjEZOow  # Venus Gabby
+    url: https://www.youtube.com/channel/UCXUOT2gl9D6qQ286wjEZOow/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UCCq4cXAbqfZfiwnwLxMGyGg  # Dr. Pak
+    url: https://www.youtube.com/channel/UCCq4cXAbqfZfiwnwLxMGyGg/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UCru8Ef3TDFaJOOTfAZ52iFA  # Dr. Milo Wolf
+    url: https://www.youtube.com/channel/UCru8Ef3TDFaJOOTfAZ52iFA/videos
+    type: channel
+    limit: 60
+    poll_every: never
+  - id: UC9Cph05W6T461_FEXLWcPvQ  # Calgary Barbell
+    url: https://www.youtube.com/channel/UC9Cph05W6T461_FEXLWcPvQ/videos
+    type: channel
+    limit: 60
+    poll_every: never
   - id: single-video-test
     url: https://www.youtube.com/watch?v=3ryh7PNhz3E
     type: video

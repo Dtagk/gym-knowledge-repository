@@ -40,8 +40,11 @@ def load_channel_whitelist() -> set[str]:
         return set(yaml.safe_load(f).get("channel_whitelist", []) or [])
 
 
-def _ydl_opts() -> dict:
-    return {"quiet": True, "no_warnings": True, "extract_flat": True}
+def _ydl_opts(limit: int | None = None) -> dict:
+    opts: dict = {"quiet": True, "no_warnings": True, "extract_flat": True}
+    if limit:
+        opts["playlistend"] = limit
+    return opts
 
 
 def discover() -> None:
@@ -53,16 +56,19 @@ def discover() -> None:
         url = ch["url"]
         channel_id = ch.get("id", "unknown")
         entry_type = ch.get("type", "channel")
-        logger.info("Discovering %s: %s", entry_type, url)
+        limit: int | None = ch.get("limit")
+        logger.info("Discovering %s: %s (limit=%s)", entry_type, url, limit)
 
         try:
-            with yt_dlp.YoutubeDL(_ydl_opts()) as ydl:
+            with yt_dlp.YoutubeDL(_ydl_opts(limit)) as ydl:
                 info = ydl.extract_info(url, download=False)
 
             if entry_type == "video":
                 entries = [info]
             else:
                 entries = info.get("entries", []) or []
+                if limit:
+                    entries = entries[:limit]
 
             for entry in entries:
                 if not entry or "id" not in entry:
