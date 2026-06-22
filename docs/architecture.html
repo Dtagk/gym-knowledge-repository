@@ -311,15 +311,27 @@
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
-        <div class="icon">📚</div>
-        <div class="label">Cite</div>
-        <div class="sub">OpenAlex + PDF</div>
+        <div class="icon">🏷️</div>
+        <div class="label">Classify</div>
+        <div class="sub">Ollama → tags</div>
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
-        <div class="icon">🤖</div>
-        <div class="label">MCP</div>
-        <div class="sub">Claude tools</div>
+        <div class="icon">📤</div>
+        <div class="label">Export</div>
+        <div class="sub">→ docs/data/</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🧠</div>
+        <div class="label">Synthesize</div>
+        <div class="sub">RAG → cards</div>
+      </div>
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="icon">🌐</div>
+        <div class="label">Deploy</div>
+        <div class="sub">GitHub Pages</div>
       </div>
     </div>
   </section>
@@ -458,6 +470,23 @@
         <div class="tag-row"><span class="tag">stdio</span><span class="tag">vector_search</span><span class="tag">cypher_query</span><span class="tag">read-only</span></div>
       </div>
 
+      <div class="card" style="--card-accent: #56c9a4">
+        <div class="card-header">
+          <div class="card-icon">🔍</div>
+          <div>
+            <div class="card-title">RAG Server</div>
+            <div class="card-lib">fastapi / uvicorn — yt_kg.rag_server</div>
+          </div>
+        </div>
+        <div class="card-desc">Local FastAPI server exposing two endpoints: <code>GET /search</code> for sub-second semantic ANN search (no LLM) and <code>POST /ask</code> for full RAG Q&amp;A with Kuzu entity enrichment and Ollama generation. Started with <code>DATA_DIR</code> env var pointing at the repo root.</div>
+        <div class="card-row">
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">Separates the heavy embedding + LanceDB query path from the static browser. GitHub Pages users get an offline text-search fallback; local users get full semantic + generative search.</span></div>
+          <div class="card-fact"><span class="fact-label">/search</span><span class="fact-val">Embeds query → LanceDB ANN → dedup by video → ranked JSON array. No Ollama. ≤3 s on RTX 5060 Ti.</span></div>
+          <div class="card-fact"><span class="fact-label">/ask</span><span class="fact-val">ANN → Kuzu entity enrichment → Ollama <code>gpt-oss:20b</code> → answer + cited sources + entity list.</span></div>
+        </div>
+        <div class="tag-row"><span class="tag">GET /search</span><span class="tag">POST /ask</span><span class="tag">DATA_DIR</span><span class="tag">no-auth</span><span class="tag">CORS</span></div>
+      </div>
+
       <div class="card" style="--card-accent: #f7a05c">
         <div class="card-header">
           <div class="card-icon">📚</div>
@@ -532,6 +561,12 @@
           <td>Open-access PDFs for resolved citations with oa_url</td>
           <td>Local copy for future full-text extraction. Idempotent: skips download if file exists.</td>
         </tr>
+        <tr>
+          <td class="bright">Browser data</td>
+          <td class="mono">docs/data/</td>
+          <td>videos.json — classified video list; entities.json — entity hub map (name, type, video_ids, related, use_case_counts); synthesis.json — pre-generated knowledge cards; meta.json — export timestamp + counts</td>
+          <td>Static JSON exported at CI time. GitHub Pages serves them directly — no server needed at browse time. entities.json and synthesis.json power the entity hub panel and knowledge cards without runtime queries.</td>
+        </tr>
       </tbody>
     </table>
   </section>
@@ -574,6 +609,16 @@
       <div class="decision">
         <h4>MCP read-only enforcement</h4>
         <p>The MCP server blocks write Cypher (CREATE/MERGE/DELETE/SET/CALL) at the server level. Claude Code can query and traverse the graph freely but cannot mutate it — preventing accidental corruption of the knowledge base during interactive sessions.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Static export over server-rendered browser</h4>
+        <p>The browser page (<code>docs/index.html</code>) is pure HTML + vanilla JS served from GitHub Pages. All runtime data — video list, entity hub map, synthesis cards — is pre-baked into JSON files at CI export time. The local RAG server (<code>yt_kg.rag_server</code>) adds semantic search when running, with a client-side text-match fallback when it isn't. This means the knowledge base is browsable by anyone with the Pages URL, with zero server infrastructure and zero API keys.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Classify → Export → Synthesize as separate idempotent stages</h4>
+        <p>Classify (Ollama body-part/use-case tags), Export (write docs/data/ JSON), and Synthesize (call RAG /ask per curated question, write synthesis.json) are three separate CLI stages run by CI. Each is non-fatal in CI (<code>|| true</code>). Synthesize depends on Export (needs the video data) and the RAG server (needs the LanceDB index), so it runs last. Separating them means the browser always gets at least the video list even if synthesis fails.</p>
       </div>
 
     </div>
