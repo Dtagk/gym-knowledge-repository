@@ -1,4 +1,5 @@
 import re
+import time
 
 import kuzu
 import lancedb
@@ -9,7 +10,17 @@ _KUZU_PATH = "data/graph.kuzu"
 
 
 def _init_graph() -> kuzu.Connection:
-    db = kuzu.Database(_KUZU_PATH)
+    # Retry with exponential backoff when the MCP server holds a concurrent read lock.
+    for attempt in range(6):
+        try:
+            db = kuzu.Database(_KUZU_PATH)
+            break
+        except RuntimeError as exc:
+            if "Could not set lock" not in str(exc) or attempt == 5:
+                raise
+            wait = 2 ** attempt  # 1 2 4 8 16 32s
+            print(f"[graph] Kuzu lock busy — retrying in {wait}s ({attempt + 1}/6)…", flush=True)
+            time.sleep(wait)
     conn = kuzu.Connection(db)
 
     ddl = [

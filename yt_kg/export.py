@@ -14,7 +14,7 @@ _DOCS_DATA_DIR = "docs/data"
 
 def _get_entities_for_video(video_id: str) -> list[dict]:
     """Query Kuzu for all entities that appear in the given video."""
-    db = kuzu.Database(_KUZU_PATH)
+    db = kuzu.Database(_KUZU_PATH, read_only=True)
     kuzu_conn = kuzu.Connection(db)
     result = kuzu_conn.execute(
         "MATCH (e:Entity)-[:APPEARS_IN]->(v:Video {video_id: $vid}) "
@@ -31,7 +31,7 @@ def _get_entities_for_video(video_id: str) -> list[dict]:
 def _export_entities(videos: list[dict]) -> None:
     """Query all Entity nodes and write docs/data/entities.json."""
     try:
-        db = kuzu.Database(_KUZU_PATH)
+        db = kuzu.Database(_KUZU_PATH, read_only=True)
         kuzu_conn = kuzu.Connection(db)
 
         # Build a lookup map: video_id -> use_cases list

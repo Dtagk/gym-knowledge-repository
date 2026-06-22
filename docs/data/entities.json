@@ -1,0 +1,6503 @@
+{
+  "e1c924b6-4452-43d0-a1f9-f915787b262a": {
+    "name": "walking lunges",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "962dc5b2-34c4-4861-8435-f87fb95d1e8d": {
+    "name": "Smith machine lunges",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "walking lunges",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "90c1040c-ef08-4ae8-b959-eb17593b02b8": {
+    "name": "curtsy lunges",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "walking lunges",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "49fa671b-bea6-43b2-a0fa-ba8d40144d5f": {
+    "name": "glute medius",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "04a8641f-9420-4399-8876-b17c7f398fce": {
+    "name": "glutes",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "Y_M50iyrd3U",
+      "Z6R8A5tcrTc",
+      "_RlRDWO2jfg",
+      "bEv6CCg2BC8",
+      "v_ZkxWzYnMc",
+      "xDmFkJxPzeM",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "v-mQm_droHg",
+      "f23vXjoG2e8",
+      "1G0y8D5rFDc",
+      "_oyxCn2iSjU",
+      "J46aPqFl0WE",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "hip extension",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 13,
+      "strength": 13,
+      "general-fitness": 3,
+      "programming": 2
+    }
+  },
+  "8f3abdb5-3f12-4522-82bb-8360dfc7678e": {
+    "name": "conventional deadlift",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "_oyxCn2iSjU"
+    ],
+    "related": [
+      {
+        "name": "bar",
+        "type": "Tool"
+      },
+      {
+        "name": "stiff leg deadlift",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 4,
+      "programming": 1
+    }
+  },
+  "e0b50729-f312-4f04-80c1-26b97df8ee02": {
+    "name": "lower glutes",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "3d024c64-8b9e-4d8b-837b-f4f24abbd554": {
+    "name": "spinal erectors",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "7B5Exks1KJE",
+      "axoeDmW0oAY",
+      "Hdc7Mw6BIEE",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "f23vXjoG2e8",
+      "_oyxCn2iSjU",
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "RDL",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 8,
+      "strength": 8,
+      "general-fitness": 2
+    }
+  },
+  "74085efe-4e72-46a1-95bc-e30007eccda3": {
+    "name": "sumo deadlift",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "_oyxCn2iSjU"
+    ],
+    "related": [
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 4,
+      "programming": 1
+    }
+  },
+  "67420f98-48af-4601-b74a-b9202a0f3ecb": {
+    "name": "EMG study",
+    "type": "Paper",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "72c51b68-fb7f-4b33-9946-0994ac59ae9e": {
+    "name": "glute maximus",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "8ab1d6ff-f11c-43cb-ba8b-304bb4aecad2": {
+    "name": "squats",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "-qsRtp_PbVM"
+    ],
+    "related": [
+      {
+        "name": "Progressive overload",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "177d5ff4-2896-45c3-a65a-7d764bce5417": {
+    "name": "hip thrust",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "v_ZkxWzYnMc",
+      "xDmFkJxPzeM",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "leg extension machine",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "7d63dd03-ac23-4bc7-bebb-114fb9cf5baf": {
+    "name": "research",
+    "type": "Paper",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "B6rGDcfyPto",
+      "v_ZkxWzYnMc",
+      "gimeRpdqWQw",
+      "qfc70k40318",
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 5
+    }
+  },
+  "0e622c47-1a0d-4782-8025-b9da9e805d09": {
+    "name": "Smith machine squat",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "1ce7d294-ba06-4811-be3e-3fe9d70b8bb6": {
+    "name": "Bulgarian split squat",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "88b752d1-62f4-4a9f-b358-c2cd57ab8782": {
+    "name": "gym pin",
+    "type": "Tool",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "a212c843-2a57-4373-a5ec-1b47fd41c77c": {
+    "name": "upper glutes",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "7ae206d5-cf0e-4f09-9125-802e46fb7b71": {
+    "name": "Cable hip abductions",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "1384c0db-b5e6-4361-bd9a-57ff65ba38a0": {
+    "name": "lateral banded walk",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "b5265236-7573-4465-8252-204e40492a6c": {
+    "name": "lunges",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "Z6R8A5tcrTc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "32f4dc10-2f42-4012-8bd4-c1f02f4c9337": {
+    "name": "mid glutes",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "43731381-3a26-4921-9eca-8c4698f9f36d": {
+    "name": "The glutes",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "gluteus maximus",
+        "type": "Concept"
+      },
+      {
+        "name": "gluteus medius",
+        "type": "Concept"
+      },
+      {
+        "name": "glute minimus",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "b371cb4f-8fcf-4c55-88b8-ea645ee7356b": {
+    "name": "gluteus maximus",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "8cec9b3b-6903-4751-9ac9-899938c12004": {
+    "name": "deadlift",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "7B5Exks1KJE",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "C6sYjDFuq9I",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 6,
+      "strength": 6,
+      "programming": 1
+    }
+  },
+  "0bdf30c8-b1c8-4b2f-9761-c65d946a4851": {
+    "name": "gluteus medius",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "d9f42470-59a9-4fe0-8a9f-19024e98f420": {
+    "name": "delts",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "n5dsI9qQXwY",
+      "v_ZkxWzYnMc",
+      "nwkLwMRHMQo",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2,
+      "programming": 1
+    }
+  },
+  "e48b5033-ef36-4fc1-9847-c2aeb01b94a1": {
+    "name": "glute minimus",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "45c834d4-b9f3-4c3e-82d6-3f0636e15aa8": {
+    "name": "hamstrings",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "I9l9WRZ5SWE",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "-qsRtp_PbVM",
+      "f23vXjoG2e8",
+      "1G0y8D5rFDc",
+      "_oyxCn2iSjU",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "good morning exercise",
+        "type": "Method"
+      },
+      {
+        "name": "hip extension",
+        "type": "Method"
+      },
+      {
+        "name": "dynamic stretching",
+        "type": "Method"
+      },
+      {
+        "name": "leg curl",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "general-fitness": 3,
+      "strength": 8,
+      "hypertrophy": 8,
+      "programming": 1
+    }
+  },
+  "82f3bd30-20b9-4dc8-a3b1-c32e7a7e5117": {
+    "name": "45 degree back extension",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "8be29475-fdf2-447c-9ad2-9d4f4cb65a4c": {
+    "name": "Cable pull-throughs",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "421d958b-f8a8-450b-8460-1375f66152eb": {
+    "name": "kettlebell swings",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "cb328683-feb9-49ec-9b8f-8a45de4db526": {
+    "name": "walking lunge",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "3ac47215-a670-4b13-bee6-6c7d805af7fb": {
+    "name": "barbell hip thrust",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "5270fe0f-3142-4165-9d40-b85a246bd7d2": {
+    "name": "Nautilus glute drive",
+    "type": "Tool",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "3d1a5752-4cf1-46cb-ac26-dc864c44c8fb": {
+    "name": "single leg dumbbell hip thrust",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [
+      {
+        "name": "upper glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "glute medius and minimus",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {}
+  },
+  "aa74ce29-50ce-4d6b-8d4c-9480a9299fa8": {
+    "name": "glute medius and minimus",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "0583c525-0fc3-47f9-8af2-b26472f44e17": {
+    "name": "glute bridge",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "2582ee37-2e01-43bf-9422-e62900cf7a5a": {
+    "name": "diet",
+    "type": "Concept",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "97f9429a-2b53-4983-8fe4-269159393868": {
+    "name": "Donkey kicks",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "186e00c9-5da0-4e27-8b53-0b594a40065a": {
+    "name": "Fire hydrants",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "c104feba-bc90-4a8e-824a-9e1def134343": {
+    "name": "Hickbacks",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "6e73b8fd-a8ad-4519-b025-f9b97e73472c": {
+    "name": "Kickbacks",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "1304e468-c167-4956-837b-7ceceee2741e": {
+    "name": "machine",
+    "type": "Tool",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "B6rGDcfyPto",
+      "SUdQ1roIWz0",
+      "V3h_1IUY-f0",
+      "J46aPqFl0WE",
+      "2RrGnjxSsiA",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 5,
+      "hypertrophy": 4,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "7a644198-c6ac-4f9d-840e-b1b357a5785f": {
+    "name": "bench",
+    "type": "Tool",
+    "video_ids": [
+      "3ryh7PNhz3E",
+      "SUdQ1roIWz0",
+      "A0NBCkpYatQ",
+      "tJIFTI9wZOw",
+      "vcBig73ojpE",
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 5,
+      "strength": 3,
+      "general-fitness": 1
+    }
+  },
+  "cb0d861e-77bc-4e8b-bf2c-3509fbfbe187": {
+    "name": "Step ups",
+    "type": "Method",
+    "video_ids": [
+      "3ryh7PNhz3E"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "239d9752-c591-4237-b9c9-0b15f0d2364b": {
+    "name": "Dr. Mike",
+    "type": "Person",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "VXKfH6ciEBI",
+      "n5dsI9qQXwY",
+      "5aRHy5ZPjwk",
+      "Tw0axi-Jlqc",
+      "0f6-uCUKqgA",
+      "zfAHfyTB_Ao",
+      "Z6R8A5tcrTc",
+      "s5hluoQjtIM",
+      "SUdQ1roIWz0",
+      "7B5Exks1KJE",
+      "EQjexKQpGeQ",
+      "GGpArq725ls",
+      "A0NBCkpYatQ",
+      "tJIFTI9wZOw",
+      "V3h_1IUY-f0",
+      "I9l9WRZ5SWE",
+      "8t2a93BjDec",
+      "Cv5nS1AH_jE",
+      "IaJWPqP-Bjo",
+      "a4muTr5ZV9Y"
+    ],
+    "related": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "lat pull downs",
+        "type": "Method"
+      },
+      {
+        "name": "Renaissance Piatization",
+        "type": "Organization"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 11,
+      "hypertrophy": 18,
+      "general-fitness": 1
+    }
+  },
+  "2a1a80df-8d70-4894-b906-32e1bf60b1c0": {
+    "name": "leg press",
+    "type": "Method",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "bEv6CCg2BC8"
+    ],
+    "related": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 1
+    }
+  },
+  "19ed6b76-6919-4c36-b0bc-68e061fab8bc": {
+    "name": "quads",
+    "type": "Concept",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "Y_M50iyrd3U",
+      "Z6R8A5tcrTc",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "-qsRtp_PbVM",
+      "v-mQm_droHg",
+      "_oyxCn2iSjU",
+      "ljO4jkwv8wQ",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 8,
+      "hypertrophy": 9,
+      "programming": 1
+    }
+  },
+  "14c78795-2263-4d14-a921-27c8eb2c6d83": {
+    "name": "calves",
+    "type": "Concept",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "-qsRtp_PbVM",
+      "v-mQm_droHg"
+    ],
+    "related": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "ankle plantar flexion",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 3
+    }
+  },
+  "37c79bb8-e10f-4ba6-816a-9c7fec1138cc": {
+    "name": "lower back",
+    "type": "Concept",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "Y_M50iyrd3U",
+      "GGpArq725ls",
+      "tJIFTI9wZOw",
+      "I9l9WRZ5SWE",
+      "axoeDmW0oAY",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "wr-iSaXPr5s",
+      "C6sYjDFuq9I",
+      "f23vXjoG2e8",
+      "O94yEoGXtBY",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 10,
+      "hypertrophy": 11,
+      "general-fitness": 2,
+      "programming": 1
+    }
+  },
+  "c7da1f4a-8b80-4cfd-b86b-d497badb5fc6": {
+    "name": "yoga",
+    "type": "Method",
+    "video_ids": [
+      "B6rGDcfyPto"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "45cc1dc3-2af2-4e07-acfd-7bff2f21cd7c": {
+    "name": "Amazon",
+    "type": "Organization",
+    "video_ids": [
+      "B6rGDcfyPto"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5e4fbc60-8a79-4b2a-baff-db990d2c330f": {
+    "name": "Upper back",
+    "type": "Concept",
+    "video_ids": [
+      "B6rGDcfyPto"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "7950e5d0-3285-4389-93b6-301f1389a16d": {
+    "name": "knees",
+    "type": "Concept",
+    "video_ids": [
+      "B6rGDcfyPto",
+      "Y_M50iyrd3U",
+      "I9l9WRZ5SWE",
+      "bEv6CCg2BC8",
+      "VL5Ab0T07e4",
+      "v-mQm_droHg"
+    ],
+    "related": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 4,
+      "general-fitness": 1
+    }
+  },
+  "c3889bd9-267b-4ad1-89a4-9598934c1516": {
+    "name": "lats",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "s5hluoQjtIM",
+      "7B5Exks1KJE",
+      "8t2a93BjDec",
+      "vcBig73ojpE",
+      "axoeDmW0oAY",
+      "popGXI-qs98",
+      "Hdc7Mw6BIEE",
+      "v_ZkxWzYnMc",
+      "XsrD5y8EIKU",
+      "94DXwlcX8Po",
+      "O94yEoGXtBY",
+      "djKXLt7kv7Q",
+      "J46aPqFl0WE",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 13,
+      "strength": 14,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "f3968dc3-e6ca-4071-adbc-70f936449940": {
+    "name": "shoulder joints",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "n5dsI9qQXwY",
+      "0f6-uCUKqgA",
+      "SUdQ1roIWz0",
+      "A0NBCkpYatQ",
+      "V3h_1IUY-f0",
+      "i1YgFZB6alI",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "C6sYjDFuq9I",
+      "nwkLwMRHMQo"
+    ],
+    "related": [
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "scapulae",
+        "type": "Concept"
+      },
+      {
+        "name": "arm blaster",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 9,
+      "strength": 8,
+      "programming": 1
+    }
+  },
+  "4cae7f1a-8222-44e7-97d6-59aeba37409f": {
+    "name": "elbows",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "0f6-uCUKqgA",
+      "SUdQ1roIWz0",
+      "A0NBCkpYatQ",
+      "tJIFTI9wZOw",
+      "V3h_1IUY-f0",
+      "8t2a93BjDec",
+      "IaJWPqP-Bjo",
+      "v-mQm_droHg"
+    ],
+    "related": [
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      },
+      {
+        "name": "long head",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 7,
+      "strength": 6
+    }
+  },
+  "fcfc4304-290c-4cca-8715-f86e50bb3f6c": {
+    "name": "wrists",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "9c731724-2a70-4787-9adc-e68b55fb63cf": {
+    "name": "D-load",
+    "type": "Method",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "bca0658c-b36a-4abf-a0eb-1e1411265676": {
+    "name": "clavicle",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "f1663783-30b4-4397-a352-14c050390dc1": {
+    "name": "mesocycle",
+    "type": "Method",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "3b5f1c9d-f077-49a5-83e4-06de781df6b6": {
+    "name": "Sternum",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "b084f155-f5e5-4aa7-94c7-928f421837ee": {
+    "name": "VersaGrips",
+    "type": "Tool",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [
+      {
+        "name": "lat pull downs",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "d8777760-5cab-4509-b824-e246528eec30": {
+    "name": "lat pull downs",
+    "type": "Method",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "4065fdd3-384d-4421-bf22-6ec3720963f4": {
+    "name": "target muscle",
+    "type": "Concept",
+    "video_ids": [
+      "VXKfH6ciEBI",
+      "SUdQ1roIWz0",
+      "V3h_1IUY-f0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "c97d0f19-e449-43a3-8e5d-dcf251352cd5": {
+    "name": "Renaissance Piatization",
+    "type": "Organization",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "20039317-c9a6-47ef-8cc0-e50a665325ea": {
+    "name": "Brian Shaw",
+    "type": "Person",
+    "video_ids": [
+      "VXKfH6ciEBI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "4d0e2356-a777-4b30-92d4-4b60be7576f0": {
+    "name": "front delts",
+    "type": "Concept",
+    "video_ids": [
+      "n5dsI9qQXwY",
+      "GGpArq725ls",
+      "A0NBCkpYatQ",
+      "tJIFTI9wZOw",
+      "V3h_1IUY-f0",
+      "_RlRDWO2jfg",
+      "v_ZkxWzYnMc",
+      "94DXwlcX8Po",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      },
+      {
+        "name": "internal rotation",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 7,
+      "hypertrophy": 7,
+      "programming": 1
+    }
+  },
+  "00996bbf-7733-434b-97eb-ca02a770e07b": {
+    "name": "dumbbell lateral raise",
+    "type": "Method",
+    "video_ids": [
+      "n5dsI9qQXwY",
+      "v_ZkxWzYnMc",
+      "C6sYjDFuq9I",
+      "nwkLwMRHMQo"
+    ],
+    "related": [
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "lateral delt",
+        "type": "Concept"
+      },
+      {
+        "name": "lateral delt",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 3
+    }
+  },
+  "b9e70a93-7f5a-4210-b817-2dd174b90cc0": {
+    "name": "Dr. Mike Kisletal",
+    "type": "Person",
+    "video_ids": [
+      "Y_M50iyrd3U"
+    ],
+    "related": [
+      {
+        "name": "Renaissance Periodization",
+        "type": "Organization"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "a8ef750c-5586-4a3b-8731-d6f0f64d8a97": {
+    "name": "Renaissance Periodization",
+    "type": "Organization",
+    "video_ids": [
+      "Y_M50iyrd3U",
+      "5aRHy5ZPjwk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1
+    }
+  },
+  "220c8c74-d964-4178-ac76-c0ac434ccd2b": {
+    "name": "Transformer Bar",
+    "type": "Tool",
+    "video_ids": [
+      "Y_M50iyrd3U"
+    ],
+    "related": [
+      {
+        "name": "Dr. Mike Kisletal",
+        "type": "Person"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "da1eedb5-3b09-453f-ac4d-c50b83c4a9c3": {
+    "name": "Kabuki Strength",
+    "type": "Organization",
+    "video_ids": [
+      "Y_M50iyrd3U"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "efb67eaf-cba5-4fd0-831f-68582e88f223": {
+    "name": "Chris Duffin",
+    "type": "Person",
+    "video_ids": [
+      "Y_M50iyrd3U"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "b351f421-90c3-4eb1-b07f-c0bd508c9f5e": {
+    "name": "hips",
+    "type": "Concept",
+    "video_ids": [
+      "Y_M50iyrd3U",
+      "bEv6CCg2BC8",
+      "xDmFkJxPzeM",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "v-mQm_droHg",
+      "f23vXjoG2e8",
+      "1G0y8D5rFDc"
+    ],
+    "related": [
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell curl",
+        "type": "Method"
+      },
+      {
+        "name": "stiff leg deadlift",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 8,
+      "strength": 8,
+      "general-fitness": 3,
+      "programming": 1
+    }
+  },
+  "ebcc77f7-7f51-40f7-a491-3385342717dd": {
+    "name": "squat",
+    "type": "Method",
+    "video_ids": [
+      "Y_M50iyrd3U",
+      "8t2a93BjDec",
+      "_RlRDWO2jfg",
+      "bEv6CCg2BC8",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "adductors",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 4,
+      "programming": 1
+    }
+  },
+  "a17dc9cf-1e58-4bbc-a204-328e97149c3a": {
+    "name": "adductors",
+    "type": "Concept",
+    "video_ids": [
+      "Y_M50iyrd3U"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "3158615e-418f-48bd-bf32-136dc327bf7b": {
+    "name": "chest",
+    "type": "Concept",
+    "video_ids": [
+      "5aRHy5ZPjwk",
+      "0f6-uCUKqgA",
+      "7B5Exks1KJE",
+      "GGpArq725ls",
+      "A0NBCkpYatQ",
+      "a4muTr5ZV9Y",
+      "-EIhKMDSjBY"
+    ],
+    "related": [
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 7
+    }
+  },
+  "b1956722-3aa5-4baa-b24b-9717145deb77": {
+    "name": "pull up",
+    "type": "Method",
+    "video_ids": [
+      "5aRHy5ZPjwk",
+      "s5hluoQjtIM",
+      "EQjexKQpGeQ",
+      "8t2a93BjDec",
+      "Hdc7Mw6BIEE",
+      "O94yEoGXtBY"
+    ],
+    "related": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "clavicle",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 6,
+      "hypertrophy": 5,
+      "general-fitness": 1
+    }
+  },
+  "be26bd11-ad70-4503-a589-10f20a6d70c1": {
+    "name": "touch and come up",
+    "type": "Method",
+    "video_ids": [
+      "5aRHy5ZPjwk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "134a3c34-d217-4c1e-b8da-5958d7bc1256": {
+    "name": "tricep",
+    "type": "Concept",
+    "video_ids": [
+      "Tw0axi-Jlqc",
+      "0f6-uCUKqgA",
+      "EQjexKQpGeQ",
+      "GGpArq725ls",
+      "A0NBCkpYatQ",
+      "8t2a93BjDec",
+      "Cv5nS1AH_jE",
+      "IaJWPqP-Bjo",
+      "vcBig73ojpE",
+      "popGXI-qs98",
+      "yN6Q1UI_xkE",
+      "-EIhKMDSjBY",
+      "94DXwlcX8Po"
+    ],
+    "related": [
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "dip stand",
+        "type": "Tool"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 12,
+      "strength": 7
+    }
+  },
+  "c3f318db-f48f-4d43-bd6f-d92dff35da4a": {
+    "name": "dips",
+    "type": "Method",
+    "video_ids": [
+      "Tw0axi-Jlqc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "5b2174c9-ec32-413e-bcee-ecbd9da154bd": {
+    "name": "cable tricep pushdowns",
+    "type": "Method",
+    "video_ids": [
+      "Tw0axi-Jlqc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "f09a68a9-1bcb-4c23-900c-cffec0dbc4cc": {
+    "name": "skull crushers",
+    "type": "Method",
+    "video_ids": [
+      "Tw0axi-Jlqc",
+      "8t2a93BjDec",
+      "IaJWPqP-Bjo"
+    ],
+    "related": [
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1
+    }
+  },
+  "c9be8c9f-fda5-4b25-a254-00325a3b8064": {
+    "name": "Renaissance Privatization",
+    "type": "Organization",
+    "video_ids": [
+      "Tw0axi-Jlqc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e6c4240e-5295-4c65-9307-6ae8ce6d471d": {
+    "name": "dip stand",
+    "type": "Tool",
+    "video_ids": [
+      "Tw0axi-Jlqc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "70d7ea66-897b-42b3-8fdf-0ddfefc088af": {
+    "name": "pecs",
+    "type": "Concept",
+    "video_ids": [
+      "Tw0axi-Jlqc",
+      "0f6-uCUKqgA",
+      "SUdQ1roIWz0",
+      "A0NBCkpYatQ",
+      "a4muTr5ZV9Y",
+      "vcBig73ojpE",
+      "yN6Q1UI_xkE",
+      "-EIhKMDSjBY",
+      "94DXwlcX8Po",
+      "O94yEoGXtBY"
+    ],
+    "related": [
+      {
+        "name": "dips",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 10,
+      "strength": 4
+    }
+  },
+  "827be83a-29b8-457c-8f32-e84f73a96bd7": {
+    "name": "Incline dumbbell presses",
+    "type": "Method",
+    "video_ids": [
+      "0f6-uCUKqgA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "e4fb5a36-b8fc-48c7-8b71-f701bb288126": {
+    "name": "study",
+    "type": "Paper",
+    "video_ids": [
+      "0f6-uCUKqgA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "2fcf8561-4420-4141-bc2e-f4bfd1403a3d": {
+    "name": "shoulder blades",
+    "type": "Concept",
+    "video_ids": [
+      "0f6-uCUKqgA",
+      "vcBig73ojpE",
+      "axoeDmW0oAY",
+      "popGXI-qs98",
+      "v_ZkxWzYnMc",
+      "XsrD5y8EIKU",
+      "yN6Q1UI_xkE",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 7,
+      "hypertrophy": 8
+    }
+  },
+  "7da7727a-a78a-47ba-8277-f2e46407664c": {
+    "name": "dumbbells",
+    "type": "Tool",
+    "video_ids": [
+      "0f6-uCUKqgA",
+      "Z6R8A5tcrTc",
+      "a4muTr5ZV9Y",
+      "94DXwlcX8Po"
+    ],
+    "related": [
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "curling",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 4
+    }
+  },
+  "4f7c2738-8f06-4f70-b0b0-2f8046cb748c": {
+    "name": "biceps",
+    "type": "Concept",
+    "video_ids": [
+      "0f6-uCUKqgA",
+      "tJIFTI9wZOw",
+      "i1YgFZB6alI",
+      "Hdc7Mw6BIEE",
+      "nwkLwMRHMQo",
+      "qfc70k40318",
+      "O94yEoGXtBY",
+      "MfMxT_jXcPE",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 6,
+      "hypertrophy": 7,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "44930a31-3ea1-430a-99bf-cd7dd39505c0": {
+    "name": "chicken dance",
+    "type": "Method",
+    "video_ids": [
+      "zfAHfyTB_Ao"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "481c838f-df85-4d3e-b2c3-1d2ad90fc8df": {
+    "name": "trap",
+    "type": "Concept",
+    "video_ids": [
+      "zfAHfyTB_Ao",
+      "7B5Exks1KJE",
+      "V3h_1IUY-f0",
+      "IaJWPqP-Bjo",
+      "axoeDmW0oAY",
+      "v_ZkxWzYnMc",
+      "C6sYjDFuq9I",
+      "djKXLt7kv7Q",
+      "J46aPqFl0WE",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 8,
+      "strength": 7,
+      "programming": 1
+    }
+  },
+  "cdba6762-cdeb-472e-b908-ee264defe846": {
+    "name": "barbell shrug",
+    "type": "Method",
+    "video_ids": [
+      "zfAHfyTB_Ao"
+    ],
+    "related": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9e5b0189-19d1-4854-9ded-e11839506a5d": {
+    "name": "Tom Hardy",
+    "type": "Person",
+    "video_ids": [
+      "zfAHfyTB_Ao"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "7b48c701-4d33-4b51-b34b-e0888838cdf4": {
+    "name": "glute",
+    "type": "Concept",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [
+      {
+        "name": "lunges",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "b0ef5577-dfe4-41cd-98e9-ec2588a5965d": {
+    "name": "technique",
+    "type": "Method",
+    "video_ids": [
+      "Z6R8A5tcrTc",
+      "popGXI-qs98",
+      "v_ZkxWzYnMc",
+      "yN6Q1UI_xkE",
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 5,
+      "strength": 3
+    }
+  },
+  "fb536426-a186-433c-b19c-50f784a01680": {
+    "name": "front leg",
+    "type": "Concept",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "57e0f05b-5e6d-494e-9377-d52ed1643081": {
+    "name": "back leg",
+    "type": "Concept",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "713a6e74-7254-4a45-ab6b-aa4bb45f02a9": {
+    "name": "barbell",
+    "type": "Tool",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "tight rope walk",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "6dc92e4f-371e-4e8b-994c-5a0c92db84d1": {
+    "name": "tight rope walk",
+    "type": "Method",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "8ebefa47-2f0d-4b12-9602-bbef37e19369": {
+    "name": "noodle lunges",
+    "type": "Method",
+    "video_ids": [
+      "Z6R8A5tcrTc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "b0d3de0a-4b2c-405e-9943-b71f29840b7c": {
+    "name": "legs",
+    "type": "Concept",
+    "video_ids": [
+      "Z6R8A5tcrTc",
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1
+    }
+  },
+  "ee742e49-5ea1-4e67-ba61-a4006a4cf263": {
+    "name": "Smith Machine",
+    "type": "Tool",
+    "video_ids": [
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "95c7baa5-9c6b-4f5c-a8de-e105b025b321": {
+    "name": "Arnold",
+    "type": "Person",
+    "video_ids": [
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "4ac5a0eb-c541-43d4-bb37-63cc337ba0c9": {
+    "name": "gym",
+    "type": "Organization",
+    "video_ids": [
+      "s5hluoQjtIM",
+      "a4muTr5ZV9Y",
+      "vcBig73ojpE",
+      "yN6Q1UI_xkE",
+      "-EIhKMDSjBY",
+      "gimeRpdqWQw",
+      "1G0y8D5rFDc",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 5,
+      "hypertrophy": 7,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "3651c2d2-0360-4002-b069-2b908cca5748": {
+    "name": "chin",
+    "type": "Concept",
+    "video_ids": [
+      "s5hluoQjtIM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "f0878383-2667-4075-8708-124438bf38e5": {
+    "name": "machine chest press",
+    "type": "Method",
+    "video_ids": [
+      "SUdQ1roIWz0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "14b8768c-8141-4a4d-94d2-67a31bf49dcc": {
+    "name": "Nautilus",
+    "type": "Organization",
+    "video_ids": [
+      "SUdQ1roIWz0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9d3bd138-b92e-4aca-8636-12cae015bb70": {
+    "name": "bench press",
+    "type": "Method",
+    "video_ids": [
+      "SUdQ1roIWz0",
+      "A0NBCkpYatQ",
+      "Cv5nS1AH_jE",
+      "vcBig73ojpE",
+      "axoeDmW0oAY",
+      "yN6Q1UI_xkE",
+      "nwkLwMRHMQo",
+      "-EIhKMDSjBY",
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 8,
+      "strength": 4
+    }
+  },
+  "554e2dfb-e60d-4536-b7a7-dbb207a9807a": {
+    "name": "Machines",
+    "type": "Tool",
+    "video_ids": [
+      "SUdQ1roIWz0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "eac46653-f86a-484e-b77d-72e5491cd5c6": {
+    "name": "PubMed study",
+    "type": "Paper",
+    "video_ids": [
+      "SUdQ1roIWz0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "24cd659a-8362-4f4b-8b1c-89475841f9d3": {
+    "name": "chess machine",
+    "type": "Tool",
+    "video_ids": [
+      "SUdQ1roIWz0"
+    ],
+    "related": [
+      {
+        "name": "target muscle",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "c5cd681a-eb71-45ee-a1cd-ec621ddb1ca4": {
+    "name": "back",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE",
+      "Hdc7Mw6BIEE",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "lower back",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 2,
+      "general-fitness": 1
+    }
+  },
+  "42ea3b62-9635-4b29-ae3a-986cc71454d9": {
+    "name": "barbell bent over row",
+    "type": "Method",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "73926ebb-3ee8-4c85-9b37-5889f027dfb1": {
+    "name": "spinal rector muscles",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "020cac0d-589d-41d5-9c1c-290fc1a1de2e": {
+    "name": "pulling muscles",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "bc2cc1af-5d70-4b51-8667-c4a4bf319498": {
+    "name": "row",
+    "type": "Method",
+    "video_ids": [
+      "7B5Exks1KJE",
+      "V3h_1IUY-f0",
+      "v_ZkxWzYnMc",
+      "nwkLwMRHMQo",
+      "qfc70k40318",
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "overhead press",
+        "type": "Method"
+      },
+      {
+        "name": "lateral delt",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 4,
+      "strength": 3
+    }
+  },
+  "8c075c96-e21f-4d54-82d1-d14defab4055": {
+    "name": "rhomboids",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE",
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "e481313c-d372-421a-98e6-9664c74e863c": {
+    "name": "scapulae",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE",
+      "A0NBCkpYatQ",
+      "axoeDmW0oAY",
+      "VL5Ab0T07e4",
+      "yN6Q1UI_xkE",
+      "C6sYjDFuq9I",
+      "-EIhKMDSjBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 7,
+      "strength": 3
+    }
+  },
+  "dfb43a88-f70f-4a0d-a161-b67256a58922": {
+    "name": "chest-supported row",
+    "type": "Method",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "cc7ab561-1f02-41f5-9670-ea020129bb6e": {
+    "name": "flexion row",
+    "type": "Method",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "29d765e8-8229-4ef4-ab40-6a03e36e51db": {
+    "name": "rhomboid mid-trap musculature",
+    "type": "Concept",
+    "video_ids": [
+      "7B5Exks1KJE"
+    ],
+    "related": [
+      {
+        "name": "barbell bent over row",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "619f16fa-9e1f-43b1-87b6-d9bd1359a956": {
+    "name": "Crystal",
+    "type": "Person",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [
+      {
+        "name": "behind  the neck press",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "f3b132f0-4175-48d3-a996-b6ad07a99a9d": {
+    "name": "abs",
+    "type": "Concept",
+    "video_ids": [
+      "GGpArq725ls",
+      "bEv6CCg2BC8",
+      "xDmFkJxPzeM",
+      "gimeRpdqWQw",
+      "1G0y8D5rFDc",
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 5,
+      "strength": 5,
+      "general-fitness": 3
+    }
+  },
+  "a66a69b5-b60b-4130-958b-5358edbc2917": {
+    "name": "shoulder press",
+    "type": "Method",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "3b8dafec-9144-41e3-aa8b-c27138da5ac4": {
+    "name": "military press",
+    "type": "Method",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "76a69f6c-94c9-4c41-85bf-6f852710afa9": {
+    "name": "Jeff Nipper",
+    "type": "Person",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "cfb02993-193b-47fa-9e6d-5921692406ed": {
+    "name": "YouTube",
+    "type": "Organization",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "84578aef-d0fd-4f30-bb11-da7ef824d367": {
+    "name": "slow eccentric",
+    "type": "Method",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9ae08a08-1bca-473f-8763-c010a6eaf328": {
+    "name": "Fast eccentric",
+    "type": "Method",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "417f9362-c2ef-43b6-a71e-8fe9e3c37970": {
+    "name": "sciatic area",
+    "type": "Concept",
+    "video_ids": [
+      "GGpArq725ls"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "14cb2f36-7bfa-4cc8-b76d-ad5d4f8664b3": {
+    "name": "sternal pecs",
+    "type": "Concept",
+    "video_ids": [
+      "A0NBCkpYatQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "fad617c5-5598-4497-b65d-316eec8000e0": {
+    "name": "bar",
+    "type": "Tool",
+    "video_ids": [
+      "A0NBCkpYatQ",
+      "xDmFkJxPzeM",
+      "f23vXjoG2e8"
+    ],
+    "related": [
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      },
+      {
+        "name": "single arm press down",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 2,
+      "general-fitness": 2
+    }
+  },
+  "54c7b82b-c6c7-4cd1-86d0-4a0a125dbd70": {
+    "name": "benching",
+    "type": "Method",
+    "video_ids": [
+      "A0NBCkpYatQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "c9558bf0-2c6b-4a06-ab13-d510ff5c4d31": {
+    "name": "grip",
+    "type": "Method",
+    "video_ids": [
+      "A0NBCkpYatQ",
+      "8t2a93BjDec"
+    ],
+    "related": [
+      {
+        "name": "grip",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "ec78ad2c-5b96-465e-8d95-935f3c3837cb": {
+    "name": "guillotine style",
+    "type": "Method",
+    "video_ids": [
+      "A0NBCkpYatQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "2e239d13-7d41-4de3-8caa-8eed59b732ce": {
+    "name": "biomechanics",
+    "type": "Method",
+    "video_ids": [
+      "A0NBCkpYatQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "4503a94c-c502-4037-af5e-b2f3c907b718": {
+    "name": "exercise science",
+    "type": "Paper",
+    "video_ids": [
+      "A0NBCkpYatQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "c6af2737-3e6b-4ce0-96c0-455779e7eba5": {
+    "name": "Rob",
+    "type": "Person",
+    "video_ids": [
+      "tJIFTI9wZOw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "52fa9160-99c9-47c2-b8ef-2f401ad2c815": {
+    "name": "Rata Sound Spiritization",
+    "type": "Organization",
+    "video_ids": [
+      "tJIFTI9wZOw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "12aa87bf-0d34-4503-9c35-10a31599dc73": {
+    "name": "barbell curls",
+    "type": "Method",
+    "video_ids": [
+      "tJIFTI9wZOw",
+      "i1YgFZB6alI",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 3,
+      "programming": 1
+    }
+  },
+  "dae05e0b-2998-4f1f-a9fe-6b6bc23974d0": {
+    "name": "easy bar",
+    "type": "Tool",
+    "video_ids": [
+      "tJIFTI9wZOw",
+      "94DXwlcX8Po",
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 2
+    }
+  },
+  "a7d2077a-1411-440d-80d6-40a678e6af80": {
+    "name": "Level three",
+    "type": "Method",
+    "video_ids": [
+      "tJIFTI9wZOw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "92c42487-3045-4125-b5fd-a56ec3e53281": {
+    "name": "Jared Feather",
+    "type": "Person",
+    "video_ids": [
+      "tJIFTI9wZOw",
+      "Cv5nS1AH_jE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "92532ef6-97d9-4a30-90fd-7fdc8cfb2df0": {
+    "name": "anti-ego juice",
+    "type": "Concept",
+    "video_ids": [
+      "tJIFTI9wZOw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "ef2f98b5-0adb-4293-9d90-58e0c157e27c": {
+    "name": "patented RP product",
+    "type": "Concept",
+    "video_ids": [
+      "tJIFTI9wZOw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "cdecb589-6f14-42ea-a165-6c11fb7a58ea": {
+    "name": "Dr. James Hoffman",
+    "type": "Person",
+    "video_ids": [
+      "V3h_1IUY-f0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "ecb8bbb6-07de-4c02-b976-1023f78a439a": {
+    "name": "Aaron Thomas",
+    "type": "Person",
+    "video_ids": [
+      "V3h_1IUY-f0"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "f2d1a16f-5d2d-42e3-8790-f7a040da37e7": {
+    "name": "good morning exercise",
+    "type": "Method",
+    "video_ids": [
+      "I9l9WRZ5SWE"
+    ],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "general-fitness": 1
+    }
+  },
+  "23535e36-b5de-4c44-ae79-6730ff88224d": {
+    "name": "massive hamstrings",
+    "type": "Concept",
+    "video_ids": [
+      "I9l9WRZ5SWE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "general-fitness": 1
+    }
+  },
+  "29bed09f-704c-49b8-b09e-8d826ec1b6f0": {
+    "name": "transformer bar",
+    "type": "Tool",
+    "video_ids": [
+      "I9l9WRZ5SWE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "general-fitness": 1
+    }
+  },
+  "1065327f-42c7-498c-b868-deaed8da9296": {
+    "name": "NFTs",
+    "type": "Method",
+    "video_ids": [
+      "8t2a93BjDec"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "1ea7eef7-2da5-4af6-af75-ec05e2b3f643": {
+    "name": "Smith machine",
+    "type": "Tool",
+    "video_ids": [
+      "8t2a93BjDec",
+      "C6sYjDFuq9I",
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "11396028-425d-4d28-b2c7-11dbb72599c3": {
+    "name": "nose",
+    "type": "Concept",
+    "video_ids": [
+      "8t2a93BjDec"
+    ],
+    "related": [
+      {
+        "name": "nose",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "d1798e50-56d4-4c02-b1f7-8cc35ad7a928": {
+    "name": "elbow joints",
+    "type": "Concept",
+    "video_ids": [
+      "8t2a93BjDec"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "1e8a9ace-f2b2-495e-b492-6835c1cc52cd": {
+    "name": "barbell bench press",
+    "type": "Method",
+    "video_ids": [
+      "Cv5nS1AH_jE",
+      "a4muTr5ZV9Y",
+      "O94yEoGXtBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 2
+    }
+  },
+  "31e7b359-fd39-4cf0-8fee-06d4b409fa41": {
+    "name": "Mike",
+    "type": "Person",
+    "video_ids": [
+      "Cv5nS1AH_jE"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "38be5b3a-4263-4292-800f-defbd4d55d16": {
+    "name": "close grip bench",
+    "type": "Method",
+    "video_ids": [
+      "Cv5nS1AH_jE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "98410fe2-7a24-49e7-953b-598d8b6d2c73": {
+    "name": "jm press",
+    "type": "Method",
+    "video_ids": [
+      "Cv5nS1AH_jE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "bf167d92-261d-42b0-9d89-216234c13092": {
+    "name": "overhead",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "783be660-261a-42b5-9625-52174614d2d1": {
+    "name": "easy bar extension",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "80aa7427-edd8-4bf4-aa28-44c44b0c4fea": {
+    "name": "Wife unit",
+    "type": "Tool",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9828e582-86d0-4bbd-a6ad-8ece3b830e09": {
+    "name": "behind  the neck press",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "fd393713-6ba8-443d-a650-125d47a04357": {
+    "name": "overhead extensions",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "2fcc8ed6-73b6-4cd7-a970-14c327ca546e": {
+    "name": "press",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "2e50baaa-8b07-4dd9-ae91-415a86c4a570": {
+    "name": "eccentric",
+    "type": "Method",
+    "video_ids": [
+      "IaJWPqP-Bjo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e5cd1f55-b50b-46fc-b593-8f049ee9e099": {
+    "name": "long head",
+    "type": "Concept",
+    "video_ids": [
+      "IaJWPqP-Bjo",
+      "i1YgFZB6alI",
+      "popGXI-qs98",
+      "94DXwlcX8Po"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 4,
+      "strength": 3
+    }
+  },
+  "608392fd-e2f1-4a3c-baf3-4b434c0843bf": {
+    "name": "Canberr Bar",
+    "type": "Tool",
+    "video_ids": [
+      "a4muTr5ZV9Y"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "011e0462-d774-442d-8102-21ad55a63c35": {
+    "name": "pecks",
+    "type": "Concept",
+    "video_ids": [
+      "a4muTr5ZV9Y"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "bdb50344-207a-40a3-84c8-154f6fe78608": {
+    "name": "cambered bar bench",
+    "type": "Tool",
+    "video_ids": [
+      "a4muTr5ZV9Y"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "5dd68bcd-9353-4958-852c-ec87483443df": {
+    "name": "chest machine",
+    "type": "Tool",
+    "video_ids": [
+      "a4muTr5ZV9Y"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "2f080036-8cd1-4e5f-948b-3c90b1108a0d": {
+    "name": "hack squats",
+    "type": "Method",
+    "video_ids": [
+      "a4muTr5ZV9Y"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "fd8b614d-3cf8-4f8d-9276-9c1dc15bafc7": {
+    "name": "machines",
+    "type": "Tool",
+    "video_ids": [
+      "a4muTr5ZV9Y",
+      "v_ZkxWzYnMc"
+    ],
+    "related": [
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1
+    }
+  },
+  "d354aecc-7094-4613-a473-ab749b5bbd64": {
+    "name": "Pull-ups",
+    "type": "Method",
+    "video_ids": [
+      "a4muTr5ZV9Y",
+      "Hdc7Mw6BIEE",
+      "O94yEoGXtBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 2,
+      "general-fitness": 1
+    }
+  },
+  "db18c5d8-b7e6-4f62-8b56-67a62cdf3544": {
+    "name": "Technique",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE",
+      "axoeDmW0oAY",
+      "i1YgFZB6alI",
+      "v-mQm_droHg",
+      "-EIhKMDSjBY",
+      "f23vXjoG2e8",
+      "ljO4jkwv8wQ",
+      "MfMxT_jXcPE"
+    ],
+    "related": [
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      },
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 6,
+      "hypertrophy": 8,
+      "general-fitness": 1
+    }
+  },
+  "4462807d-efda-47ae-84bc-e60f0fb76c51": {
+    "name": "pec major",
+    "type": "Concept",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "b82fa032-3b83-4ead-90af-489f7bc0de66": {
+    "name": "sternal",
+    "type": "Concept",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "7c57239b-0f6b-47ba-8ee6-9451c3732328": {
+    "name": "upper heads",
+    "type": "Concept",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "92ed3403-70b7-4308-b238-760e080cc2cb": {
+    "name": "triceps brachii",
+    "type": "Concept",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "cde20522-a08b-4083-9e9b-d7c8ab614af2": {
+    "name": "anterior deltoids",
+    "type": "Concept",
+    "video_ids": [
+      "vcBig73ojpE",
+      "_RlRDWO2jfg",
+      "nwkLwMRHMQo",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2,
+      "programming": 1
+    }
+  },
+  "4412357a-c5bf-4f9b-bf21-66baf5bc9ed2": {
+    "name": "elbow extension",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE",
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "1e9f247d-c28b-43c0-996f-392228af5e80": {
+    "name": "2007 study",
+    "type": "Paper",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "4b3aa3f1-d34b-4fdf-9f9e-1a0d9088e171": {
+    "name": "Lifting",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE",
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "nwkLwMRHMQo"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 3
+    }
+  },
+  "d9c4a77a-66af-4c60-942e-010c984b30fb": {
+    "name": "Research",
+    "type": "Paper",
+    "video_ids": [
+      "vcBig73ojpE",
+      "bEv6CCg2BC8",
+      "-qsRtp_PbVM",
+      "nwkLwMRHMQo",
+      "O94yEoGXtBY",
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 4
+    }
+  },
+  "7c40e801-a408-40d5-9fbe-2f580cd0db84": {
+    "name": "daily undulating periodization",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "729c92b5-1896-4e68-b9a8-7135b9424476": {
+    "name": "leg drive",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "fc7d8e53-e462-4be7-8b13-e4bd0dacd2c6": {
+    "name": "equipped powerlifting",
+    "type": "Method",
+    "video_ids": [
+      "vcBig73ojpE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "a58d2a8f-2382-437e-9a54-cbce9eb3fe25": {
+    "name": "Pendlay row",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "lower back",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "6269440f-ffb4-44fc-bec2-63b382c7719f": {
+    "name": "standing barbell row",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "cd9dcd7e-a779-40e3-9ce6-095ecee2837a": {
+    "name": "Glenn Pendlay",
+    "type": "Person",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "ac8c5e1c-bd49-40f4-9b1f-24dc108166b7": {
+    "name": "rear delt",
+    "type": "Concept",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "qfc70k40318",
+      "f23vXjoG2e8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 3,
+      "general-fitness": 1
+    }
+  },
+  "9b779cc0-ad10-4e2a-88e8-eea5454df129": {
+    "name": "mid traps",
+    "type": "Concept",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "Hdc7Mw6BIEE",
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 3,
+      "general-fitness": 1
+    }
+  },
+  "d02e5ba8-091b-4a72-971b-e60069c48723": {
+    "name": "Dr. Mike Isretel",
+    "type": "Person",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [
+      {
+        "name": "Pendlay row",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "3107d611-6f44-4949-bb5b-d254bd2552c0": {
+    "name": "Progressive overload",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "XsrD5y8EIKU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "750fb5ec-94f2-41be-ad2c-1a39254bb6f5": {
+    "name": "hip extension",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "bEv6CCg2BC8",
+      "v-mQm_droHg"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2
+    }
+  },
+  "5341f1a0-1381-411e-945c-b6e39d7e58e4": {
+    "name": "best studies",
+    "type": "Paper",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "1cff18f5-8f70-47c9-b8d8-2633d5521c0a": {
+    "name": "Helms Row",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "a6cfb38f-a95f-496b-b4f8-c10f83f0ae6c": {
+    "name": "Pendley row",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "252cb670-97ee-4c9e-9c6d-3abe68b9c7cc": {
+    "name": "spinal  erectors",
+    "type": "Concept",
+    "video_ids": [
+      "axoeDmW0oAY",
+      "XsrD5y8EIKU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "ac9dd446-c254-4bfc-9184-f825f7674dd3": {
+    "name": "aerobic risers",
+    "type": "Tool",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "d5459a4e-ac3e-40b9-a064-124741fb3f33": {
+    "name": "true pendulary row",
+    "type": "Method",
+    "video_ids": [
+      "axoeDmW0oAY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "e8c6a7b1-c745-435e-a746-646403b229f1": {
+    "name": "bicep curl",
+    "type": "Method",
+    "video_ids": [
+      "i1YgFZB6alI",
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "502bee36-51f1-47e8-9b78-563faf84a6d1": {
+    "name": "barbell curl",
+    "type": "Method",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [
+      {
+        "name": "barbell curl",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "798de9ec-2201-4166-8bde-ff9cde4c579d": {
+    "name": "brachialis",
+    "type": "Concept",
+    "video_ids": [
+      "i1YgFZB6alI",
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [
+      {
+        "name": "bicep curl",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2,
+      "general-fitness": 1
+    }
+  },
+  "02bbe17b-6cd9-46ab-b2c7-da6ee9d73e47": {
+    "name": "biceps brachii",
+    "type": "Concept",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [
+      {
+        "name": "wrist supination",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "80a8084e-79e6-441f-a8b7-1e3d3da3e282": {
+    "name": "wrist supination",
+    "type": "Method",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "64d08cba-65be-49e9-80af-1ffb93b5dbcc": {
+    "name": "forearm muscles",
+    "type": "Concept",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "cd321193-6f94-4086-9eea-a8ac38b270be": {
+    "name": "8-week training study",
+    "type": "Paper",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "20e038bb-aaf8-49e4-b5f2-08b7d62bb460": {
+    "name": "Schoenfeld and colleagues",
+    "type": "Person",
+    "video_ids": [
+      "i1YgFZB6alI",
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 2
+    }
+  },
+  "d6ede467-9a84-485f-8787-59c607c01f68": {
+    "name": "short head",
+    "type": "Concept",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5b61c67e-2da5-4fe8-9592-08713d08770c": {
+    "name": "Bayesian cable curl",
+    "type": "Method",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [
+      {
+        "name": "barbell curl",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "2d9fb8a1-7fcb-461a-94e6-ee81c4af91cf": {
+    "name": "arm blaster",
+    "type": "Tool",
+    "video_ids": [
+      "i1YgFZB6alI"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "e1dc37c0-0e41-4080-b2e0-396b6c77f2c5": {
+    "name": "skull crusher",
+    "type": "Tool",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "26036b4c-1920-4898-912b-ac76414890b3": {
+    "name": "lat pullovers",
+    "type": "Method",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "8ef16bd0-92f4-4ce1-abae-10a0ea7d04eb": {
+    "name": "Brad Schoenfeld",
+    "type": "Person",
+    "video_ids": [
+      "popGXI-qs98",
+      "1G0y8D5rFDc",
+      "ljO4jkwv8wQ",
+      "2RrGnjxSsiA",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 4,
+      "strength": 5,
+      "general-fitness": 2,
+      "programming": 1
+    }
+  },
+  "c2c4cbb6-8ba5-4e03-82aa-90fdc4cf48d2": {
+    "name": "Other research",
+    "type": "Paper",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "0fb1cecc-e052-4002-8bb0-bcda7035e29d": {
+    "name": "2017 study",
+    "type": "Paper",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "557926ab-8251-4713-9511-66308b76abba": {
+    "name": "Greg Knuckles",
+    "type": "Person",
+    "video_ids": [
+      "popGXI-qs98",
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "1f830f43-7865-4538-a4f6-a4bcff00be7b": {
+    "name": "mass research review",
+    "type": "Paper",
+    "video_ids": [
+      "popGXI-qs98",
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "b665a01a-a4f0-4d77-8f0c-d62c8347be3c": {
+    "name": "lats and pecs",
+    "type": "Concept",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "dbe4d645-448f-495e-9740-bde485960fe3": {
+    "name": "dumbbell skull crusher",
+    "type": "Tool",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "70395138-5c85-4348-92a6-c46bd433d00a": {
+    "name": "shoulder",
+    "type": "Concept",
+    "video_ids": [
+      "popGXI-qs98",
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2
+    }
+  },
+  "9749386d-6d76-47c9-97e9-a0233a1bbee7": {
+    "name": "horizontal pressing",
+    "type": "Method",
+    "video_ids": [
+      "popGXI-qs98"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
+  },
+  "5b722d2f-06e3-4414-a52d-4e4ef293162b": {
+    "name": "behind  the neck lat pull down",
+    "type": "Method",
+    "video_ids": [
+      "Hdc7Mw6BIEE",
+      "XsrD5y8EIKU",
+      "O94yEoGXtBY",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 3,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "bdf79b72-41de-4969-89b5-96b0c09f9ba8": {
+    "name": "terus major and minor muscles",
+    "type": "Concept",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "ca21ebed-6426-4b95-86f6-d46e094fd2a4": {
+    "name": "brachioradialis  muscles",
+    "type": "Concept",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "19a953fc-88ab-454b-9c20-990a80d34de1": {
+    "name": "lower  traps",
+    "type": "Concept",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "b8ce0c54-d8ac-4403-aa3c-1d4a5a3644fa": {
+    "name": "rectus  abdominis",
+    "type": "Concept",
+    "video_ids": [
+      "Hdc7Mw6BIEE",
+      "1G0y8D5rFDc",
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 3,
+      "general-fitness": 3
+    }
+  },
+  "b60d4470-9ed8-41b5-8351-53a94b1de71a": {
+    "name": "Domen and colleagues",
+    "type": "Paper",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "ff93c3de-ad68-4a8f-b916-cb9c3109146d": {
+    "name": "chin-ups",
+    "type": "Method",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "f4b3068b-7562-4a5e-bb47-7e6110d275ce": {
+    "name": "assisted pull-up  machine",
+    "type": "Tool",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "03f1175c-d3d8-4a9e-a805-9dc7c28ee3fc": {
+    "name": "2016 study",
+    "type": "Paper",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "81d7cd30-5e17-4cf9-b815-ab9f6296990a": {
+    "name": "Massey University",
+    "type": "Organization",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "b75f6b89-8217-4a77-8262-2e752f8dca14": {
+    "name": "lifting straps",
+    "type": "Tool",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "9bfe123b-7c57-42f5-8345-2e7b98125808": {
+    "name": "cluster sets",
+    "type": "Method",
+    "video_ids": [
+      "Hdc7Mw6BIEE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "81b867ab-06d5-45fc-bc85-9b73b47bb14b": {
+    "name": "OHP",
+    "type": "Method",
+    "video_ids": [
+      "_RlRDWO2jfg",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "barbell",
+        "type": "Tool"
+      },
+      {
+        "name": "anterior deltoids",
+        "type": "Concept"
+      },
+      {
+        "name": "upper  trap fibers",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "1ac70b52-bb07-49fa-ae57-69fa91adfddf": {
+    "name": "upper  trap fibers",
+    "type": "Concept",
+    "video_ids": [
+      "_RlRDWO2jfg",
+      "v_ZkxWzYnMc",
+      "C6sYjDFuq9I",
+      "nwkLwMRHMQo",
+      "f23vXjoG2e8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 4,
+      "general-fitness": 1
+    }
+  },
+  "501d9dce-c5bd-4b50-ba99-f72125af7455": {
+    "name": "overhead press",
+    "type": "Method",
+    "video_ids": [
+      "_RlRDWO2jfg",
+      "nwkLwMRHMQo"
+    ],
+    "related": [
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "3344bdef-c6a2-474f-8831-db9b380a0c71": {
+    "name": "2013 study",
+    "type": "Paper",
+    "video_ids": [
+      "_RlRDWO2jfg",
+      "v_ZkxWzYnMc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "e44af60b-67f7-40a4-88a4-a174da710e2f": {
+    "name": "knee extension",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2
+    }
+  },
+  "ef1b04f9-51b3-400a-b09b-cb68adf213ab": {
+    "name": "adductor",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [
+      {
+        "name": "hip extension",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "58cb05a8-523e-41f9-a533-05fce8e69456": {
+    "name": "Magnus",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "b90f6c11-df10-41f0-bc9d-c18217987540": {
+    "name": "quadriceps",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8",
+      "XsrD5y8EIKU",
+      "ljO4jkwv8wQ"
+    ],
+    "related": [
+      {
+        "name": "knee extension",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2
+    }
+  },
+  "7c2012f3-c79f-4d60-a067-1e7e3041f6dd": {
+    "name": "back squat",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8",
+      "v-mQm_droHg",
+      "_oyxCn2iSjU",
+      "ljO4jkwv8wQ",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Olympic grip",
+        "type": "Method"
+      },
+      {
+        "name": "strap technique",
+        "type": "Method"
+      },
+      {
+        "name": "cross grip",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 5,
+      "hypertrophy": 3,
+      "programming": 1
+    }
+  },
+  "1f2bf8f5-05dc-4d4a-b079-fff6cf33c893": {
+    "name": "upper back",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8",
+      "v-mQm_droHg",
+      "f23vXjoG2e8",
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 3,
+      "general-fitness": 1
+    }
+  },
+  "c8022f6b-d263-4a5d-ab59-bc3ada42a2b6": {
+    "name": "big toe",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "8e98eff6-d082-4f2d-adda-bb7a539a0244": {
+    "name": "hip abductors",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "a4c2c9df-8edf-40f5-a7b1-1ddefd868376": {
+    "name": "Foam rolling",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "b32d3f3f-c008-480b-a7f4-5bf43352fb17": {
+    "name": "dynamic stretching",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "320af162-eb9c-4d5d-b65b-9a41b9a22ffd": {
+    "name": "lower back extension",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "5a842738-07f6-4e52-b6e4-e6d789471ee4": {
+    "name": "regulation technique",
+    "type": "Method",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "46521480-336b-47ed-9cd8-37f10e3c201a": {
+    "name": "hip crease",
+    "type": "Concept",
+    "video_ids": [
+      "bEv6CCg2BC8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1
+    }
+  },
+  "4fd6396c-2ba2-47eb-bcb5-ed75525dbc98": {
+    "name": "lateral delt",
+    "type": "Concept",
+    "video_ids": [
+      "v_ZkxWzYnMc",
+      "nwkLwMRHMQo"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "b1cff8ca-9471-494d-b586-9239539d395b": {
+    "name": "Egyptian cable lateral  raise",
+    "type": "Method",
+    "video_ids": [
+      "v_ZkxWzYnMc",
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "99731eb3-febb-497d-a2bc-25fa07868b65": {
+    "name": "bench press",
+    "type": "Concept",
+    "video_ids": [
+      "v_ZkxWzYnMc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "a0c6bf79-5d09-41c6-8fc6-0fac680b67d8": {
+    "name": "lateral raise",
+    "type": "Concept",
+    "video_ids": [
+      "v_ZkxWzYnMc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "164cc204-248e-4f74-9b2b-f6c03d2a1212": {
+    "name": "internal rotation",
+    "type": "Method",
+    "video_ids": [
+      "v_ZkxWzYnMc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "228e8517-6101-4218-957b-25c1abf2e5c0": {
+    "name": "external  rotation",
+    "type": "Method",
+    "video_ids": [
+      "v_ZkxWzYnMc",
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 2
+    }
+  },
+  "0adfeef1-60c8-4961-bc42-34ef3e4129b6": {
+    "name": "butt cheeks",
+    "type": "Concept",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "b6e4cde9-e835-489e-af68-751f6ea534fe": {
+    "name": "intensity technique",
+    "type": "Method",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "8bd96fbb-d2a1-468b-9f91-3dd5826e93ce": {
+    "name": "hip  thrust",
+    "type": "Method",
+    "video_ids": [
+      "xDmFkJxPzeM",
+      "wr-iSaXPr5s"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "2dd53d1c-aa71-4aa5-8c53-f63a753ff754": {
+    "name": "Brett Contreras",
+    "type": "Person",
+    "video_ids": [
+      "xDmFkJxPzeM",
+      "wr-iSaXPr5s",
+      "yN6Q1UI_xkE",
+      "v-mQm_droHg",
+      "qfc70k40318",
+      "J46aPqFl0WE",
+      "2RrGnjxSsiA",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 6,
+      "hypertrophy": 7,
+      "general-fitness": 2,
+      "programming": 2
+    }
+  },
+  "daa7e1a1-cf8f-42b3-8fd9-c8ba7a531b5a": {
+    "name": "Katie Sonnier",
+    "type": "Person",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "9c7ce70a-bf84-40d5-947f-62eb69adbc1a": {
+    "name": "decline bench",
+    "type": "Tool",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "f6740a7b-b584-4bf3-bfd0-d78481ab950e": {
+    "name": "leg extension machine",
+    "type": "Tool",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "db6c2121-1cb3-4898-9a31-9eb2f3da0925": {
+    "name": "hip abduction",
+    "type": "Method",
+    "video_ids": [
+      "xDmFkJxPzeM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "f5c52181-604b-4909-921e-7d82a7286091": {
+    "name": "plates",
+    "type": "Method",
+    "video_ids": [
+      "XsrD5y8EIKU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "c14382d5-fe74-4c98-8513-68ff7163c369": {
+    "name": "Conventional deadlift",
+    "type": "Method",
+    "video_ids": [
+      "XsrD5y8EIKU",
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "-qsRtp_PbVM",
+      "_oyxCn2iSjU"
+    ],
+    "related": [
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 4,
+      "hypertrophy": 5,
+      "programming": 1
+    }
+  },
+  "5ce939d9-4218-406c-b0b7-e8ece8cda565": {
+    "name": "squat",
+    "type": "Concept",
+    "video_ids": [
+      "XsrD5y8EIKU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "859e453c-8645-4b97-890f-0463deac4408": {
+    "name": "powerlifting coaches",
+    "type": "Person",
+    "video_ids": [
+      "XsrD5y8EIKU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "29c37f57-9131-43f8-98b4-cf6e159700d5": {
+    "name": "lats and traps",
+    "type": "Concept",
+    "video_ids": [
+      "VL5Ab0T07e4"
+    ],
+    "related": [
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "fce82132-382a-458b-bf26-8752d19b531c": {
+    "name": "hip extension",
+    "type": "Concept",
+    "video_ids": [
+      "VL5Ab0T07e4",
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2,
+      "general-fitness": 1
+    }
+  },
+  "485cee84-586f-42db-8a6d-6d04723e822d": {
+    "name": "coaches",
+    "type": "Person",
+    "video_ids": [
+      "VL5Ab0T07e4"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "8f112e86-f2d8-4b36-bc71-5e04d1008ec5": {
+    "name": "Sumo",
+    "type": "Method",
+    "video_ids": [
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2,
+      "programming": 1
+    }
+  },
+  "ca3a4219-6cc5-44f1-af76-0c9d10524a0d": {
+    "name": "lockout",
+    "type": "Method",
+    "video_ids": [
+      "VL5Ab0T07e4"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5fd7e61d-6a9b-4e5a-8525-84debe8e0677": {
+    "name": "the plates",
+    "type": "Tool",
+    "video_ids": [
+      "VL5Ab0T07e4"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "2b7ce560-d728-475a-91b0-a85b14a3261d": {
+    "name": "stiff leg deadlift",
+    "type": "Method",
+    "video_ids": [
+      "VL5Ab0T07e4",
+      "wr-iSaXPr5s",
+      "_oyxCn2iSjU"
+    ],
+    "related": [
+      {
+        "name": "Romanian deadlift",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 3,
+      "programming": 1
+    }
+  },
+  "dc79feab-a1dc-4c75-ae4c-71b894a5a6db": {
+    "name": "plates",
+    "type": "Concept",
+    "video_ids": [
+      "VL5Ab0T07e4"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "700e5036-5f37-45ce-ad13-833582f22133": {
+    "name": "Romanian deadlift",
+    "type": "Method",
+    "video_ids": [
+      "wr-iSaXPr5s",
+      "-qsRtp_PbVM",
+      "f23vXjoG2e8",
+      "_oyxCn2iSjU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 4,
+      "programming": 1,
+      "general-fitness": 1
+    }
+  },
+  "804ebab0-2464-4401-9668-cd2425c7e327": {
+    "name": "your lower back",
+    "type": "Concept",
+    "video_ids": [
+      "wr-iSaXPr5s"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "02aca54e-9a8e-4543-b49b-6d7be81bac15": {
+    "name": "cable pull-throughs",
+    "type": "Method",
+    "video_ids": [
+      "wr-iSaXPr5s"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "a7597c24-c10c-47a6-ad71-4a1b5f076d0e": {
+    "name": "deadlift",
+    "type": "Concept",
+    "video_ids": [
+      "wr-iSaXPr5s",
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2,
+      "programming": 1
+    }
+  },
+  "91d7e48a-9ee5-4b24-bbd1-a7d3598717e3": {
+    "name": "setup",
+    "type": "Method",
+    "video_ids": [
+      "wr-iSaXPr5s"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "56d9a239-172e-459f-8996-516917453a7d": {
+    "name": "dip rack",
+    "type": "Tool",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "73c8b6fe-7f65-4a33-a112-9e5b88a72208": {
+    "name": "parallel bars",
+    "type": "Tool",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [
+      {
+        "name": "shoulder blades",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "24d04e6a-20a0-4e7b-8018-2df4f29a6bed": {
+    "name": "torso",
+    "type": "Concept",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "fbd8bd2f-da59-4955-b83f-b1b528fd2e0f": {
+    "name": "lower pecs",
+    "type": "Concept",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "ae82248e-ff02-434b-8bd7-a57fc246d21c": {
+    "name": "interior deltoids",
+    "type": "Concept",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "3df4d0ed-1737-4247-8437-bd22c33db965": {
+    "name": "Clavicular or upper head of the pecs",
+    "type": "Concept",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "90ff4d83-be9d-4616-915d-119fe4614782": {
+    "name": "dip",
+    "type": "Method",
+    "video_ids": [
+      "yN6Q1UI_xkE",
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2
+    }
+  },
+  "c7280fa6-75c9-4e50-bb3a-d866b65f1c8a": {
+    "name": "free weight dip",
+    "type": "Method",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "39fe2a2b-51a3-4b9f-be53-cf3b7507220d": {
+    "name": "assisted dip machine",
+    "type": "Tool",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [
+      {
+        "name": "free weight dip",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "720d6c6e-833b-4cc2-baee-4e1468927201": {
+    "name": "weighted dip machine",
+    "type": "Tool",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [
+      {
+        "name": "free weight dip",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "0831d31f-cc56-4817-a3f4-e2ca355097e2": {
+    "name": "weighted push-ups",
+    "type": "Method",
+    "video_ids": [
+      "yN6Q1UI_xkE"
+    ],
+    "related": [
+      {
+        "name": "dips",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "210455fe-2bdd-45fc-b175-106c419eb2ae": {
+    "name": "power shrug",
+    "type": "Method",
+    "video_ids": [
+      "C6sYjDFuq9I",
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 2
+    }
+  },
+  "c18d4778-b6d5-470b-9f90-779507959be2": {
+    "name": "power rack",
+    "type": "Tool",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "6bd3ad7e-9fff-41e3-896f-1accdf9509c6": {
+    "name": "standing calf raise shrug",
+    "type": "Method",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [
+      {
+        "name": "trap",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "615f605b-e843-4976-83bb-725b6bf8be3a": {
+    "name": "dual cable shrug",
+    "type": "Method",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5d060b8e-1fea-491d-a342-84b0929cdaac": {
+    "name": "cable rack",
+    "type": "Tool",
+    "video_ids": [
+      "C6sYjDFuq9I",
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "26e98271-d2c6-4978-b00c-38eaad721916": {
+    "name": "Dr. Mike Isartel",
+    "type": "Person",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "d823cb95-f946-4d0e-9f4d-14564f7dc085": {
+    "name": "levator scapulae",
+    "type": "Concept",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5780396f-7049-4d07-9f41-ba7a984dc8f7": {
+    "name": "scapular elevation",
+    "type": "Method",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "179713e4-8313-4164-b0f7-0a415ccff178": {
+    "name": "1994 cadaver study",
+    "type": "Paper",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "542dd23b-c809-4fa3-8f58-aafd37ff86d9": {
+    "name": "rack pulls",
+    "type": "Method",
+    "video_ids": [
+      "C6sYjDFuq9I"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5b3f9586-5b1b-457d-9ea8-f72b3f2e931e": {
+    "name": "ankle plantar flexion",
+    "type": "Method",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "eece0813-092f-4a17-b1e5-6233d8dc69b6": {
+    "name": "two-headed gastric anemius muscle",
+    "type": "Concept",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [
+      {
+        "name": "ankle plantar flexion",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9c97ad4f-686a-44ff-b94a-4f96ac175332": {
+    "name": "soleus",
+    "type": "Concept",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [
+      {
+        "name": "ankle plantar flexion",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "d8fdb44a-ba90-40c0-b355-d3aa825fc527": {
+    "name": "gastroc",
+    "type": "Concept",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "7d9f9b7e-b5fd-452b-ab8a-95a35dc557ac": {
+    "name": "EMG data",
+    "type": "Paper",
+    "video_ids": [
+      "-qsRtp_PbVM",
+      "qfc70k40318",
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 3,
+      "strength": 1
+    }
+  },
+  "c5a9783f-67f6-41bc-bcda-fdc9d35f6160": {
+    "name": "Achilles tendon",
+    "type": "Concept",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "4a1001c0-0428-4374-8c8f-bf90ce1498f8": {
+    "name": "2011 study",
+    "type": "Paper",
+    "video_ids": [
+      "-qsRtp_PbVM"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "6851e357-8e84-400c-9b99-ba0e833cef8c": {
+    "name": "goblet squat",
+    "type": "Method",
+    "video_ids": [
+      "v-mQm_droHg",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "bed89eca-906a-414d-87b2-52cea9afeed4": {
+    "name": "Olympic grip",
+    "type": "Method",
+    "video_ids": [
+      "v-mQm_droHg"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "890db3f9-c800-4e4c-992f-39d646f285e6": {
+    "name": "strap technique",
+    "type": "Method",
+    "video_ids": [
+      "v-mQm_droHg"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "0119658c-01a3-4dfd-8313-cb87da03876d": {
+    "name": "cross grip",
+    "type": "Method",
+    "video_ids": [
+      "v-mQm_droHg"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "8b8e6223-b48b-45b3-9c41-e9bad48f5ba7": {
+    "name": "1-2015 study",
+    "type": "Paper",
+    "video_ids": [
+      "v-mQm_droHg"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "eddc62d8-2683-4e53-ad4a-d17683b28410": {
+    "name": "NSEA report",
+    "type": "Paper",
+    "video_ids": [
+      "nwkLwMRHMQo"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "63cb96dc-920d-4d27-a24a-6f3afcc3fe0e": {
+    "name": "McAllister et al",
+    "type": "Person",
+    "video_ids": [
+      "nwkLwMRHMQo"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "de3112a2-18b8-438d-8661-1188183dd5d7": {
+    "name": "cable machine",
+    "type": "Tool",
+    "video_ids": [
+      "nwkLwMRHMQo",
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "3fa6a2e7-02e8-4990-bc54-236e3a2f3c38": {
+    "name": "Front raise",
+    "type": "Method",
+    "video_ids": [
+      "nwkLwMRHMQo"
+    ],
+    "related": [],
+    "use_case_counts": {}
+  },
+  "82bfd94b-2424-4b28-b596-77cfb8365eee": {
+    "name": "fly",
+    "type": "Method",
+    "video_ids": [
+      "-EIhKMDSjBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "239ca48f-3abe-40c3-baa7-1175ff541fbd": {
+    "name": "clavicular head",
+    "type": "Concept",
+    "video_ids": [
+      "-EIhKMDSjBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "f4a12d65-ec15-4c49-941b-b73107cbd9f1": {
+    "name": "cable setup",
+    "type": "Tool",
+    "video_ids": [
+      "-EIhKMDSjBY",
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "fly",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "90f789a2-5345-44c9-be2f-cfa5858cdeb1": {
+    "name": "cable fly",
+    "type": "Method",
+    "video_ids": [
+      "-EIhKMDSjBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "42e85ac8-82fc-4252-acbf-4727b8f43336": {
+    "name": "upper lower",
+    "type": "Concept",
+    "video_ids": [
+      "-EIhKMDSjBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "061fb88b-e096-422a-b935-57f690d54e92": {
+    "name": "neck extension",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "0e93678e-784a-4291-89e0-584959cc23e4": {
+    "name": "lying neck curls",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [
+      {
+        "name": "neck extension",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "05a76504-3da9-4c84-8c91-c60355c4e334": {
+    "name": "Extension",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw",
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "a5578ed2-87cc-4da2-8f13-ba88a8ab057b": {
+    "name": "neck flex",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "8578569f-610b-4b72-946a-65fe137b1647": {
+    "name": "neck",
+    "type": "Concept",
+    "video_ids": [
+      "gimeRpdqWQw",
+      "J46aPqFl0WE"
+    ],
+    "related": [
+      {
+        "name": "abs",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 2
+    }
+  },
+  "f6da24b4-e476-4a3d-a094-e92cec92fb5b": {
+    "name": "neck training",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [
+      {
+        "name": "neck bridges",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "4680132d-a76c-44bd-ba97-bf0ef46382e1": {
+    "name": "Channing Tatum",
+    "type": "Person",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "fbc17f64-395f-4f13-9722-f2e7a4d35a57": {
+    "name": "DJ Qualls",
+    "type": "Person",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "fda2aa0d-796b-4aad-a37c-a3e84252f1f6": {
+    "name": "forward flexion",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [
+      {
+        "name": "sternocleidomastoid",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "7a333912-2879-43d3-bbbb-2251f897567e": {
+    "name": "sternocleidomastoid",
+    "type": "Concept",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5783b13d-f991-4773-bdf6-1f943107faf7": {
+    "name": "lateral flexion",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "20b81b89-bed9-4c4c-a7f0-299caad3567c": {
+    "name": "MMA fighters",
+    "type": "Person",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "fd14f3cb-1589-409e-8616-1610a74f567e": {
+    "name": "NASCAR drivers",
+    "type": "Person",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "ba75bd06-9032-48e7-9ad5-8a1b8d5c37c7": {
+    "name": "head",
+    "type": "Concept",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "e567962c-c969-4ec9-8d0f-f8d04a7bd563": {
+    "name": "neck bridges",
+    "type": "Method",
+    "video_ids": [
+      "gimeRpdqWQw"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "886eb498-5a8c-407e-9f91-be90bcb056b1": {
+    "name": "transverse abduction",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e6c981e4-c9d7-41c3-b282-0a0845ba84c4": {
+    "name": "isolation  exercises",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "b4ff9404-282f-4715-83c0-6b7d08e382e7": {
+    "name": "seated row",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "66d5a835-2e4d-439d-b8a9-051567110de5": {
+    "name": "face pull",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9d22e23e-eea2-47ed-80e4-b6bee1d3b9b3": {
+    "name": "rotator cuff",
+    "type": "Concept",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "0e73a19e-8de8-45ac-ba5f-ec3edb8f6635": {
+    "name": "high row",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "539352f4-c530-432b-bdcc-1a66c1fc37bf": {
+    "name": "reverse  peck deck",
+    "type": "Method",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "d7734144-7872-4f8a-8b1f-83e3f5c6f627": {
+    "name": "Button et al",
+    "type": "Person",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "d8a59312-7b32-4876-998e-58456f1d1e67": {
+    "name": "reverse peck deck",
+    "type": "Tool",
+    "video_ids": [
+      "qfc70k40318"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "1511e3b0-dbfe-4e0b-b5cd-ae371db22fb3": {
+    "name": "Mark Ripitow",
+    "type": "Person",
+    "video_ids": [
+      "f23vXjoG2e8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "a102a888-dcb4-41e6-a635-80f47893c515": {
+    "name": "safety pins",
+    "type": "Tool",
+    "video_ids": [
+      "f23vXjoG2e8"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "29cf123b-21c2-415d-8cdf-83e8b6f99478": {
+    "name": "dumbbell rack",
+    "type": "Tool",
+    "video_ids": [
+      "f23vXjoG2e8",
+      "djKXLt7kv7Q",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "curling",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 3,
+      "hypertrophy": 2,
+      "general-fitness": 1,
+      "programming": 1
+    }
+  },
+  "5dc2c3a3-e2a0-4134-82ab-cf1fac0250d9": {
+    "name": "wheel",
+    "type": "Tool",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "7c2665ae-f8f8-438f-8f10-775437401767": {
+    "name": "plank",
+    "type": "Method",
+    "video_ids": [
+      "1G0y8D5rFDc",
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "rectus  abdominis",
+        "type": "Concept"
+      },
+      {
+        "name": "core",
+        "type": "Concept"
+      },
+      {
+        "name": "abdominal muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "obliques",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2,
+      "general-fitness": 2
+    }
+  },
+  "8bbf1bd6-9aab-4eeb-89c6-bbbbd840e102": {
+    "name": "core",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "1e86c484-8853-4a1d-86c9-d0f938580c33": {
+    "name": "abdominal muscles",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [
+      {
+        "name": "Progressive overload",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "67829174-7397-4735-bdf8-e5568781b698": {
+    "name": "ab wheel rollout",
+    "type": "Method",
+    "video_ids": [
+      "1G0y8D5rFDc",
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2,
+      "general-fitness": 2
+    }
+  },
+  "3ffd34ad-437c-42d4-b90c-0d627025e370": {
+    "name": "2008 study",
+    "type": "Paper",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "66b574d0-c77f-4f5a-9f2d-73069882f053": {
+    "name": "Eudice and colleagues",
+    "type": "Person",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "2326574a-ba59-4e97-82a8-8c20aa68b4b0": {
+    "name": "upper abs",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "b516a92b-41c5-483e-a3e5-1f009d92a39e": {
+    "name": "lower abs",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "98d1682d-e2a2-4e14-b65e-81926557665d": {
+    "name": "obliques",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc",
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 2,
+      "strength": 2,
+      "general-fitness": 2
+    }
+  },
+  "218006e8-8480-44ad-9e82-f71d9d680b91": {
+    "name": "transverse abdominis",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "380db51e-738c-4eed-9d92-2aac9f20d40b": {
+    "name": "TVA",
+    "type": "Concept",
+    "video_ids": [
+      "1G0y8D5rFDc"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1,
+      "general-fitness": 1
+    }
+  },
+  "490ef4a2-0dc5-4b60-b668-3b25b9f69235": {
+    "name": "D-handle",
+    "type": "Tool",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "12c91dd6-cd05-4f69-910e-970eaa898af9": {
+    "name": "skull  crusher",
+    "type": "Method",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "3dbea1ab-0ec5-41df-be23-cc859508b3f2": {
+    "name": "lateral head",
+    "type": "Concept",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "d5c33a07-feed-4fee-a3f0-e3db8a671c6d": {
+    "name": "straight bar",
+    "type": "Tool",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [
+      {
+        "name": "easy bar",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "01dcc23e-f389-4663-8699-0a7470983275": {
+    "name": "single arm press down",
+    "type": "Method",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "149a9238-54b1-4e7c-9ef9-7ba4f9e8a862": {
+    "name": "kickback",
+    "type": "Method",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "7162d3fe-e34a-44e6-8970-8aa4b326c0e6": {
+    "name": "press down",
+    "type": "Method",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "97d25203-3841-4810-b305-c433c1d4e3ac": {
+    "name": "rope and single arm press downs",
+    "type": "Method",
+    "video_ids": [
+      "94DXwlcX8Po"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "1af73520-6732-4bc5-bae5-fc75fa32b79b": {
+    "name": "sumo RDL",
+    "type": "Method",
+    "video_ids": [
+      "_oyxCn2iSjU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5ea4b4fd-1185-4c38-bb8b-286dda8fbaa2": {
+    "name": "RDL",
+    "type": "Method",
+    "video_ids": [
+      "_oyxCn2iSjU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "98bd6485-d7b6-4a71-8b5d-fad27d0d954b": {
+    "name": "leg curl",
+    "type": "Method",
+    "video_ids": [
+      "_oyxCn2iSjU"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "df82452c-4fe7-426e-9ca2-5d7b5de64241": {
+    "name": "lap pull down",
+    "type": "Method",
+    "video_ids": [
+      "O94yEoGXtBY"
+    ],
+    "related": [
+      {
+        "name": "chest",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "d3f5543f-7bd3-43d4-bdfe-8835d9630041": {
+    "name": "inverted row",
+    "type": "Method",
+    "video_ids": [
+      "O94yEoGXtBY"
+    ],
+    "related": [
+      {
+        "name": "behind  the neck lat pull down",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "5684b775-908d-4386-a38e-244f7632d28f": {
+    "name": "neutral grip pull down",
+    "type": "Method",
+    "video_ids": [
+      "O94yEoGXtBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "eb51acad-ca7a-4e3e-833d-0059f0522b2c": {
+    "name": "supinated grip",
+    "type": "Method",
+    "video_ids": [
+      "O94yEoGXtBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "2cfa73e6-59b3-4ed6-86ad-5b03251b978c": {
+    "name": "terrace major and minor muscles",
+    "type": "Concept",
+    "video_ids": [
+      "O94yEoGXtBY"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "c250bb15-09bc-40b9-abe7-128ef48bb4cc": {
+    "name": "vastus medialis",
+    "type": "Concept",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "01669f9b-42cd-4898-a230-907c82728d70": {
+    "name": "vastus inter medius",
+    "type": "Concept",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [
+      {
+        "name": "quadriceps",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "06dba5a2-9141-44f8-b0b7-397639551013": {
+    "name": "vastus lateralis",
+    "type": "Concept",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "ad01b92f-3562-405b-aad7-dd5fe8728788": {
+    "name": "rectus femoris head",
+    "type": "Concept",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "a8c294c8-135b-4d32-a88a-9a6ed9f3ecd1": {
+    "name": "2015 study",
+    "type": "Paper",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "c9dbef54-bdd3-4aae-aa2a-d1bfdd1267c6": {
+    "name": "lunge",
+    "type": "Method",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "e347bb48-0c1a-4cc4-be83-bbce544c4fd8": {
+    "name": "Split squat",
+    "type": "Method",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "550b11f6-7a0a-4147-83cc-1d714a06b387": {
+    "name": "lateralis",
+    "type": "Concept",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "3dabe0a9-6799-4249-ae2b-983889c27f31": {
+    "name": "x-frame quad sweep",
+    "type": "Method",
+    "video_ids": [
+      "ljO4jkwv8wQ"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "60e5e30b-4739-46fa-88d4-f56b603776c4": {
+    "name": "dumbbell and cable rows",
+    "type": "Method",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "d9c1215c-381a-42ef-8b6a-7decb04508d1": {
+    "name": "incline bench",
+    "type": "Tool",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "33791a30-b7d6-4885-88cf-4f1d13eea8ab": {
+    "name": "cable row",
+    "type": "Method",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "425342b4-a1dd-43e2-b3fe-31b9920d7e88": {
+    "name": "T-bar row",
+    "type": "Method",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "cab860bf-98bb-4b1c-80ea-0a519dd9539d": {
+    "name": "shoulder extension",
+    "type": "Method",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "lats",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "519d06ee-d31c-43cc-9d7f-83a74cdf1463": {
+    "name": "scapular  retraction",
+    "type": "Method",
+    "video_ids": [
+      "djKXLt7kv7Q"
+    ],
+    "related": [
+      {
+        "name": "mid traps",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "8fb75d34-e8a8-4ec0-bad5-62dc2f57e4da": {
+    "name": "Bro Jeff",
+    "type": "Person",
+    "video_ids": [
+      "djKXLt7kv7Q",
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 2,
+      "hypertrophy": 1,
+      "programming": 1
+    }
+  },
+  "850474b8-3bcf-4e83-9091-e9ce2a860804": {
+    "name": "form alteration",
+    "type": "Method",
+    "video_ids": [
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "c98c5aab-5d7b-4b77-88d8-6a98db9e7681": {
+    "name": "yoke muscles",
+    "type": "Concept",
+    "video_ids": [
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "945b4df8-0e60-4122-b56c-9a0a5e4c1915": {
+    "name": "long head of the triceps",
+    "type": "Concept",
+    "video_ids": [
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "daeff7d9-f264-451b-80fc-7ba59355f79b": {
+    "name": "45 degree hyper extension machine",
+    "type": "Tool",
+    "video_ids": [
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "350a2d7d-3b8d-46fa-ab42-205843a2f05c": {
+    "name": "Glue ham raises",
+    "type": "Method",
+    "video_ids": [
+      "J46aPqFl0WE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1
+    }
+  },
+  "00a70649-b22b-4615-a20e-9855cab4f177": {
+    "name": "Matt Ogis",
+    "type": "Person",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "3fd5135e-3413-40c5-a1b9-4bfee055a716": {
+    "name": "six pack",
+    "type": "Concept",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "7c2d4320-01a1-47f0-8d67-4329c2a4f2dc": {
+    "name": "crunch",
+    "type": "Method",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "six pack",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "7e255b66-8711-4a5f-b750-fd62db6f3ddc": {
+    "name": "hanging leg raise",
+    "type": "Method",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "hip flexors",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "8f3fe176-2338-4084-a96a-6b1e931f44de": {
+    "name": "ab",
+    "type": "Concept",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "99ebdd81-87be-4e24-8951-456f332daf9b": {
+    "name": "hip flexors",
+    "type": "Concept",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "ee84d47e-ff27-4c42-9c1b-2b7272f4fb03": {
+    "name": "pull up bar",
+    "type": "Tool",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "fe2e4e39-3c62-4946-b1ba-eec481871c9b": {
+    "name": "Roman chair",
+    "type": "Tool",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [
+      {
+        "name": "hanging leg raise",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "545d95e7-ae4e-4820-ad6e-9d5f98fff632": {
+    "name": "decline reverse curls",
+    "type": "Method",
+    "video_ids": [
+      "2RrGnjxSsiA",
+      "MfMxT_jXcPE"
+    ],
+    "related": [
+      {
+        "name": "hanging leg raise",
+        "type": "Method"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 2,
+      "general-fitness": 1
+    }
+  },
+  "1ff68e28-eb91-4b71-bcd4-98a7e01470bc": {
+    "name": "bicycle crunch",
+    "type": "Method",
+    "video_ids": [
+      "2RrGnjxSsiA"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "hypertrophy": 1,
+      "general-fitness": 1
+    }
+  },
+  "2196fa14-6bc7-4820-b33f-c0c3d684a202": {
+    "name": "One paper",
+    "type": "Paper",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "brachial radialis",
+        "type": "Concept"
+      }
+    ],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "8e23e6d7-dc6b-46bf-9bfd-6c7c9e8313ce": {
+    "name": "brachial radialis",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e083023c-f22e-4bb2-836b-5a0c3928d9e6": {
+    "name": "advanced intensity technique",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "d5c1072e-c3d5-490f-b69d-7067bfd600a4": {
+    "name": "anterior compartment",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "0b70f573-b2c4-40da-b289-5bd7d45dacdd": {
+    "name": "posterior compartment",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "3ae145c9-ccc0-4f44-ad93-8f25239abda6": {
+    "name": "posterior muscles",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "91c0832e-0482-405f-bbc9-10f3449d32e3": {
+    "name": "fingers",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "13d59c29-e27a-4ae5-b4b1-1b676d7b64e7": {
+    "name": "hand gripper",
+    "type": "Tool",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e64f8efa-e422-49d4-80c6-1e77e2801918": {
+    "name": "form training",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "c47df99e-c69c-4cc7-b194-b3881f6d26e7": {
+    "name": "bodybuilder",
+    "type": "Person",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "ccb9a0d3-5548-45ad-8a04-e1e869b14554": {
+    "name": "dumbbell wrist curl",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "e039a7b6-9626-4585-b4fc-b2929cea5f55": {
+    "name": "farmers walks",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "9dd21807-1421-4e88-883d-89f87d859f47": {
+    "name": "standard barbell holds",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "1556ab20-a416-4ffc-817c-c0c3a59aafda": {
+    "name": "pleat pinch",
+    "type": "Method",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "7b18f6e4-f6a7-4961-a23d-5abb4e8d6669": {
+    "name": "digit flexors",
+    "type": "Concept",
+    "video_ids": [
+      "MfMxT_jXcPE"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "hypertrophy": 1
+    }
+  },
+  "902aa4bc-cecc-4a12-9e2c-80b156907fc2": {
+    "name": "exercises",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "779d30b6-6d3d-4074-a5ea-54caf6da2a78": {
+    "name": "standing dumbbell external rotation",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "047e4f74-b596-4806-8e90-3c5a3a13039b": {
+    "name": "above the knee rack pull",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "3dc092c2-2894-4f32-bac2-75ad562368a9": {
+    "name": "gym equipment",
+    "type": "Tool",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "d85ad87b-c093-491c-ba2c-540ae16a6f39": {
+    "name": "cable squat",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "machine",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "fed0c4b5-261c-4a4f-8e25-31b05abe6056": {
+    "name": "Machine  Shoulder Press",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "aa62c24a-09c3-4835-9627-4aadffb436a8": {
+    "name": "curling",
+    "type": "Method",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "69c5d374-d052-4eae-800a-96302c0fd0fe": {
+    "name": "commercial gyms",
+    "type": "Organization",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "dumbbell rack",
+        "type": "Tool"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "a23f7e14-e7ec-4731-849b-781e39757b5a": {
+    "name": "Bosu balls",
+    "type": "Tool",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  },
+  "a4cefc73-3c53-41f4-ac39-110073ffe9f1": {
+    "name": "2010 ACSM article",
+    "type": "Paper",
+    "video_ids": [
+      "1GsYg9YG0Xk"
+    ],
+    "related": [
+      {
+        "name": "Brad Schoenfeld",
+        "type": "Person"
+      }
+    ],
+    "use_case_counts": {
+      "strength": 1,
+      "programming": 1
+    }
+  }
+}

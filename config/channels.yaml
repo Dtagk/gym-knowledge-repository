@@ -40,3 +40,30 @@ searches:
   - query: "shoulder mobility exercises"
     limit: 20
     channels_only: true
+  - query: "ankle dorsiflexion fix squat depth"
+    limit: 15
+    channels_only: true
+  - query: "Romanian deadlift hip hinge posterior chain"
+    limit: 15
+    channels_only: true
+  - query: "thoracic spine extension mobility overhead press"
+    limit: 15
+    channels_only: true
+  - query: "deload week recovery supercompensation programming"
+    limit: 15
+    channels_only: true
+  - query: "mind muscle connection EMG activation evidence"
+    limit: 15
+    channels_only: true
+  - query: "blood flow restriction BFR low load hypertrophy"
+    limit: 15
+    channels_only: true
+  - query: "progressive overload plateau double progression"
+    limit: 15
+    channels_only: true
+  - query: "hip abductor glute medius lateral band work"
+    limit: 15
+    channels_only: true
+  - query: "bench press shoulder health pain free technique"
+    limit: 15
+    channels_only: true

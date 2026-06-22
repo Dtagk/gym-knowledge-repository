@@ -34,7 +34,7 @@ def _migrate(conn: sqlite3.Connection) -> None:
 
 def _get_top_entities(video_id: str) -> list[str]:
     """Query Kuzu for the top-5 entity names that appear in the given video."""
-    db = kuzu.Database(_KUZU_PATH)
+    db = kuzu.Database(_KUZU_PATH, read_only=True)
     kuzu_conn = kuzu.Connection(db)
     result = kuzu_conn.execute(
         "MATCH (e:Entity)-[:APPEARS_IN]->(v:Video {video_id: $vid}) "
