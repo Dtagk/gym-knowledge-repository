@@ -10,10 +10,14 @@ _ROOT = Path(__file__).parent.parent
 
 _model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 _lance_db = lancedb.connect(str(_ROOT / "data/vectors.lance"))
-# Primary write protection: the database itself is opened read-only, so any
-# mutating statement fails at the engine level regardless of how it is phrased.
-# The regex below is only a secondary, fail-fast guard for a friendlier message.
-_kuzu_db = kuzu.Database(str(_ROOT / "data/graph.kuzu"), read_only=True)
+_KUZU_PATH = str(_ROOT / "data/graph.kuzu")
+
+# Primary write protection: read_only=True at the engine level.
+# Open per tool call (not at module level) so the file lock is released
+# between calls, allowing the pipeline's graph stage to acquire it for writes.
+def _kuzu_conn() -> "tuple[kuzu.Database, kuzu.Connection]":
+    db = kuzu.Database(_KUZU_PATH, read_only=True)
+    return db, kuzu.Connection(db)
 
 # Allow the read-only statement starters Kuzu supports. WITH is now included to
 # match the error message and permit multi-stage read pipelines.
@@ -47,7 +51,7 @@ def cypher_query(query: str) -> list[dict] | str:
     if not _READ_PREFIX.match(query):
         return "Error: only read queries (MATCH, OPTIONAL MATCH, WITH, UNWIND, RETURN, CALL) are permitted."
     try:
-        conn = kuzu.Connection(_kuzu_db)
+        _db, conn = _kuzu_conn()
         result = conn.execute(query)
         columns = result.get_column_names()
         rows = []
@@ -61,7 +65,7 @@ def cypher_query(query: str) -> list[dict] | str:
 
 @mcp.tool()
 def expand_entity(name: str, depth: int = 1) -> list[dict]:
-    conn = kuzu.Connection(_kuzu_db)
+    _db, conn = _kuzu_conn()
     if depth <= 1:
         cypher = (
             "MATCH (e:Entity {name: $name})-[r:RELATED]->(e2:Entity) "
@@ -125,7 +129,7 @@ def papers_for_topic(topic: str) -> list[dict]:
         "RETURN DISTINCT p.doi AS doi, p.title AS title, p.authors AS authors, p.year AS year"
     )
     try:
-        conn = kuzu.Connection(_kuzu_db)
+        _db, conn = _kuzu_conn()
         result = conn.execute(cypher, {"chunk_ids": chunk_ids})
         papers = []
         while result.has_next():
