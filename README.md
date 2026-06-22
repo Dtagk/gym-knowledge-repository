@@ -2,7 +2,7 @@
 
 A personal knowledge base of gym/training YouTube videos — tagged, graphed, searchable.
 
-**Live browser:** [https://dtagkoulis.github.io/gym-knowledge-repository/](https://dtagkoulis.github.io/gym-knowledge-repository/)
+**Live browser:** [https://dtagkoulis.github.io/gym-knowledge-repository/](https://dtagkoulis.github.io/gym-knowledge-repository/)](https://dtagk.github.io/gym-knowledge-repository/)
 
 ## What it does
 
