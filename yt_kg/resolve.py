@@ -200,3 +200,7 @@ def resolve():
 
     logger.info("resolve: %d canonical entities, %d merges applied", total_entities, total_merges)
     conn.close()
+
+
+if __name__ == "__main__":
+    resolve()

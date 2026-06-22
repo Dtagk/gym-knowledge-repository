@@ -1,5 +1,204 @@
 [
   {
+    "video_id": "3ryh7PNhz3E",
+    "title": "The Best & Worst Glute Exercises (According To Science)",
+    "channel_id": "single-video-test",
+    "url": "https://youtu.be/3ryh7PNhz3E",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "hypertrophy",
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "walking lunges",
+        "type": "Method"
+      },
+      {
+        "name": "Smith machine lunges",
+        "type": "Method"
+      },
+      {
+        "name": "curtsy lunges",
+        "type": "Method"
+      },
+      {
+        "name": "glute medius",
+        "type": "Concept"
+      },
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "lower glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "sumo deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "EMG study",
+        "type": "Paper"
+      },
+      {
+        "name": "glute maximus",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "Smith machine squat",
+        "type": "Method"
+      },
+      {
+        "name": "Bulgarian split squat",
+        "type": "Method"
+      },
+      {
+        "name": "gym pin",
+        "type": "Tool"
+      },
+      {
+        "name": "upper glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "Cable hip abductions",
+        "type": "Method"
+      },
+      {
+        "name": "lateral banded walk",
+        "type": "Method"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "mid glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "The glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "gluteus maximus",
+        "type": "Concept"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "gluteus medius",
+        "type": "Concept"
+      },
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "glute minimus",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "45 degree back extension",
+        "type": "Method"
+      },
+      {
+        "name": "Cable pull-throughs",
+        "type": "Method"
+      },
+      {
+        "name": "kettlebell swings",
+        "type": "Method"
+      },
+      {
+        "name": "walking lunge",
+        "type": "Method"
+      },
+      {
+        "name": "barbell hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "Nautilus glute drive",
+        "type": "Tool"
+      },
+      {
+        "name": "single leg dumbbell hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "glute medius and minimus",
+        "type": "Concept"
+      },
+      {
+        "name": "glute bridge",
+        "type": "Method"
+      },
+      {
+        "name": "diet",
+        "type": "Concept"
+      },
+      {
+        "name": "Donkey kicks",
+        "type": "Method"
+      },
+      {
+        "name": "Fire hydrants",
+        "type": "Method"
+      },
+      {
+        "name": "Hickbacks",
+        "type": "Method"
+      },
+      {
+        "name": "Kickbacks",
+        "type": "Method"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "bench",
+        "type": "Tool"
+      },
+      {
+        "name": "Step ups",
+        "type": "Method"
+      }
+    ]
+  },
+  {
     "video_id": "B6rGDcfyPto",
     "title": "How To Leg Press For Best Quad Growth | Targeting The Muscle Series",
     "channel_id": "playlist-test",
@@ -1878,6 +2077,61 @@
       {
         "name": "hip crease",
         "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "dJa_Nf4zdik",
+    "title": "Build Bigger Glutes With Perfect Training Technique ft. Stephanie Buttermore (Glute Kickback)",
+    "channel_id": "playlist-big",
+    "url": "https://youtu.be/dJa_Nf4zdik",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "quadriceps",
+        "type": "Concept"
+      },
+      {
+        "name": "cable machine",
+        "type": "Tool"
+      },
+      {
+        "name": "kickback",
+        "type": "Method"
       }
     ]
   },
@@ -3971,6 +4225,2568 @@
       {
         "name": "2010 ACSM article",
         "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "EsJje6V77ok",
+    "title": "Dealing With Difficult Situations | Lecture #79",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/EsJje6V77ok",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "EokSGFdSp0Y",
+    "title": "Client Check Ins | Lecture #78",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/EokSGFdSp0Y",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "D-load",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "G-upyfK1CWA",
+    "title": "First Program Delivery | Lecture #77",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/G-upyfK1CWA",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "glute",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "a-f3vKHPu_Y",
+    "title": "Client Training History And Limitations | Lecture #76",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/a-f3vKHPu_Y",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "QrqXteVOR1Y",
+    "title": "Client Bandwidth | Lecture #75",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/QrqXteVOR1Y",
+    "body_parts": [],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "F81izDQq3Gs",
+    "title": "Client Desires And Timescales | Lecture #74",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/F81izDQq3Gs",
+    "body_parts": [],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "ZDqi5o5V9vs",
+    "title": "Cardio Differences | Lecture #73",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/ZDqi5o5V9vs",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "krhPNPVi-ds",
+    "title": "Progression And Periodization Differences | Lecture #72",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/krhPNPVi-ds",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "tY2YUaeEL0Y",
+    "title": "Volume and Frequency Differences | Lecture #71",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/tY2YUaeEL0Y",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "HljCYSL0b5M",
+    "title": "Load and Relative Effort Differences | Lecture #70",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/HljCYSL0b5M",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "dips",
+        "type": "Method"
+      },
+      {
+        "name": "chin-ups",
+        "type": "Method"
+      },
+      {
+        "name": "Brett Contreras",
+        "type": "Person"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "nCvTU_XIEQE",
+    "title": "Exercise Selection Differences | Lecture #69",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/nCvTU_XIEQE",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "s2pgDGsmexI",
+    "title": "Male And Female Psychological Differences | Lecture #68",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/s2pgDGsmexI",
+    "body_parts": [],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "abs",
+        "type": "Concept"
+      },
+      {
+        "name": "six pack",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "3hC6UOLCnuA",
+    "title": "Male And Female Biological Differences | Lecture #67",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/3hC6UOLCnuA",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "AiOzSpP5x_8",
+    "title": "Cardio Fads, Myths, And Follies | Lecture #66",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/AiOzSpP5x_8",
+    "body_parts": [
+      "full-body"
+    ],
+    "use_cases": [
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "yoga",
+        "type": "Method"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "kvGZmfqHkKM",
+    "title": "Cardio For Sport And Heath | Lecture #65",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/kvGZmfqHkKM",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "rehab",
+      "mobility"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "elbows",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "neck",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "WoiQvL4_QAE",
+    "title": "Cardio Periodization | Lecture #64",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/WoiQvL4_QAE",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "2x2WAm1cv_8",
+    "title": "Cardio Timing | Lecture #63",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/2x2WAm1cv_8",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "HKuKEev7mDE",
+    "title": "SFR And STR Of Cardio | Lecture #62",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/HKuKEev7mDE",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "2_iYnUgM200",
+    "title": "Why We Do Cardio For Fat Loss | Lecture #61",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/2_iYnUgM200",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "QiXUeX1GfJQ",
+    "title": "Tracking Long Term Progress | Lecture #60",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/QiXUeX1GfJQ",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lat pull downs",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "hack squats",
+        "type": "Method"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "-epbbILmiog",
+    "title": "Tracking Sets | Lecture #59",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/-epbbILmiog",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "spinal erectors",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "target muscle",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "dips",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Mike",
+        "type": "Person"
+      },
+      {
+        "name": "cambered bar bench",
+        "type": "Tool"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "z7VVaqYEcco",
+    "title": "Tracking Loads and Reps | Lecture #58",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/z7VVaqYEcco",
+    "body_parts": [
+      "chest",
+      "back"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "mKBN9YTGPXk",
+    "title": "Tracking Relative Efforts | Lecture #57",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/mKBN9YTGPXk",
+    "body_parts": [],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "HFikx0R80OY",
+    "title": "Tracking Stimulus To Fatigue Ratio | Lecture #56",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/HFikx0R80OY",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "hack squats",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "1hsgJk9tvqQ",
+    "title": "Tracking Exercises and Techniques | Lecture #55",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/1hsgJk9tvqQ",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "slow eccentric",
+        "type": "Method"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "hack squats",
+        "type": "Method"
+      },
+      {
+        "name": "shoulder",
+        "type": "Concept"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "power rack",
+        "type": "Tool"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "rL7pBGHhPE8",
+    "title": "What To Track and Why | Lecture #54",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/rL7pBGHhPE8",
+    "body_parts": [
+      "legs",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "barbell curls",
+        "type": "Method"
+      },
+      {
+        "name": "Lifting",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "rYTljxLS0gk",
+    "title": "Helpful Tidbits For Helping The Advanced | Lecture #53",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/rYTljxLS0gk",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "research",
+        "type": "Paper"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      }
+    ]
+  },
+  {
+    "video_id": "7mZYHWwtqnY",
+    "title": "Changing Training With Diet Phases | Lecture #52",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/7mZYHWwtqnY",
+    "body_parts": [],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "jZBSKK-XJP0",
+    "title": "Planning The Next Mesocycle | Lecture #51",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/jZBSKK-XJP0",
+    "body_parts": [
+      "legs",
+      "chest"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "good morning exercise",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "wvJ_hEL8p1M",
+    "title": "Monitoring Fatigue Accumulation | Lecture #50",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/wvJ_hEL8p1M",
+    "body_parts": [
+      "legs",
+      "chest",
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength",
+      "mobility"
+    ],
+    "entities": [
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "F9wfLFJYGnM",
+    "title": "Progressing Through Loads, Reps, And Sets | Lecture #49",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/F9wfLFJYGnM",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "1vKu_OErpbI",
+    "title": "Choosing Initial Set Numbers | Lecture #48",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/1vKu_OErpbI",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "mesocycle",
+        "type": "Method"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "571IKLbDoVM",
+    "title": "Technique Specifics And How To Coach Them | Lecture #47",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/571IKLbDoVM",
+    "body_parts": [
+      "legs",
+      "chest",
+      "arms"
+    ],
+    "use_cases": [
+      "strength",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "hips",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "9vvyMjse9-I",
+    "title": "Warming Up And Selecting Working Weights | Lecture #46",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/9vvyMjse9-I",
+    "body_parts": [],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "q4_o_SF2MZI",
+    "title": "Choosing Rep Range | Lecture #45",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/q4_o_SF2MZI",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "EKetXpJ43PM",
+    "title": "Choosing Exercises | Lecture #44",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/EKetXpJ43PM",
+    "body_parts": [
+      "legs",
+      "core"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      },
+      {
+        "name": "Pull-ups",
+        "type": "Method"
+      },
+      {
+        "name": "core",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell and cable rows",
+        "type": "Method"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "3E4NMEX8jyw",
+    "title": "Needs Analysis And Split Design | Lecture #43",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/3E4NMEX8jyw",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "delts",
+        "type": "Concept"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "TGnj8ZfYwmA",
+    "title": "What Is An Advanced Lifter? | Lecture #42",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/TGnj8ZfYwmA",
+    "body_parts": [
+      "legs",
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "pecs",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      }
+    ]
+  },
+  {
+    "video_id": "P8OUxBxIMYg",
+    "title": "Signs Your Client Is No Longer An Intermediate | Lecture #41",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/P8OUxBxIMYg",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "rhomboids",
+        "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "DBy2dMH6QBc",
+    "title": "Changing Training With Diet Phases | Lecture #40",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/DBy2dMH6QBc",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "D-load",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "xslGdIDByfI",
+    "title": "Planning The Next Mesocycle | Lecture #39",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/xslGdIDByfI",
+    "body_parts": [
+      "legs",
+      "back"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "83yM6p9z2WU",
+    "title": "Monitoring Fatigue Accumulation | Lecture #38",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/83yM6p9z2WU",
+    "body_parts": [
+      "back"
+    ],
+    "use_cases": [
+      "mobility"
+    ],
+    "entities": [
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "UPMKGT8dgCE",
+    "title": "Progressing Through Loads, Reps, And Sets | Lecture #37",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/UPMKGT8dgCE",
+    "body_parts": [
+      "legs",
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "barbell curl",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "ZYoJwIykbeM",
+    "title": "Choosing Initial Set Numbers | Lecture #36",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/ZYoJwIykbeM",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbell lateral raise",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "SPQ-f4iB4KM",
+    "title": "Technique Specifics And How To Coach Them | Lecture #35",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/SPQ-f4iB4KM",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "h-9Sk9Nz0As",
+    "title": "Choosing Rep Range | Lecture #33",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/h-9Sk9Nz0As",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "dips",
+        "type": "Method"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "upper back",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "PfEWqDgkMNE",
+    "title": "Choosing Exercises | Lecture #32",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/PfEWqDgkMNE",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "machine",
+        "type": "Tool"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "skull crushers",
+        "type": "Method"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "close grip bench",
+        "type": "Method"
+      },
+      {
+        "name": "hack squats",
+        "type": "Method"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      },
+      {
+        "name": "lat pullovers",
+        "type": "Method"
+      },
+      {
+        "name": "shoulder",
+        "type": "Concept"
+      },
+      {
+        "name": "leg curl",
+        "type": "Method"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "7HtUhJzPUS8",
+    "title": "Needs Analysis And Split Design | Lecture #31",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/7HtUhJzPUS8",
+    "body_parts": [
+      "back",
+      "legs"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "Ax4M7OI3duc",
+    "title": "What Is An Intermediate? | Lecture #30",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/Ax4M7OI3duc",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "lats",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "adductors",
+        "type": "Concept"
+      },
+      {
+        "name": "dumbbells",
+        "type": "Tool"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "row",
+        "type": "Method"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "CgvpnaygIss",
+    "title": "Signs Your Client Is No Longer A Beginner | Lecture #29",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/CgvpnaygIss",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "TkwgyjJKJ0c",
+    "title": "Changing Training With Diet Phases | Lecture #28",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/TkwgyjJKJ0c",
+    "body_parts": [],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "lZYGZOYTS08",
+    "title": "Planning The Next Mesocycle | Lecture #27",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/lZYGZOYTS08",
+    "body_parts": [
+      "shoulder",
+      "legs"
+    ],
+    "use_cases": [
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "gym",
+        "type": "Organization"
+      },
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      },
+      {
+        "name": "exercises",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "iNTH279jtS4",
+    "title": "Monitoring Fatigue Accumulation | Lecture #26",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/iNTH279jtS4",
+    "body_parts": [],
+    "use_cases": [],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      }
+    ]
+  },
+  {
+    "video_id": "4LnvnV3eJVI",
+    "title": "Progressing Through Loads, Reps, And Sets | Lecture #25",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/4LnvnV3eJVI",
+    "body_parts": [
+      "shoulder"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "bench press",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "ndIcE1c7hZs",
+    "title": "Choosing Initial Set Numbers | Training Lecture #24",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/ndIcE1c7hZs",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "Research",
+        "type": "Paper"
+      },
+      {
+        "name": "rear delt",
+        "type": "Concept"
+      }
+    ]
+  },
+  {
+    "video_id": "GUvWI-5Zueo",
+    "title": "Technique Basics And How To Teach Them | Training Lecture #23",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/GUvWI-5Zueo",
+    "body_parts": [
+      "chest"
+    ],
+    "use_cases": [
+      "strength",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "squat",
+        "type": "Method"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "benching",
+        "type": "Method"
+      },
+      {
+        "name": "Technique",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "lEmU6Jzj65g",
+    "title": "Warming Up And Selecting Working Weights | Training Lecture #22",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/lEmU6Jzj65g",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "bar",
+        "type": "Tool"
+      }
+    ]
+  },
+  {
+    "video_id": "MS6RexepJRY",
+    "title": "Choosing Exercises | Training Lecture #21",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/MS6RexepJRY",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "hypertrophy",
+      "general-fitness"
+    ],
+    "entities": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "hip thrust",
+        "type": "Method"
+      },
+      {
+        "name": "lunges",
+        "type": "Method"
+      },
+      {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "calves",
+        "type": "Concept"
+      },
+      {
+        "name": "shoulder joints",
+        "type": "Concept"
+      },
+      {
+        "name": "front delts",
+        "type": "Concept"
+      },
+      {
+        "name": "adductors",
+        "type": "Concept"
+      },
+      {
+        "name": "chest",
+        "type": "Concept"
+      },
+      {
+        "name": "pull up",
+        "type": "Method"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "trap",
+        "type": "Concept"
+      },
+      {
+        "name": "legs",
+        "type": "Concept"
+      },
+      {
+        "name": "back",
+        "type": "Concept"
+      },
+      {
+        "name": "machines",
+        "type": "Tool"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "lunge",
+        "type": "Method"
+      }
+    ]
+  },
+  {
+    "video_id": "0-HKtpj3dcQ",
+    "title": "Choosing Rep Range | Training Lecture #20",
+    "channel_id": "playlist-nippard-sbs",
+    "url": "https://youtu.be/0-HKtpj3dcQ",
+    "body_parts": [
+      "legs"
+    ],
+    "use_cases": [
+      "strength",
+      "programming"
+    ],
+    "entities": [
+      {
+        "name": "Dr. Mike",
+        "type": "Person"
+      },
+      {
+        "name": "Renaissance Periodization",
+        "type": "Organization"
+      },
+      {
+        "name": "technique",
+        "type": "Method"
+      },
+      {
+        "name": "squat",
+        "type": "Concept"
       }
     ]
   }

@@ -6,7 +6,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "962dc5b2-34c4-4861-8435-f87fb95d1e8d": {
     "name": "Smith machine lunges",
@@ -20,7 +23,10 @@
         "type": "Method"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "90c1040c-ef08-4ae8-b959-eb17593b02b8": {
     "name": "curtsy lunges",
@@ -34,7 +40,10 @@
         "type": "Method"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "49fa671b-bea6-43b2-a0fa-ba8d40144d5f": {
     "name": "glute medius",
@@ -43,7 +52,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "04a8641f-9420-4399-8876-b17c7f398fce": {
     "name": "glutes",
@@ -64,7 +76,22 @@
       "1G0y8D5rFDc",
       "_oyxCn2iSjU",
       "J46aPqFl0WE",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "dJa_Nf4zdik",
+      "nCvTU_XIEQE",
+      "HKuKEev7mDE",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "rYTljxLS0gk",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "GUvWI-5Zueo",
+      "lEmU6Jzj65g",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -77,10 +104,10 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 13,
-      "strength": 13,
-      "general-fitness": 3,
-      "programming": 2
+      "hypertrophy": 21,
+      "strength": 26,
+      "general-fitness": 6,
+      "programming": 3
     }
   },
   "8f3abdb5-3f12-4522-82bb-8360dfc7678e": {
@@ -104,8 +131,8 @@
       }
     ],
     "use_case_counts": {
-      "strength": 4,
-      "hypertrophy": 4,
+      "hypertrophy": 5,
+      "strength": 5,
       "programming": 1
     }
   },
@@ -116,7 +143,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "3d024c64-8b9e-4d8b-837b-f4f24abbd554": {
     "name": "spinal erectors",
@@ -131,7 +161,8 @@
       "VL5Ab0T07e4",
       "f23vXjoG2e8",
       "_oyxCn2iSjU",
-      "djKXLt7kv7Q"
+      "djKXLt7kv7Q",
+      "-epbbILmiog"
     ],
     "related": [
       {
@@ -140,8 +171,8 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 8,
-      "strength": 8,
+      "hypertrophy": 10,
+      "strength": 10,
       "general-fitness": 2
     }
   },
@@ -166,8 +197,8 @@
       }
     ],
     "use_case_counts": {
-      "strength": 4,
-      "hypertrophy": 4,
+      "hypertrophy": 5,
+      "strength": 5,
       "programming": 1
     }
   },
@@ -178,7 +209,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "72c51b68-fb7f-4b33-9946-0994ac59ae9e": {
     "name": "glute maximus",
@@ -187,23 +221,65 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "8ab1d6ff-f11c-43cb-ba8b-304bb4aecad2": {
     "name": "squats",
     "type": "Method",
     "video_ids": [
       "3ryh7PNhz3E",
-      "-qsRtp_PbVM"
+      "-qsRtp_PbVM",
+      "G-upyfK1CWA",
+      "a-f3vKHPu_Y",
+      "HljCYSL0b5M",
+      "nCvTU_XIEQE",
+      "3hC6UOLCnuA",
+      "-epbbILmiog",
+      "1hsgJk9tvqQ",
+      "rL7pBGHhPE8",
+      "1vKu_OErpbI",
+      "571IKLbDoVM",
+      "q4_o_SF2MZI",
+      "EKetXpJ43PM",
+      "TGnj8ZfYwmA",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "lZYGZOYTS08",
+      "4LnvnV3eJVI",
+      "ndIcE1c7hZs",
+      "lEmU6Jzj65g",
+      "MS6RexepJRY"
     ],
     "related": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
       {
         "name": "Progressive overload",
         "type": "Method"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 7,
+      "strength": 18,
+      "programming": 4,
+      "general-fitness": 3
     }
   },
   "177d5ff4-2896-45c3-a65a-7d764bce5417": {
@@ -213,7 +289,9 @@
       "3ryh7PNhz3E",
       "v_ZkxWzYnMc",
       "xDmFkJxPzeM",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "dJa_Nf4zdik",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -234,9 +312,9 @@
       }
     ],
     "use_case_counts": {
-      "strength": 3,
-      "hypertrophy": 2,
-      "general-fitness": 1,
+      "hypertrophy": 5,
+      "strength": 6,
+      "general-fitness": 2,
       "programming": 1
     }
   },
@@ -249,12 +327,16 @@
       "v_ZkxWzYnMc",
       "gimeRpdqWQw",
       "qfc70k40318",
-      "djKXLt7kv7Q"
+      "djKXLt7kv7Q",
+      "3hC6UOLCnuA",
+      "mKBN9YTGPXk",
+      "rYTljxLS0gk"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 4,
-      "hypertrophy": 5
+      "hypertrophy": 8,
+      "strength": 7,
+      "general-fitness": 1
     }
   },
   "0e622c47-1a0d-4782-8025-b9da9e805d09": {
@@ -264,7 +346,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "1ce7d294-ba06-4811-be3e-3fe9d70b8bb6": {
     "name": "Bulgarian split squat",
@@ -273,7 +358,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "88b752d1-62f4-4a9f-b358-c2cd57ab8782": {
     "name": "gym pin",
@@ -282,7 +370,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "a212c843-2a57-4373-a5ec-1b47fd41c77c": {
     "name": "upper glutes",
@@ -291,7 +382,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "7ae206d5-cf0e-4f09-9125-802e46fb7b71": {
     "name": "Cable hip abductions",
@@ -300,7 +394,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "1384c0db-b5e6-4361-bd9a-57ff65ba38a0": {
     "name": "lateral banded walk",
@@ -309,18 +406,29 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "b5265236-7573-4465-8252-204e40492a6c": {
     "name": "lunges",
     "type": "Method",
     "video_ids": [
       "3ryh7PNhz3E",
-      "Z6R8A5tcrTc"
+      "Z6R8A5tcrTc",
+      "a-f3vKHPu_Y",
+      "nCvTU_XIEQE",
+      "xslGdIDByfI",
+      "PfEWqDgkMNE",
+      "MS6RexepJRY"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 3,
+      "strength": 4,
+      "programming": 1,
+      "general-fitness": 1
     }
   },
   "32f4dc10-2f42-4012-8bd4-c1f02f4c9337": {
@@ -330,7 +438,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "43731381-3a26-4921-9eca-8c4698f9f36d": {
     "name": "The glutes",
@@ -352,7 +463,10 @@
         "type": "Concept"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "b371cb4f-8fcf-4c55-88b8-ea645ee7356b": {
     "name": "gluteus maximus",
@@ -361,7 +475,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "8cec9b3b-6903-4751-9ac9-899938c12004": {
     "name": "deadlift",
@@ -374,7 +491,17 @@
       "VL5Ab0T07e4",
       "wr-iSaXPr5s",
       "C6sYjDFuq9I",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "dJa_Nf4zdik",
+      "3hC6UOLCnuA",
+      "-epbbILmiog",
+      "wvJ_hEL8p1M",
+      "9vvyMjse9-I",
+      "EKetXpJ43PM",
+      "xslGdIDByfI",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -386,22 +513,24 @@
         "type": "Concept"
       },
       {
+        "name": "deadlift",
+        "type": "Method"
+      },
+      {
         "name": "hamstrings",
         "type": "Concept"
       },
       {
-        "name": "quads",
+        "name": "hamstrings",
         "type": "Concept"
-      },
-      {
-        "name": "squat",
-        "type": "Method"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 6,
-      "strength": 6,
-      "programming": 1
+      "hypertrophy": 11,
+      "strength": 16,
+      "programming": 2,
+      "mobility": 1,
+      "general-fitness": 1
     }
   },
   "0bdf30c8-b1c8-4b2f-9761-c65d946a4851": {
@@ -411,7 +540,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "d9f42470-59a9-4fe0-8a9f-19024e98f420": {
     "name": "delts",
@@ -421,7 +553,9 @@
       "n5dsI9qQXwY",
       "v_ZkxWzYnMc",
       "nwkLwMRHMQo",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "krhPNPVi-ds",
+      "3E4NMEX8jyw"
     ],
     "related": [
       {
@@ -438,9 +572,10 @@
       }
     ],
     "use_case_counts": {
-      "strength": 3,
-      "hypertrophy": 2,
-      "programming": 1
+      "hypertrophy": 3,
+      "strength": 4,
+      "programming": 2,
+      "general-fitness": 1
     }
   },
   "e48b5033-ef36-4fc1-9847-c2aeb01b94a1": {
@@ -450,7 +585,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "45c834d4-b9f3-4c3e-82d6-3f0636e15aa8": {
     "name": "hamstrings",
@@ -466,7 +604,20 @@
       "f23vXjoG2e8",
       "1G0y8D5rFDc",
       "_oyxCn2iSjU",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "wvJ_hEL8p1M",
+      "1vKu_OErpbI",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "xslGdIDByfI",
+      "83yM6p9z2WU",
+      "ZYoJwIykbeM",
+      "h-9Sk9Nz0As",
+      "PfEWqDgkMNE",
+      "ndIcE1c7hZs",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -487,10 +638,11 @@
       }
     ],
     "use_case_counts": {
-      "general-fitness": 3,
-      "strength": 8,
-      "hypertrophy": 8,
-      "programming": 1
+      "hypertrophy": 11,
+      "strength": 17,
+      "general-fitness": 6,
+      "programming": 3,
+      "mobility": 2
     }
   },
   "82f3bd30-20b9-4dc8-a3b1-c32e7a7e5117": {
@@ -505,7 +657,10 @@
         "type": "Concept"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "8be29475-fdf2-447c-9ad2-9d4f4cb65a4c": {
     "name": "Cable pull-throughs",
@@ -514,7 +669,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "421d958b-f8a8-450b-8460-1375f66152eb": {
     "name": "kettlebell swings",
@@ -523,7 +681,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "cb328683-feb9-49ec-9b8f-8a45de4db526": {
     "name": "walking lunge",
@@ -537,7 +698,10 @@
         "type": "Concept"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "3ac47215-a670-4b13-bee6-6c7d805af7fb": {
     "name": "barbell hip thrust",
@@ -546,7 +710,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "5270fe0f-3142-4165-9d40-b85a246bd7d2": {
     "name": "Nautilus glute drive",
@@ -555,7 +722,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "3d1a5752-4cf1-46cb-ac26-dc864c44c8fb": {
     "name": "single leg dumbbell hip thrust",
@@ -573,7 +743,10 @@
         "type": "Concept"
       }
     ],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "aa74ce29-50ce-4d6b-8d4c-9480a9299fa8": {
     "name": "glute medius and minimus",
@@ -582,7 +755,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "0583c525-0fc3-47f9-8af2-b26472f44e17": {
     "name": "glute bridge",
@@ -593,8 +769,8 @@
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1,
+      "hypertrophy": 2,
+      "strength": 2,
       "general-fitness": 1
     }
   },
@@ -605,7 +781,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "97f9429a-2b53-4983-8fe4-269159393868": {
     "name": "Donkey kicks",
@@ -614,7 +793,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "186e00c9-5da0-4e27-8b53-0b594a40065a": {
     "name": "Fire hydrants",
@@ -623,7 +805,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "c104feba-bc90-4a8e-824a-9e1def134343": {
     "name": "Hickbacks",
@@ -632,7 +817,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "6e73b8fd-a8ad-4519-b025-f9b97e73472c": {
     "name": "Kickbacks",
@@ -641,7 +829,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "1304e468-c167-4956-837b-7ceceee2741e": {
     "name": "machine",
@@ -653,12 +844,16 @@
       "V3h_1IUY-f0",
       "J46aPqFl0WE",
       "2RrGnjxSsiA",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "QiXUeX1GfJQ",
+      "q4_o_SF2MZI",
+      "h-9Sk9Nz0As",
+      "PfEWqDgkMNE"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 5,
-      "hypertrophy": 4,
+      "hypertrophy": 6,
+      "strength": 9,
       "general-fitness": 1,
       "programming": 1
     }
@@ -676,8 +871,8 @@
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 5,
-      "strength": 3,
+      "hypertrophy": 6,
+      "strength": 4,
       "general-fitness": 1
     }
   },
@@ -688,7 +883,10 @@
       "3ryh7PNhz3E"
     ],
     "related": [],
-    "use_case_counts": {}
+    "use_case_counts": {
+      "hypertrophy": 1,
+      "strength": 1
+    }
   },
   "239d9752-c591-4237-b9c9-0b15f0d2364b": {
     "name": "Dr. Mike",
@@ -714,7 +912,64 @@
       "8t2a93BjDec",
       "Cv5nS1AH_jE",
       "IaJWPqP-Bjo",
-      "a4muTr5ZV9Y"
+      "a4muTr5ZV9Y",
+      "EsJje6V77ok",
+      "EokSGFdSp0Y",
+      "G-upyfK1CWA",
+      "a-f3vKHPu_Y",
+      "QrqXteVOR1Y",
+      "F81izDQq3Gs",
+      "ZDqi5o5V9vs",
+      "krhPNPVi-ds",
+      "tY2YUaeEL0Y",
+      "HljCYSL0b5M",
+      "nCvTU_XIEQE",
+      "s2pgDGsmexI",
+      "3hC6UOLCnuA",
+      "AiOzSpP5x_8",
+      "kvGZmfqHkKM",
+      "WoiQvL4_QAE",
+      "2x2WAm1cv_8",
+      "HKuKEev7mDE",
+      "2_iYnUgM200",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "z7VVaqYEcco",
+      "mKBN9YTGPXk",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "rL7pBGHhPE8",
+      "rYTljxLS0gk",
+      "7mZYHWwtqnY",
+      "jZBSKK-XJP0",
+      "wvJ_hEL8p1M",
+      "F9wfLFJYGnM",
+      "1vKu_OErpbI",
+      "571IKLbDoVM",
+      "9vvyMjse9-I",
+      "q4_o_SF2MZI",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "TGnj8ZfYwmA",
+      "P8OUxBxIMYg",
+      "DBy2dMH6QBc",
+      "xslGdIDByfI",
+      "83yM6p9z2WU",
+      "UPMKGT8dgCE",
+      "SPQ-f4iB4KM",
+      "h-9Sk9Nz0As",
+      "PfEWqDgkMNE",
+      "7HtUhJzPUS8",
+      "Ax4M7OI3duc",
+      "CgvpnaygIss",
+      "TkwgyjJKJ0c",
+      "lZYGZOYTS08",
+      "iNTH279jtS4",
+      "4LnvnV3eJVI",
+      "ndIcE1c7hZs",
+      "GUvWI-5Zueo",
+      "MS6RexepJRY",
+      "0-HKtpj3dcQ"
     ],
     "related": [
       {
@@ -739,9 +994,12 @@
       }
     ],
     "use_case_counts": {
-      "strength": 11,
-      "hypertrophy": 18,
-      "general-fitness": 1
+      "strength": 43,
+      "hypertrophy": 32,
+      "general-fitness": 9,
+      "programming": 12,
+      "rehab": 1,
+      "mobility": 3
     }
   },
   "2a1a80df-8d70-4894-b906-32e1bf60b1c0": {
@@ -749,12 +1007,30 @@
     "type": "Method",
     "video_ids": [
       "B6rGDcfyPto",
-      "bEv6CCg2BC8"
+      "bEv6CCg2BC8",
+      "EsJje6V77ok",
+      "EokSGFdSp0Y",
+      "a-f3vKHPu_Y",
+      "HljCYSL0b5M",
+      "nCvTU_XIEQE",
+      "s2pgDGsmexI",
+      "3hC6UOLCnuA",
+      "QiXUeX1GfJQ",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "rYTljxLS0gk",
+      "jZBSKK-XJP0",
+      "EKetXpJ43PM",
+      "TGnj8ZfYwmA",
+      "P8OUxBxIMYg",
+      "UPMKGT8dgCE",
+      "Ax4M7OI3duc",
+      "MS6RexepJRY"
     ],
     "related": [
       {
-        "name": "quads",
-        "type": "Concept"
+        "name": "squats",
+        "type": "Method"
       },
       {
         "name": "quads",
@@ -765,13 +1041,19 @@
         "type": "Concept"
       },
       {
-        "name": "knees",
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
         "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "strength": 2,
-      "hypertrophy": 1
+      "strength": 16,
+      "hypertrophy": 8,
+      "general-fitness": 2,
+      "programming": 1
     }
   },
   "19ed6b76-6919-4c36-b0bc-68e061fab8bc": {
@@ -788,9 +1070,33 @@
       "v-mQm_droHg",
       "_oyxCn2iSjU",
       "ljO4jkwv8wQ",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "dJa_Nf4zdik",
+      "3hC6UOLCnuA",
+      "HKuKEev7mDE",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "rL7pBGHhPE8",
+      "jZBSKK-XJP0",
+      "3E4NMEX8jyw",
+      "TGnj8ZfYwmA",
+      "P8OUxBxIMYg",
+      "83yM6p9z2WU",
+      "ZYoJwIykbeM",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "4LnvnV3eJVI",
+      "ndIcE1c7hZs",
+      "GUvWI-5Zueo",
+      "lEmU6Jzj65g",
+      "MS6RexepJRY"
     ],
     "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
       {
         "name": "glutes",
         "type": "Concept"
@@ -806,16 +1112,14 @@
       {
         "name": "quads",
         "type": "Concept"
-      },
-      {
-        "name": "quads",
-        "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "strength": 8,
-      "hypertrophy": 9,
-      "programming": 1
+      "strength": 24,
+      "hypertrophy": 17,
+      "programming": 3,
+      "general-fitness": 4,
+      "mobility": 1
     }
   },
   "14c78795-2263-4d14-a921-27c8eb2c6d83": {
@@ -824,7 +1128,10 @@
     "video_ids": [
       "B6rGDcfyPto",
       "-qsRtp_PbVM",
-      "v-mQm_droHg"
+      "v-mQm_droHg",
+      "3E4NMEX8jyw",
+      "7HtUhJzPUS8",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -833,6 +1140,10 @@
       },
       {
         "name": "hamstrings",
+        "type": "Concept"
+      },
+      {
+        "name": "biceps",
         "type": "Concept"
       },
       {
@@ -845,8 +1156,10 @@
       }
     ],
     "use_case_counts": {
-      "strength": 2,
-      "hypertrophy": 3
+      "strength": 3,
+      "hypertrophy": 4,
+      "general-fitness": 2,
+      "programming": 1
     }
   },
   "37c79bb8-e10f-4ba6-816a-9c7fec1138cc": {
@@ -865,7 +1178,15 @@
       "C6sYjDFuq9I",
       "f23vXjoG2e8",
       "O94yEoGXtBY",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "a-f3vKHPu_Y",
+      "nCvTU_XIEQE",
+      "1vKu_OErpbI",
+      "q4_o_SF2MZI",
+      "xslGdIDByfI",
+      "UPMKGT8dgCE",
+      "h-9Sk9Nz0As",
+      "PfEWqDgkMNE"
     ],
     "related": [
       {
@@ -878,22 +1199,24 @@
       }
     ],
     "use_case_counts": {
-      "strength": 10,
-      "hypertrophy": 11,
+      "strength": 15,
+      "hypertrophy": 12,
       "general-fitness": 2,
-      "programming": 1
+      "programming": 3
     }
   },
   "c7da1f4a-8b80-4cfd-b86b-d497badb5fc6": {
     "name": "yoga",
     "type": "Method",
     "video_ids": [
-      "B6rGDcfyPto"
+      "B6rGDcfyPto",
+      "AiOzSpP5x_8"
     ],
     "related": [],
     "use_case_counts": {
       "strength": 1,
-      "hypertrophy": 1
+      "hypertrophy": 1,
+      "general-fitness": 1
     }
   },
   "45cc1dc3-2af2-4e07-acfd-7bff2f21cd7c": {
@@ -929,7 +1252,9 @@
       "I9l9WRZ5SWE",
       "bEv6CCg2BC8",
       "VL5Ab0T07e4",
-      "v-mQm_droHg"
+      "v-mQm_droHg",
+      "kvGZmfqHkKM",
+      "HFikx0R80OY"
     ],
     "related": [
       {
@@ -940,7 +1265,9 @@
     "use_case_counts": {
       "strength": 4,
       "hypertrophy": 4,
-      "general-fitness": 1
+      "general-fitness": 1,
+      "rehab": 1,
+      "mobility": 1
     }
   },
   "c3889bd9-267b-4ad1-89a4-9598934c1516": {
@@ -961,7 +1288,13 @@
       "O94yEoGXtBY",
       "djKXLt7kv7Q",
       "J46aPqFl0WE",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "-epbbILmiog",
+      "1hsgJk9tvqQ",
+      "EKetXpJ43PM",
+      "P8OUxBxIMYg",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc"
     ],
     "related": [
       {
@@ -974,8 +1307,8 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 13,
-      "strength": 14,
+      "hypertrophy": 16,
+      "strength": 20,
       "general-fitness": 1,
       "programming": 1
     }
@@ -994,7 +1327,17 @@
       "VL5Ab0T07e4",
       "wr-iSaXPr5s",
       "C6sYjDFuq9I",
-      "nwkLwMRHMQo"
+      "nwkLwMRHMQo",
+      "tY2YUaeEL0Y",
+      "nCvTU_XIEQE",
+      "HFikx0R80OY",
+      "jZBSKK-XJP0",
+      "wvJ_hEL8p1M",
+      "3E4NMEX8jyw",
+      "TGnj8ZfYwmA",
+      "lZYGZOYTS08",
+      "4LnvnV3eJVI",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -1011,9 +1354,11 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 9,
-      "strength": 8,
-      "programming": 1
+      "hypertrophy": 11,
+      "strength": 13,
+      "programming": 3,
+      "mobility": 1,
+      "general-fitness": 2
     }
   },
   "4cae7f1a-8222-44e7-97d6-59aeba37409f": {
@@ -1028,7 +1373,8 @@
       "V3h_1IUY-f0",
       "8t2a93BjDec",
       "IaJWPqP-Bjo",
-      "v-mQm_droHg"
+      "v-mQm_droHg",
+      "kvGZmfqHkKM"
     ],
     "related": [
       {
@@ -1054,7 +1400,9 @@
     ],
     "use_case_counts": {
       "hypertrophy": 7,
-      "strength": 6
+      "strength": 6,
+      "rehab": 1,
+      "mobility": 1
     }
   },
   "fcfc4304-290c-4cca-8715-f86e50bb3f6c": {
@@ -1073,12 +1421,14 @@
     "name": "D-load",
     "type": "Method",
     "video_ids": [
-      "VXKfH6ciEBI"
+      "VXKfH6ciEBI",
+      "EokSGFdSp0Y",
+      "DBy2dMH6QBc"
     ],
     "related": [],
     "use_case_counts": {
       "hypertrophy": 1,
-      "strength": 1
+      "strength": 2
     }
   },
   "bca0658c-b36a-4abf-a0eb-1e1411265676": {
@@ -1098,12 +1448,14 @@
     "name": "mesocycle",
     "type": "Method",
     "video_ids": [
-      "VXKfH6ciEBI"
+      "VXKfH6ciEBI",
+      "1vKu_OErpbI"
     ],
     "related": [],
     "use_case_counts": {
       "hypertrophy": 1,
-      "strength": 1
+      "strength": 2,
+      "programming": 1
     }
   },
   "3b5f1c9d-f077-49a5-83e4-06de781df6b6": {
@@ -1140,7 +1492,8 @@
     "name": "lat pull downs",
     "type": "Method",
     "video_ids": [
-      "VXKfH6ciEBI"
+      "VXKfH6ciEBI",
+      "QiXUeX1GfJQ"
     ],
     "related": [
       {
@@ -1149,8 +1502,8 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 1,
-      "strength": 1
+      "hypertrophy": 2,
+      "strength": 2
     }
   },
   "4065fdd3-384d-4421-bf22-6ec3720963f4": {
@@ -1159,12 +1512,13 @@
     "video_ids": [
       "VXKfH6ciEBI",
       "SUdQ1roIWz0",
-      "V3h_1IUY-f0"
+      "V3h_1IUY-f0",
+      "-epbbILmiog"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 2
+      "hypertrophy": 3,
+      "strength": 3
     }
   },
   "c97d0f19-e449-43a3-8e5d-dcf251352cd5": {
@@ -1203,9 +1557,17 @@
       "_RlRDWO2jfg",
       "v_ZkxWzYnMc",
       "94DXwlcX8Po",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "3E4NMEX8jyw",
+      "MS6RexepJRY"
     ],
     "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
       {
         "name": "rear delt",
         "type": "Concept"
@@ -1216,9 +1578,10 @@
       }
     ],
     "use_case_counts": {
-      "strength": 7,
-      "hypertrophy": 7,
-      "programming": 1
+      "strength": 9,
+      "hypertrophy": 9,
+      "programming": 1,
+      "general-fitness": 2
     }
   },
   "00996bbf-7733-434b-97eb-ca02a770e07b": {
@@ -1228,7 +1591,10 @@
       "n5dsI9qQXwY",
       "v_ZkxWzYnMc",
       "C6sYjDFuq9I",
-      "nwkLwMRHMQo"
+      "nwkLwMRHMQo",
+      "HFikx0R80OY",
+      "3E4NMEX8jyw",
+      "ZYoJwIykbeM"
     ],
     "related": [
       {
@@ -1249,8 +1615,9 @@
       }
     ],
     "use_case_counts": {
-      "strength": 3,
-      "hypertrophy": 3
+      "strength": 4,
+      "hypertrophy": 3,
+      "general-fitness": 1
     }
   },
   "b9e70a93-7f5a-4210-b817-2dd174b90cc0": {
@@ -1274,12 +1641,14 @@
     "type": "Organization",
     "video_ids": [
       "Y_M50iyrd3U",
-      "5aRHy5ZPjwk"
+      "5aRHy5ZPjwk",
+      "0-HKtpj3dcQ"
     ],
     "related": [],
     "use_case_counts": {
       "hypertrophy": 2,
-      "strength": 1
+      "strength": 2,
+      "programming": 1
     }
   },
   "220c8c74-d964-4178-ac76-c0ac434ccd2b": {
@@ -1332,9 +1701,15 @@
       "wr-iSaXPr5s",
       "v-mQm_droHg",
       "f23vXjoG2e8",
-      "1G0y8D5rFDc"
+      "1G0y8D5rFDc",
+      "2x2WAm1cv_8",
+      "571IKLbDoVM"
     ],
     "related": [
+      {
+        "name": "lower back",
+        "type": "Concept"
+      },
       {
         "name": "hips",
         "type": "Concept"
@@ -1354,9 +1729,9 @@
     ],
     "use_case_counts": {
       "hypertrophy": 8,
-      "strength": 8,
+      "strength": 9,
       "general-fitness": 3,
-      "programming": 1
+      "programming": 2
     }
   },
   "ebcc77f7-7f51-40f7-a491-3385342717dd": {
@@ -1367,9 +1742,25 @@
       "8t2a93BjDec",
       "_RlRDWO2jfg",
       "bEv6CCg2BC8",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "dJa_Nf4zdik",
+      "QiXUeX1GfJQ",
+      "1hsgJk9tvqQ",
+      "rYTljxLS0gk",
+      "q4_o_SF2MZI",
+      "xslGdIDByfI",
+      "ZYoJwIykbeM",
+      "SPQ-f4iB4KM",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "CgvpnaygIss",
+      "GUvWI-5Zueo"
     ],
     "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      },
       {
         "name": "glutes",
         "type": "Concept"
@@ -1379,33 +1770,34 @@
         "type": "Concept"
       },
       {
-        "name": "lower back",
+        "name": "quads",
         "type": "Concept"
       },
       {
         "name": "lower back",
-        "type": "Concept"
-      },
-      {
-        "name": "adductors",
         "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 4,
-      "programming": 1
+      "hypertrophy": 6,
+      "strength": 14,
+      "programming": 3,
+      "general-fitness": 1
     }
   },
   "a17dc9cf-1e58-4bbc-a204-328e97149c3a": {
     "name": "adductors",
     "type": "Concept",
     "video_ids": [
-      "Y_M50iyrd3U"
+      "Y_M50iyrd3U",
+      "Ax4M7OI3duc",
+      "MS6RexepJRY"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 2,
+      "strength": 2,
+      "general-fitness": 1
     }
   },
   "3158615e-418f-48bd-bf32-136dc327bf7b": {
@@ -1418,11 +1810,30 @@
       "GGpArq725ls",
       "A0NBCkpYatQ",
       "a4muTr5ZV9Y",
-      "-EIhKMDSjBY"
+      "-EIhKMDSjBY",
+      "tY2YUaeEL0Y",
+      "-epbbILmiog",
+      "z7VVaqYEcco",
+      "HFikx0R80OY",
+      "rL7pBGHhPE8",
+      "jZBSKK-XJP0",
+      "wvJ_hEL8p1M",
+      "F9wfLFJYGnM",
+      "571IKLbDoVM",
+      "q4_o_SF2MZI",
+      "3E4NMEX8jyw",
+      "P8OUxBxIMYg",
+      "DBy2dMH6QBc",
+      "83yM6p9z2WU",
+      "UPMKGT8dgCE",
+      "ZYoJwIykbeM",
+      "PfEWqDgkMNE",
+      "GUvWI-5Zueo",
+      "MS6RexepJRY"
     ],
     "related": [
       {
-        "name": "pecs",
+        "name": "tricep",
         "type": "Concept"
       },
       {
@@ -1438,13 +1849,16 @@
         "type": "Concept"
       },
       {
-        "name": "barbell",
-        "type": "Tool"
+        "name": "pecs",
+        "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "strength": 2,
-      "hypertrophy": 7
+      "strength": 16,
+      "hypertrophy": 15,
+      "general-fitness": 3,
+      "programming": 3,
+      "mobility": 2
     }
   },
   "b1956722-3aa5-4baa-b24b-9717145deb77": {
@@ -1456,7 +1870,13 @@
       "EQjexKQpGeQ",
       "8t2a93BjDec",
       "Hdc7Mw6BIEE",
-      "O94yEoGXtBY"
+      "O94yEoGXtBY",
+      "HljCYSL0b5M",
+      "-epbbILmiog",
+      "z7VVaqYEcco",
+      "1vKu_OErpbI",
+      "571IKLbDoVM",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -1476,14 +1896,15 @@
         "type": "Concept"
       },
       {
-        "name": "legs",
+        "name": "biceps",
         "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "strength": 6,
-      "hypertrophy": 5,
-      "general-fitness": 1
+      "strength": 12,
+      "hypertrophy": 8,
+      "general-fitness": 2,
+      "programming": 2
     }
   },
   "be26bd11-ad70-4503-a589-10f20a6d70c1": {
@@ -1514,7 +1935,17 @@
       "popGXI-qs98",
       "yN6Q1UI_xkE",
       "-EIhKMDSjBY",
-      "94DXwlcX8Po"
+      "94DXwlcX8Po",
+      "tY2YUaeEL0Y",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "rL7pBGHhPE8",
+      "jZBSKK-XJP0",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "TGnj8ZfYwmA",
+      "PfEWqDgkMNE",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -1526,32 +1957,38 @@
         "type": "Method"
       },
       {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
         "name": "dip stand",
         "type": "Tool"
       },
       {
         "name": "dumbbells",
         "type": "Tool"
-      },
-      {
-        "name": "legs",
-        "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 12,
-      "strength": 7
+      "hypertrophy": 16,
+      "strength": 14,
+      "general-fitness": 3,
+      "programming": 1
     }
   },
   "c3f318db-f48f-4d43-bd6f-d92dff35da4a": {
     "name": "dips",
     "type": "Method",
     "video_ids": [
-      "Tw0axi-Jlqc"
+      "Tw0axi-Jlqc",
+      "HljCYSL0b5M",
+      "-epbbILmiog",
+      "h-9Sk9Nz0As"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 2,
+      "strength": 2
     }
   },
   "5b2174c9-ec32-413e-bcee-ecbd9da154bd": {
@@ -1571,12 +2008,20 @@
     "video_ids": [
       "Tw0axi-Jlqc",
       "8t2a93BjDec",
-      "IaJWPqP-Bjo"
+      "IaJWPqP-Bjo",
+      "HFikx0R80OY",
+      "TGnj8ZfYwmA",
+      "ZYoJwIykbeM",
+      "PfEWqDgkMNE"
     ],
     "related": [
       {
         "name": "pull up",
         "type": "Method"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
       },
       {
         "name": "bench press",
@@ -1585,7 +2030,7 @@
     ],
     "use_case_counts": {
       "hypertrophy": 2,
-      "strength": 1
+      "strength": 4
     }
   },
   "c9be8c9f-fda5-4b25-a254-00325a3b8064": {
@@ -1623,17 +2068,26 @@
       "yN6Q1UI_xkE",
       "-EIhKMDSjBY",
       "94DXwlcX8Po",
-      "O94yEoGXtBY"
+      "O94yEoGXtBY",
+      "3hC6UOLCnuA",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "TGnj8ZfYwmA"
     ],
     "related": [
       {
         "name": "dips",
         "type": "Method"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 10,
-      "strength": 4
+      "hypertrophy": 11,
+      "strength": 7,
+      "general-fitness": 1
     }
   },
   "827be83a-29b8-457c-8f32-e84f73a96bd7": {
@@ -1691,7 +2145,8 @@
       "0f6-uCUKqgA",
       "Z6R8A5tcrTc",
       "a4muTr5ZV9Y",
-      "94DXwlcX8Po"
+      "94DXwlcX8Po",
+      "Ax4M7OI3duc"
     ],
     "related": [
       {
@@ -1712,7 +2167,7 @@
       }
     ],
     "use_case_counts": {
-      "strength": 2,
+      "strength": 3,
       "hypertrophy": 4
     }
   },
@@ -1728,19 +2183,36 @@
       "qfc70k40318",
       "O94yEoGXtBY",
       "MfMxT_jXcPE",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "tY2YUaeEL0Y",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "rYTljxLS0gk",
+      "jZBSKK-XJP0",
+      "wvJ_hEL8p1M",
+      "571IKLbDoVM",
+      "q4_o_SF2MZI",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "ndIcE1c7hZs",
+      "MS6RexepJRY"
     ],
     "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
       {
         "name": "barbell curls",
         "type": "Method"
       }
     ],
     "use_case_counts": {
-      "strength": 6,
-      "hypertrophy": 7,
-      "general-fitness": 1,
-      "programming": 1
+      "strength": 15,
+      "hypertrophy": 11,
+      "general-fitness": 5,
+      "programming": 3,
+      "mobility": 1
     }
   },
   "44930a31-3ea1-430a-99bf-cd7dd39505c0": {
@@ -1767,13 +2239,18 @@
       "C6sYjDFuq9I",
       "djKXLt7kv7Q",
       "J46aPqFl0WE",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "HFikx0R80OY",
+      "MS6RexepJRY"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 8,
-      "strength": 7,
-      "programming": 1
+      "hypertrophy": 11,
+      "strength": 10,
+      "programming": 1,
+      "general-fitness": 1
     }
   },
   "cdba6762-cdeb-472e-b908-ee264defe846": {
@@ -1807,7 +2284,8 @@
     "name": "glute",
     "type": "Concept",
     "video_ids": [
-      "Z6R8A5tcrTc"
+      "Z6R8A5tcrTc",
+      "G-upyfK1CWA"
     ],
     "related": [
       {
@@ -1816,7 +2294,8 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 1,
+      "programming": 1
     }
   },
   "b0ef5577-dfe4-41cd-98e9-ec2588a5965d": {
@@ -1827,12 +2306,40 @@
       "popGXI-qs98",
       "v_ZkxWzYnMc",
       "yN6Q1UI_xkE",
-      "ljO4jkwv8wQ"
+      "ljO4jkwv8wQ",
+      "dJa_Nf4zdik",
+      "s2pgDGsmexI",
+      "QiXUeX1GfJQ",
+      "mKBN9YTGPXk",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "rL7pBGHhPE8",
+      "1vKu_OErpbI",
+      "571IKLbDoVM",
+      "P8OUxBxIMYg",
+      "Ax4M7OI3duc",
+      "CgvpnaygIss",
+      "4LnvnV3eJVI",
+      "ndIcE1c7hZs",
+      "GUvWI-5Zueo",
+      "lEmU6Jzj65g",
+      "0-HKtpj3dcQ"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "squats",
+        "type": "Method"
+      },
+      {
+        "name": "squats",
+        "type": "Method"
+      }
+    ],
     "use_case_counts": {
-      "hypertrophy": 5,
-      "strength": 3
+      "hypertrophy": 10,
+      "strength": 16,
+      "general-fitness": 2,
+      "programming": 4
     }
   },
   "fb536426-a186-433c-b19c-50f784a01680": {
@@ -1904,12 +2411,38 @@
     "type": "Concept",
     "video_ids": [
       "Z6R8A5tcrTc",
-      "s5hluoQjtIM"
+      "s5hluoQjtIM",
+      "EsJje6V77ok",
+      "EokSGFdSp0Y",
+      "G-upyfK1CWA",
+      "ZDqi5o5V9vs",
+      "kvGZmfqHkKM",
+      "WoiQvL4_QAE",
+      "2x2WAm1cv_8",
+      "2_iYnUgM200",
+      "QiXUeX1GfJQ",
+      "rL7pBGHhPE8",
+      "wvJ_hEL8p1M",
+      "571IKLbDoVM",
+      "EKetXpJ43PM",
+      "TGnj8ZfYwmA",
+      "7HtUhJzPUS8",
+      "ndIcE1c7hZs",
+      "MS6RexepJRY"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "leg press",
+        "type": "Method"
+      }
+    ],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 1
+      "hypertrophy": 5,
+      "strength": 11,
+      "programming": 3,
+      "rehab": 1,
+      "mobility": 2,
+      "general-fitness": 4
     }
   },
   "ee742e49-5ea1-4e67-ba61-a4006a4cf263": {
@@ -1947,14 +2480,32 @@
       "-EIhKMDSjBY",
       "gimeRpdqWQw",
       "1G0y8D5rFDc",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "dJa_Nf4zdik",
+      "EsJje6V77ok",
+      "EokSGFdSp0Y",
+      "F81izDQq3Gs",
+      "AiOzSpP5x_8",
+      "2x2WAm1cv_8",
+      "HKuKEev7mDE",
+      "QiXUeX1GfJQ",
+      "rYTljxLS0gk",
+      "UPMKGT8dgCE",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "lZYGZOYTS08"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "machine",
+        "type": "Tool"
+      }
+    ],
     "use_case_counts": {
-      "strength": 5,
-      "hypertrophy": 7,
-      "general-fitness": 1,
-      "programming": 1
+      "strength": 14,
+      "hypertrophy": 12,
+      "general-fitness": 3,
+      "programming": 3
     }
   },
   "3651c2d2-0360-4002-b069-2b908cca5748": {
@@ -2003,12 +2554,19 @@
       "yN6Q1UI_xkE",
       "nwkLwMRHMQo",
       "-EIhKMDSjBY",
-      "94DXwlcX8Po"
+      "94DXwlcX8Po",
+      "2_iYnUgM200",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "rL7pBGHhPE8",
+      "TGnj8ZfYwmA",
+      "4LnvnV3eJVI"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 8,
-      "strength": 4
+      "hypertrophy": 11,
+      "strength": 9,
+      "general-fitness": 2
     }
   },
   "554e2dfb-e60d-4536-b7a7-dbb207a9807a": {
@@ -2055,18 +2613,37 @@
     "video_ids": [
       "7B5Exks1KJE",
       "Hdc7Mw6BIEE",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "tY2YUaeEL0Y",
+      "z7VVaqYEcco",
+      "1hsgJk9tvqQ",
+      "EKetXpJ43PM",
+      "3E4NMEX8jyw",
+      "83yM6p9z2WU",
+      "PfEWqDgkMNE",
+      "7HtUhJzPUS8",
+      "MS6RexepJRY"
     ],
     "related": [
       {
         "name": "lower back",
         "type": "Concept"
+      },
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 3,
-      "strength": 2,
-      "general-fitness": 1
+      "hypertrophy": 7,
+      "strength": 8,
+      "general-fitness": 3,
+      "mobility": 1,
+      "programming": 1
     }
   },
   "42ea3b62-9635-4b29-ae3a-986cc71454d9": {
@@ -2111,12 +2688,19 @@
       "v_ZkxWzYnMc",
       "nwkLwMRHMQo",
       "qfc70k40318",
-      "djKXLt7kv7Q"
+      "djKXLt7kv7Q",
+      "QrqXteVOR1Y",
+      "h-9Sk9Nz0As",
+      "Ax4M7OI3duc"
     ],
     "related": [
       {
         "name": "biceps",
         "type": "Concept"
+      },
+      {
+        "name": "row",
+        "type": "Method"
       },
       {
         "name": "Research",
@@ -2129,15 +2713,11 @@
       {
         "name": "overhead press",
         "type": "Method"
-      },
-      {
-        "name": "lateral delt",
-        "type": "Concept"
       }
     ],
     "use_case_counts": {
       "hypertrophy": 4,
-      "strength": 3
+      "strength": 4
     }
   },
   "8c075c96-e21f-4d54-82d1-d14defab4055": {
@@ -2145,12 +2725,13 @@
     "type": "Concept",
     "video_ids": [
       "7B5Exks1KJE",
-      "Hdc7Mw6BIEE"
+      "Hdc7Mw6BIEE",
+      "P8OUxBxIMYg"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 1,
+      "hypertrophy": 3,
+      "strength": 2,
       "general-fitness": 1
     }
   },
@@ -2235,7 +2816,8 @@
       "xDmFkJxPzeM",
       "gimeRpdqWQw",
       "1G0y8D5rFDc",
-      "2RrGnjxSsiA"
+      "2RrGnjxSsiA",
+      "s2pgDGsmexI"
     ],
     "related": [
       {
@@ -2301,11 +2883,13 @@
     "name": "slow eccentric",
     "type": "Method",
     "video_ids": [
-      "GGpArq725ls"
+      "GGpArq725ls",
+      "1hsgJk9tvqQ"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 2,
+      "strength": 1
     }
   },
   "9ae08a08-1bca-473f-8763-c010a6eaf328": {
@@ -2347,7 +2931,8 @@
     "video_ids": [
       "A0NBCkpYatQ",
       "xDmFkJxPzeM",
-      "f23vXjoG2e8"
+      "f23vXjoG2e8",
+      "lEmU6Jzj65g"
     ],
     "related": [
       {
@@ -2361,7 +2946,7 @@
     ],
     "use_case_counts": {
       "hypertrophy": 3,
-      "strength": 2,
+      "strength": 3,
       "general-fitness": 2
     }
   },
@@ -2369,11 +2954,14 @@
     "name": "benching",
     "type": "Method",
     "video_ids": [
-      "A0NBCkpYatQ"
+      "A0NBCkpYatQ",
+      "GUvWI-5Zueo"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 1,
+      "strength": 1,
+      "programming": 1
     }
   },
   "c9558bf0-2c6b-4a06-ab13-d510ff5c4d31": {
@@ -2457,13 +3045,15 @@
     "video_ids": [
       "tJIFTI9wZOw",
       "i1YgFZB6alI",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "rL7pBGHhPE8"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 3,
-      "programming": 1
+      "hypertrophy": 3,
+      "strength": 4,
+      "programming": 1,
+      "general-fitness": 1
     }
   },
   "dae05e0b-2998-4f1f-a9fe-6b6bc23974d0": {
@@ -2497,12 +3087,20 @@
     "type": "Person",
     "video_ids": [
       "tJIFTI9wZOw",
-      "Cv5nS1AH_jE"
+      "Cv5nS1AH_jE",
+      "WoiQvL4_QAE",
+      "wvJ_hEL8p1M",
+      "571IKLbDoVM",
+      "EKetXpJ43PM",
+      "TGnj8ZfYwmA",
+      "P8OUxBxIMYg"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 2
+      "hypertrophy": 3,
+      "strength": 7,
+      "mobility": 1,
+      "programming": 1
     }
   },
   "92532ef6-97d9-4a30-90fd-7fdc8cfb2df0": {
@@ -2555,7 +3153,8 @@
     "name": "good morning exercise",
     "type": "Method",
     "video_ids": [
-      "I9l9WRZ5SWE"
+      "I9l9WRZ5SWE",
+      "jZBSKK-XJP0"
     ],
     "related": [
       {
@@ -2576,7 +3175,8 @@
       }
     ],
     "use_case_counts": {
-      "general-fitness": 1
+      "general-fitness": 1,
+      "programming": 1
     }
   },
   "23535e36-b5de-4c44-ae79-6730ff88224d": {
@@ -2618,12 +3218,22 @@
     "video_ids": [
       "8t2a93BjDec",
       "C6sYjDFuq9I",
-      "-qsRtp_PbVM"
+      "-qsRtp_PbVM",
+      "G-upyfK1CWA",
+      "1hsgJk9tvqQ",
+      "P8OUxBxIMYg",
+      "lZYGZOYTS08"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "Smith machine",
+        "type": "Tool"
+      }
+    ],
     "use_case_counts": {
-      "strength": 2,
-      "hypertrophy": 2
+      "strength": 4,
+      "hypertrophy": 4,
+      "programming": 2
     }
   },
   "11396028-425d-4d28-b2c7-11dbb72599c3": {
@@ -2671,29 +3281,44 @@
     "name": "Mike",
     "type": "Person",
     "video_ids": [
-      "Cv5nS1AH_jE"
+      "Cv5nS1AH_jE",
+      "-epbbILmiog"
     ],
     "related": [
       {
         "name": "tricep",
         "type": "Concept"
+      },
+      {
+        "name": "Jared Feather",
+        "type": "Person"
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 1,
-      "strength": 1
+      "hypertrophy": 2,
+      "strength": 2
     }
   },
   "38be5b3a-4263-4292-800f-defbd4d55d16": {
     "name": "close grip bench",
     "type": "Method",
     "video_ids": [
-      "Cv5nS1AH_jE"
+      "Cv5nS1AH_jE",
+      "PfEWqDgkMNE"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
+      {
+        "name": "forearm muscles",
+        "type": "Concept"
+      }
+    ],
     "use_case_counts": {
       "hypertrophy": 1,
-      "strength": 1
+      "strength": 2
     }
   },
   "98410fe2-7a24-49e7-953b-598d8b6d2c73": {
@@ -2834,11 +3459,22 @@
     "name": "cambered bar bench",
     "type": "Tool",
     "video_ids": [
-      "a4muTr5ZV9Y"
+      "a4muTr5ZV9Y",
+      "-epbbILmiog"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "quads",
+        "type": "Concept"
+      }
+    ],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 2,
+      "strength": 1
     }
   },
   "5dd68bcd-9353-4958-852c-ec87483443df": {
@@ -2856,11 +3492,25 @@
     "name": "hack squats",
     "type": "Method",
     "video_ids": [
-      "a4muTr5ZV9Y"
+      "a4muTr5ZV9Y",
+      "QiXUeX1GfJQ",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "PfEWqDgkMNE"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "leg press",
+        "type": "Method"
+      },
+      {
+        "name": "knees",
+        "type": "Concept"
+      }
+    ],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 3,
+      "strength": 3
     }
   },
   "fd8b614d-3cf8-4f8d-9276-9c1dc15bafc7": {
@@ -2868,7 +3518,12 @@
     "type": "Tool",
     "video_ids": [
       "a4muTr5ZV9Y",
-      "v_ZkxWzYnMc"
+      "v_ZkxWzYnMc",
+      "a-f3vKHPu_Y",
+      "z7VVaqYEcco",
+      "PfEWqDgkMNE",
+      "TkwgyjJKJ0c",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -2885,8 +3540,10 @@
       }
     ],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 1
+      "hypertrophy": 4,
+      "strength": 5,
+      "programming": 1,
+      "general-fitness": 1
     }
   },
   "d354aecc-7094-4613-a473-ab749b5bbd64": {
@@ -2895,12 +3552,20 @@
     "video_ids": [
       "a4muTr5ZV9Y",
       "Hdc7Mw6BIEE",
-      "O94yEoGXtBY"
+      "O94yEoGXtBY",
+      "QiXUeX1GfJQ",
+      "-epbbILmiog",
+      "EKetXpJ43PM"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "tricep",
+        "type": "Concept"
+      }
+    ],
     "use_case_counts": {
-      "hypertrophy": 3,
-      "strength": 2,
+      "hypertrophy": 5,
+      "strength": 5,
       "general-fitness": 1
     }
   },
@@ -2915,7 +3580,8 @@
       "-EIhKMDSjBY",
       "f23vXjoG2e8",
       "ljO4jkwv8wQ",
-      "MfMxT_jXcPE"
+      "MfMxT_jXcPE",
+      "GUvWI-5Zueo"
     ],
     "related": [
       {
@@ -2932,9 +3598,10 @@
       }
     ],
     "use_case_counts": {
-      "strength": 6,
+      "strength": 7,
       "hypertrophy": 8,
-      "general-fitness": 1
+      "general-fitness": 1,
+      "programming": 1
     }
   },
   "4462807d-efda-47ae-84bc-e60f0fb76c51": {
@@ -3034,7 +3701,8 @@
       "bEv6CCg2BC8",
       "XsrD5y8EIKU",
       "VL5Ab0T07e4",
-      "nwkLwMRHMQo"
+      "nwkLwMRHMQo",
+      "rL7pBGHhPE8"
     ],
     "related": [
       {
@@ -3047,8 +3715,9 @@
       }
     ],
     "use_case_counts": {
-      "strength": 4,
-      "hypertrophy": 3
+      "strength": 5,
+      "hypertrophy": 4,
+      "general-fitness": 1
     }
   },
   "d9c4a77a-66af-4c60-942e-010c984b30fb": {
@@ -3060,12 +3729,17 @@
       "-qsRtp_PbVM",
       "nwkLwMRHMQo",
       "O94yEoGXtBY",
-      "MfMxT_jXcPE"
+      "MfMxT_jXcPE",
+      "mKBN9YTGPXk",
+      "DBy2dMH6QBc",
+      "iNTH279jtS4",
+      "ndIcE1c7hZs"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 3,
-      "hypertrophy": 4
+      "strength": 4,
+      "hypertrophy": 4,
+      "general-fitness": 1
     }
   },
   "7c40e801-a408-40d5-9fbe-2f580cd0db84": {
@@ -3153,13 +3827,14 @@
     "video_ids": [
       "axoeDmW0oAY",
       "qfc70k40318",
-      "f23vXjoG2e8"
+      "f23vXjoG2e8",
+      "ndIcE1c7hZs"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 2,
+      "strength": 3,
       "hypertrophy": 3,
-      "general-fitness": 1
+      "general-fitness": 2
     }
   },
   "9b779cc0-ad10-4e2a-88e8-eea5454df129": {
@@ -3312,7 +3987,8 @@
     "name": "barbell curl",
     "type": "Method",
     "video_ids": [
-      "i1YgFZB6alI"
+      "i1YgFZB6alI",
+      "UPMKGT8dgCE"
     ],
     "related": [
       {
@@ -3321,8 +3997,8 @@
       }
     ],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 2,
+      "hypertrophy": 2
     }
   },
   "798de9ec-2201-4166-8bde-ff9cde4c579d": {
@@ -3377,9 +4053,18 @@
     "name": "forearm muscles",
     "type": "Concept",
     "video_ids": [
-      "i1YgFZB6alI"
+      "i1YgFZB6alI",
+      "tY2YUaeEL0Y",
+      "wvJ_hEL8p1M",
+      "3E4NMEX8jyw",
+      "xslGdIDByfI",
+      "MS6RexepJRY"
     ],
     "related": [
+      {
+        "name": "biceps",
+        "type": "Concept"
+      },
       {
         "name": "biceps",
         "type": "Concept"
@@ -3390,8 +4075,11 @@
       }
     ],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 4,
+      "hypertrophy": 3,
+      "mobility": 1,
+      "general-fitness": 2,
+      "programming": 1
     }
   },
   "cd321193-6f94-4086-9eea-a8ac38b270be": {
@@ -3476,12 +4164,13 @@
     "name": "lat pullovers",
     "type": "Method",
     "video_ids": [
-      "popGXI-qs98"
+      "popGXI-qs98",
+      "PfEWqDgkMNE"
     ],
     "related": [],
     "use_case_counts": {
       "hypertrophy": 1,
-      "strength": 1
+      "strength": 2
     }
   },
   "8ef16bd0-92f4-4ce1-abae-10a0ea7d04eb": {
@@ -3599,12 +4288,14 @@
     "type": "Concept",
     "video_ids": [
       "popGXI-qs98",
-      "94DXwlcX8Po"
+      "94DXwlcX8Po",
+      "1hsgJk9tvqQ",
+      "PfEWqDgkMNE"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 2,
-      "strength": 2
+      "hypertrophy": 3,
+      "strength": 4
     }
   },
   "9749386d-6d76-47c9-97e9-a0233a1bbee7": {
@@ -3712,11 +4403,12 @@
     "name": "chin-ups",
     "type": "Method",
     "video_ids": [
-      "Hdc7Mw6BIEE"
+      "Hdc7Mw6BIEE",
+      "HljCYSL0b5M"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
+      "strength": 2,
       "hypertrophy": 1,
       "general-fitness": 1
     }
@@ -3912,7 +4604,8 @@
     "video_ids": [
       "bEv6CCg2BC8",
       "XsrD5y8EIKU",
-      "ljO4jkwv8wQ"
+      "ljO4jkwv8wQ",
+      "dJa_Nf4zdik"
     ],
     "related": [
       {
@@ -3921,8 +4614,8 @@
       }
     ],
     "use_case_counts": {
-      "strength": 3,
-      "hypertrophy": 2
+      "strength": 4,
+      "hypertrophy": 3
     }
   },
   "7c2012f3-c79f-4d60-a067-1e7e3041f6dd": {
@@ -3933,7 +4626,14 @@
       "v-mQm_droHg",
       "_oyxCn2iSjU",
       "ljO4jkwv8wQ",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "QiXUeX1GfJQ",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "rL7pBGHhPE8",
+      "jZBSKK-XJP0",
+      "P8OUxBxIMYg",
+      "ZYoJwIykbeM"
     ],
     "related": [
       {
@@ -3958,9 +4658,10 @@
       }
     ],
     "use_case_counts": {
-      "strength": 5,
-      "hypertrophy": 3,
-      "programming": 1
+      "strength": 10,
+      "hypertrophy": 7,
+      "programming": 2,
+      "general-fitness": 1
     }
   },
   "1f2bf8f5-05dc-4d4a-b079-fff6cf33c893": {
@@ -3970,7 +4671,8 @@
       "bEv6CCg2BC8",
       "v-mQm_droHg",
       "f23vXjoG2e8",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "h-9Sk9Nz0As"
     ],
     "related": [],
     "use_case_counts": {
@@ -4183,11 +4885,12 @@
       "qfc70k40318",
       "J46aPqFl0WE",
       "2RrGnjxSsiA",
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "HljCYSL0b5M"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 6,
+      "strength": 7,
       "hypertrophy": 7,
       "general-fitness": 2,
       "programming": 2
@@ -4265,7 +4968,16 @@
       "VL5Ab0T07e4",
       "wr-iSaXPr5s",
       "-qsRtp_PbVM",
-      "_oyxCn2iSjU"
+      "_oyxCn2iSjU",
+      "a-f3vKHPu_Y",
+      "HljCYSL0b5M",
+      "nCvTU_XIEQE",
+      "HFikx0R80OY",
+      "1hsgJk9tvqQ",
+      "jZBSKK-XJP0",
+      "P8OUxBxIMYg",
+      "xslGdIDByfI",
+      "MS6RexepJRY"
     ],
     "related": [
       {
@@ -4279,24 +4991,36 @@
       {
         "name": "quads",
         "type": "Concept"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
+      },
+      {
+        "name": "Conventional deadlift",
+        "type": "Method"
       }
     ],
     "use_case_counts": {
-      "strength": 4,
-      "hypertrophy": 5,
-      "programming": 1
+      "strength": 9,
+      "hypertrophy": 8,
+      "programming": 3,
+      "general-fitness": 1
     }
   },
   "5ce939d9-4218-406c-b0b7-e8ece8cda565": {
     "name": "squat",
     "type": "Concept",
     "video_ids": [
-      "XsrD5y8EIKU"
+      "XsrD5y8EIKU",
+      "QiXUeX1GfJQ",
+      "0-HKtpj3dcQ"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 3,
+      "hypertrophy": 2,
+      "programming": 1
     }
   },
   "859e453c-8645-4b97-890f-0463deac4408": {
@@ -4653,12 +5377,13 @@
     "name": "power rack",
     "type": "Tool",
     "video_ids": [
-      "C6sYjDFuq9I"
+      "C6sYjDFuq9I",
+      "1hsgJk9tvqQ"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 2,
+      "hypertrophy": 2
     }
   },
   "6bd3ad7e-9fff-41e3-896f-1accdf9509c6": {
@@ -4943,11 +5668,13 @@
     "type": "Tool",
     "video_ids": [
       "nwkLwMRHMQo",
-      "qfc70k40318"
+      "qfc70k40318",
+      "dJa_Nf4zdik"
     ],
     "related": [],
     "use_case_counts": {
-      "hypertrophy": 1
+      "hypertrophy": 2,
+      "strength": 1
     }
   },
   "3fa6a2e7-02e8-4990-bc54-236e3a2f3c38": {
@@ -5081,7 +5808,8 @@
     "type": "Concept",
     "video_ids": [
       "gimeRpdqWQw",
-      "J46aPqFl0WE"
+      "J46aPqFl0WE",
+      "kvGZmfqHkKM"
     ],
     "related": [
       {
@@ -5091,7 +5819,9 @@
     ],
     "use_case_counts": {
       "strength": 2,
-      "hypertrophy": 2
+      "hypertrophy": 2,
+      "rehab": 1,
+      "mobility": 1
     }
   },
   "f6da24b4-e476-4a3d-a094-e92cec92fb5b": {
@@ -5422,12 +6152,13 @@
     "name": "core",
     "type": "Concept",
     "video_ids": [
-      "1G0y8D5rFDc"
+      "1G0y8D5rFDc",
+      "EKetXpJ43PM"
     ],
     "related": [],
     "use_case_counts": {
       "hypertrophy": 1,
-      "strength": 1,
+      "strength": 2,
       "general-fitness": 1
     }
   },
@@ -5629,12 +6360,18 @@
     "name": "kickback",
     "type": "Method",
     "video_ids": [
-      "94DXwlcX8Po"
+      "94DXwlcX8Po",
+      "dJa_Nf4zdik"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "glutes",
+        "type": "Concept"
+      }
+    ],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 2,
+      "hypertrophy": 2
     }
   },
   "7162d3fe-e34a-44e6-8970-8aa4b326c0e6": {
@@ -5689,11 +6426,12 @@
     "name": "leg curl",
     "type": "Method",
     "video_ids": [
-      "_oyxCn2iSjU"
+      "_oyxCn2iSjU",
+      "PfEWqDgkMNE"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
+      "strength": 2,
       "hypertrophy": 1
     }
   },
@@ -5836,12 +6574,14 @@
     "name": "lunge",
     "type": "Method",
     "video_ids": [
-      "ljO4jkwv8wQ"
+      "ljO4jkwv8wQ",
+      "MS6RexepJRY"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
-      "hypertrophy": 1
+      "strength": 2,
+      "hypertrophy": 2,
+      "general-fitness": 1
     }
   },
   "e347bb48-0c1a-4cc4-be83-bbce544c4fd8": {
@@ -5884,11 +6624,12 @@
     "name": "dumbbell and cable rows",
     "type": "Method",
     "video_ids": [
-      "djKXLt7kv7Q"
+      "djKXLt7kv7Q",
+      "EKetXpJ43PM"
     ],
     "related": [],
     "use_case_counts": {
-      "strength": 1,
+      "strength": 2,
       "hypertrophy": 1
     }
   },
@@ -6053,7 +6794,8 @@
     "name": "six pack",
     "type": "Concept",
     "video_ids": [
-      "2RrGnjxSsiA"
+      "2RrGnjxSsiA",
+      "s2pgDGsmexI"
     ],
     "related": [],
     "use_case_counts": {
@@ -6369,12 +7111,34 @@
     "name": "exercises",
     "type": "Method",
     "video_ids": [
-      "1GsYg9YG0Xk"
+      "1GsYg9YG0Xk",
+      "1hsgJk9tvqQ",
+      "rL7pBGHhPE8",
+      "EKetXpJ43PM",
+      "PfEWqDgkMNE",
+      "Ax4M7OI3duc",
+      "CgvpnaygIss",
+      "lZYGZOYTS08"
     ],
-    "related": [],
+    "related": [
+      {
+        "name": "quads",
+        "type": "Concept"
+      },
+      {
+        "name": "tricep",
+        "type": "Concept"
+      },
+      {
+        "name": "back squat",
+        "type": "Method"
+      }
+    ],
     "use_case_counts": {
-      "strength": 1,
-      "programming": 1
+      "strength": 6,
+      "programming": 2,
+      "hypertrophy": 2,
+      "general-fitness": 1
     }
   },
   "779d30b6-6d3d-4074-a5ea-54caf6da2a78": {
