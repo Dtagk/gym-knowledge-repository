@@ -57,6 +57,38 @@
     header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
     #video-count { font-size: 0.8rem; color: var(--text-muted); }
 
+    /* ── Knowledge Cards strip ──────────────────────────────────────────────── */
+    #knowledge-cards {
+      padding: 1rem 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .kc-heading {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    #kc-list {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+    }
+    .kc-card {
+      flex: 0 0 280px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+    }
+    .kc-question { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+    .kc-answer { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+    .kc-sources { margin-top: 0.4rem; display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .kc-source { font-size: 0.65rem; color: var(--accent); text-decoration: none; }
+    .kc-source:hover { text-decoration: underline; }
+
     main { display: flex; flex: 1; min-height: 0; }
 
     /* ── Sidebar ────────────────────────────────────────────────────────────── */
@@ -75,6 +107,22 @@
       gap: 1.2rem;
     }
 
+    /* ── Search box ─────────────────────────────────────────────────────────── */
+    .search-wrap { position: relative; }
+    #search-input {
+      width: 100%;
+      padding: 0.4rem 0.6rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.8rem;
+      outline: none;
+    }
+    #search-input:focus { border-color: var(--accent); }
+    #search-input::placeholder { color: var(--text-muted); }
+    .search-mode-label { font-size: 0.6rem; color: var(--text-muted); display: block; margin-top: 2px; }
+
     /* ── Body map ───────────────────────────────────────────────────────────── */
     .body-map { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
 
@@ -92,11 +140,12 @@
 
     .body-svg { width: 104px; height: auto; overflow: visible; }
 
-    /* Non-interactive outline shapes */
+    /* Non-interactive outline shapes — anatomical red fill */
     .outline {
-      fill: var(--body-fill);
-      stroke: var(--zone-stroke);
-      stroke-width: 1;
+      fill: #c8503a;
+      opacity: 0.7;
+      stroke: #8b2a1a;
+      stroke-width: 0.5;
       pointer-events: none;
     }
 
@@ -204,6 +253,27 @@
     }
     #clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── Entity Hub Panel ───────────────────────────────────────────────────── */
+    .entity-hub {
+      border-top: 1px solid var(--border);
+      padding: 0.75rem;
+      background: var(--surface2);
+      border-radius: var(--radius);
+    }
+    .entity-hub h4 { font-size: 0.75rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .entity-hub .hub-meta { font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .hub-related { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+    .hub-related-pill {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      background: var(--badge-ent-bg);
+      color: var(--badge-ent-fg);
+      border: none;
+      cursor: pointer;
+    }
+    .hub-related-pill:hover { opacity: 0.8; }
+
     /* ── Card grid ──────────────────────────────────────────────────────────── */
     #grid { flex: 1; padding: 1.25rem; overflow-y: auto; }
 
@@ -250,6 +320,14 @@
     .badge-bp  { background: var(--badge-bp-bg);  color: var(--badge-bp-fg); }
     .badge-uc  { background: var(--badge-uc-bg);  color: var(--badge-uc-fg); }
     .badge-ent { background: var(--badge-ent-bg); color: var(--badge-ent-fg); }
+
+    /* Entity buttons in expanded panel */
+    button.badge-ent {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    button.badge-ent:hover { opacity: 0.8; }
 
     .card-footer {
       display: flex;
@@ -302,65 +380,84 @@
   <span id="video-count"></span>
 </header>
 
+<!-- Knowledge Cards strip (Epic 10) -->
+<section id="knowledge-cards" hidden>
+  <h2 class="kc-heading">Knowledge Cards</h2>
+  <div id="kc-list"></div>
+</section>
+
 <main>
   <aside id="filters">
+
+    <!-- Search box (Epic 8) -->
+    <div class="search-wrap">
+      <input id="search-input" type="search" placeholder="Search videos…" autocomplete="off">
+      <span id="search-mode" class="search-mode-label" hidden>(offline)</span>
+    </div>
 
     <div class="body-map">
       <div class="body-views">
 
-        <!-- FRONT VIEW -->
+        <!-- FRONT VIEW — anatomically accurate -->
         <div class="body-view">
           <span class="view-label">Front</span>
           <svg class="body-svg" viewBox="0 0 100 255">
-            <!-- background outline -->
-            <circle class="outline" cx="50" cy="17" r="13"/>
-            <rect   class="outline" x="45" y="28" width="10" height="10"/>
-            <path   class="outline" d="M23,40 L77,40 L72,132 L58,132 L58,138 L42,138 L42,132 L28,132 Z"/>
-            <path   class="outline" d="M14,64 L26,60 L22,125 L10,120 Z"/>
-            <path   class="outline" d="M74,60 L86,64 L90,120 L78,125 Z"/>
-            <path   class="outline" d="M28,140 L48,140 L46,253 L26,253 Z"/>
-            <path   class="outline" d="M52,140 L72,140 L74,253 L54,253 Z"/>
+            <!-- Anatomical outline shapes -->
+            <!-- Head -->
+            <ellipse class="outline" cx="50" cy="15" rx="11" ry="13"/>
+            <!-- Neck -->
+            <path class="outline" d="M44,27 L56,27 L57,36 L43,36 Z"/>
+            <!-- Torso: shoulders wide, waist narrow, hip slightly wider -->
+            <path class="outline" d="M20,36 Q14,48 16,70 L18,108 L24,130 L38,135 L38,140 L62,140 L62,135 L76,130 L82,108 L84,70 Q86,48 80,36 Q65,42 50,42 Q35,42 20,36 Z"/>
+            <!-- Left arm -->
+            <path class="outline" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 Q18,108 18,108 L16,70 Z"/>
+            <!-- Right arm -->
+            <path class="outline" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 Q82,108 82,108 L84,70 Z"/>
+            <!-- Left leg -->
+            <path class="outline" d="M38,140 L24,140 L20,185 Q19,215 22,250 L36,250 Q35,215 36,185 L40,155 Z"/>
+            <!-- Right leg -->
+            <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Shoulder zones (left + right deltoid) -->
-            <path class="zone" data-part="shoulder" d="M23,40 L42,40 L40,70 L21,62 Z"/>
-            <path class="zone" data-part="shoulder" d="M58,40 L77,40 L79,62 L60,70 Z"/>
-            <!-- Chest (upper torso) -->
-            <path class="zone" data-part="chest"    d="M42,40 L58,40 L58,86 L42,86 Z"/>
-            <!-- Core / abs (lower torso) -->
-            <path class="zone" data-part="core"     d="M42,86 L58,86 L57,132 L43,132 Z"/>
+            <!-- Shoulders (deltoids) -->
+            <path class="zone" data-part="shoulder" d="M20,36 Q14,48 16,70 L24,68 L26,48 Q35,44 50,42 Q35,42 20,36 Z"/>
+            <path class="zone" data-part="shoulder" d="M80,36 Q86,48 84,70 L76,68 L74,48 Q65,44 50,42 Q65,42 80,36 Z"/>
+            <!-- Chest (pecs) -->
+            <path class="zone" data-part="chest" d="M26,48 L74,48 L72,82 L28,82 Z"/>
+            <!-- Core (abs) -->
+            <path class="zone" data-part="core" d="M28,82 L72,82 L70,130 L30,130 Z"/>
             <!-- Arms -->
-            <path class="zone" data-part="arms"     d="M14,64 L25,60 L21,123 L10,118 Z"/>
-            <path class="zone" data-part="arms"     d="M75,60 L86,64 L90,118 L79,123 Z"/>
+            <path class="zone" data-part="arms" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 L18,108 L16,70 Z"/>
+            <path class="zone" data-part="arms" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 L82,108 L84,70 Z"/>
             <!-- Legs -->
-            <path class="zone" data-part="legs"     d="M29,140 L47,140 L45,252 L27,252 Z"/>
-            <path class="zone" data-part="legs"     d="M53,140 L71,140 L73,252 L55,252 Z"/>
+            <path class="zone" data-part="legs" d="M38,140 L24,140 L20,185 L22,250 L36,250 L36,185 L40,155 Z"/>
+            <path class="zone" data-part="legs" d="M62,140 L76,140 L80,185 L78,250 L64,250 L64,185 L60,155 Z"/>
           </svg>
         </div>
 
-        <!-- BACK VIEW -->
+        <!-- BACK VIEW — anatomically accurate -->
         <div class="body-view">
           <span class="view-label">Back</span>
           <svg class="body-svg" viewBox="0 0 100 255">
-            <!-- same outline -->
-            <circle class="outline" cx="50" cy="17" r="13"/>
-            <rect   class="outline" x="45" y="28" width="10" height="10"/>
-            <path   class="outline" d="M23,40 L77,40 L72,132 L58,132 L58,138 L42,138 L42,132 L28,132 Z"/>
-            <path   class="outline" d="M14,64 L26,60 L22,125 L10,120 Z"/>
-            <path   class="outline" d="M74,60 L86,64 L90,120 L78,125 Z"/>
-            <path   class="outline" d="M28,140 L48,140 L46,253 L26,253 Z"/>
-            <path   class="outline" d="M52,140 L72,140 L74,253 L54,253 Z"/>
+            <!-- Same outline as front -->
+            <ellipse class="outline" cx="50" cy="15" rx="11" ry="13"/>
+            <path class="outline" d="M44,27 L56,27 L57,36 L43,36 Z"/>
+            <path class="outline" d="M20,36 Q14,48 16,70 L18,108 L24,130 L38,135 L38,140 L62,140 L62,135 L76,130 L82,108 L84,70 Q86,48 80,36 Q65,42 50,42 Q35,42 20,36 Z"/>
+            <path class="outline" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 Q18,108 18,108 L16,70 Z"/>
+            <path class="outline" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 Q82,108 82,108 L84,70 Z"/>
+            <path class="outline" d="M38,140 L24,140 L20,185 Q19,215 22,250 L36,250 Q35,215 36,185 L40,155 Z"/>
+            <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
             <!-- Rear shoulders (same deltoid region) -->
-            <path class="zone" data-part="shoulder" d="M23,40 L42,40 L40,70 L21,62 Z"/>
-            <path class="zone" data-part="shoulder" d="M58,40 L77,40 L79,62 L60,70 Z"/>
-            <!-- Back (traps + lats — full torso rear) -->
-            <path class="zone" data-part="back"     d="M42,40 L58,40 L57,132 L43,132 Z"/>
+            <path class="zone" data-part="shoulder" d="M20,36 Q14,48 16,70 L24,68 L26,48 Q35,44 50,42 Q35,42 20,36 Z"/>
+            <path class="zone" data-part="shoulder" d="M80,36 Q86,48 84,70 L76,68 L74,48 Q65,44 50,42 Q65,42 80,36 Z"/>
+            <!-- Back (traps + lats — full rear torso) -->
+            <path class="zone" data-part="back" d="M26,48 L74,48 L70,130 L30,130 Z"/>
             <!-- Arms (back view) -->
-            <path class="zone" data-part="arms"     d="M14,64 L25,60 L21,123 L10,118 Z"/>
-            <path class="zone" data-part="arms"     d="M75,60 L86,64 L90,118 L79,123 Z"/>
+            <path class="zone" data-part="arms" d="M16,70 Q8,85 9,110 Q10,118 14,122 L20,120 L18,108 L16,70 Z"/>
+            <path class="zone" data-part="arms" d="M84,70 Q92,85 91,110 Q90,118 86,122 L80,120 L82,108 L84,70 Z"/>
             <!-- Legs (back view) -->
-            <path class="zone" data-part="legs"     d="M29,140 L47,140 L45,252 L27,252 Z"/>
-            <path class="zone" data-part="legs"     d="M53,140 L71,140 L73,252 L55,252 Z"/>
+            <path class="zone" data-part="legs" d="M38,140 L24,140 L20,185 L22,250 L36,250 L36,185 L40,155 Z"/>
+            <path class="zone" data-part="legs" d="M62,140 L76,140 L80,185 L78,250 L64,250 L64,185 L60,155 Z"/>
           </svg>
         </div>
 
@@ -395,6 +492,11 @@
 
     <button id="clear-btn">Clear all filters</button>
 
+    <!-- Entity Hub Panel (Epic 9) -->
+    <div id="entity-hub" class="entity-hub" hidden>
+      <div id="entity-hub-content"></div>
+    </div>
+
   </aside>
 
   <section id="grid">
@@ -407,9 +509,27 @@
 (function () {
   'use strict';
 
-  let allVideos = [];
+  let allVideos    = [];
+  let entitiesData = {};
+  let searchResults = null;
+  let searchMode    = 'offline';
+  let searchQuery   = '';
+  let activeEntityId = null;
+  let searchTimer    = null;
+
   const activeParts = new Set();
   const activeUcs   = new Set();
+
+  // ── Utility ────────────────────────────────────────────────────────────────
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function slugify(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
 
   // ── Body zone clicks ───────────────────────────────────────────────────────
   document.querySelectorAll('.zone').forEach(function (el) {
@@ -478,10 +598,59 @@
   document.getElementById('clear-btn').addEventListener('click', function () {
     activeParts.clear();
     activeUcs.clear();
+    searchQuery = '';
+    searchResults = null;
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-mode').hidden = true;
     document.querySelectorAll('.uc-pill').forEach(function (el) { el.classList.remove('active'); });
     syncUI();
     renderFiltered();
   });
+
+  // ── Search (Epic 8) ────────────────────────────────────────────────────────
+  document.getElementById('search-input').addEventListener('input', function () {
+    const q = this.value.trim();
+    searchQuery = q;
+    clearTimeout(searchTimer);
+    if (!q) {
+      searchResults = null;
+      document.getElementById('search-mode').hidden = true;
+      renderFiltered();
+      return;
+    }
+    searchTimer = setTimeout(function () { doSearch(q); }, 400);
+  });
+
+  function doSearch(q) {
+    fetch('http://localhost:8000/search?q=' + encodeURIComponent(q) + '&limit=10')
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (data) {
+        searchResults = Array.isArray(data) ? data : (data.results || []);
+        searchMode = 'server';
+        document.getElementById('search-mode').hidden = true;
+        renderFiltered();
+      })
+      .catch(function () {
+        // Fallback: client-side offline search
+        searchResults = null;
+        searchMode = 'offline';
+        document.getElementById('search-mode').hidden = false;
+        renderFiltered();
+      });
+  }
+
+  function searchOk(v) {
+    if (!searchQuery) return true;
+    if (searchResults !== null && searchMode === 'server') {
+      return searchResults.some(function (r) { return r.video_id === v.video_id; });
+    }
+    // Offline: title or entity name substring match
+    const q = searchQuery.toLowerCase();
+    if ((v.title || '').toLowerCase().includes(q)) return true;
+    return (v.entities || []).some(function (e) {
+      return (e.name || '').toLowerCase().includes(q);
+    });
+  }
 
   // ── Filter logic ───────────────────────────────────────────────────────────
   function videoMatches(v) {
@@ -489,16 +658,10 @@
       || Array.from(activeParts).some(function (p) { return (v.body_parts || []).includes(p); });
     const ucOk = activeUcs.size === 0
       || Array.from(activeUcs).some(function (u) { return (v.use_cases  || []).includes(u); });
-    return bpOk && ucOk;
+    return bpOk && ucOk && searchOk(v);
   }
 
   // ── Card builder ───────────────────────────────────────────────────────────
-  function esc(str) {
-    return String(str)
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
-
   function buildCard(v) {
     const card = document.createElement('article');
     card.className = 'card';
@@ -508,7 +671,10 @@
 
     const bpBadges  = (v.body_parts || []).map(function (b) { return `<span class="badge badge-bp">${esc(b)}</span>`; }).join('');
     const ucBadges  = (v.use_cases  || []).map(function (u) { return `<span class="badge badge-uc">${esc(u)}</span>`; }).join('');
-    const entBadges = (v.entities   || []).map(function (e) { return `<span class="badge badge-ent">${esc(e.name)} · ${esc(e.type)}</span>`; }).join('');
+    const entBadges = (v.entities   || []).map(function (e) {
+      const id = slugify(e.name);
+      return `<button class="badge badge-ent ent-btn" data-entity-id="${esc(id)}">${esc(e.name)} · ${esc(e.type)}</button>`;
+    }).join('');
 
     card.innerHTML = `
       ${thumbSrc
@@ -555,14 +721,150 @@
       shown === allVideos.length ? `${allVideos.length} videos` : `${shown} / ${allVideos.length} videos`;
   }
 
+  // ── Entity Hub (Epic 9) ────────────────────────────────────────────────────
+  // Event delegation on #cards for .ent-btn clicks
+  document.getElementById('cards').addEventListener('click', function (e) {
+    const btn = e.target.closest('.ent-btn');
+    if (!btn) return;
+    e.stopPropagation();
+
+    const entityId = btn.dataset.entityId;
+    if (activeEntityId === entityId) {
+      // Toggle off
+      activeEntityId = null;
+      hideEntityHub();
+      return;
+    }
+    activeEntityId = entityId;
+    showEntityHub(entityId);
+  });
+
+  function showEntityHub(entityId) {
+    const hub = document.getElementById('entity-hub');
+    const content = document.getElementById('entity-hub-content');
+
+    // Find entity in entitiesData
+    const entity = entitiesData[entityId];
+    if (!entity) {
+      content.innerHTML = `<h4>${esc(entityId)}</h4><p class="hub-meta">No details available.</p>`;
+      hub.hidden = false;
+      scrollSidebarToBottom();
+      return;
+    }
+
+    // Count appearances
+    const videoCount = allVideos.filter(function (v) {
+      return (v.entities || []).some(function (e) { return slugify(e.name) === entityId; });
+    }).length;
+
+    // Related entities
+    const relatedPills = (entity.related || []).map(function (r) {
+      const rId = slugify(r);
+      return `<button class="hub-related-pill" data-entity-id="${esc(rId)}">${esc(r)}</button>`;
+    }).join('');
+
+    // Use-case counts
+    const ucText = entity.use_case_counts
+      ? Object.entries(entity.use_case_counts).map(function (kv) { return kv[0] + ': ' + kv[1]; }).join(', ')
+      : '';
+
+    content.innerHTML = `
+      <h4>${esc(entity.name || entityId)}</h4>
+      <p class="hub-meta">${esc(entity.type || '')}${entity.type ? ' · ' : ''}Appears in ${videoCount} video${videoCount !== 1 ? 's' : ''}${ucText ? ' · ' + esc(ucText) : ''}</p>
+      ${relatedPills ? `<div class="hub-related">${relatedPills}</div>` : ''}
+    `;
+
+    hub.hidden = false;
+    scrollSidebarToBottom();
+
+    // Clicking related pills
+    content.querySelectorAll('.hub-related-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        const rId = this.dataset.entityId;
+        if (activeEntityId === rId) {
+          activeEntityId = null;
+          hideEntityHub();
+        } else {
+          activeEntityId = rId;
+          showEntityHub(rId);
+        }
+      });
+    });
+  }
+
+  function hideEntityHub() {
+    document.getElementById('entity-hub').hidden = true;
+  }
+
+  function scrollSidebarToBottom() {
+    const sidebar = document.getElementById('filters');
+    sidebar.scrollTop = sidebar.scrollHeight;
+  }
+
+  // Escape key hides entity hub
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      activeEntityId = null;
+      hideEntityHub();
+    }
+  });
+
+  // ── Knowledge Cards (Epic 10) ──────────────────────────────────────────────
+  function renderKnowledgeCards(cards) {
+    if (!cards || cards.length === 0) return;
+    const list = document.getElementById('kc-list');
+    cards.forEach(function (card) {
+      const sources = (card.sources || []).map(function (s) {
+        return `<a class="kc-source" href="${esc(s.url || '#')}" target="_blank" rel="noopener">${esc(s.title || s.video_id || 'source')}</a>`;
+      }).join('');
+      const div = document.createElement('div');
+      div.className = 'kc-card';
+      div.innerHTML = `
+        <p class="kc-question">${esc(card.question || card.query || '')}</p>
+        <p class="kc-answer">${esc(card.answer || card.summary || '')}</p>
+        ${sources ? `<div class="kc-sources">${sources}</div>` : ''}
+      `;
+      list.appendChild(div);
+    });
+    document.getElementById('knowledge-cards').hidden = false;
+  }
+
   // ── Boot ───────────────────────────────────────────────────────────────────
-  fetch('data/videos.json')
+  // Load videos
+  const videosPromise = fetch('data/videos.json')
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (videos) { allVideos = videos; syncUI(); renderFiltered(); })
+    .then(function (videos) {
+      allVideos = videos;
+      syncUI();
+      renderFiltered();
+    })
     .catch(function (err) {
       document.getElementById('cards').innerHTML =
         `<p style="color:var(--text-muted);padding:2rem">Failed to load videos: ${esc(String(err))}</p>`;
     });
+
+  // Load entities (Epic 9) — fail gracefully
+  fetch('data/entities.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      // Accept array (keyed by id field) or object map
+      if (Array.isArray(data)) {
+        data.forEach(function (e) {
+          const id = slugify(e.name || e.id || '');
+          if (id) entitiesData[id] = e;
+        });
+      } else {
+        entitiesData = data;
+      }
+    })
+    .catch(function () { entitiesData = {}; });
+
+  // Load synthesis (Epic 10) — fail gracefully
+  fetch('data/synthesis.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) { renderKnowledgeCards(Array.isArray(data) ? data : []); })
+    .catch(function () { /* section stays hidden */ });
+
 })();
 </script>
 </body>
