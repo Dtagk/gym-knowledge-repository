@@ -149,32 +149,32 @@
       pointer-events: none;
     }
 
-    /* Clickable zones — subtle tint + visible muscle-border stroke at idle */
+    /* Zones: transparent at idle, show muscle boundary as dark-red stroke */
     .zone {
-      fill: rgba(200, 65, 45, 0.10);
-      stroke: rgba(100, 28, 10, 0.55);
-      stroke-width: 1;
+      fill: none;
+      stroke: rgba(80, 18, 4, 0.5);
+      stroke-width: 0.9;
       cursor: pointer;
-      transition: fill 0.15s, filter 0.15s, stroke 0.15s;
+      transition: fill 0.12s, filter 0.12s;
     }
-    .zone:hover { fill: rgba(200, 65, 45, 0.28); filter: brightness(1.2); }
+    .zone:hover { fill: rgba(255, 255, 255, 0.10); }
     .zone.active { filter: brightness(1); }
 
-    /* Muscle detail lines (abs midline + inscriptions, lat/trap separators) */
+    /* Muscle detail lines (abs, erectors) */
     .muscle-line {
       fill: none;
-      stroke: rgba(100, 28, 10, 0.35);
-      stroke-width: 0.8;
+      stroke: rgba(80, 18, 4, 0.35);
+      stroke-width: 0.7;
       pointer-events: none;
     }
 
-    /* Active colors per body part */
-    [data-part="shoulder"].active { fill: var(--c-shoulder); stroke: var(--c-shoulder); opacity: 0.82; }
-    [data-part="chest"].active    { fill: var(--c-chest);    stroke: var(--c-chest);    opacity: 0.82; }
-    [data-part="back"].active     { fill: var(--c-back);     stroke: var(--c-back);     opacity: 0.82; }
-    [data-part="core"].active     { fill: var(--c-core);     stroke: var(--c-core);     opacity: 0.82; }
-    [data-part="arms"].active     { fill: var(--c-arms);     stroke: var(--c-arms);     opacity: 0.82; }
-    [data-part="legs"].active     { fill: var(--c-legs);     stroke: var(--c-legs);     opacity: 0.82; }
+    /* Active: solid opaque fill over the orange outline */
+    [data-part="shoulder"].active { fill: var(--c-shoulder); stroke: var(--c-shoulder); }
+    [data-part="chest"].active    { fill: var(--c-chest);    stroke: var(--c-chest); }
+    [data-part="back"].active     { fill: var(--c-back);     stroke: var(--c-back); }
+    [data-part="core"].active     { fill: var(--c-core);     stroke: var(--c-core); }
+    [data-part="arms"].active     { fill: var(--c-arms);     stroke: var(--c-arms); }
+    [data-part="legs"].active     { fill: var(--c-legs);     stroke: var(--c-legs); }
 
     /* Legend dots */
     .legend {
