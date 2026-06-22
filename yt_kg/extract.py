@@ -183,3 +183,7 @@ def extract() -> None:
                 (utcnow(), video_id),
             )
         conn.commit()
+
+
+if __name__ == "__main__":
+    extract()

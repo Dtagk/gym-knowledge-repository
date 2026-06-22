@@ -203,3 +203,7 @@ def graph() -> None:
     conn.close()
     for row in rows:
         load_video(row["video_id"])
+
+
+if __name__ == "__main__":
+    graph()

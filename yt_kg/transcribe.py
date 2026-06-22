@@ -80,3 +80,7 @@ def transcribe(workers: int = 1) -> None:  # ponytail: workers reserved — GPU 
                 )
                 conn.commit()
                 logger.error("transcribe failed %s: %s", video_id, e)
+
+
+if __name__ == "__main__":
+    transcribe()

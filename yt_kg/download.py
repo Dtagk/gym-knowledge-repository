@@ -64,3 +64,7 @@ def download(workers: int = 1) -> None:
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         pool.map(lambda r: _download_one(r["video_id"], r["url"]), rows)
+
+
+if __name__ == "__main__":
+    download()
