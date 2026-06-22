@@ -51,11 +51,24 @@
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 1rem;
     }
-    header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; margin-left: auto; }
     #video-count { font-size: 0.8rem; color: var(--text-muted); }
+
+    .header-nav { display: flex; gap: 0.75rem; align-items: center; }
+    .header-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.28rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: border-color 0.12s, color 0.12s;
+    }
+    .header-nav a:hover { color: var(--accent); border-color: var(--accent); }
 
     /* ── Knowledge Cards strip ──────────────────────────────────────────────── */
     #knowledge-cards {
@@ -249,7 +262,6 @@
 
     /* ── Clear button ───────────────────────────────────────────────────────── */
     #clear-btn {
-      margin-top: auto;
       padding: 0.38rem;
       background: transparent;
       border: 1px solid var(--border);
@@ -261,35 +273,6 @@
     }
     #clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Graph Explorer link-button ─────────────────────────────────────────── */
-    #graph-btn {
-      display: block;
-      padding: 0.38rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-muted);
-      font-size: 0.73rem;
-      text-align: center;
-      text-decoration: none;
-      transition: border-color 0.12s, color 0.12s;
-    }
-    #graph-btn:hover { border-color: var(--badge-ent-fg); color: var(--badge-ent-fg); }
-
-    /* ── Papers link-button ─────────────────────────────────────────────────── */
-    #papers-btn {
-      display: block;
-      padding: 0.38rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-muted);
-      font-size: 0.73rem;
-      text-align: center;
-      text-decoration: none;
-      transition: border-color 0.12s, color 0.12s;
-    }
-    #papers-btn:hover { border-color: #f7874f; color: #f7874f; }
 
     /* ── Entity Hub Panel ───────────────────────────────────────────────────── */
     .entity-hub {
@@ -414,9 +397,12 @@
 <noscript><p class="noscript-notice">Filtering requires JavaScript. All videos are shown below.</p></noscript>
 
 <header>
+  <nav class="header-nav">
+    <a href="papers.html">📄 Papers</a>
+    <a href="graph.html">⬡ Graph Explorer</a>
+  </nav>
   <h1>Gym Knowledge Browser</h1>
   <span id="video-count"></span>
-  <a href="graph.html" style="margin-left:auto;color:var(--accent);text-decoration:none;font-size:14px">Graph explorer →</a>
 </header>
 
 <!-- Knowledge Cards strip (Epic 10) -->
@@ -574,9 +560,6 @@
     <div id="entity-hub" class="entity-hub" hidden>
       <div id="entity-hub-content"></div>
     </div>
-
-    <a id="papers-btn" href="papers.html">📄 Papers</a>
-    <a id="graph-btn" href="graph.html">⬡ Graph Explorer</a>
 
   </aside>
 
