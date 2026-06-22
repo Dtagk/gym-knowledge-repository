@@ -426,36 +426,43 @@
             <!-- Right leg -->
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Left deltoid (anterior) -->
-            <path class="zone" data-part="shoulder" d="M21,38 Q11,47 12,69 L20,71 Q25,58 29,49 Q36,44 50,42 Q34,42 21,38 Z"/>
-            <!-- Right deltoid (anterior) -->
-            <path class="zone" data-part="shoulder" d="M79,38 Q89,47 88,69 L80,71 Q75,58 71,49 Q64,44 50,42 Q66,42 79,38 Z"/>
+            <!-- deltoids: 3 heads each -->
+            <path class="zone" data-part="shoulder" d="M58 35 C64 37 69 42 71 49 C72 53 71 58 68 60 C64 57 60 55 56 55 C54 49 54 41 58 35 Z"/>
+            <path class="zone" data-part="shoulder" d="M42 35 C36 37 31 42 29 49 C28 53 29 58 32 60 C36 57 40 55 44 55 C46 49 46 41 42 35 Z"/>
+            <line class="muscle-line" x1="62" y1="40" x2="65" y2="55"/>
+            <line class="muscle-line" x1="38" y1="40" x2="35" y2="55"/>
 
-            <!-- Left pec (fan from sternum to outer chest) -->
-            <path class="zone" data-part="chest" d="M50,49 Q40,51 30,58 Q22,67 25,86 Q30,92 50,91 Z"/>
-            <!-- Right pec -->
-            <path class="zone" data-part="chest" d="M50,49 Q60,51 70,58 Q78,67 75,86 Q70,92 50,91 Z"/>
+            <!-- pecs -->
+            <path class="zone" data-part="chest" d="M50 44 C56 44 62 47 65 53 C67 57 66 63 63 67 C58 70 54 71 50 70 Z"/>
+            <path class="zone" data-part="chest" d="M50 44 C44 44 38 47 35 53 C33 57 34 63 37 67 C42 70 46 71 50 70 Z"/>
 
-            <!-- Abs: 6 individual cells (3 pairs) — clearly anatomical -->
-            <ellipse class="zone" data-part="core" cx="42" cy="97"  rx="9" ry="5"/>
-            <ellipse class="zone" data-part="core" cx="58" cy="97"  rx="9" ry="5"/>
-            <ellipse class="zone" data-part="core" cx="41" cy="110" rx="8" ry="5"/>
-            <ellipse class="zone" data-part="core" cx="59" cy="110" rx="8" ry="5"/>
-            <ellipse class="zone" data-part="core" cx="41" cy="122" rx="7" ry="5"/>
-            <ellipse class="zone" data-part="core" cx="59" cy="122" rx="7" ry="5"/>
-            <!-- Obliques (side strips) -->
-            <path class="zone" data-part="core" d="M28,91 Q32,106 32,124 Q32,132 35,138 L39,138 Q37,131 37,123 Q37,106 33,91 Z"/>
-            <path class="zone" data-part="core" d="M72,91 Q68,106 68,124 Q68,132 65,138 L61,138 Q63,131 63,123 Q63,106 67,91 Z"/>
+            <!-- abs -->
+            <ellipse class="zone" data-part="core" cx="46" cy="78"  rx="4.2" ry="2.8"/>
+            <ellipse class="zone" data-part="core" cx="54" cy="78"  rx="4.2" ry="2.8"/>
+            <ellipse class="zone" data-part="core" cx="45.6" cy="87" rx="3.8" ry="2.8"/>
+            <ellipse class="zone" data-part="core" cx="54.4" cy="87" rx="3.8" ry="2.8"/>
+            <ellipse class="zone" data-part="core" cx="45.6" cy="96" rx="3.3" ry="2.8"/>
+            <ellipse class="zone" data-part="core" cx="54.4" cy="96" rx="3.3" ry="2.8"/>
 
-            <!-- Left arm (bicep front) -->
-            <path class="zone" data-part="arms" d="M12,69 Q7,86 9,109 Q10,117 14,122 L20,120 L20,71 Z"/>
-            <!-- Right arm (bicep front) -->
-            <path class="zone" data-part="arms" d="M88,69 Q93,86 91,109 Q90,117 86,122 L80,120 L80,71 Z"/>
+            <!-- ARMS: biceps (inner belly) + outer (tri/brachialis) per side, with groove -->
+            <path class="zone" data-part="arms" d="M65 53 C68 56 70 62 70 69 C70 77 68 85 65 91 C63 86 62 79 62 72 C62 64 63 57 65 53 Z"/>
+            <path class="zone" data-part="arms" d="M71 54 C75 58 77 64 77 71 C77 79 75 87 72 93 C70 88 69 81 69 74 C69 66 70 59 71 54 Z"/>
+            <line class="muscle-line" x1="68" y1="58" x2="68" y2="90"/>
+            <path class="zone" data-part="arms" d="M35 53 C32 56 30 62 30 69 C30 77 32 85 35 91 C37 86 38 79 38 72 C38 64 37 57 35 53 Z"/>
+            <path class="zone" data-part="arms" d="M29 54 C25 58 23 64 23 71 C23 79 25 87 28 93 C30 88 31 81 31 74 C31 66 30 59 29 54 Z"/>
+            <line class="muscle-line" x1="32" y1="58" x2="32" y2="90"/>
 
-            <!-- Left leg (quads) -->
-            <path class="zone" data-part="legs" d="M38,140 L24,142 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,165 40,156 Z"/>
-            <!-- Right leg (quads) -->
-            <path class="zone" data-part="legs" d="M62,140 L76,142 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,165 60,156 Z"/>
+            <!-- LEGS: quad (rectus sweep) + outer (vastus) + calf heads, grooves -->
+            <path class="zone" data-part="legs" d="M50 119 C54 119 57 124 58 132 C59 142 58 156 55 169 C53 178 51 187 50 194 C49 186 49 172 49 159 C49 144 49 130 50 119 Z"/>
+            <path class="zone" data-part="legs" d="M58 121 C62 122 64 128 64 137 C64 148 62 162 59 174 C57 182 55 188 53 192 C53 180 54 165 55 150 C56 138 57 128 58 121 Z"/>
+            <line class="muscle-line" x1="54" y1="128" x2="56" y2="186"/>
+            <path class="zone" data-part="legs" d="M50 119 C46 119 43 124 42 132 C41 142 42 156 45 169 C47 178 49 187 50 194 C51 186 51 172 51 159 C51 144 51 130 50 119 Z"/>
+            <path class="zone" data-part="legs" d="M42 121 C38 122 36 128 36 137 C36 148 38 162 41 174 C43 182 45 188 47 192 C47 180 46 165 45 150 C44 138 43 128 42 121 Z"/>
+            <line class="muscle-line" x1="46" y1="128" x2="44" y2="186"/>
+            <!-- calves: 2 heads each -->
+            <path class="zone" data-part="legs" d="M52 199 C56 200 58 207 58 216 C58 225 56 233 53 238 C52 231 51 222 51 213 C51 207 51 202 52 199 Z"/>
+            <path class="zone" data-part="legs" d="M48 199 C44 200 42 207 42 216 C42 225 44 233 47 238 C48 231 49 222 49 213 C49 207 49 202 48 199 Z"/>
+            <line class="muscle-line" x1="50" y1="201" x2="50" y2="236"/>
           </svg>
         </div>
 
@@ -472,33 +479,41 @@
             <path class="outline" d="M38,140 L24,140 L20,185 Q19,215 22,250 L36,250 Q35,215 36,185 L40,155 Z"/>
             <path class="outline" d="M62,140 L76,140 L80,185 Q81,215 78,250 L64,250 Q65,215 64,185 L60,155 Z"/>
 
-            <!-- Rear shoulders (posterior deltoids) -->
-            <path class="zone" data-part="shoulder" d="M21,38 Q11,47 12,69 L20,71 Q25,58 29,49 Q36,44 50,42 Q34,42 21,38 Z"/>
-            <path class="zone" data-part="shoulder" d="M79,38 Q89,47 88,69 L80,71 Q75,58 71,49 Q64,44 50,42 Q66,42 79,38 Z"/>
+            <!-- posterior delts -->
+            <path class="zone" data-part="shoulder" d="M58 35 C64 37 69 42 71 49 C72 53 71 58 68 60 C64 57 60 55 56 55 C54 49 54 41 58 35 Z"/>
+            <path class="zone" data-part="shoulder" d="M42 35 C36 37 31 42 29 49 C28 53 29 58 32 60 C36 57 40 55 44 55 C46 49 46 41 42 35 Z"/>
 
-            <!-- Trapezius (upper-back V from neck base to shoulder blades) -->
-            <path class="zone" data-part="back" d="M28,50 Q50,46 72,50 L65,90 Q50,96 35,90 Z"/>
-            <!-- Left lat wing (outer back, armpit to waist) -->
-            <path class="zone" data-part="back" d="M20,70 Q16,92 18,112 Q20,126 26,132 L36,132 Q36,110 35,90 Z"/>
-            <!-- Right lat wing -->
-            <path class="zone" data-part="back" d="M80,70 Q84,92 82,112 Q80,126 74,132 L64,132 Q64,110 65,90 Z"/>
-            <!-- Middle back / erectors -->
-            <path class="zone" data-part="back" d="M35,90 Q50,96 65,90 L64,132 Q50,136 36,132 Z"/>
-            <!-- Spine line -->
-            <line class="muscle-line" x1="50" y1="94" x2="50" y2="132"/>
+            <!-- traps (diamond) -->
+            <path class="zone" data-part="back" d="M50 42 C55 42 60 44 62 48 C61 56 57 63 50 66 C43 63 39 56 38 48 C40 44 45 42 50 42 Z"/>
+            <!-- rhomboids/mid -->
+            <path class="zone" data-part="back" d="M50 66 C54 67 59 69 61 72 C61 82 57 92 50 98 C43 92 39 82 39 72 C41 69 46 67 50 66 Z"/>
+            <!-- lat wings -->
+            <path class="zone" data-part="back" d="M61 70 C65 76 66 86 64 96 C62 104 58 110 54 112 C53 102 53 90 54 80 C56 74 59 71 61 70 Z"/>
+            <path class="zone" data-part="back" d="M39 70 C35 76 34 86 36 96 C38 104 42 110 46 112 C47 102 47 90 46 80 C44 74 41 71 39 70 Z"/>
+            <line class="muscle-line" x1="50" y1="46" x2="50" y2="110"/>
 
-            <!-- Left arm (tricep back) -->
-            <path class="zone" data-part="arms" d="M12,69 Q7,86 9,109 Q10,117 14,122 L20,120 L20,71 Z"/>
-            <!-- Right arm (tricep back) -->
-            <path class="zone" data-part="arms" d="M88,69 Q93,86 91,109 Q90,117 86,122 L80,120 L80,71 Z"/>
+            <!-- triceps: 2 heads -->
+            <path class="zone" data-part="arms" d="M65 53 C68 56 70 62 70 69 C70 77 68 85 65 91 C63 86 62 79 62 72 C62 64 63 57 65 53 Z"/>
+            <path class="zone" data-part="arms" d="M71 54 C75 58 77 64 77 71 C77 79 75 87 72 93 C70 88 69 81 69 74 C69 66 70 59 71 54 Z"/>
+            <line class="muscle-line" x1="68" y1="58" x2="68" y2="90"/>
+            <path class="zone" data-part="arms" d="M35 53 C32 56 30 62 30 69 C30 77 32 85 35 91 C37 86 38 79 38 72 C38 64 37 57 35 53 Z"/>
+            <path class="zone" data-part="arms" d="M29 54 C25 58 23 64 23 71 C23 79 25 87 28 93 C30 88 31 81 31 74 C31 66 30 59 29 54 Z"/>
+            <line class="muscle-line" x1="32" y1="58" x2="32" y2="90"/>
 
-            <!-- Left leg (glute + hamstring — starts at y=132 to cover glutes) -->
-            <path class="zone" data-part="legs" d="M38,132 L24,135 Q19,168 20,188 Q20,216 22,250 L36,250 Q35,215 36,187 Q38,165 40,155 Z"/>
-            <!-- Right leg (glute + hamstring) -->
-            <path class="zone" data-part="legs" d="M62,132 L76,135 Q81,168 80,188 Q80,216 78,250 L64,250 Q65,215 64,187 Q62,165 60,155 Z"/>
-            <!-- Glute crease lines -->
-            <line class="muscle-line" x1="24" y1="150" x2="40" y2="154"/>
-            <line class="muscle-line" x1="76" y1="150" x2="60" y2="154"/>
+            <!-- glutes: pair -->
+            <path class="zone" data-part="legs" d="M50 114 C56 114 61 118 63 126 C64 133 61 141 55 144 C52 145 50 145 50 144 Z"/>
+            <path class="zone" data-part="legs" d="M50 114 C44 114 39 118 37 126 C36 133 39 141 45 144 C48 145 50 145 50 144 Z"/>
+            <line class="muscle-line" x1="50" y1="116" x2="50" y2="143"/>
+            <!-- hamstrings: 2 bellies per leg -->
+            <path class="zone" data-part="legs" d="M50 147 C54 147 57 153 58 162 C59 173 58 187 55 199 C53 207 51 213 50 217 C49 209 49 196 49 183 C49 168 49 156 50 147 Z"/>
+            <path class="zone" data-part="legs" d="M58 149 C61 151 63 157 63 166 C63 177 61 190 58 200 C56 206 54 210 53 212 C53 200 54 185 55 171 C56 160 57 153 58 149 Z"/>
+            <line class="muscle-line" x1="54" y1="154" x2="56" y2="208"/>
+            <path class="zone" data-part="legs" d="M50 147 C46 147 43 153 42 162 C41 173 42 187 45 199 C47 207 49 213 50 217 C51 209 51 196 51 183 C51 168 51 156 50 147 Z"/>
+            <path class="zone" data-part="legs" d="M42 149 C39 151 37 157 37 166 C37 177 39 190 42 200 C44 206 46 210 47 212 C47 200 46 185 45 171 C44 160 43 153 42 149 Z"/>
+            <line class="muscle-line" x1="46" y1="154" x2="44" y2="208"/>
+            <!-- calves -->
+            <path class="zone" data-part="legs" d="M52 220 C56 221 58 228 58 235 C58 242 56 248 53 250 C52 244 51 236 51 229 C51 224 51 222 52 220 Z"/>
+            <path class="zone" data-part="legs" d="M48 220 C44 221 42 228 42 235 C42 242 44 248 47 250 C48 244 49 236 49 229 C49 224 49 222 48 220 Z"/>
           </svg>
         </div>
 
