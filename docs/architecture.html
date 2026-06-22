@@ -252,6 +252,7 @@
     <span class="badge">Zero API cost</span>
     <span class="badge">GPU-accelerated</span>
     <span class="badge">MCP-native</span>
+    <span class="badge">Docker</span>
   </div>
 </header>
 
@@ -368,12 +369,12 @@
             <div class="card-lib">sentence_transformers — BAAI/bge-small-en-v1.5</div>
           </div>
         </div>
-        <div class="card-desc">Encodes text chunks into 384-dimensional dense vectors for semantic similarity search. Same model used for embedding query text at retrieval time.</div>
+        <div class="card-desc">Encodes transcript chunks into 384-dim vectors for semantic search. <code>bge-small-en-v1.5</code> handles chunk-level retrieval; entity resolution uses <code>nomic-embed-text</code> via Ollama for cosine scoring against anchor topics.</div>
         <div class="card-row">
-          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">bge-small-en-v1.5 tops MTEB leaderboard at this size class. 384-dim keeps LanceDB index small. Runs on CPU in ~10ms per chunk — no GPU needed for embedding.</span></div>
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">bge-small-en-v1.5 tops MTEB leaderboard at this size class. 384-dim keeps LanceDB index small. Runs on CPU in ~10ms per chunk — no GPU needed for retrieval embeddings.</span></div>
           <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">OpenAI text-embedding-ada-002 (API cost, latency), all-MiniLM (lower retrieval quality), larger models (unnecessarily slow for 384-dim benefit).</span></div>
         </div>
-        <div class="tag-row"><span class="tag">384-dim</span><span class="tag">cosine</span><span class="tag">cpu-friendly</span></div>
+        <div class="tag-row"><span class="tag">384-dim</span><span class="tag">cosine</span><span class="tag">cpu-friendly</span><span class="tag">nomic-embed-text (entity res)</span></div>
       </div>
 
       <div class="card" style="--card-accent: #f7a05c">
@@ -400,12 +401,13 @@
             <div class="card-lib">ollama — local LLM serving</div>
           </div>
         </div>
-        <div class="card-desc">Serves open-source models locally via an OpenAI-compatible API. Used for triple extraction (qwen-coder) and entity resolution / citation extraction (general reasoning).</div>
+        <div class="card-desc">Runs in Docker (<code>docker compose up -d</code>) with GPU passthrough and performance env vars pre-baked. Serves five models via an OpenAI-compatible API at <code>localhost:11434</code>.</div>
         <div class="card-row">
-          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">One-command model management on Windows with GPU offloading. OpenAI-compatible API means zero code changes to switch models. Zero marginal cost per LLM call.</span></div>
-          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">OpenAI API (cost at scale, privacy), llama.cpp direct (no model management), LM Studio (no programmatic API).</span></div>
+          <div class="card-fact"><span class="fact-label">Models</span><span class="fact-val"><code>gpt-oss:20b</code> — research/reasoning · <code>qwen3.6:35b-a3b</code> — primary extraction · <code>qwen2.5-coder:7b</code> — code tasks · <code>qwen-coder-32768</code> — custom 32k-context variant · <code>nomic-embed-text</code> — entity resolution embeddings</span></div>
+          <div class="card-fact"><span class="fact-label">Why</span><span class="fact-val">One-command model management with GPU offloading. OpenAI-compatible API means zero code changes to switch models. Docker deployment keeps FLASH_ATTENTION, KV_CACHE_TYPE, and KEEP_ALIVE pre-configured; model weights persist in ~/.ollama across OS reinstalls.</span></div>
+          <div class="card-fact"><span class="fact-label">Over</span><span class="fact-val">Native Ollama install (env vars must be re-set after reinstall), OpenAI API (cost, privacy), llama.cpp direct (no model management), LM Studio (no programmatic API).</span></div>
         </div>
-        <div class="tag-row"><span class="tag">qwen-coder</span><span class="tag">gpt-oss:20b</span><span class="tag">gpu-offload</span></div>
+        <div class="tag-row"><span class="tag">docker</span><span class="tag">gpu-passthrough</span><span class="tag">gpt-oss:20b</span><span class="tag">qwen3.6:35b-a3b</span><span class="tag">nomic-embed-text</span></div>
       </div>
 
       <div class="card" style="--card-accent: #56c9a4">
@@ -562,6 +564,11 @@
       <div class="decision">
         <h4>Provenance on every graph edge</h4>
         <p>Every RELATED edge carries <code>evidence</code> (the exact transcript quote) and <code>video_id</code> (source video). This means any fact in the graph is traceable back to the specific YouTube timestamp that supports it — critical for a fitness domain where sources matter.</p>
+      </div>
+
+      <div class="decision">
+        <h4>Ollama in Docker over native install</h4>
+        <p>Ollama runs via <code>docker compose up -d</code> rather than as a native Windows app. GPU env vars (<code>OLLAMA_FLASH_ATTENTION</code>, <code>OLLAMA_KV_CACHE_TYPE</code>, <code>OLLAMA_KEEP_ALIVE</code>) are committed in <code>docker-compose.yml</code> and applied automatically — no manual re-configuration after a Windows reset. Model weights live in <code>~/.ollama</code> on the host and survive OS reinstalls via a bind-mount volume (<code>OLLAMA_DATA</code> env var, defaults to named volume). The result is a one-command stack start with no post-install tuning steps.</p>
       </div>
 
       <div class="decision">
