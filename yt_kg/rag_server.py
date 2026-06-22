@@ -87,6 +87,48 @@ async def health() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# /search — semantic ANN search, no LLM call
+# ---------------------------------------------------------------------------
+
+@app.get("/search")
+async def search(q: str, limit: int = 10):
+    if not q.strip():
+        return []
+    model = _get_model()
+    query_vector = model.encode([q])[0].tolist()
+    db = _get_lance()
+    table = db.open_table("chunks")
+    rows = table.search(query_vector).limit(limit * 3).to_list()  # oversample, then dedup by video
+
+    # Group by video_id, keep best score per video
+    best: dict[str, dict] = {}
+    for row in rows:
+        vid = row["video_id"]
+        if vid not in best or row["_distance"] < best[vid]["_distance"]:
+            best[vid] = row
+
+    # Sort by score ascending (_distance = cosine distance, lower = better)
+    ranked = sorted(best.values(), key=lambda r: r["_distance"])[:limit]
+
+    # Look up titles from SQLite
+    sql_conn = init_db()
+    results = []
+    for row in ranked:
+        vid = row["video_id"]
+        db_row = sql_conn.execute("SELECT title FROM videos WHERE video_id = ?", (vid,)).fetchone()
+        title = db_row["title"] if db_row else vid
+        score = round(1.0 - float(row["_distance"]), 4)  # convert distance to similarity
+        results.append({
+            "video_id": vid,
+            "title": title,
+            "score": score,
+            "excerpt": row["text"][:300],
+            "url": f"https://youtu.be/{vid}",
+        })
+    return results
+
+
+# ---------------------------------------------------------------------------
 # /ask
 # ---------------------------------------------------------------------------
 
