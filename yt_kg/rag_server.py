@@ -10,9 +10,11 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 
+import os
+
 from yt_kg.db import init_db
 
-_ROOT = Path(__file__).parent.parent
+_ROOT = Path(os.environ.get("DATA_DIR", Path(__file__).parent.parent))
 _LANCE_PATH = str(_ROOT / "data/vectors.lance")
 _KUZU_PATH = str(_ROOT / "data/graph.kuzu")
 _OLLAMA_URL = "http://localhost:11434"
