@@ -18,7 +18,7 @@ jobs:
       - name: Install (lint/test deps only)
         run: |
           python -m pip install --upgrade pip
-          pip install ruff pytest pydantic kuzu requests numpy pyyaml
+          pip install ruff pytest pydantic kuzu requests numpy pyyaml lancedb
 
       - name: Ruff
         # scripts/ contains one-off helpers with pre-existing lint; scope CI to
