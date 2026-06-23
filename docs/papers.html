@@ -284,7 +284,8 @@
     const srcLabel = { openalex: 'OpenAlex', pubmed: 'PubMed', semantic_scholar: 'S2' }[p.source] || p.source;
     const meta = [p.authors, p.year].filter(Boolean).join(' · ');
     const abstract = (p.abstract || '').trim();
-    const doi = p.doi ? `https://doi.org/${p.doi}` : null;
+    const doiRaw = /^10\.\d{4,9}\/.+$/i.test(p.doi || '') ? p.doi : null;
+    const doi = doiRaw ? `https://doi.org/${doiRaw}` : null;
 
     card.innerHTML = `
       <div class="card-top">
@@ -294,7 +295,7 @@
       ${meta ? `<div class="paper-meta">${esc(meta)}</div>` : ''}
       ${abstract ? `<div class="paper-abstract">${esc(abstract)}</div>` : ''}
       <div class="card-footer">
-        ${doi ? `<a class="doi-link" href="${doi}" target="_blank" rel="noopener">DOI ↗</a>` : ''}
+        ${doi ? `<a class="doi-link" href="${esc(doi)}" target="_blank" rel="noopener">DOI ↗</a>` : ''}
         ${p.oa_url ? `<a class="pdf-link" href="${esc(p.oa_url)}" target="_blank" rel="noopener">PDF ↗</a>` : ''}
       </div>
     `;
