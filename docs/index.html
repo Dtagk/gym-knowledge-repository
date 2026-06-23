@@ -261,6 +261,21 @@
     }
     #clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── Graph Explorer link-button ─────────────────────────────────────────── */
+    #graph-btn {
+      display: block;
+      padding: 0.38rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 0.12s, color 0.12s;
+    }
+    #graph-btn:hover { border-color: var(--badge-ent-fg); color: var(--badge-ent-fg); }
+
     /* ── Entity Hub Panel ───────────────────────────────────────────────────── */
     .entity-hub {
       border-top: 1px solid var(--border);
@@ -544,6 +559,8 @@
     <div id="entity-hub" class="entity-hub" hidden>
       <div id="entity-hub-content"></div>
     </div>
+
+    <a id="graph-btn" href="graph.html">⬡ Graph Explorer</a>
 
   </aside>
 
