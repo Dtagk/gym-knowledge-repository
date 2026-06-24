@@ -65,7 +65,7 @@ def build_coder_variant(container: str) -> None:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Seed Ollama models into Docker container")
-    p.add_argument("--container", default="ollama",      help="Container name (default: ollama)")
+    p.add_argument("--container", default="ollama-local", help="Container name (default: ollama-local)")
     p.add_argument("--no-coder",  action="store_true",   help="Skip building qwen-coder-32768 variant")
     args = p.parse_args()
 
