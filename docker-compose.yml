@@ -1,11 +1,11 @@
 services:
   ollama:
     image: ollama/ollama:latest
-    container_name: ollama
+    container_name: ollama-local
     ports:
       - "11434:11434"
     volumes:
-      - ${OLLAMA_DATA:-ollama_models}:/root/.ollama
+      - ${OLLAMA_DATA:-C:\Users\User\.ollama}:/root/.ollama
     deploy:
       resources:
         reservations:
@@ -16,7 +16,7 @@ services:
     environment:
       OLLAMA_FLASH_ATTENTION: "1"
       OLLAMA_KV_CACHE_TYPE: q8_0
-      OLLAMA_KEEP_ALIVE: 30m
+      OLLAMA_KEEP_ALIVE: -1
     restart: unless-stopped
 
 volumes:
