@@ -57,7 +57,7 @@ _llm = instructor.from_openai(
 class _LLMRelation(BaseModel):
     subject: str = ""
     predicate: str = ""
-    object: str = ""
+    object: Optional[str] = None
     evidence: str = ""
 
 
@@ -146,7 +146,7 @@ def _extract_chunk(text: str) -> Extraction:
         )
         try:
             c = _llm.chat.completions.create(
-                model="qwen2.5-coder:7b",  # ponytail: candidate for base qwen2.5:7b — see eval harness
+                model=_OLLAMA_MODEL,
                 messages=[{"role": "user", "content": prompt}],
                 response_model=_Cues,
                 max_retries=1,
