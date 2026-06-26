@@ -55,14 +55,14 @@ _llm = instructor.from_openai(
 
 
 class _LLMRelation(BaseModel):
-    subject: str = ""
+    subject: Optional[str] = None
     predicate: str = ""
     object: Optional[str] = None
     evidence: str = ""
 
 
 class _Relations(BaseModel):
-    relations: list[_LLMRelation]
+    relations: list[_LLMRelation] = []
 
 
 _VALID_KINDS = {"mistake", "cue", "setup", "tempo", "breathing", "range-of-motion"}
@@ -76,7 +76,7 @@ class _LLMCue(BaseModel):
 
 
 class _Cues(BaseModel):
-    cues: list[_LLMCue]
+    cues: list[_LLMCue] = []
 
 
 def _init_extractions_table(conn: sqlite3.Connection) -> None:
