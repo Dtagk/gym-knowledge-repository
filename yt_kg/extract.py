@@ -45,8 +45,11 @@ def _gliner() -> GLiNER:
     return _gliner_model
 
 
+_OLLAMA_BASE_URL = "http://localhost:11435/v1"
+_OLLAMA_MODEL = "gemma3:12b"
+
 _llm = instructor.from_openai(
-    OpenAI(base_url="http://localhost:11434/v1", api_key="ollama"),
+    OpenAI(base_url=_OLLAMA_BASE_URL, api_key="ollama"),
     mode=instructor.Mode.JSON,
 )
 
@@ -112,7 +115,7 @@ def _extract_chunk(text: str) -> Extraction:
         )
         try:
             r = _llm.chat.completions.create(
-                model="qwen2.5-coder:7b",  # ponytail: base qwen2.5:7b better for NL, switch if relations quality suffers
+                model=_OLLAMA_MODEL,
                 messages=[{"role": "user", "content": prompt}],
                 response_model=_Relations,
                 max_retries=1,
