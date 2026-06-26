@@ -41,7 +41,7 @@ def _gliner() -> GLiNER:
     if _gliner_model is None:
         import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        _gliner_model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1", device=device)
+        _gliner_model = GLiNER.from_pretrained("urchade/gliner_medium-v2.1", map_location=device)
     return _gliner_model
 
 
