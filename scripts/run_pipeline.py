@@ -88,8 +88,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="YouTube Fitness Knowledge Graph Pipeline")
     parser.add_argument("--workers",    type=int, default=4,    help="Parallel workers for I/O stages (default: 4)")
     parser.add_argument("--skip-setup", action="store_true",    help="Skip Docker/Ollama environment check")
+    parser.add_argument("--skip",       nargs="+", default=[],  metavar="STAGE", help="Stage names to skip (e.g. --skip discover filter)")
     args = parser.parse_args()
     w = args.workers
+    skip_stages = set(args.skip)
 
     setup_env(skip=args.skip_setup)
 
@@ -113,12 +115,17 @@ def main() -> None:
     ]
 
     for fn, name in stages:
+        if name in skip_stages:
+            logger.info("Skipping stage: %s", name)
+            continue
         _run_stage(fn, name)
 
     # Retry pass — re-runs every stage; each stage's WHERE clause naturally
     # picks up only videos that failed or were skipped the first time.
     logger.info("Retry pass — re-running stages to pick up transient failures")
     for fn, name in stages:
+        if name in skip_stages:
+            continue
         _run_stage(fn, f"{name} [retry]")
 
     logger.info("All stages done. Running smoke test...")
