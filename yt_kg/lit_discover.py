@@ -1,4 +1,4 @@
-"""Independent literature discovery: seed from KG entities → Semantic Scholar."""
+"""Independent literature discovery: seed from KG entities → PubMed E-utilities."""
 import json
 import logging
 import time
@@ -7,28 +7,35 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+try:
+    import truststore
+    truststore.inject_into_ssl()  # use OS cert store — handles antivirus MITM certs
+except ImportError:
+    pass
+
 import kuzu
 
 from .db import init_db
 
 logger = logging.getLogger(__name__)
 
-_SS_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
-_FIELDS = "paperId,title,abstract,year,citationCount,authors,venue,externalIds"
+_ESEARCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+_ESUMMARY = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
 _KUZU_PATH = "data/graph.kuzu"
+_UA = {"User-Agent": "gym-knowledge-graph/1.0 (research; contact: dim.tagkoulis@gmail.com)"}
 
 # Hardcoded exercise-science seeds that may not appear as KG entity names
 _BASE_SEEDS = [
     "muscle hypertrophy resistance training",
-    "progressive overload strength",
+    "progressive overload strength training",
     "squat biomechanics",
-    "deadlift technique",
-    "bench press pectoralis",
+    "deadlift technique spine",
+    "bench press pectoralis major",
     "posterior chain hip hinge",
-    "protein synthesis muscle",
-    "range of motion exercise",
-    "RPE training intensity",
-    "periodization strength training",
+    "protein synthesis skeletal muscle",
+    "range of motion exercise performance",
+    "RPE rating perceived exertion training",
+    "periodization strength hypertrophy",
 ]
 
 
@@ -45,8 +52,7 @@ def _top_entity_seeds(n: int = 30) -> list[str]:
         while result.has_next():
             row = result.get_next()
             name = row[0]
-            # Skip very short / generic names unlikely to yield good SS results
-            if name and len(name) > 3 and name.lower() not in {"gym", "a-side joint"}:
+            if name and len(name) > 3 and name.lower() not in {"gym", "a-side joint", "research", "new research"}:
                 names.append(name)
         return names
     except Exception as e:
@@ -54,30 +60,69 @@ def _top_entity_seeds(n: int = 30) -> list[str]:
         return []
 
 
-def _search(query: str, limit: int = 10) -> list[dict]:
-    params = urllib.parse.urlencode({"query": query, "limit": limit, "fields": _FIELDS})
-    req = urllib.request.Request(
-        f"{_SS_URL}?{params}",
-        headers={"User-Agent": "gym-knowledge-graph/1.0 (research; contact: dim.tagkoulis@gmail.com)"},
-    )
-    for attempt, backoff in enumerate([0, 60, 120]):
-        try:
-            if backoff:
-                logger.info("lit_discover: retry %d for %r after %ds", attempt, query, backoff)
-                time.sleep(backoff)
-            with urllib.request.urlopen(req, timeout=15) as r:
-                return json.loads(r.read()).get("data", [])
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                logger.warning("lit_discover: rate limited on %r (attempt %d)", query, attempt + 1)
-                continue
-            logger.warning("lit_discover: HTTP %s for %r", e.code, query)
-            return []
-        except Exception as e:
-            logger.warning("lit_discover: request failed for %r — %s", query, e)
-            return []
-    logger.warning("lit_discover: giving up on %r after 3 attempts", query)
-    return []
+def _fetch(url: str) -> dict | None:
+    req = urllib.request.Request(url, headers=_UA)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 429:
+            logger.warning("lit_discover: PubMed rate limited — sleeping 10s")
+            time.sleep(10)
+        else:
+            logger.warning("lit_discover: HTTP %s for %s", e.code, url[:80])
+        return None
+    except Exception as e:
+        logger.warning("lit_discover: request failed — %s", e)
+        return None
+
+
+def _search_pubmed(query: str, limit: int = 10) -> list[dict]:
+    """Return list of paper dicts with doi, title, abstract, year, authors, venue."""
+    # Step 1: get PMIDs
+    params = urllib.parse.urlencode({
+        "db": "pubmed", "term": query, "retmax": limit,
+        "retmode": "json", "sort": "relevance",
+    })
+    data = _fetch(f"{_ESEARCH}?{params}")
+    if not data:
+        return []
+    pmids = data.get("esearchresult", {}).get("idlist", [])
+    if not pmids:
+        return []
+
+    time.sleep(0.4)  # brief pause between search and fetch
+
+    # Step 2: fetch summaries
+    params2 = urllib.parse.urlencode({"db": "pubmed", "id": ",".join(pmids), "retmode": "json"})
+    summary = _fetch(f"{_ESUMMARY}?{params2}")
+    if not summary:
+        return []
+
+    papers = []
+    for uid, art in summary.get("result", {}).items():
+        if uid == "uids":
+            continue
+        # Extract DOI from articleids list
+        doi = ""
+        for aid in art.get("articleids", []):
+            if aid.get("idtype") == "doi":
+                doi = aid.get("value", "").lower().strip()
+                break
+        if not doi:
+            continue
+        authors = json.dumps([a.get("name", "") for a in art.get("authors", [])])
+        papers.append({
+            "doi": doi,
+            "pmid": uid,
+            "title": art.get("title", "").rstrip("."),
+            "abstract": "",  # esummary doesn't include abstract; acceptable for now
+            "year": int(art.get("pubdate", "0")[:4] or 0),
+            "citation_count": 0,
+            "authors": authors,
+            "venue": art.get("source", ""),
+        })
+    return papers
 
 
 def _ensure_table(conn) -> None:
@@ -108,35 +153,25 @@ def lit_discover(max_per_seed: int = 10, top_n_entities: int = 30) -> None:
 
     added = 0
     for seed in seeds:
-        papers = _search(seed, limit=max_per_seed)
+        papers = _search_pubmed(seed, limit=max_per_seed)
         for p in papers:
-            ext = p.get("externalIds") or {}
-            doi = (ext.get("DOI") or ext.get("doi") or "").lower().strip()
-            if not doi:
-                continue
+            doi = p["doi"]
             if conn.execute("SELECT 1 FROM literature WHERE doi=?", (doi,)).fetchone():
                 continue
-            authors = json.dumps([a.get("name", "") for a in (p.get("authors") or [])])
             conn.execute(
                 "INSERT INTO literature "
                 "(doi, ss_id, title, abstract, year, citation_count, authors, venue, seed_entity, discovered_at) "
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (
-                    doi,
-                    p.get("paperId"),
-                    p.get("title"),
-                    p.get("abstract"),
-                    p.get("year"),
-                    p.get("citationCount", 0),
-                    authors,
-                    p.get("venue"),
-                    seed,
+                    doi, p["pmid"], p["title"], p["abstract"],
+                    p["year"], p["citation_count"], p["authors"],
+                    p["venue"], seed,
                     datetime.now(timezone.utc).isoformat(),
                 ),
             )
             added += 1
         conn.commit()
-        time.sleep(4.0)  # ponytail: SS unauthenticated is ~100 req/5min ≈ 1/3s; 4s gives headroom
+        time.sleep(0.4)  # ponytail: PubMed allows 3 req/sec unauthenticated; 0.4s is safe
 
     logger.info("lit_discover: added %d papers across %d seeds", added, len(seeds))
     conn.close()
