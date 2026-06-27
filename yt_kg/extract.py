@@ -45,7 +45,7 @@ def _gliner() -> GLiNER:
     return _gliner_model
 
 
-_OLLAMA_BASE_URL = "http://localhost:11435/v1"
+_OLLAMA_BASE_URL = "http://localhost:11434/v1"
 _OLLAMA_MODEL = "gemma3:12b"
 
 _llm = instructor.from_openai(
