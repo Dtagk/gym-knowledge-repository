@@ -23,6 +23,7 @@ from yt_kg.cite_extract import cite_extract
 from yt_kg.cite_resolve import cite_resolve
 from yt_kg.cite_pdf import cite_pdf_stage
 from yt_kg.enrich_papers import enrich_papers
+from yt_kg.lit_discover import lit_discover
 from yt_kg.classify import classify
 from yt_kg.export import export
 
@@ -112,6 +113,7 @@ def main() -> None:
         (cite_resolve,                    "cite_resolve"),
         (lambda: cite_pdf_stage(workers=w), "cite_pdf"),
         (enrich_papers,                   "enrich_papers"),
+        (lit_discover,                    "lit_discover"),
     ]
 
     for fn, name in stages:
