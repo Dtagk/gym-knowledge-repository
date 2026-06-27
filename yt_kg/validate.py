@@ -6,7 +6,7 @@ videos that are deleted, private, members-only, or otherwise undownloadable.
 import logging
 from pathlib import Path
 
-from .db import init_db, utcnow
+from .db import init_db
 
 logger = logging.getLogger(__name__)
 
