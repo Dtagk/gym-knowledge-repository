@@ -44,14 +44,14 @@ def setup_env(skip: bool = False) -> None:
         raise RuntimeError("Docker daemon is not running — start Docker Desktop.")
 
     running = subprocess.run(
-        ["docker", "ps", "--filter", "name=ollama", "--format", "{{.Names}}"],
+        ["docker", "ps", "--filter", "name=ollama-local", "--format", "{{.Names}}"],
         capture_output=True, text=True,
     ).stdout
-    if "ollama" not in running:
+    if "ollama-local" not in running:
         logger.info("Starting Ollama container via docker compose…")
         subprocess.run(
-            ["docker", "compose", "up", "-d", "ollama"],
-            check=True, cwd=Path(__file__).resolve().parent.parent,
+            ["docker", "compose", "up", "-d"],
+            check=True, cwd=Path("C:/Users/User/Documents/Code"),
         )
 
     for _ in range(30):
@@ -61,16 +61,16 @@ def setup_env(skip: bool = False) -> None:
         except Exception:
             time.sleep(2)
     else:
-        raise RuntimeError("Ollama API not ready — check 'docker logs ollama'.")
+        raise RuntimeError("Ollama API not ready — check 'docker logs ollama-local'.")
 
     present = subprocess.run(
-        ["docker", "exec", "ollama", "ollama", "list"],
+        ["docker", "exec", "ollama-local", "ollama", "list"],
         capture_output=True, text=True,
     ).stdout.lower()
     for model in _REQUIRED_MODELS:
         if model.split(":")[0] not in present:
             logger.info("Pulling %s…", model)
-            subprocess.run(["docker", "exec", "ollama", "ollama", "pull", model], check=True)
+            subprocess.run(["docker", "exec", "ollama-local", "ollama", "pull", model], check=True)
     logger.info("Environment ready.")
 
 
